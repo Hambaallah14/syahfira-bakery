@@ -1,0 +1,51 @@
+/* Login */
+.body-back{
+    /* background: -webkit-linear-gradient(right,#ee7a49, #ffff65); */
+    background-color: #16a085;
+}
+.wrapper{
+    margin:auto;
+    width:28%;
+    background: #f0f0f0;
+    border-radius: 8px;
+    box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.65);
+    margin: 6rem auto auto auto;
+    padding:20px 0 20px 0;
+}
+
+.wrapper-title{
+    font-family: "Raleway Thin", sans-serif;
+    letter-spacing: 2px;
+    padding-top: 13px;
+}
+.bkd-title{
+    font-family: "Raleway Thin", sans-serif;
+    letter-spacing: 1px;
+    font-size: 11px;
+    padding-top: -20px;
+}
+
+.btn-submit{
+    background:-webkit-linear-gradient(right, #16a085, #1abc9c);
+    border: none;
+    border-radius: 21px;
+    box-shadow: 0px 1px 8px #b9572d;
+    cursor: pointer;
+    color: white;
+    font-family: "Raleway SemiBold", sans-serif;
+    height: 42.3px;
+    margin: 0 auto;
+    margin-top: 50px;
+    transition: 0.25s;
+    width: 153px;
+}
+
+.btn-submit:hover{
+    background: -webkit-linear-gradient(right,  #1abc9c, #16a085);
+}
+
+@media (max-width:768px){
+    .wrapper{  
+        width:85%;   
+    }
+}
