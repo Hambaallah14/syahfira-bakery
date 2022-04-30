@@ -42,7 +42,7 @@ $('.btn-pemberitahuan-pegawai').on('click', function(e){
 	// $('.modal-title').text('Daftar Pembelian ATK Per Tanggal '+format_tanggal);
 	$.ajax({
         type    : 'POST',
-        url     : 'http://localhost/website/aplikasi-inventaris/daftar_pegawai/select_pemberitahuan',
+        url     : 'https://syahfirabakery.co.id/daftar_pegawai/select_pemberitahuan',
         data    : 'nip=' + nip,
         success : function(response){
           $('.modal-body-pemberitahuan').html(response);
@@ -79,7 +79,7 @@ $('.btn-tambah-barang').on('click', function(e){
 	const value    = "";
 	$('.btn-simpan').text('Simpan data');
 	$('.modal-title').text('Tambah Barang');	
-	$('#form_validation').attr('action', 'http://syahfirabakery.co.id/daftar_barang/add');
+	$('#form_validation').attr('action', 'https://syahfirabakery.co.id/daftar_barang/add');
 	$('.form-label').show();
 	$('[name="id_kategori"]').val('-').trigger('change');
 	$('.barang').val(value);
@@ -210,7 +210,7 @@ $("#button-filter-daftar-barang").on('click', function(e){
 		const semua = "semua";
 		$.ajax({
 			type    : 'POST',
-			url     : 'http://syahfirabakery.co.id/filter_laporan/semua_barang',
+			url     : 'https://syahfirabakery.co.id/filter_laporan/semua_barang',
 			data    : 'semua=' + semua,
 			success : function(response){
 			  $(".data-barang").html(response);
@@ -224,7 +224,7 @@ $("#button-filter-daftar-barang").on('click', function(e){
 		const id_jenis = $('#level-2-jenis-brg').val();
 		$.ajax({
 			type    : 'POST',
-			url     : 'http://syahfirabakery.co.id/filter_laporan/jenis_barang',
+			url     : 'https://syahfirabakery.co.id/filter_laporan/jenis_barang',
 			data    : 'id_jenis=' + id_jenis,
 			success : function(response){
 			  $(".data-barang").html(response);
@@ -251,7 +251,7 @@ $("#button-filter-persediaan-barang").on('click', function(e){
 		const sm_tgl = $('#sm-tgl-persediaan').val();
 		$.ajax({
 			type    : 'POST',
-			url     : 'http://syahfirabakery.co.id/filter_laporan/per_tanggal/persediaan',
+			url     : 'https://syahfirabakery.co.id/filter_laporan/per_tanggal/persediaan',
 			data    : {dr_tgl : dr_tgl, sm_tgl : sm_tgl},
 			success : function(response){
 			  $(".data-barang").html(response);
@@ -265,7 +265,7 @@ $("#button-filter-persediaan-barang").on('click', function(e){
 		const tahun = $('#tahun').val();
 		$.ajax({
 			type    : 'POST',
-			url     : 'http://syahfirabakery.co.id/filter_laporan/per_bulan/persediaan',
+			url     : 'https://syahfirabakery.co.id/filter_laporan/per_bulan/persediaan',
 			data    : {per_bulan : bulan, per_tahun : tahun},
 			success : function(response){
 			  $(".data-barang").html(response);
@@ -279,7 +279,7 @@ $("#button-filter-persediaan-barang").on('click', function(e){
 		const tahun = $('#tahun-persediaan').val();
 		$.ajax({
 			type    : 'POST',
-			url     : 'http://syahfirabakery.co.id/filter_laporan/per_tahun/persediaan',
+			url     : 'https://syahfirabakery.co.id/filter_laporan/per_tahun/persediaan',
 			data    : {per_tahun : tahun},
 			success : function(response){
 			  $(".data-barang").html(response);
@@ -307,7 +307,7 @@ $("#button-filter-penjualan-barang").on('click', function(e){
 		const sm_tgl = $('#sm-tgl-penjualan').val();
 		$.ajax({
 			type    : 'POST',
-			url     : 'http://syahfirabakery.co.id/filter_laporan/per_tanggal/penjualan',
+			url     : 'https://syahfirabakery.co.id/filter_laporan/per_tanggal/penjualan',
 			data    : {dr_tgl : dr_tgl, sm_tgl : sm_tgl},
 			success : function(response){
 			  $(".data-barang").html(response);
@@ -321,7 +321,7 @@ $("#button-filter-penjualan-barang").on('click', function(e){
 		const tahun = $('#tahun').val();
 		$.ajax({
 			type    : 'POST',
-			url     : 'http://syahfirabakery.co.id/filter_laporan/per_bulan/penjualan',
+			url     : 'https://syahfirabakery.co.id/filter_laporan/per_bulan/penjualan',
 			data    : {per_bulan : bulan, per_tahun : tahun},
 			success : function(response){
 			  $(".data-barang").html(response);
@@ -335,7 +335,7 @@ $("#button-filter-penjualan-barang").on('click', function(e){
 		const tahun = $('#tahun-penjualan').val();
 		$.ajax({
 			type    : 'POST',
-			url     : 'http://syahfirabakery.co.id/filter_laporan/per_tahun/penjualan',
+			url     : 'https://syahfirabakery.co.id/filter_laporan/per_tahun/penjualan',
 			data    : {per_tahun : tahun},
 			success : function(response){
 			  $(".data-barang").html(response);
@@ -368,12 +368,12 @@ $('.rekap_pembelian_atk').change(function(){
 	if(option == "Bulan"){
 		$('.pil-bulan').show();
 		$('.pil-tanggal').hide();
-		$('#form_validation').attr('action', 'http://localhost/website/aplikasi-inventaris/rekap/rekap_pembelian_atk');
+		$('#form_validation').attr('action', 'https://syahfirabakery.co.id/rekap/rekap_pembelian_atk');
 	}
 	else if (option == "Tanggal"){
 		$('.pil-bulan').hide();
 		$('.pil-tanggal').show();
-		$('#form_validation').attr('action', 'http://localhost/website/aplikasi-inventaris/rekap/rekap_pembelian_atk');
+		$('#form_validation').attr('action', 'https://syahfirabakery.co.id/rekap/rekap_pembelian_atk');
 	}
 	else{
 		$('.pil-bulan').hide();
@@ -387,12 +387,12 @@ $('.rekap_permintaan_atk').change(function(){
 	if(option == "Bidang"){
 		$('.pil-bidang').show();
 		$('.pil-orang').hide();
-		$('#form_validation').attr('action', 'http://localhost/website/aplikasi-inventaris/rekap/rekap_permintaan_atk');
+		$('#form_validation').attr('action', 'https://syahfirabakery.co.id/rekap/rekap_permintaan_atk');
 	}
 	else if (option == "Orang"){
 		$('.pil-bidang').hide();
 		$('.pil-orang').show();
-		$('#form_validation').attr('action', 'http://localhost/website/aplikasi-inventaris/rekap/rekap_permintaan_atk');
+		$('#form_validation').attr('action', 'https://syahfirabakery.co.id/rekap/rekap_permintaan_atk');
 	}
 	else{
 		$('.pil-bidang').hide();
@@ -405,7 +405,7 @@ $('.rekap').change(function(){
 	if(option == "Bulan"){
 		$('.pil-bulan').show();
 		$('.pil-tanggal').hide();
-		$('#form_validation').attr('action', 'http://localhost/website/aplikasi-inventaris/rekap/rekap_pembelian_barang');
+		$('#form_validation').attr('action', 'https://syahfirabakery.co.id/rekap/rekap_pembelian_barang');
 	}
 	else if (option == "Tanggal"){
 		$('.pil-bulan').hide();
