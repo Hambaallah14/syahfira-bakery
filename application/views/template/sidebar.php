@@ -23,7 +23,7 @@
                 <ul class="list">
                     <li class="header">DASHBOARD</li>
                         <li class="active">
-                            <a href="<?=base_url();?>dashboard">
+                            <a href="<?=base_url();?>Dashboard">
                                 <i class="material-icons" style="color:#24181a;">dashboard</i>
                                 <span style="color:#24181a;">Home</span>
                             </a>
