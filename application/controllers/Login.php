@@ -11,7 +11,7 @@ Class Login extends CI_Controller{
 	public function index(){
 		$cookie = get_cookie('inventaris'); // Ambil Cookie
 		if ($this->session->userdata('logged')) { // Cek Session
-			redirect('dashboard');
+			redirect('Dashboard');
 		}
 		else if($cookie <> ''){
 			
@@ -46,7 +46,7 @@ Class Login extends CI_Controller{
 					'id_user'  => $row->id_user
 					);
 		$this->session->set_userdata($session);
-		redirect('dashboard');
+		redirect('Dashboard');
 	}
 
 	public function cek(){
