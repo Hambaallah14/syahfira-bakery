@@ -22,10 +22,10 @@ Class Dashboard extends CI_Controller{
 		//$data['jumlah_roti']	  		= $this->Barang_Model->jumlah_roti();
 		//$data['jumlah_kue_tradisional']		= $this->Barang_Model->jumlah_kue_tradisional();
 		//$data['jumlah_bahan_baku'] 		= $this->Barang_Model->jumlah_bahan_baku();
-		//$this->load->view('template/header', $data);
-		//$this->load->view('template/sidebar', $data);
+		$this->load->view('template/header', $data);
+		$this->load->view('template/sidebar', $data);
 		//$this->load->view('dashboard/index');
-		//$this->load->view('template/footer');
+		$this->load->view('template/footer');
 	}
 }
  ?>
