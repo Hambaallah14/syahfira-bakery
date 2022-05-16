@@ -2,7 +2,7 @@
         <!-- Left Sidebar -->
         <aside id="leftsidebar" class="sidebar">
             <!-- User Info -->
-            <div class="user-info" style="background-image:url(http://localhost/website/aplikasi-syafira/assets/img/backgroun.jpg);">
+            <div class="user-info" style="background-image:url(https://syahfirabakery.co.id/assets/img/backgroun.jpg);">
                 <div class="image">
                     <img src="<?=base_url();?>assets/img/user.png" width="48" height="48" alt="User" />
                 </div>
@@ -23,7 +23,7 @@
                 <ul class="list">
                     <li class="header">DASHBOARD</li>
                         <li class="active">
-                            <a href="<?=base_url();?>">
+                            <a href="<?=base_url();?>dashboard">
                                 <i class="material-icons" style="color:#24181a;">dashboard</i>
                                 <span style="color:#24181a;">Home</span>
                             </a>
