@@ -62,6 +62,9 @@
                    
                         <li class="header">TRANSAKSI</li>
                         <li>
+                            <a href="http://" class="waves-effect wave-block">Persediaan Barang</a>
+                        </li>
+                        <li>
                             <a href="javascript:void(0);" class="menu-toggle">
                                 <i class="material-icons" style="color:#24181a;">shopping_cart</i>
                                 <span style="color:#24181a;">Persediaan Barang</span>
