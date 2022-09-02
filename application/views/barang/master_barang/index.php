@@ -11,7 +11,7 @@
                 
                 <div class="card">
                     <div class="header">
-                            <button type="button" class="btn bg-brown waves-effect btn-tambah-barang" data-toggle="modal" data-target="#defaultModal">Tambah Barang</button>
+                            <button type="button" class="btn bg-green waves-effect btn-tambah-barang" data-toggle="modal" data-target="#defaultModal">Tambah Barang</button>
                         <ul class="header-dropdown m-r--5">
                             <li class="dropdown">
                                 <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
