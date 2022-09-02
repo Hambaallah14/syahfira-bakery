@@ -67,6 +67,27 @@
                                 <span style="color:#24181a;">Persediaan Barang</span>
                             </a>
                         </li>
+
+                        <li>
+                            <a href="http://" class="waves-effect wave-block">
+                                <i class="material-icons" style="color:#24181a;">shopping_cart</i>
+                                <span style="color:#24181a;">Barang Keluar</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="http://" class="waves-effect wave-block">
+                                <i class="material-icons" style="color:#24181a;">shopping_cart</i>
+                                <span style="color:#24181a;">Barang Terjual</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="http://" class="waves-effect wave-block">
+                                <i class="material-icons" style="color:#24181a;">shopping_cart</i>
+                                <span style="color:#24181a;">Barang Sisa</span>
+                            </a>
+                        </li>
                         <li>
                             <a href="javascript:void(0);" class="menu-toggle">
                                 <i class="material-icons" style="color:#24181a;">shopping_cart</i>
