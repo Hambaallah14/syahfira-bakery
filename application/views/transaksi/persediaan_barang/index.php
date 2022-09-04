@@ -83,11 +83,7 @@
                             <div class="col-md-8">
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        <input type="text" class="datepicker form-control tgl-transaksi" placeholder="Pilih Tanggal" name="tgl-transaksi" required>
-                                    </div>
-
-                                    <div class="form-line">
-                                        <input type="text" class="datepicker form-control" placeholder="Please choose a date...">
+                                        <input type="date" class="datepicker form-control tgl-transaksi" placeholder="Pilih Tanggal" name="tgl-transaksi" required>
                                     </div>
                                 </div>
                             </div>
