@@ -33,7 +33,7 @@ Class transaksi extends CI_Controller{
 
         $this->load->view('template/header', $data);
 		$this->load->view('template/sidebar');
-		
+		$this->load->view('transaksi/barang_keluar/index');
         $this->load->view('template/footer');
     }
 
@@ -46,7 +46,7 @@ Class transaksi extends CI_Controller{
 
         $this->load->view('template/header', $data);
 		$this->load->view('template/sidebar');
-		
+		$this->load->view('transaksi/barang_terjual/index');
         $this->load->view('template/footer');
     }
 
@@ -59,7 +59,7 @@ Class transaksi extends CI_Controller{
 
         $this->load->view('template/header', $data);
 		$this->load->view('template/sidebar');
-		
+		$this->load->view('transaksi/barang_sisa/index');
         $this->load->view('template/footer');
     }
 

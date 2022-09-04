@@ -11,7 +11,7 @@
                 
                 <div class="card">
                     <div class="header">
-                            <a href="<?=base_url();?>transaksi/tambah_persediaan_barang" class="btn bg-teal">Tambah Persediaan Barang</a>
+                            <a href="<?=base_url();?>transaksi/tambah_persediaan_barang" class="btn bg-brown">Tambah Persediaan Barang</a>
                             
                         <ul class="header-dropdown m-r--5">
                             <li class="dropdown">
