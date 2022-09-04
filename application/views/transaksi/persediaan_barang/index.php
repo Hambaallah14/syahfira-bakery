@@ -50,7 +50,7 @@
                                             echo"<tr>";
                                                 echo"<td>".$no."</td>";
                                                 echo"<td>".$persediaan["barang"]."</td>";
-                                                echo"<td>".$persediaan["qty"]."</td>";
+                                                echo"<td>".$persediaan["qty"]." " .$persediaan["satuan"]."</td>";
 
                                                 if($diff->d >= 3){
                                                     echo"<td class='bg-pink text-center'>".date('d F Y', strtotime($persediaan["tanggal_transaksi"]))."</td>";
