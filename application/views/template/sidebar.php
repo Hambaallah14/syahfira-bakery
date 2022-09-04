@@ -62,28 +62,28 @@
                    
                         <li class="header">TRANSAKSI</li>
                         <li>
-                            <a href="http://" class="waves-effect wave-block">
+                            <a href="<?=base_url();?>transaksi/persediaan_barang" class="waves-effect wave-block">
                                 <i class="material-icons" style="color:#24181a;">shopping_cart</i>
                                 <span style="color:#24181a;">Persediaan Barang</span>
                             </a>
                         </li>
 
                         <li>
-                            <a href="http://" class="waves-effect wave-block">
+                            <a href="<?=base_url();?>transaksi/barang_keluar" class="waves-effect wave-block">
                                 <i class="material-icons" style="color:#24181a;">shopping_cart</i>
                                 <span style="color:#24181a;">Barang Keluar</span>
                             </a>
                         </li>
 
                         <li>
-                            <a href="http://" class="waves-effect wave-block">
+                            <a href="<?=base_url();?>transaksi/barang_terjual" class="waves-effect wave-block">
                                 <i class="material-icons" style="color:#24181a;">shopping_cart</i>
                                 <span style="color:#24181a;">Barang Terjual</span>
                             </a>
                         </li>
 
                         <li>
-                            <a href="http://" class="waves-effect wave-block">
+                            <a href="<?=base_url();?>transaksi/barang_sisa" class="waves-effect wave-block">
                                 <i class="material-icons" style="color:#24181a;">shopping_cart</i>
                                 <span style="color:#24181a;">Barang Sisa</span>
                             </a>
