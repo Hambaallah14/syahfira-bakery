@@ -45,6 +45,10 @@
                                         $no=1;
                                         foreach($persediaan_barang as $persediaan){
                                             echo"<td>".$no."</td>";
+                                            echo"<td>".$persediaan["barang"]."</td>";
+                                            echo"<td>".$persediaan["qty"]."</td>";
+                                            echo"<td>".$persediaan["tanggal_transaksi"]."</td>";
+                                            echo"<td>d</td>";
                                             $no++;
                                         }
                                     ?>
