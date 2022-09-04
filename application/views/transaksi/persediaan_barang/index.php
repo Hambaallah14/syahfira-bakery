@@ -45,12 +45,12 @@
                                         $no=1;
                                         foreach($persediaan_barang as $persediaan){
                                             $date_now = date_create();
-                                            $date     = date_create("2022-09-02");
+                                            $date     = date_create($persediaan["tanggal_transaksi"]);
                                             $diff = date_diff($date, $date_now);
                                             echo"<td>".$no."</td>";
                                             echo"<td>".$persediaan["barang"]."</td>";
                                             echo"<td>".$persediaan["qty"]."</td>";
-                                            echo"<td>".date('Y-m-d', strtotime($persediaan["tanggal_transaksi"]))."</td>";
+                                            echo"<td>".date('d F Y', strtotime($persediaan["tanggal_transaksi"]))."</td>";
                                             echo"<td>".$diff->d." Hari</td>";
                                             $no++;
                                         }
