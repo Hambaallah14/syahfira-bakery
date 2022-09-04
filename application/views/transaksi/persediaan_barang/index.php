@@ -83,22 +83,16 @@
                             <div class="col-md-8">
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        <input type="text" class="form-control barang" name="barang" required>
-                                        <label class="form-label">Barang</label>
+                                        <input type="text" class="datepicker form-control tgl-transaksi" placeholder="Pilih Tanggal" name="tgl-transaksi" required>
+                                        <label class="form-label">Tanggal Transaksi</label>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        <select class="form-control show-tick id_satuan" name="id_satuan" required>
-                                            <option value="-">--Pilih Satuan--</option>
-                                                <?php
-                                                    foreach($satuan as $sat){
-                                                        echo"<option value='".$sat["id_satuan"]."'>".$sat['satuan']."</option>";
-                                                    }
-                                                ?>
-                                        </select>
+                                        <input type="number" class="form-control qty" name="qty" required>
+                                        <label class="form-label">Qty</label>
                                     </div>
                                 </div> 
                             </div>
