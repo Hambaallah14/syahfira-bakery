@@ -47,17 +47,18 @@
                                             $date_now = date_create();
                                             $date     = date_create($persediaan["tanggal_transaksi"]);
                                             $diff = date_diff($date, $date_now);
-                                            echo"<td>".$no."</td>";
-                                            echo"<td>".$persediaan["barang"]."</td>";
-                                            echo"<td>".$persediaan["qty"]."</td>";
+                                            echo"<tr>";
+                                                echo"<td>".$no."</td>";
+                                                echo"<td>".$persediaan["barang"]."</td>";
+                                                echo"<td>".$persediaan["qty"]."</td>";
 
-                                            if($diff->d >= 3){
-                                                echo"<td class='bg-pink'>".date('d F Y', strtotime($persediaan["tanggal_transaksi"]))."</td>";
-                                            }
-                                            else{
-                                                echo"<td class='bg-teal'>".date('d F Y', strtotime($persediaan["tanggal_transaksi"]))."</td>";
-                                            }
-                                            
+                                                if($diff->d >= 3){
+                                                    echo"<td class='bg-pink'>".date('d F Y', strtotime($persediaan["tanggal_transaksi"]))."</td>";
+                                                }
+                                                else{
+                                                    echo"<td class='bg-teal text-center'>".date('d F Y', strtotime($persediaan["tanggal_transaksi"]))."</td>";
+                                                }
+                                                echo"</tr>";
                                             $no++;
                                         }
                                     ?>
