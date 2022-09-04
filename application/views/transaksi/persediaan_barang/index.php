@@ -50,8 +50,14 @@
                                             echo"<td>".$no."</td>";
                                             echo"<td>".$persediaan["barang"]."</td>";
                                             echo"<td>".$persediaan["qty"]."</td>";
-                                            echo"<td>".date('d F Y', strtotime($persediaan["tanggal_transaksi"]))."</td>";
-                                            echo"<td>".$diff->d." Hari</td>";
+
+                                            if($diff->d >= 3){
+                                                echo"<td class='bg-pink'>".date('d F Y', strtotime($persediaan["tanggal_transaksi"]))."</td>";
+                                            }
+                                            else{
+                                                echo"<td class='bg-teal'>".date('d F Y', strtotime($persediaan["tanggal_transaksi"]))."</td>";
+                                            }
+                                            
                                             $no++;
                                         }
                                     ?>
