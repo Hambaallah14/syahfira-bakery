@@ -46,7 +46,7 @@
                                         foreach($persediaan_barang as $persediaan){
                                             $date_now = date('Y-m-d');
                                             $date     = $persediaan["tanggal_transaksi"];
-                                            $diff = $date_now;
+                                            $diff = $date_now-$date;
                                             echo"<td>".$no."</td>";
                                             echo"<td>".$persediaan["barang"]."</td>";
                                             echo"<td>".$persediaan["qty"]."</td>";
