@@ -50,11 +50,11 @@
                                             $a = new DateTime($date_now);
                                             $b = new DateTime($date);
 
-                                            $diff = $a->diff($b);
+                                            $diff = date_diff($date_now, $date);
                                             echo"<td>".$no."</td>";
                                             echo"<td>".$persediaan["barang"]."</td>";
                                             echo"<td>".$persediaan["qty"]."</td>";
-                                            echo"<td>".$persediaan["tanggal_transaksi"]."</td>";
+                                            echo"<td>".date('Y-m-d', strtotime($persediaan["tanggal_transaksi"]))."</td>";
                                             echo"<td>".$diff." Hari</td>";
                                             $no++;
                                         }
