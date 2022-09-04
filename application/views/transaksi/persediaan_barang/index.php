@@ -43,7 +43,10 @@
                                 <tbody>
                                     <?php
                                         $no=1;
-                                        
+                                        foreach($persediaan_barang as $persediaan){
+                                            echo"<td>".$no."</td>";
+                                            $no++;
+                                        }
                                     ?>
                                 </tbody>
                             </table>

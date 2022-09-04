@@ -7,6 +7,7 @@ Class transaksi extends CI_Controller{
 		$this->load->library('form_validation');
 		$this->load->helper('url');
 		$this->load->model('Barang_Model');
+        $this->load->model('Transaksi_Model');
 		$this->load->model('User_Model');
 		if (! $this->session->userdata('logged')) { //cek session
             redirect('login'); //jika tidak ada session maka balek ke menu login
@@ -16,6 +17,7 @@ Class transaksi extends CI_Controller{
     // <!-- PERSEDIAAN BARANG -->
     public function persediaan_barang(){
         $data['title'] 	  	       = "Persediaan Barang - Syahfira Bakery & Cake";
+        $data['persediaan_barang'] = $this->Transaksi_Model->all_persediaan_barang();
         $data['daftar_barang']     = $this->Barang_Model->all_daftar_barang();
 
         $this->load->view('template/header', $data);
