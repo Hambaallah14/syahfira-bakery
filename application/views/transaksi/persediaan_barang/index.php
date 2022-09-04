@@ -44,11 +44,13 @@
                                     <?php
                                         $no=1;
                                         foreach($persediaan_barang as $persediaan){
+                                            $date_now = new DateTime();
+                                            $diff = $date_now->diff($persediaan["tanggal_transaksi"]);
                                             echo"<td>".$no."</td>";
                                             echo"<td>".$persediaan["barang"]."</td>";
                                             echo"<td>".$persediaan["qty"]."</td>";
                                             echo"<td>".$persediaan["tanggal_transaksi"]."</td>";
-                                            echo"<td>d</td>";
+                                            echo"<td>".$diff." Hari</td>";
                                             $no++;
                                         }
                                     ?>
