@@ -53,7 +53,9 @@
                                                 echo"<td>".$persediaan["qty"]."</td>";
 
                                                 if($diff->d >= 3){
-                                                    echo"<td class='bg-pink'>".date('d F Y', strtotime($persediaan["tanggal_transaksi"]))."</td>";
+                                                    echo"<td class='bg-pink text-center'>".date('d F Y', strtotime($persediaan["tanggal_transaksi"]))."</td>";
+
+                                                    echo"<td class='text-center'><a href='#' class='btn bg-pink'>Pindai Stok</a></td>";
                                                 }
                                                 else{
                                                     echo"<td class='bg-teal text-center'>".date('d F Y', strtotime($persediaan["tanggal_transaksi"]))."</td>";
