@@ -65,18 +65,14 @@
                 </div>
                 <div class="modal-body">
                     <?php echo form_open("", array('enctype'=>'multipart/form-data', 'id' => 'form_validation')); ?>
+                        
                         <div class="form-group form-float">
                             <div class="form-line">
-                                <input type="text" class="form-control id_barang" name="id_barang" value="<?= $kode;?>" readonly required>
-                            </div>
-                        </div>
-                        <div class="form-group form-float">
-                            <div class="form-line">
-                                <select class="form-control show-tick id_jenis" name="id_jenis" required>
-                                        <option value="-">--Pilih Jenis Barang--</option>
+                                <select class="form-control show-tick id_barang" name="id_barang" required>
+                                        <option value="-">--Pilih Barang--</option>
                                         <?php
-                                            foreach($jenis_barang as $jenis){
-                                                echo"<option value='".$jenis["id"]."'>".$jenis['jenis']."</option>";
+                                            foreach($daftar_barang as $brg){
+                                                echo"<option value='".$brg["id_barang"]."'>".$brg['barang']."</option>";
                                             }
                                         ?>
                                 </select>

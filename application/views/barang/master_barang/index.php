@@ -77,7 +77,7 @@
     <div class="modal fade" id="defaultModal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header bg-brown">
+                <div class="modal-header bg-teal">
                     <h4 class="modal-title" id="defaultModalLabel" style="padding-top:-5px;padding-bottom:10px;color:white;">Tambah Barang</h4>
                 </div>
                 <div class="modal-body">
