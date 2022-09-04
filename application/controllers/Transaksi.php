@@ -14,25 +14,33 @@ Class transaksi extends CI_Controller{
 	}
 
     // <!-- PERSEDIAAN BARANG -->
+    public function persediaan_barang(){
 
+    }
 
     // <!-- END PERSEDIAAN BARANG -->
-
+    
 
     // <!-- BARANG KELUAR -->
+    public function barang_keluar(){
 
+    }
 
     // <!-- END BARANG KELUAR -->
-
+    
 
     // <!-- BARANG TERJUAL -->
+    public function barang_terjual(){
 
+    }
 
     // <!-- END BARANG TERJUAL -->
 
 
     // <!-- BARANG SISA -->
+    public function barang_sisa(){
 
+    }
 
     // <!-- END BARANG SISA -->
 
