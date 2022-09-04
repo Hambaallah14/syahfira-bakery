@@ -15,7 +15,13 @@ Class transaksi extends CI_Controller{
 
     // <!-- PERSEDIAAN BARANG -->
     public function persediaan_barang(){
+        $data['title'] 	  	       = "Persediaan Barang - Syahfira Bakery & Cake";
+        $data['daftar_barang']     = $this->Barang_Model->all_barang();
 
+        $this->load->view('template/header', $data);
+		$this->load->view('template/sidebar');
+		$this->load->view('transaksi/persediaan_barang/index');
+        $this->load->view('template/footer');
     }
 
     // <!-- END PERSEDIAAN BARANG -->
@@ -23,7 +29,12 @@ Class transaksi extends CI_Controller{
 
     // <!-- BARANG KELUAR -->
     public function barang_keluar(){
+        $data['title'] 	  	       = "Barang Keluar - Syahfira Bakery & Cake";
 
+        $this->load->view('template/header', $data);
+		$this->load->view('template/sidebar');
+		
+        $this->load->view('template/footer');
     }
 
     // <!-- END BARANG KELUAR -->
@@ -31,7 +42,12 @@ Class transaksi extends CI_Controller{
 
     // <!-- BARANG TERJUAL -->
     public function barang_terjual(){
+        $data['title'] 	  	       = "Barang Terjual - Syahfira Bakery & Cake";
 
+        $this->load->view('template/header', $data);
+		$this->load->view('template/sidebar');
+		
+        $this->load->view('template/footer');
     }
 
     // <!-- END BARANG TERJUAL -->
@@ -39,7 +55,12 @@ Class transaksi extends CI_Controller{
 
     // <!-- BARANG SISA -->
     public function barang_sisa(){
+        $data['title'] 	  	       = "Barang Sisa - Syahfira Bakery & Cake";
 
+        $this->load->view('template/header', $data);
+		$this->load->view('template/sidebar');
+		
+        $this->load->view('template/footer');
     }
 
     // <!-- END BARANG SISA -->
