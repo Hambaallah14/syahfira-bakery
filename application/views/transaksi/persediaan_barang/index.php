@@ -44,8 +44,8 @@
                                     <?php
                                         $no=1;
                                         foreach($persediaan_barang as $persediaan){
-                                            $date_now = date('Y-m-d');
-                                            $date     = date('Y-m-d', strtotime($persediaan["tanggal_transaksi"]));
+                                            $date_now = date_create("2013-03-15");
+                                            $date     = date_create("2013-03-12");
 
                                             $a = new DateTime($date_now);
                                             $b = new DateTime($date);
