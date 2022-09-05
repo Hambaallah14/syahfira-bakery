@@ -58,9 +58,16 @@
                                                     echo"<td class='text-center'><a href='#' class='btn bg-pink'>Pindai Stok</a></td>";
                                                 }
                                                 else{
-                                                    echo"<td class='bg-teal text-center'>".date('d F Y', strtotime($persediaan["tanggal_transaksi"]))."</td>";
+                                                    if($persediaan["qty"] == 0){
+                                                        echo"<td class='bg-teal text-center'>".date('d F Y', strtotime($persediaan["tanggal_transaksi"]))."</td>";
 
-                                                    echo"<td class='text-center'><a href='#' class='btn bg-teal' data-toggle='modal' data-target='#ModalTransaksi'>Pindai Stok</a></td>";
+                                                        echo"<td class='text-center'><a href='#' class='btn bg-teal' data-toggle='modal' data-target='#ModalTransaksi'><i class='material-icons'>delete</i></a></td>";
+                                                    }
+                                                    else{
+                                                        echo"<td class='bg-teal text-center'>".date('d F Y', strtotime($persediaan["tanggal_transaksi"]))."</td>";
+
+                                                        echo"<td class='text-center'><a href='#' class='btn bg-teal' data-toggle='modal' data-target='#ModalTransaksi'>Pindai Stok</a></td>";
+                                                    }
                                                 }
                                                 echo"</tr>";
                                             $no++;
