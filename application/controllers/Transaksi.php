@@ -17,6 +17,7 @@ Class transaksi extends CI_Controller{
     // <!-- PERSEDIAAN BARANG -->
     public function persediaan_barang(){
         $data['title'] 	  	       = "Persediaan Barang - Syahfira Bakery & Cake";
+        $data['user']              = $this->User_Model->user_by_iduser($this->session->userdata('id_user'));
         $data['persediaan_barang'] = $this->Transaksi_Model->all_persediaan_barang();
         $data['daftar_barang']     = $this->Barang_Model->all_daftar_barang();
 
