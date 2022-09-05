@@ -26,6 +26,12 @@ Class transaksi extends CI_Controller{
         $this->load->view('template/footer');
     }
 
+    public function delete_persediaan_barang($id_transaksi){
+        $this->Transaksi_Model->delete_persediaan_barang($id_transaksi);
+		$this->session->set_flashdata('flash', 'Dihapus');
+		redirect('transaksi/persediaan_barang');
+    }
+
     // <!-- END PERSEDIAAN BARANG -->
     
 
