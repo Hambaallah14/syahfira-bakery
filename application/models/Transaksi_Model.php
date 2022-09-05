@@ -9,6 +9,15 @@ class Transaksi_Model extends CI_Model{
         return $this->db->query("SELECT tb_persediaan_barang.id_transaksi, tb_persediaan_barang.qty, tb_persediaan_barang.tanggal_transaksi, tb_barang.barang, tb_satuan.satuan FROM tb_persediaan_barang INNER JOIN tb_barang ON tb_persediaan_barang.id_barang=tb_barang.id_barang INNER JOIN tb_satuan ON tb_satuan.id_satuan=tb_barang.id_satuan")->result_array();
     }
 
+    public function add_persediaan_barang(){
+      $data_persediaan = [
+        "id_barang"           => $this->input->post('id_barang', true),
+        "tanggal_transaksi"   => $this->input->post('tgl-transaksi', true),
+        "qty"                 => $this->input->post('qty', true)
+      ];
+      $this->db->insert('tb_persediaan_barang', $data_persediaan);
+    }
+
     public function delete_persediaan_barang($id_transaksi){
       $this->db->where('id_transaksi', $id_transaksi);
       $this->db->delete('tb_persediaan_barang');
