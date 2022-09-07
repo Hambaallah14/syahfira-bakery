@@ -55,7 +55,7 @@
                                                 if($diff->d >= 3){
                                                     echo"<td class='bg-pink text-center'>".date('d F Y', strtotime($persediaan["tanggal_transaksi"]))."</td>";
 
-                                                    echo"<td class='text-center'><a href='#' class='btn bg-pink' data-toggle='modal' data-target='#ModalBarangSisa' data-id_transaksi='".$persediaan["id_transaksi"]."' data-id_barang='".$persediaan["id_barang"]."' data-barang='".$persediaan["barang"]."' data-qty='".$persediaan["qty"]."' data-satuan='".$persediaan["satuan"]."'>Pindai Stok</a></td>";
+                                                    echo"<td class='text-center'><a href='#' class='btn bg-pink btn-barang-sisa' data-toggle='modal' data-target='#ModalBarangSisa' data-id_transaksi='".$persediaan["id_transaksi"]."' data-id_barang='".$persediaan["id_barang"]."' data-barang='".$persediaan["barang"]."' data-qty='".$persediaan["qty"]."' data-satuan='".$persediaan["satuan"]."'>Pindai Stok</a></td>";
                                                 }
                                                 else{
                                                     if($persediaan["qty"] == 0){
@@ -233,7 +233,7 @@
                 </div>
         
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-pink waves-effect btn-simpan">Pindai Stok</button>
+                    <button type="submit" class="btn bg-pink waves-effect btn-simpan">Pindai Stok</button>
                     <?php echo form_close(); ?>
                     <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">Tutup</button>
                 </div>

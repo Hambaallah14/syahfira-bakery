@@ -462,6 +462,21 @@ function show_rekap(){
 
 
 
+// TRANSAKSI
+// BARANG SISA
+$("#btn-barang-sisa").on('click', function(e){
+	const id_barang = $(this).data('id_barang');
+	const barang    = $(this).data('barang');
+	const qty       = $(this).data('qty');
+	const satuan    = $(this).data('satuan');
+
+	$('#id_barang').val(id_barang);
+	$('#barang').val(barang);
+	$('#qty').val(qty+" "+satuan);
+});
+
+
+
 
 
 // Tanda Pemisah Koma
