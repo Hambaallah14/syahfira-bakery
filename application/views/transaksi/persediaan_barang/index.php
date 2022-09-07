@@ -200,50 +200,36 @@
                     <div class="body table-responsive">
                             <table class="table table-bordered">
                                 <thead>
+                                    <input type="text" class="id-transaksi" name="id-transaksi">
+                                    <input type="text" class="id-barang" name="id-barang">
+                                    <input type="text" class="qty" name="qty">
                                     <tr>
                                         <th>ID Barang</th>
-                                        <th>Barang</th>
-                                        <th>QTY</th>
+                                        <th>:</th>
+                                        <th>
+
+                                            <div id="id-barang"></div>
+                                        </th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
+                                        <td>Barang</td>
                                         <td>:</td>
-                                        <td>:</td>
-                                        <td>:</td>
+                                        <td>
+                                            <div id="barang"></div>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>@fat</td>
+                                        <td>Qty</td>
+                                        <td>:</td>
+                                        <td>
+                                            <div id="qty"></div>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
-                        </div>
-
-                        <div class="form-group form-float">
-                            <div class="form-line">
-
-                                <input type="text" class="id-transaksi" name="id-transaksi">
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-8">
-                                <div class="form-group form-float">
-                                    <div class="form-line">
-                                        <input type="text" class="id-barang" name="id-barang">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group form-float">
-                                    <div class="form-line">
-                                        <input type="text" class="qty" name="qty">
-                                    </div>
-                                </div> 
-                            </div>
-                        </div>                   
+                        </div>      
                 </div>
         
                 <div class="modal-footer">
