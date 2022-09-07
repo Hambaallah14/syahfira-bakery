@@ -55,7 +55,7 @@
                                                 if($diff->d >= 3){
                                                     echo"<td class='bg-pink text-center'>".date('d F Y', strtotime($persediaan["tanggal_transaksi"]))."</td>";
 
-                                                    echo"<td class='text-center'><a href='#' class='btn bg-pink'>Pindai Stok</a></td>";
+                                                    echo"<td class='text-center'><a href='#' class='btn bg-pink' data-toggle='modal' data-target='#ModalBarangSisa'>Pindai Stok</a></td>";
                                                 }
                                                 else{
                                                     if($persediaan["qty"] == 0){
@@ -180,6 +180,50 @@
         
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-link waves-effect btn-simpan">Simpan data</button>
+                    <?php echo form_close(); ?>
+                    <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="ModalBarangSisa" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-pink">
+                    <h4 class="modal-title" id="defaultModalLabel" style="padding-top:-5px;padding-bottom:10px;color:white;">Memindai Persediaan Barang</h4>
+                </div>
+                <div class="modal-body">
+                    <?php echo form_open("transaksi/add_barang_sisa", array('enctype'=>'multipart/form-data', 'id' => 'form_validation')); ?>
+                        
+                        <div class="form-group form-float">
+                            <div class="form-line">
+
+                                <input type="text" class="id-transaksi" name="id-transaksi">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="form-group form-float">
+                                    <div class="form-line">
+                                        <input type="text" class="id-barang" name="id-barang">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group form-float">
+                                    <div class="form-line">
+                                        <input type="text" class="qty" name="qty">
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>                   
+                </div>
+        
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-link waves-effect btn-simpan">Pindai Stok</button>
                     <?php echo form_close(); ?>
                     <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">Tutup</button>
                 </div>
