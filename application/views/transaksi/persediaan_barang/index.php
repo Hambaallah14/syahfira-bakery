@@ -197,6 +197,30 @@
                 <div class="modal-body">
                     <?php echo form_open("transaksi/add_barang_sisa", array('enctype'=>'multipart/form-data', 'id' => 'form_validation')); ?>
                         
+                    <div class="body table-responsive">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>ID Barang</th>
+                                        <th>Barang</th>
+                                        <th>QTY</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>:</td>
+                                        <td>:</td>
+                                        <td>:</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jacob</td>
+                                        <td>Thornton</td>
+                                        <td>@fat</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
                         <div class="form-group form-float">
                             <div class="form-line">
 
