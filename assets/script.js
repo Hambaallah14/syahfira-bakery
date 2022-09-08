@@ -473,7 +473,7 @@ $(".btn-barang-sisa").on('click', function(e){
 
 	$('#id-barang').val(id_barang);
 	$('#barang').val(barang);
-	$('#qty').val(qty+" "+satuan);
+	$('#qty').val(qty);
 
 	$('.modal-id-transaksi').val(id_transaksi);
 	$('.modal-id-barang').val(id_barang);
