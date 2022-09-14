@@ -32,11 +32,16 @@ class Transaksi_Model extends CI_Model{
     }
 
     public function add_barang_sisa(){
+      // Menambahkan barang ke Barang Sisa
       $data_barang_sisa = [
         "id_transaksi"        => $this->input->post('id-transaksi', true),
         "id_barang"           => $this->input->post('id-barang', true),
         "qty"                 => $this->input->post('qty', true)
       ];
       $this->db->insert('tb_barang_sisa', $data_barang_sisa);
+
+      // Kemudian Menghapus persediaan barang
+      $this->db->where('id_transaksi', $this->input->post('id-transaksi', true));
+      $this->db->delete('tb_persediaan_barang');
     }
 }

@@ -3,7 +3,9 @@
 </div>
 <?php echo form_open("transaksi/add_barang_sisa", array('enctype'=>'multipart/form-data', 'id' => 'form_validation')); ?>                
 <div class="modal-body">
+
     <div class="body table-responsive">
+        <h6 class="mb-3">Apakah anda ingin memindahkan stok ?</h5>
         <table class="table table-bordered">
             <thead>
                 <input type="hidden" class="modal-id-transaksi" name="id-transaksi" value="<?= $data_modal[0]["id_transaksi"];?>">
