@@ -92,7 +92,7 @@ Class transaksi extends CI_Controller{
     }
 
     public function modal_barang_sisa(){
-        // $id_transaksi = $this->input->post['id_transaksi'];
+        $id_transaksi = $this->input->post['id_transaksi'];
         // $data['data_modal'] = $this->Transaksi_Model->modal_barang_sisa($id_transaksi);
         $this->load->view('transaksi/barang_sisa/modal_barang_sisa');
     }
