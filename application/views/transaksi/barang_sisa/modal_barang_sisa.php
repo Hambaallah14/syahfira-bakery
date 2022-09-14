@@ -1,5 +1,9 @@
-<?php echo form_open("transaksi/add_barang_sisa", array('enctype'=>'multipart/form-data', 'id' => 'form_validation')); ?>
-                        
+<div class="modal-header bg-pink">
+    <h4 class="modal-title" id="defaultModalLabel" style="padding-top:-5px;padding-bottom:10px;color:white;">Memindai Persediaan Barang</h4>
+</div>
+                
+<div class="modal-body">
+    <?php echo form_open("transaksi/add_barang_sisa", array('enctype'=>'multipart/form-data', 'id' => 'form_validation')); ?>
     <div class="body table-responsive">
         <table class="table table-bordered">
             <thead>
@@ -29,4 +33,15 @@
                 </tr>
             </tbody>
         </table>
-    </div>    
+    </div>
+</div>
+        
+<div class="modal-footer">
+    <button type="submit" class="btn bg-pink waves-effect btn-simpan">Pindai Stok</button>
+    <?php echo form_close(); ?>
+    <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">Tutup</button>
+</div>
+
+
+                        
+        

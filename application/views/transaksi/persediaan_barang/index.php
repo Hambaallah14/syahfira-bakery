@@ -191,19 +191,7 @@
     <div class="modal fade" id="ModalBarangSisa" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header bg-pink">
-                    <h4 class="modal-title" id="defaultModalLabel" style="padding-top:-5px;padding-bottom:10px;color:white;">Memindai Persediaan Barang</h4>
-                </div>
-                
-                <div class="modal-body">
-                    <div class="modal-barang-sisa"></div>
-                </div>
-        
-                <div class="modal-footer">
-                    <button type="submit" class="btn bg-pink waves-effect btn-simpan">Pindai Stok</button>
-                    <?php echo form_close(); ?>
-                    <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">Tutup</button>
-                </div>
+                <div class="modal-barang-sisa"></div>
             </div>
         </div>
     </div>
