@@ -52,6 +52,12 @@ Class transaksi extends CI_Controller{
 		redirect('transaksi/persediaan_barang');
     }
 
+    public function modal_status_barang(){
+        $id_transaksi = $this->input->post('id_transaksi', true);
+        $data['data_modal'] = $this->Transaksi_Model->modal_status_barang($id_transaksi);
+        $this->load->view('transaksi/persediaan_barang/modal_status_barang', $data);
+    }
+
     // <!-- END PERSEDIAAN BARANG -->
     
 

@@ -66,7 +66,7 @@
                                                     else{
                                                         echo"<td class='bg-teal text-center'>".date('d F Y', strtotime($persediaan["tanggal_transaksi"]))."</td>";
 
-                                                        echo"<td class='text-center'><a href='#' class='btn bg-teal' data-toggle='modal' data-target='#ModalTransaksi'>Pindai Stok</a></td>";
+                                                        echo"<td class='text-center'><a href='#' class='btn bg-teal btn-status-barang' data-toggle='modal' data-target='#ModalStatusBarang' data-id_transaksi='".$persediaan["id_transaksi"]."'>Pindai Stok</a></td>";
                                                     }
                                                 }
                                                 echo"</tr>";
@@ -136,58 +136,17 @@
     </div>
 
 
-
-    <div class="modal fade" id="ModalTransaksi" tabindex="-1" role="dialog">
+    <!-- Modal Status Barang -->
+    <div class="modal fade" id="ModalStatusBarang" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header bg-teal">
-                    <h4 class="modal-title" id="defaultModalLabel" style="padding-top:-5px;padding-bottom:10px;color:white;">Memindai Persediaan Barang</h4>
-                </div>
-                <div class="modal-body">
-                    <?php echo form_open("", array('enctype'=>'multipart/form-data', 'id' => 'form_validation')); ?>
-                        
-                        <div class="form-group form-float">
-                            <div class="form-line">
-                                <select class="form-control show-tick id_barang" name="id_barang" required>
-                                        <option value="-">--Pilih Barang--</option>
-                                        <?php
-                                            foreach($daftar_barang as $brg){
-                                                echo"<option value='".$brg["id_barang"]."'>".$brg['barang']."</option>";
-                                            }
-                                        ?>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-8">
-                                <div class="form-group form-float">
-                                    <div class="form-line">
-                                        <input type="date" class="datepicker form-control tgl-transaksi" placeholder="Pilih Tanggal" name="tgl-transaksi" required>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group form-float">
-                                    <div class="form-line">
-                                        <input type="number" class="form-control qty" name="qty" required>
-                                        <label class="form-label">Qty</label>
-                                    </div>
-                                </div> 
-                            </div>
-                        </div>                   
-                </div>
-        
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-link waves-effect btn-simpan">Simpan data</button>
-                    <?php echo form_close(); ?>
-                    <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">Tutup</button>
-                </div>
+                <div class="modal-status-barang"></div>
             </div>
         </div>
     </div>
 
-
+    
+    <!-- Modal Barang Sisa -->
     <div class="modal fade" id="ModalBarangSisa" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
