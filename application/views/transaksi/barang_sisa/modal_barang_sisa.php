@@ -30,3 +30,10 @@
             </tbody>
         </table>
     </div>      
+
+    <?php
+    foreach($data_modal as $data){
+        echo $data["id_transaksi"];
+        echo $data["barang"];
+    }
+    ?>
