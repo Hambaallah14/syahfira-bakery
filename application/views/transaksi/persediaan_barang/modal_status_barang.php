@@ -17,7 +17,7 @@
                                 <select class="form-control" name="pilih-menu">
                                     <option value="">-Pilih Menu-</option>
                                     <option value="Barang Keluar">Barang Keluar</option>
-                                    <option value="Barang Terjual">Barang Terjual</option>
+                                    <option value="Barang Terjual">Barang Terjua</option>
                                 </select>
                             </div>
                         </div>
