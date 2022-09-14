@@ -465,24 +465,12 @@ function show_rekap(){
 // TRANSAKSI
 // BARANG SISA
 $(".btn-barang-sisa").on('click', function(e){
-	const id_transaksi 	= $(this).data('id_transaksi'); 
-	const id_barang		= $(this).data('id_barang');
-	const barang		= $(this).data('barang');
-	const qty       	= $(this).data('qty');
-	const satuan    	= $(this).data('satuan');
-
-	// $('#id-barang').text(id_barang);
-	// $('#barang').val(barang);
-	// $('#qty').val(qty);
-
-	// $('.modal-id-transaksi').val(id_transaksi);
-	// $('.modal-id-barang').val(id_barang);
-	// $('.modal-qty').val(qty);
+	const idTransaksi 	= $(this).data('id_transaksi'); 
 
 	$.ajax({
         type    : 'POST',
         url     : 'https://syahfirabakery.co.id/transaksi/modal_barang_sisa',
-        data    : 'id_transaksi=' + id_transaksi,
+        data    : 'id_transaksi=' + idTransaksi,
         success : function(response){
           $('.modal-barang-sisa').html(response);
         }
