@@ -6,9 +6,9 @@
     <div class="body table-responsive">
         <table class="table table-bordered">
             <thead>
-                <input type="text" class="modal-id-transaksi" name="id-transaksi" value="<?= $data_modal[0]["id_transaksi"];?>">
-                <input type="text" class="modal-id-barang" name="id-barang" value="<?= $data_modal[0]["id_barang"];?>">
-                <input type="text" class="modal-qty" name="qty" value="<?= $data_modal[0]["qty"];?>">
+                <input type="hidden" class="modal-id-transaksi" name="id-transaksi" value="<?= $data_modal[0]["id_transaksi"];?>">
+                <input type="hidden" class="modal-id-barang" name="id-barang" value="<?= $data_modal[0]["id_barang"];?>">
+                <input type="hidden" class="modal-qty" name="qty" value="<?= $data_modal[0]["qty"];?>">
                 
                 <tr>
                     <th>ID Barang</th>
@@ -28,7 +28,7 @@
                 <tr>
                     <td>Qty</td>
                     <td>:</td>
-                    <td><?php echo $data_modal[0]["qty"];?></td>
+                    <td><?php echo $data_modal[0]["qty"]." ".$data_modal[0]["satuan"];?></td>
                 </tr>
             </tbody>
         </table>
