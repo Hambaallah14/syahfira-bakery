@@ -471,13 +471,15 @@ $(".btn-barang-sisa").on('click', function(e){
 	const qty       	= $(this).data('qty');
 	const satuan    	= $(this).data('satuan');
 
-	$('#id-barang').val(id_barang);
-	$('#barang').val(barang);
-	$('#qty').val(qty);
+	// $('#id-barang').val(id_barang);
+	// $('#barang').val(barang);
+	// $('#qty').val(qty);
 
-	$('.modal-id-transaksi').val(id_transaksi);
-	$('.modal-id-barang').val(id_barang);
-	$('.modal-qty').val(qty);
+	// $('.modal-id-transaksi').val(id_transaksi);
+	// $('.modal-id-barang').val(id_barang);
+	// $('.modal-qty').val(qty);
+
+	alert(id_transaksi);
 });
 
 
