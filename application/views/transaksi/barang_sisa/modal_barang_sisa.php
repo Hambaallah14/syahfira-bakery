@@ -1,9 +1,8 @@
 <div class="modal-header bg-pink">
     <h4 class="modal-title" id="defaultModalLabel" style="padding-top:-5px;padding-bottom:10px;color:white;">Memindai Persediaan Barang</h4>
 </div>
-                
+<?php echo form_open("transaksi/add_barang_sisa", array('enctype'=>'multipart/form-data', 'id' => 'form_validation')); ?>                
 <div class="modal-body">
-    <?php echo form_open("transaksi/add_barang_sisa", array('enctype'=>'multipart/form-data', 'id' => 'form_validation')); ?>
     <div class="body table-responsive">
         <table class="table table-bordered">
             <thead>
