@@ -29,6 +29,7 @@ class Transaksi_Model extends CI_Model{
 
     public function add_status_barang(){
       $pilih_menu = $this->input->post('pilih-menu', true);
+      
       if($pilih_menu == "Barang Terjual"){
         // ditambahkan ke barang terjual
         $data_barang_terjual = [

@@ -72,7 +72,7 @@ Class transaksi extends CI_Controller{
             $this->load->view('template/footer');
 		}
 		else{
-			$this->Transaksi_Model->add_status_barang();
+			// $this->Transaksi_Model->add_status_barang();
 			$this->session->set_flashdata('flash', 'Disimpan');
 			redirect('transaksi/persediaan_barang');
 		}
