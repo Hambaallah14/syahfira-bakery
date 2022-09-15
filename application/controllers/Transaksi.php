@@ -100,6 +100,8 @@ Class transaksi extends CI_Controller{
     // <!-- BARANG TERJUAL -->
     public function barang_terjual(){
         $data['title'] 	  	       = "Barang Terjual - Syahfira Bakery & Cake";
+        $data['user']              = $this->User_Model->user_by_iduser($this->session->userdata('id_user'));
+        $data['barang_terjual']    = $this->Transaksi_Model->all_barang_terjual();
 
         $this->load->view('template/header', $data);
 		$this->load->view('template/sidebar');
