@@ -31,9 +31,9 @@
                                 <thead>
                                     <tr>
                                         <th class="text-center">No</th>
+                                        <th class="text-center">Tanggal Transaksi</th>
                                         <th class="text-center">Barang</th>
                                         <th class="text-center">Qty</th>
-                                        <th class="text-center">Tanggal Transaksi</th>
                                     </tr>
                                 </thead>
 
@@ -43,9 +43,9 @@
                                         foreach ($barang_keluar as $brg_keluar) {
                                             echo"<tr>";
                                                 echo"<td>".$no."</td>";
+                                                echo"<td>".date('d F Y', strtotime($brg_keluar["tanggal_transaksi"]))."</td>";
                                                 echo"<td>".$brg_keluar["barang"]."</td>";
                                                 echo"<td>".$brg_keluar["qty"]." ".$brg_keluar["satuan"]."</td>";
-                                                echo"<td>".$brg_keluar["tanggal_transaksi"]."</td>";
                                             echo"</tr>";
                                             $no++;
                                         }
