@@ -14,7 +14,7 @@
                     <th>
                         <div class="form-line">
                             <select class="form-control" name="pilih-menu">
-                                <option value="">-Pilih Menu-</option>
+                                <option value="-">-Pilih Menu-</option>
                                 <option value="Barang Keluar">Barang Keluar</option>
                                 <option value="Barang Terjual">Barang Terjual</option>
                             </select>
