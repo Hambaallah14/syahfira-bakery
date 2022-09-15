@@ -42,7 +42,7 @@ class Transaksi_Model extends CI_Model{
 
         // Update Barang Persediaan Barang
         $this->db->set('qty', 'qty-'.$this->input->post('new-qty', true), FALSE);
-        $this->db->where("id_transaksi", $this->input->post('id-barang', true));
+        $this->db->where("id_transaksi", $this->input->post('id-transaksi', true));
         $this->db->update('tb_persediaan_barang');
       }
 
@@ -58,7 +58,7 @@ class Transaksi_Model extends CI_Model{
 
         // Update Barang Persediaan Barang
         $this->db->set('qty', 'qty-'.$this->input->post('new-qty', true), FALSE);
-        $this->db->where("id_transaksi", $this->input->post('id-barang', true));
+        $this->db->where("id_transaksi", $this->input->post('id-transaksi', true));
         $this->db->update('tb_persediaan_barang');
       }
     }
