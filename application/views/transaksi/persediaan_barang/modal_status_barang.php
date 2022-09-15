@@ -12,15 +12,13 @@
                     <th>Pilih Menu</th>
                     <th>:</th>
                     <th>
-                        
-                            <div class="form-line">
-                                <select class="form-control" name="pilih-menu">
-                                    <option value="">-Pilih Menu-</option>
-                                    <option value="Barang Keluar">Barang Keluar</option>
-                                    <option value="Barang Terjual">Barang Terjual</option>
-                                </select>
-                            </div>
-                        
+                        <div class="form-line">
+                            <select class="form-control" name="pilih-menu">
+                                <option value="">-Pilih Menu-</option>
+                                <option value="Barang Keluar">Barang Keluar</option>
+                                <option value="Barang Terjual">Barang Terjual</option>
+                            </select>
+                        </div>
                     </th>
                 </tr>
             </thead>
@@ -66,10 +64,8 @@
                     <td>Qty</td>
                     <td>:</td>
                     <td>
-                        <div class="form-group form-float">
-                            <div class="form-line">
+                        <div class="form-line">
                             <input type="number" class="form-control" name="new-qty" required min="0" max="<?=$data_modal[0]["qty"];?>" value="0">
-                            </div>
                         </div>
                     </td>
                 </tr>
