@@ -1,4 +1,4 @@
-<div class="modal-header bg-pink">
+<div class="modal-header bg-teal">
     <h4 class="modal-title" id="defaultModalLabel" style="padding-top:-5px;padding-bottom:10px;color:white;">Memindai Persediaan Barang</h4>
 </div>
 <?php echo form_open("transaksi/add_status_barang", array('enctype'=>'multipart/form-data', 'id' => 'form_validation')); ?>                
@@ -17,7 +17,7 @@
                                 <select class="form-control" name="pilih-menu">
                                     <option value="">-Pilih Menu-</option>
                                     <option value="Barang Keluar">Barang Keluar</option>
-                                    <option value="Barang Terjual">Barang Terjua</option>
+                                    <option value="Barang Terjual">Barang Terjual</option>
                                 </select>
                             </div>
                         </div>
@@ -61,13 +61,25 @@
                         </div>
                     </td>
                 </tr>
+
+                <tr>
+                    <td>Qty</td>
+                    <td>:</td>
+                    <td>
+                        <div class="form-group form-float">
+                            <div class="form-line">
+                            <input type="number" class="form-control" name="new-qty" required min="0" max="<?=$data_modal[0]["qty"];?>" value="0">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
             </tbody>
         </table>
     </div>
 </div>
         
 <div class="modal-footer">
-    <button type="submit" class="btn bg-pink waves-effect btn-simpan">Pindai Stok</button>
+    <button type="submit" class="btn bg-teal waves-effect btn-simpan">Pindai Stok</button>
     <?php echo form_close(); ?>
     <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">Tutup</button>
 </div>
