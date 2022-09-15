@@ -29,7 +29,7 @@
                     <td>:</td>
                     <td>
                         <div class="form-line">
-                            <input type="text" class="form-control" name="id-barang" value="<?=$data_modal[0]["id_barang"];?>">
+                            <input type="text" class="form-control" name="id-barang" readonly value="<?=$data_modal[0]["id_barang"];?>">
                         </div>
                     </td>
                 </tr>
@@ -39,7 +39,7 @@
                     <td>:</td>
                     <td>
                         <div class="form-line">
-                            <input type="text" class="form-control" name="barang" disabled value="<?=$data_modal[0]["barang"];?>">
+                            <input type="text" class="form-control" name="barang" readonly value="<?=$data_modal[0]["barang"];?>">
                         </div>
                     </td>
                 </tr>
@@ -49,7 +49,7 @@
                     <td>:</td>
                     <td>
                         <div class="form-line">
-                            <input type="text" class="form-control" name="qty" disabled value="<?=$data_modal[0]["qty"]." ".$data_modal[0]["satuan"];?>">
+                            <input type="text" class="form-control" name="qty" readonly value="<?=$data_modal[0]["qty"]." ".$data_modal[0]["satuan"];?>">
                         </div>
                     </td>
                 </tr>
