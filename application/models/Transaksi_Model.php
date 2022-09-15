@@ -27,7 +27,7 @@ class Transaksi_Model extends CI_Model{
       return $this->db->query("SELECT tb_persediaan_barang.id_transaksi, tb_persediaan_barang.id_barang, tb_persediaan_barang.qty, tb_persediaan_barang.tanggal_transaksi, tb_barang.barang, tb_satuan.satuan FROM tb_persediaan_barang INNER JOIN tb_barang ON tb_persediaan_barang.id_barang=tb_barang.id_barang INNER JOIN tb_satuan ON tb_satuan.id_satuan=tb_barang.id_satuan WHERE tb_persediaan_barang.id_transaksi='$id_transaksi'")->result_array();
     }
 
-    public function add_barang_sisa(){
+    public function add_status_barang(){
       $pilih_menu = $this->input->post('pilih-menu', true);
       if($pilih_menu == "Barang Terjual"){
         // ditambahkan ke barang terjual
@@ -44,10 +44,7 @@ class Transaksi_Model extends CI_Model{
         $this->db->where("id_transaksi", $this->input->post('id-barang', true));
         $this->db->update('tb_persediaan_barang');
       }
-      else{
 
-      }
-      
     }
 
 
