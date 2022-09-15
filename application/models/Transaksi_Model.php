@@ -40,9 +40,9 @@ class Transaksi_Model extends CI_Model{
         $this->db->insert('tb_barang_terjual', $data_barang_terjual);
 
         // Update Barang Persediaan Barang
-        $this->db->set('qty', 'qty-'.$this->input->post('new-qty', true), true);
-        $this->db->where("id_transaksi", $this->input->post('id-barang', true));
-        $this->db->update('tb_persediaan_barang');
+        // $this->db->set('qty', 'qty-'.$this->input->post('new-qty', true), FALSE);
+        // $this->db->where("id_transaksi", $this->input->post('id-barang', true));
+        // $this->db->update('tb_persediaan_barang');
       }
 
     }
