@@ -29,7 +29,7 @@
                     <td>:</td>
                     <td>
                         <div class="form-line">
-                            <input type="text" class="form-control" name="id-barang" disabled value="<?=$data_modal[0]["id_barang"];?>">
+                            <input type="text" class="form-control" name="id-barang" value="<?=$data_modal[0]["id_barang"];?>">
                         </div>
                     </td>
                 </tr>
