@@ -28,35 +28,13 @@ class Transaksi_Model extends CI_Model{
     }
 
     public function add_status_barang(){
-      $pilih_menu = $this->input->post('pilih-menu', true);
-
-      if($pilih_menu == "Barang Terjual"){
-        // ditambahkan ke barang terjual
-        $data_barang_terjual = [
-          "tanggal_transaksi"   => date('Y-m-d'),
-          "id_transaksi"        => $this->input->post('id-transaksi', true),
-          "id_barang"           => $this->input->post('id-barang', true),
-          "qty"                 => $this->input->post('new-qty', true)
-        ];
-        $this->db->insert('tb_barang_terjual', $data_barang_terjual);
-
-        // Update Barang Persediaan Barang
-        // $this->db->set('qty', 'qty-'.$this->input->post('new-qty', true), FALSE);
-        // $this->db->where("id_transaksi", $this->input->post('id-barang', true));
-        // $this->db->update('tb_persediaan_barang');
-      }
-
-      else{
-        // ditambahkan ke barang keluar
-        $data_barang_keluar = [
-          "tanggal_transaksi"   => date('Y-m-d'),
-          "id_transaksi"        => $this->input->post('id-transaksi', true),
-          "id_barang"           => $this->input->post('id-barang', true),
-          "qty"                 => $this->input->post('new-qty', true)
-        ];
-        $this->db->insert('tb_barang_keluar', $data_barang_keluar);
-      }
-
+      $data_barang_terjual = [
+        "tanggal_transaksi"   => date('Y-m-d'),
+        "id_transaksi"        => $this->input->post('id-transaksi', true),
+        "id_barang"           => $this->input->post('id-barang', true),
+        "qty"                 => $this->input->post('new-qty', true)
+      ];
+      $this->db->insert('tb_barang_terjual', $data_barang_terjual);
     }
 
 
