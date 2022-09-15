@@ -7,7 +7,7 @@
     <div class="body table-responsive">
         <table class="table table-bordered">
             <thead>
-                <input type="hidden" name="id-transaksi" value="<?=$data_modal[0]["id_transaksi"];?>"> 
+                    <input type="hidden" name="id-transaksi" value="<?=$data_modal[0]["id_transaksi"];?>"> 
                 <tr>
                     <th>Pilih Menu</th>
                     <th>:</th>
@@ -28,10 +28,8 @@
                     <td>ID Barang</td>
                     <td>:</td>
                     <td>
-                        <div class="form-group form-float">
-                            <div class="form-line">
-                                <input type="text" class="form-control" name="id-barang" disabled value="<?=$data_modal[0]["id_barang"];?>">
-                            </div>
+                        <div class="form-line">
+                            <input type="text" class="form-control" name="id-barang" disabled value="<?=$data_modal[0]["id_barang"];?>">
                         </div>
                     </td>
                 </tr>
@@ -40,10 +38,8 @@
                     <td>Barang</td>
                     <td>:</td>
                     <td>
-                        <div class="form-group form-float">
-                            <div class="form-line">
-                                <input type="text" class="form-control" name="barang" disabled value="<?=$data_modal[0]["barang"];?>">
-                            </div>
+                        <div class="form-line">
+                            <input type="text" class="form-control" name="barang" disabled value="<?=$data_modal[0]["barang"];?>">
                         </div>
                     </td>
                 </tr>
@@ -52,10 +48,8 @@
                     <td>Qty tersedia</td>
                     <td>:</td>
                     <td>
-                        <div class="form-group form-float">
-                            <div class="form-line">
-                                <input type="text" class="form-control" name="qty" disabled value="<?=$data_modal[0]["qty"]." ".$data_modal[0]["satuan"];?>">
-                            </div>
+                        <div class="form-line">
+                            <input type="text" class="form-control" name="qty" disabled value="<?=$data_modal[0]["qty"]." ".$data_modal[0]["satuan"];?>">
                         </div>
                     </td>
                 </tr>
