@@ -70,7 +70,7 @@ Class transaksi extends CI_Controller{
         $id_barang = $this->input->post('id-barang', true);
         $new_qty = $this->input->post('new-qty', true);
 
-        echo"Tanggal ".$tanggal." ".$id_transaksi." ".$id_barang." ".$new_qty;
+        echo"Tanggal ".$tanggal." ID-Transaksi : ".$id_transaksi.", ID-Barang : ".$id_barang.", Qty : ".$new_qty;
 
 		// if ($this->form_validation->run() == FALSE) {
 		// 	$this->load->view('template/header', $data);
