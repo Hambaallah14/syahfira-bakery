@@ -61,7 +61,7 @@ Class transaksi extends CI_Controller{
     public function add_status_barang(){
         $data['title'] 	            = "Persediaan Barang - Syahfira Bakery & Cake";
 		$this->form_validation->set_rules('id-transaksi', 'id-transaksi', 'required');
-		$this->form_validation->set_rules('pilih-menu', 'pilih-menu', 'required');
+		// $this->form_validation->set_rules('pilih-menu', 'pilih-menu', 'required');
 		$this->form_validation->set_rules('id-barang', 'id-barang', 'required');
 		$this->form_validation->set_rules('new-qty', 'new-qty', 'required');
         
@@ -73,8 +73,8 @@ Class transaksi extends CI_Controller{
             $this->load->view('template/footer');
 		}
 		else{
-			// $this->Transaksi_Model->add_status_barang();
-			// $this->session->set_flashdata('flash', 'Disimpan');
+			$this->Transaksi_Model->add_status_barang();
+			$this->session->set_flashdata('flash', 'Disimpan');
 			redirect('transaksi/persediaan_barang');
 		}
     }
