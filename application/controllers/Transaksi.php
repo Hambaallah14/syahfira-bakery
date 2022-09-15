@@ -115,6 +115,8 @@ Class transaksi extends CI_Controller{
     // <!-- BARANG SISA -->
     public function barang_sisa(){
         $data['title'] 	  	       = "Barang Sisa - Syahfira Bakery & Cake";
+        $data['user']              = $this->User_Model->user_by_iduser($this->session->userdata('id_user'));
+        $data['barang_sisa']       = $this->Transaksi_Model->all_barang_sisa();
 
         $this->load->view('template/header', $data);
 		$this->load->view('template/sidebar');

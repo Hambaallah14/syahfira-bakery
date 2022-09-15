@@ -1,9 +1,9 @@
-<div class="flash-data" data-target="Persediaan Barang" data-flashdata="<?= $this->session->flashdata('flash'); ?>"></div>
+<div class="flash-data" data-target="Barang Sisa" data-flashdata="<?= $this->session->flashdata('flash'); ?>"></div>
 <section class="content">
     <div class="container-fluid">
     
         <div class="block-header">
-            <h2>Persediaan Barang</h2>
+            <h2>Barang Sisa</h2>
         </div>
 
         <div class="row clearfix">
@@ -11,8 +11,6 @@
                 
                 <div class="card">
                     <div class="header">
-                            <a href="<?=base_url();?>transaksi/tambah_persediaan_barang" class="btn bg-brown">Tambah Persediaan Barang</a>
-                            
                         <ul class="header-dropdown m-r--5">
                             <li class="dropdown">
                                 <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -35,14 +33,20 @@
                                         <th class="text-center">No</th>
                                         <th class="text-center">Barang</th>
                                         <th class="text-center">Qty</th>
-                                        <th class="text-center">Tanggal Transaksi</th>
-                                        <th class="text-center">Opsi</th>
                                     </tr>
                                 </thead>
 
                                 <tbody>
-                                    <?php
+                                <?php
                                         $no=1;
+                                        foreach ($barang_sisa as $brg_sisa) {
+                                            echo"<tr>";
+                                                echo"<td>".$no."</td>";
+                                                echo"<td>".$brg_sisa["barang"]."</td>";
+                                                echo"<td>".$brg_sisa["qty"]." ".$brg_sisa["satuan"]."</td>";
+                                            echo"</tr>";
+                                            $no++;
+                                        }
                                         
                                     ?>
                                 </tbody>
