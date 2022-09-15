@@ -63,20 +63,22 @@ Class transaksi extends CI_Controller{
 		$this->form_validation->set_rules('id-transaksi', 'id-transaksi', 'required');
 		$this->form_validation->set_rules('pilih-menu', 'pilih-menu', 'required');
 		$this->form_validation->set_rules('id-barang', 'id-barang', 'required');
+		$this->form_validation->set_rules('barang', 'barang', 'required');
+		$this->form_validation->set_rules('qty', 'qty', 'required');
 		$this->form_validation->set_rules('new-qty', 'new-qty', 'required');
         
-        
-		// if ($this->form_validation->run() == FALSE) {
-		// 	$this->load->view('template/header', $data);
-        //     $this->load->view('template/sidebar');
-        //     $this->load->view('transaksi/persediaan_barang/index');
-        //     $this->load->view('template/footer');
-		// }
-		// else{
-		// 	$this->Transaksi_Model->add_status_barang();
-		// 	$this->session->set_flashdata('flash', 'Disimpan');
-		// 	redirect('transaksi/persediaan_barang');
-		// }
+
+		if ($this->form_validation->run() == FALSE) {
+			$this->load->view('template/header', $data);
+            $this->load->view('template/sidebar');
+            $this->load->view('transaksi/persediaan_barang/index');
+            $this->load->view('template/footer');
+		}
+		else{
+			$this->Transaksi_Model->add_status_barang();
+			$this->session->set_flashdata('flash', 'Disimpan');
+			redirect('transaksi/persediaan_barang');
+		}
     }
 
     // <!-- END PERSEDIAAN BARANG -->
