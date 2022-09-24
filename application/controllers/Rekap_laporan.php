@@ -67,7 +67,10 @@ Class Rekap_laporan extends CI_Controller{
             $this->load->view('rekap_laporan/persediaan_barang/rekap_filter', $data);
         }
         else if($object == "barang_keluar"){
-            
+            $dr_tgl                    = $this->input->post('dr_tgl');
+			$sm_tgl                    = $this->input->post('sm_tgl');
+            $data['barang_keluar']     = $this->Transaksi_Model->perTanggal($dr_tgl, $sm_tgl, $object);
+            $this->load->view('rekap_laporan/barang_keluar/rekap_filter', $data);
         }
         else if($object == "barang_terjual"){
 
@@ -85,7 +88,10 @@ Class Rekap_laporan extends CI_Controller{
             $this->load->view('rekap_laporan/persediaan_barang/rekap_filter', $data);
         }
         else if($object == "barang_keluar"){
-            
+            $bulan                    = $this->input->post('per_bulan');
+			$tahun                    = $this->input->post('per_tahun');
+            $data['barang_keluar']    = $this->Transaksi_Model->perBulan($bulan, $tahun, $object);
+            $this->load->view('rekap_laporan/barang_keluar/rekap_filter', $data);
         }
         else if($object == "barang_terjual"){
 
@@ -102,7 +108,9 @@ Class Rekap_laporan extends CI_Controller{
             $this->load->view('rekap_laporan/persediaan_barang/rekap_filter', $data);
         }
         else if($object == "barang_keluar"){
-            
+            $tahun                     = $this->input->post('tahun');
+            $data['barang_keluar']     = $this->Transaksi_Model->perTahun($tahun, $object);
+            $this->load->view('rekap_laporan/barang_keluar/rekap_filter', $data);
         }
         else if($object == "barang_terjual"){
 

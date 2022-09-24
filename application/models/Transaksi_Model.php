@@ -113,17 +113,29 @@ class Transaksi_Model extends CI_Model{
       if($object == "persediaan_barang"){
         return $this->db->query("SELECT tb_persediaan_barang.id_transaksi, tb_persediaan_barang.id_barang, tb_persediaan_barang.qty, tb_persediaan_barang.tanggal_transaksi, tb_barang.barang, tb_satuan.satuan FROM tb_persediaan_barang INNER JOIN tb_barang ON tb_persediaan_barang.id_barang=tb_barang.id_barang INNER JOIN tb_satuan ON tb_satuan.id_satuan=tb_barang.id_satuan WHERE tb_persediaan_barang.tanggal_transaksi >= '$dr_tgl' AND tb_persediaan_barang.tanggal_transaksi <= '$sm_tgl' ORDER BY tb_persediaan_barang.tanggal_transaksi DESC")->result_array();
       }
+
+      else if($object == "barang_keluar"){
+        return $this->db->query("SELECT tb_barang_keluar.id_transaksi, tb_barang_keluar.id_barang, tb_barang_keluar.qty, tb_barang_keluar.tanggal_transaksi, tb_barang.barang, tb_satuan.satuan FROM tb_barang_keluar INNER JOIN tb_barang ON tb_barang_keluar.id_barang=tb_barang.id_barang INNER JOIN tb_satuan ON tb_satuan.id_satuan=tb_barang.id_satuan WHERE tb_barang_keluar.tanggal_transaksi >= '$dr_tgl' AND tb_barang_keluar.tanggal_transaksi <= '$sm_tgl' ORDER BY tb_barang_keluar.tanggal_transaksi DESC")->result_array();
+      }
+
     }
 
     public function perBulan($bulan, $tahun, $object){
       if($object == "persediaan_barang"){
         return $this->db->query("SELECT tb_persediaan_barang.id_transaksi, tb_persediaan_barang.id_barang, tb_persediaan_barang.qty, tb_persediaan_barang.tanggal_transaksi, tb_barang.barang, tb_satuan.satuan FROM tb_persediaan_barang INNER JOIN tb_barang ON tb_persediaan_barang.id_barang=tb_barang.id_barang INNER JOIN tb_satuan ON tb_satuan.id_satuan=tb_barang.id_satuan WHERE EXTRACT(YEAR FROM tb_persediaan_barang.tanggal_transaksi) = '$tahun' AND EXTRACT(MONTH FROM tb_persediaan_barang.tanggal_transaksi)='$bulan' ORDER BY tb_persediaan_barang.tanggal_transaksi DESC")->result_array();
       }
+
+      else if($object == "barang_keluar"){
+        return $this->db->query("SELECT tb_barang_keluar.id_transaksi, tb_barang_keluar.id_barang, tb_barang_keluar.qty, tb_barang_keluar.tanggal_transaksi, tb_barang.barang, tb_satuan.satuan FROM tb_barang_keluar INNER JOIN tb_barang ON tb_barang_keluar.id_barang=tb_barang.id_barang INNER JOIN tb_satuan ON tb_satuan.id_satuan=tb_barang.id_satuan WHERE EXTRACT(YEAR FROM tb_barang_keluar.tanggal_transaksi) = '$tahun' AND EXTRACT(MONTH FROM tb_barang_keluar.tanggal_transaksi)='$bulan' ORDER BY tb_barang_keluar.tanggal_transaksi DESC")->result_array();
+      }
     }
 
     public function perTahun($tahun, $object){
       if($object == "persediaan_barang"){
         return $this->db->query("SELECT tb_persediaan_barang.id_transaksi, tb_persediaan_barang.id_barang, tb_persediaan_barang.qty, tb_persediaan_barang.tanggal_transaksi, tb_barang.barang, tb_satuan.satuan FROM tb_persediaan_barang INNER JOIN tb_barang ON tb_persediaan_barang.id_barang=tb_barang.id_barang INNER JOIN tb_satuan ON tb_satuan.id_satuan=tb_barang.id_satuan WHERE EXTRACT(YEAR FROM tb_persediaan_barang.tanggal_transaksi) = '$tahun' ORDER BY tb_persediaan_barang.tanggal_transaksi DESC")->result_array();
+      }
+      else if($object == "barang_keluar"){
+        return $this->db->query("SELECT tb_barang_keluar.id_transaksi, tb_barang_keluar.id_barang, tb_barang_keluar.qty, tb_barang_keluar.tanggal_transaksi, tb_barang.barang, tb_satuan.satuan FROM tb_barang_keluar INNER JOIN tb_barang ON tb_barang_keluar.id_barang=tb_barang.id_barang INNER JOIN tb_satuan ON tb_satuan.id_satuan=tb_barang.id_satuan WHERE EXTRACT(YEAR FROM tb_barang_keluar.tanggal_transaksi) = '$tahun' ORDER BY tb_barang_keluar.tanggal_transaksi DESC")->result_array();
       }
     }
 }

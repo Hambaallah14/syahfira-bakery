@@ -1,24 +1,18 @@
 $(document).ready(function(){
     
     // PERSEDIAAN BARANG
-    hidden_persediaan_barang();
+    hidden("#per-tanggal-persediaan-barang", "#per-bulan-persediaan-barang", "#per-tahun-persediaan-barang");
     button_cetak(".button-cetak-persediaan-barang");
     $('#rekap-persediaan-barang').change(function(){
         var option = $(this).val();
         if(option == "per-tanggal"){
-            $("#per-tanggal-persediaan-barang").show();
-            $("#per-bulan-persediaan-barang").hide();
-            $("#per-tahun-persediaan-barang").hide();
+            per_tanggal_show("#per-tanggal-persediaan-barang", "#per-bulan-persediaan-barang", "#per-tahun-persediaan-barang");
         }
         else if(option == "per-bulan"){
-            $("#per-bulan-persediaan-barang").show();
-            $("#per-tanggal-persediaan-barang").hide();
-            $("#per-tahun-persediaan-barang").hide();
+            per_bulan_show("#per-tanggal-persediaan-barang", "#per-bulan-persediaan-barang", "#per-tahun-persediaan-barang");
         }
         else if(option == "per-tahun"){
-            $("#per-tahun-persediaan-barang").show();
-            $("#per-tanggal-persediaan-barang").hide();
-            $("#per-bulan-persediaan-barang").hide();
+            per_tahun_show("#per-tanggal-persediaan-barang", "#per-bulan-persediaan-barang", "#per-tahun-persediaan-barang");
         }
     });
 
@@ -78,8 +72,72 @@ $(document).ready(function(){
 
 
     // BARANG KELUAR
+    hidden("#per-tanggal-barang-keluar", "#per-bulan-barang-keluar", "#per-tahun-barang-keluar");
+    button_cetak(".button-cetak-persediaan-barang");
+    $('#rekap-barang-keluar').change(function(){
+        var option = $(this).val();
+        if(option == "per-tanggal"){
+            per_tanggal_show("#per-tanggal-barang-keluar", "#per-bulan-barang-keluar", "#per-tahun-barang-keluar");
+        }
+        else if(option == "per-bulan"){
+           per_bulan_show("#per-tanggal-barang-keluar", "#per-bulan-barang-keluar", "#per-tahun-barang-keluar");
+        }
+        else if(option == "per-tahun"){
+            per_tahun_show("#per-tanggal-barang-keluar", "#per-bulan-barang-keluar", "#per-tahun-barang-keluar");
+        }
+    });
 
+    $("#button-filter-barang-keluar").on('click', function(e){
+        var option_rekap = $('#rekap-barang-keluar').val();
+        if(option_rekap == "per-tanggal"){
+            const dr_tgl = $('#dr-tgl-barang-keluar').val();
+            const sm_tgl = $('#sm-tgl-barang-keluar').val();
+            $.ajax({
+                type    : 'POST',
+                url     : 'https://syahfirabakery.co.id/rekap_laporan/per_tanggal/barang_keluar',
+                data    : {dr_tgl : dr_tgl, sm_tgl : sm_tgl},
+                success : function(response){
+                  $(".data-barang").html(response);
+                }
+            });
+            $("#card-filter").show();
+            $(".button-cetak-barang-keluar").show();
+        }
 
+        else if(option_rekap == "per-bulan"){
+            
+            const bulan = $('#bulan-brg-keluar').val();
+            const tahun = $('#tahun-brg-keluar').val();
+            $.ajax({
+                type    : 'POST',
+                url     : 'https://syahfirabakery.co.id/rekap_laporan/per_bulan/barang_keluar',
+                data    : {per_bulan : bulan, per_tahun : tahun},
+                success : function(response){
+                  $(".data-barang").html(response);
+                }
+            });
+            $("#card-filter").show();
+            $(".button-cetak-barang-keluar").show();
+        }
+
+        else if(option_rekap == "per-tahun"){
+            const tahun = $('#tahun-barang-keluar').val();
+            $.ajax({
+                type    : 'POST',
+                url     : 'https://syahfirabakery.co.id/rekap_laporan/per_tahun/barang_keluar',
+                data    : {tahun : tahun},
+                success : function(response){
+                  $(".data-barang").html(response);
+                }
+            });
+            $("#card-filter").show();
+            $(".button-cetak-barang-keluar").show();
+        }
+        
+        else{
+            alert("Silahkan pilih Jenis Rekap Barang");
+        }
+    });
 
     // BARANG TERJUAL
 
@@ -89,10 +147,28 @@ $(document).ready(function(){
 
 
     // =========================================================
-    function hidden_persediaan_barang(){
-        $("#per-tanggal-persediaan-barang").hide();
-        $("#per-bulan-persediaan-barang").hide();
-        $("#per-tahun-persediaan-barang").hide();
+    function hidden($btn_tgl, $btn_bulan, $btn_tahun){
+        $($btn_tgl).hide();
+        $($btn_bulan).hide();
+        $($btn_tahun).hide();
+    }
+
+    function per_tanggal_show($btn_tgl, $btn_bulan, $btn_tahun){
+        $($btn_tgl).show();
+        $($btn_bulan).hide();
+        $($btn_tahun).hide();
+    }
+
+    function per_bulan_show($btn_tgl, $btn_bulan, $btn_tahun){
+        $($btn_tgl).hide();
+        $($btn_bulan).show();
+        $($btn_tahun).hide();
+    }
+
+    function per_tahun_show($btn_tgl, $btn_bulan, $btn_tahun){
+        $($btn_tgl).hide();
+        $($btn_bulan).hide();
+        $($btn_tahun).show();
     }
 
     function button_cetak($button){
