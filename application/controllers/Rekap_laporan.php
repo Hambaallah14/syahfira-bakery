@@ -69,7 +69,7 @@ Class Rekap_laporan extends CI_Controller{
             $dr_tgl                    = $this->input->post('dr_tgl');
 			$sm_tgl                    = $this->input->post('sm_tgl');
             $data['persediaan_barang'] = $this->Transaksi_Model->perTanggal($dr_tgl, $sm_tgl, $object);
-            $this->load->view('rekap_laporan/persediaan_barang/rekap_perTanggal', $data);
+            $this->load->view('rekap_laporan/persediaan_barang/rekap_filter', $data);
         }
         else if($object == "barang_keluar"){
             
@@ -87,7 +87,7 @@ Class Rekap_laporan extends CI_Controller{
             $bulan                    = $this->input->post('per_bulan');
 			$tahun                    = $this->input->post('per_tahun');
             $data['persediaan_barang'] = $this->Transaksi_Model->perBulan($bulan, $tahun, $object);
-            $this->load->view('rekap_laporan/persediaan_barang/rekap_perBulan', $data);
+            $this->load->view('rekap_laporan/persediaan_barang/rekap_filter', $data);
         }
         else if($object == "barang_keluar"){
             
@@ -104,7 +104,7 @@ Class Rekap_laporan extends CI_Controller{
         if($object == "persediaan_barang"){
 			$tahun                     = $this->input->post('tahun');
             $data['persediaan_barang'] = $this->Transaksi_Model->perTahun($tahun, $object);
-            $this->load->view('rekap_laporan/persediaan_barang/rekap_perTahun', $data);
+            $this->load->view('rekap_laporan/persediaan_barang/rekap_filter', $data);
         }
         else if($object == "barang_keluar"){
             
