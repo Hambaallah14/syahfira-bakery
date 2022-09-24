@@ -39,18 +39,19 @@ $(document).ready(function(){
         }
 
         else if(option_rekap == "per-bulan"){
-            const bulan = $('#bulan-persediaan-brg').val();
-            const tahun = $('#tahun-persediaan-brg').val();
-            $.ajax({
-                type    : 'POST',
-                url     : 'https://syahfirabakery.co.id/rekap_laporan/per_bulan/persediaan_barang',
-                data    : {per_bulan : bulan, per_tahun : tahun},
-                success : function(response){
-                  $(".data-barang").html(response);
-                }
-            });
-            $("#card-filter").show();
-            $(".button-cetak-persediaan-barang").show();
+            alert("Ok");
+            // const bulan = $('#bulan-persediaan-brg').val();
+            // const tahun = $('#tahun-persediaan-brg').val();
+            // $.ajax({
+            //     type    : 'POST',
+            //     url     : 'https://syahfirabakery.co.id/rekap_laporan/per_bulan/persediaan_barang',
+            //     data    : {per_bulan : bulan, per_tahun : tahun},
+            //     success : function(response){
+            //       $(".data-barang").html(response);
+            //     }
+            // });
+            // $("#card-filter").show();
+            // $(".button-cetak-persediaan-barang").show();
         }
         
         else{
