@@ -20,7 +20,7 @@ Class Rekap_laporan extends CI_Controller{
         $data['jenis_barang']	   = $this->Barang_Model->jenis_barang();
 		$this->load->view('template/header', $data);
 		$this->load->view('template/sidebar');
-		$this->load->view('barang/filter_laporan/daftar_barang');
+		$this->load->view('barang/rekap_laporan/persediaan_barang/index');
         $this->load->view('template/footer');     
     }
 
