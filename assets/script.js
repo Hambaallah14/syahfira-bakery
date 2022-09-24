@@ -149,24 +149,7 @@ $('#rekap-barang').change(function(){
 });
 
 // PERSEDIAAN BARANG
-$('#rekap-persediaan-barang').change(function(){
-	var option = $(this).val();
-	if(option == "per-tanggal"){
-		$("#per-tanggal-persediaan-barang").show();
-		$("#per-bulan-persediaan-barang").hide();
-		$("#per-tahun-persediaan-barang").hide();
-	}
-	else if(option == "per-bulan"){
-		$("#per-bulan-persediaan-barang").show();
-		$("#per-tanggal-persediaan-barang").hide();
-		$("#per-tahun-persediaan-barang").hide();
-	}
-	else if(option == "per-tahun"){
-		$("#per-tahun-persediaan-barang").show();
-		$("#per-tanggal-persediaan-barang").hide();
-		$("#per-bulan-persediaan-barang").hide();
-	}
-});
+
 
 // PENJUALAN BARANG
 $('#rekap-penjualan-barang').change(function(){
@@ -244,55 +227,7 @@ $(".button-cetak-daftar-barang").on("click",  function(e){
 
 
 // PERSEDIAAN BARANG
-$("#button-filter-persediaan-barang").on('click', function(e){
-	var option_rekap = $('#rekap-persediaan-barang').val();
-	if(option_rekap == "per-tanggal"){
-		const dr_tgl = $('#dr-tgl-persediaan').val();
-		const sm_tgl = $('#sm-tgl-persediaan').val();
-		$.ajax({
-			type    : 'POST',
-			url     : 'https://syahfirabakery.co.id/filter_laporan/per_tanggal/persediaan',
-			data    : {dr_tgl : dr_tgl, sm_tgl : sm_tgl},
-			success : function(response){
-			  $(".data-barang").html(response);
-			}
-		});
-		$("#card-filter").show();
-		$(".button-cetak-persediaan-barang").show();
-	}
-	else if(option_rekap == "per-bulan"){
-		const bulan = $('#bulan-persediaan').val();
-		const tahun = $('#tahun').val();
-		$.ajax({
-			type    : 'POST',
-			url     : 'https://syahfirabakery.co.id/filter_laporan/per_bulan/persediaan',
-			data    : {per_bulan : bulan, per_tahun : tahun},
-			success : function(response){
-			  $(".data-barang").html(response);
-			}
-		});
 
-		$("#card-filter").show();
-		$(".button-cetak-persediaan-barang").show();
-	}
-	else if(option_rekap == "per-tahun"){
-		const tahun = $('#tahun-persediaan').val();
-		$.ajax({
-			type    : 'POST',
-			url     : 'https://syahfirabakery.co.id/filter_laporan/per_tahun/persediaan',
-			data    : {per_tahun : tahun},
-			success : function(response){
-			  $(".data-barang").html(response);
-			}
-		});
-
-		$("#card-filter").show();
-		$(".button-cetak-persediaan-barang").show();
-	}
-	else{
-		alert("Silahkan pilih Jenis Rekap Barang");
-	}
-});
 
 $(".button-cetak-persediaan-barang").on("click",  function(e){
 	$(".data-barang").printArea();

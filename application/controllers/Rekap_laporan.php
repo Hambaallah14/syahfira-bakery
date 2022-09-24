@@ -60,6 +60,35 @@ Class Rekap_laporan extends CI_Controller{
 		$this->load->view('barang/filter_laporan/daftar_barang');
         $this->load->view('template/footer');     
     }
+
+
+
+    // REKAP LAPORAN
+    public function per_tanggal($object){
+        if($object == "persediaan_barang"){
+            $dr_tgl                    = $this->input->post('dr_tgl');
+			$sm_tgl                    = $this->input->post('sm_tgl');
+            $data['persediaan_barang'] = $this->Transaksi_Model->perTanggal($dr_tgl, $sm_tgl, $object);
+            $this->load->view('rekap_laporan/persediaan_barang/rekap_perTanggal', $data);
+        }
+        else if($object == "barang_keluar"){
+            
+        }
+        else if($object == "barang_terjual"){
+
+        }
+        else if($object == "barang_sisa"){
+
+        }
+    }
+
+    public function per_bulan($object){
+
+    }
+
+    public function per_tahun($object){
+
+    }
 	
 }
  ?>

@@ -64,9 +64,23 @@ class Transaksi_Model extends CI_Model{
     }
 
 
+    // BARANG KELUAR
+    public function all_barang_keluar(){
+      return $this->db->query("SELECT tb_barang_keluar.id_transaksi, tb_barang_keluar.id_barang, tb_barang_keluar.qty, tb_barang_keluar.tanggal_transaksi, tb_barang.barang, tb_satuan.satuan FROM tb_barang_keluar INNER JOIN tb_barang ON tb_barang_keluar.id_barang=tb_barang.id_barang INNER JOIN tb_satuan ON tb_satuan.id_satuan=tb_barang.id_satuan")->result_array();
+    }
+
+
+    // BARANG TERJUAL
+    public function all_barang_terjual(){
+      return $this->db->query("SELECT tb_barang_terjual.id_transaksi, tb_barang_terjual.id_barang, tb_barang_terjual.qty, tb_barang_terjual.tanggal_transaksi, tb_barang.barang, tb_satuan.satuan FROM tb_barang_terjual INNER JOIN tb_barang ON tb_barang_terjual.id_barang=tb_barang.id_barang INNER JOIN tb_satuan ON tb_satuan.id_satuan=tb_barang.id_satuan")->result_array();
+    }
 
 
     // BARANG SISA
+    public function all_barang_sisa(){
+      return $this->db->query("SELECT tb_barang_sisa.id_transaksi, tb_barang_sisa.id_barang, tb_barang_sisa.qty, tb_barang.barang, tb_satuan.satuan FROM tb_barang_sisa INNER JOIN tb_barang ON tb_barang_sisa.id_barang=tb_barang.id_barang INNER JOIN tb_satuan ON tb_satuan.id_satuan=tb_barang.id_satuan")->result_array();
+    }
+
     public function modal_barang_sisa($id_transaksi){
       return $this->db->query("SELECT tb_persediaan_barang.id_transaksi, tb_persediaan_barang.id_barang, tb_persediaan_barang.qty, tb_persediaan_barang.tanggal_transaksi, tb_barang.barang, tb_satuan.satuan FROM tb_persediaan_barang INNER JOIN tb_barang ON tb_persediaan_barang.id_barang=tb_barang.id_barang INNER JOIN tb_satuan ON tb_satuan.id_satuan=tb_barang.id_satuan WHERE tb_persediaan_barang.id_transaksi='$id_transaksi'")->result_array();
     }
@@ -88,20 +102,16 @@ class Transaksi_Model extends CI_Model{
 
 
 
-    // BARANG KELUAR
-    public function all_barang_keluar(){
-      return $this->db->query("SELECT tb_barang_keluar.id_transaksi, tb_barang_keluar.id_barang, tb_barang_keluar.qty, tb_barang_keluar.tanggal_transaksi, tb_barang.barang, tb_satuan.satuan FROM tb_barang_keluar INNER JOIN tb_barang ON tb_barang_keluar.id_barang=tb_barang.id_barang INNER JOIN tb_satuan ON tb_satuan.id_satuan=tb_barang.id_satuan")->result_array();
-    }
 
 
-    // BARANG TERJUAL
-    public function all_barang_terjual(){
-      return $this->db->query("SELECT tb_barang_terjual.id_transaksi, tb_barang_terjual.id_barang, tb_barang_terjual.qty, tb_barang_terjual.tanggal_transaksi, tb_barang.barang, tb_satuan.satuan FROM tb_barang_terjual INNER JOIN tb_barang ON tb_barang_terjual.id_barang=tb_barang.id_barang INNER JOIN tb_satuan ON tb_satuan.id_satuan=tb_barang.id_satuan")->result_array();
-    }
 
 
-    // BARANG SISA
-    public function all_barang_sisa(){
-      return $this->db->query("SELECT tb_barang_sisa.id_transaksi, tb_barang_sisa.id_barang, tb_barang_sisa.qty, tb_barang.barang, tb_satuan.satuan FROM tb_barang_sisa INNER JOIN tb_barang ON tb_barang_sisa.id_barang=tb_barang.id_barang INNER JOIN tb_satuan ON tb_satuan.id_satuan=tb_barang.id_satuan")->result_array();
+
+
+    // REKAP LAPORAN
+    public function perTanggal($dr_tgl, $sm_tgl, $object){
+      if($object == "persediaan_barang"){
+        return $this->db->query("SELECT tb_persediaan_barang.id_transaksi, tb_persediaan_barang.id_barang, tb_persediaan_barang.qty, tb_persediaan_barang.tanggal_transaksi, tb_barang.barang, tb_satuan.satuan FROM tb_persediaan_barang INNER JOIN tb_barang ON tb_persediaan_barang.id_barang=tb_barang.id_barang INNER JOIN tb_satuan ON tb_satuan.id_satuan=tb_barang.id_satuan WHERE tb_persediaan_barang.tanggal_transaksi >= '$dr_tgl' AND tb_persediaan_barang.tanggal_transaksi <= '$sm_tgl' ORDER BY tb_header_persediaan_barang.tanggal_persediaan DESC")->result_array();
+      }
     }
 }
