@@ -53,6 +53,20 @@ $(document).ready(function(){
             $("#card-filter").show();
             $(".button-cetak-persediaan-barang").show();
         }
+
+        else if(option_rekap == "per-tahun"){
+            const tahun = $('#tahun-persediaan-barang').val();
+            $.ajax({
+                type    : 'POST',
+                url     : 'https://syahfirabakery.co.id/rekap_laporan/per_tahun/persediaan_barang',
+                data    : {tahun : tahun},
+                success : function(response){
+                  $(".data-barang").html(response);
+                }
+            });
+            $("#card-filter").show();
+            $(".button-cetak-persediaan-barang").show();
+        }
         
         else{
             alert("Silahkan pilih Jenis Rekap Barang");

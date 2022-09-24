@@ -120,4 +120,10 @@ class Transaksi_Model extends CI_Model{
         return $this->db->query("SELECT tb_persediaan_barang.id_transaksi, tb_persediaan_barang.id_barang, tb_persediaan_barang.qty, tb_persediaan_barang.tanggal_transaksi, tb_barang.barang, tb_satuan.satuan FROM tb_persediaan_barang INNER JOIN tb_barang ON tb_persediaan_barang.id_barang=tb_barang.id_barang INNER JOIN tb_satuan ON tb_satuan.id_satuan=tb_barang.id_satuan WHERE EXTRACT(YEAR FROM tb_persediaan_barang.tanggal_transaksi) = '$tahun' AND EXTRACT(MONTH FROM tb_persediaan_barang.tanggal_transaksi)='$bulan' ORDER BY tb_persediaan_barang.tanggal_transaksi DESC")->result_array();
       }
     }
+
+    public function perTahun($tahun, $object){
+      if($object == "persediaan_barang"){
+        return $this->db->query("SELECT tb_persediaan_barang.id_transaksi, tb_persediaan_barang.id_barang, tb_persediaan_barang.qty, tb_persediaan_barang.tanggal_transaksi, tb_barang.barang, tb_satuan.satuan FROM tb_persediaan_barang INNER JOIN tb_barang ON tb_persediaan_barang.id_barang=tb_barang.id_barang INNER JOIN tb_satuan ON tb_satuan.id_satuan=tb_barang.id_satuan WHERE EXTRACT(YEAR FROM tb_persediaan_barang.tanggal_transaksi) = '$tahun' ORDER BY tb_persediaan_barang.tanggal_transaksi DESC")->result_array();
+      }
+    }
 }
