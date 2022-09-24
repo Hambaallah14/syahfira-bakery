@@ -2,6 +2,7 @@ $(document).ready(function(){
     
     // PERSEDIAAN BARANG
     hidden_persediaan_barang();
+    button_cetak(".button-cetak-persediaan-barang");
     $('#rekap-persediaan-barang').change(function(){
         var option = $(this).val();
         if(option == "per-tanggal"){
@@ -73,6 +74,8 @@ $(document).ready(function(){
         }
     });
 
+    
+
 
     // BARANG KELUAR
 
@@ -90,5 +93,11 @@ $(document).ready(function(){
         $("#per-tanggal-persediaan-barang").hide();
         $("#per-bulan-persediaan-barang").hide();
         $("#per-tahun-persediaan-barang").hide();
+    }
+
+    function button_cetak($button){
+        $($button).on("click",  function(e){
+            $(".data-barang").printArea();
+        });
     }
 })

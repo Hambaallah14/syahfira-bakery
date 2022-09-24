@@ -226,13 +226,6 @@ $(".button-cetak-daftar-barang").on("click",  function(e){
 });
 
 
-// PERSEDIAAN BARANG
-
-
-$(".button-cetak-persediaan-barang").on("click",  function(e){
-	$(".data-barang").printArea();
-});
-
 
 //PENJUALAN BARANG
 $("#button-filter-penjualan-barang").on('click', function(e){
