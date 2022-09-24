@@ -1,5 +1,7 @@
 $(document).ready(function(){
+    
     // PERSEDIAAN BARANG
+    hidden_persediaan_barang();
     $('#rekap-persediaan-barang').change(function(){
         var option = $(this).val();
         if(option == "per-tanggal"){
@@ -29,4 +31,12 @@ $(document).ready(function(){
 
 
     // BARANG SISA
+
+
+    // =========================================================
+    function hidden_persediaan_barang(){
+        $("#per-tanggal-persediaan-barang").hide();
+        $("#per-bulan-persediaan-barang").hide();
+        $("#per-tahun-persediaan-barang").hide();
+    }
 })
