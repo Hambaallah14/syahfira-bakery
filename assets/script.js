@@ -282,32 +282,6 @@ $(".button-cetak-penjualan-barang").on("click",  function(e){
 	$(".data-barang").printArea();
 });
 
-// $(".data-barang, #button-cetak-daftar-barang").on("click",  function(e){
-// 	// alert('addd');
-// 	printJS('#viewer', 'html');
-// });
-
-
-
-// Rekap Laporan Pembelian Barang
-show_rekap();
-$('.rekap_pembelian_atk').change(function(){
-	var option = $(this).val();
-	if(option == "Bulan"){
-		$('.pil-bulan').show();
-		$('.pil-tanggal').hide();
-		$('#form_validation').attr('action', 'https://syahfirabakery.co.id/rekap/rekap_pembelian_atk');
-	}
-	else if (option == "Tanggal"){
-		$('.pil-bulan').hide();
-		$('.pil-tanggal').show();
-		$('#form_validation').attr('action', 'https://syahfirabakery.co.id/rekap/rekap_pembelian_atk');
-	}
-	else{
-		$('.pil-bulan').hide();
-		$('.pil-tanggal').hide();
-	}
-});
 
 
 $('.rekap_permintaan_atk').change(function(){
@@ -344,65 +318,6 @@ $('.rekap').change(function(){
 		$('.pil-bulan').hide();
 		$('.pil-tanggal').hide();
 	}
-});
-
-
-$('.rekap_peminjaman_brg').change(function(){
-	var option = $(this).val();
-	if(option == "Bidang"){
-		$('.pil-bidang').show();
-		$('.pil-orang').hide();
-		$('.pil-bap').hide();
-		$('#form_validation').attr('action', 'http://localhost/website/aplikasi-inventaris/rekap/rekap_peminjaman_barang');
-	}
-	
-	else if (option == "Orang"){
-		$('.pil-bidang').hide();
-		$('.pil-orang').show();
-		$('.pil-bap').hide();
-		$('#form_validation').attr('action', 'http://localhost/website/aplikasi-inventaris/rekap/rekap_peminjaman_barang');
-	}
-
-	else if (option == "Bap"){
-		$('.pil-bidang').hide();
-		$('.pil-orang').hide();
-		$('.pil-bap').show();
-		$('#form_validation').attr('action', 'http://localhost/website/aplikasi-inventaris/rekap/rekap_peminjaman_barang');
-	}
-
-	else{
-		$('.pil-bidang').hide();
-		$('.pil-orang').hide();
-		$('.pil-bap').hide();
-	}
-});
-
-function show_rekap(){
-	$('.pil-bulan').hide();
-	$('.pil-tanggal').hide();
-	$('.pil-bidang').hide();
-	$('.pil-orang').hide();
-	$('.pil-bap').hide();
-}
-
-
-// End Rekap Pembelian Barang
-
-
-
-// TRANSAKSI
-// PINDAH STATUS BARANG
-$(".btn-status-barang").on('click', function(e){
-	const idTransaksi 	= $(this).data('id_transaksi'); 
-
-	$.ajax({
-        type    : 'POST',
-        url     : 'https://syahfirabakery.co.id/transaksi/modal_status_barang',
-        data    : 'id_transaksi=' + idTransaksi,
-        success : function(response){
-          $('.modal-status-barang').html(response);
-        }
-    });
 });
 
 // BARANG SISA

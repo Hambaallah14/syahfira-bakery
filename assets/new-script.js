@@ -73,7 +73,7 @@ $(document).ready(function(){
 
     // BARANG KELUAR
     hidden("#per-tanggal-barang-keluar", "#per-bulan-barang-keluar", "#per-tahun-barang-keluar");
-    button_cetak(".button-cetak-persediaan-barang");
+    button_cetak(".button-cetak-barang-keluar");
     $('#rekap-barang-keluar').change(function(){
         var option = $(this).val();
         if(option == "per-tanggal"){
@@ -140,7 +140,8 @@ $(document).ready(function(){
     });
 
     // BARANG TERJUAL
-
+    hidden("#per-tanggal-barang-terjual", "#per-bulan-barang-terjual", "#per-tahun-barang-terjual");
+    button_cetak(".button-cetak-barang-terjual");
 
 
     // BARANG SISA
