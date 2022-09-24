@@ -139,9 +139,78 @@ $(document).ready(function(){
         }
     });
 
+
+
+
     // BARANG TERJUAL
     hidden("#per-tanggal-barang-terjual", "#per-bulan-barang-terjual", "#per-tahun-barang-terjual");
     button_cetak(".button-cetak-barang-terjual");
+    $('#rekap-barang-terjual').change(function(){
+        var option = $(this).val();
+        if(option == "per-tanggal"){
+            per_tanggal_show("#per-tanggal-barang-terjual", "#per-bulan-barang-terjual", "#per-tahun-barang-terjual");
+        }
+        else if(option == "per-bulan"){
+           per_bulan_show("#per-tanggal-barang-terjual", "#per-bulan-barang-terjual", "#per-tahun-barang-terjual");
+        }
+        else if(option == "per-tahun"){
+            per_tahun_show("#per-tanggal-barang-terjual", "#per-bulan-barang-terjual", "#per-tahun-barang-terjual");
+        }
+    });
+
+    $("#button-filter-barang-terjual").on('click', function(e){
+        var option_rekap = $('#rekap-barang-terjual').val();
+        if(option_rekap == "per-tanggal"){
+            const dr_tgl = $('#dr-tgl-barang-terjual').val();
+            const sm_tgl = $('#sm-tgl-barang-terjual').val();
+            $.ajax({
+                type    : 'POST',
+                url     : 'https://syahfirabakery.co.id/rekap_laporan/per_tanggal/barang_terjual',
+                data    : {dr_tgl : dr_tgl, sm_tgl : sm_tgl},
+                success : function(response){
+                  $(".data-barang").html(response);
+                }
+            });
+            $("#card-filter").show();
+            $(".button-cetak-barang-terjual").show();
+        }
+
+        else if(option_rekap == "per-bulan"){
+            
+            const bulan = $('#bulan-brg-terjual').val();
+            const tahun = $('#tahun-brg-terjual').val();
+            $.ajax({
+                type    : 'POST',
+                url     : 'https://syahfirabakery.co.id/rekap_laporan/per_bulan/barang_terjual',
+                data    : {per_bulan : bulan, per_tahun : tahun},
+                success : function(response){
+                  $(".data-barang").html(response);
+                }
+            });
+            $("#card-filter").show();
+            $(".button-cetak-barang-terjual").show();
+        }
+
+        else if(option_rekap == "per-tahun"){
+            const tahun = $('#tahun-barang-terjual').val();
+            $.ajax({
+                type    : 'POST',
+                url     : 'https://syahfirabakery.co.id/rekap_laporan/per_tahun/barang_terjual',
+                data    : {tahun : tahun},
+                success : function(response){
+                  $(".data-barang").html(response);
+                }
+            });
+            $("#card-filter").show();
+            $(".button-cetak-barang-terjual").show();
+        }
+        
+        else{
+            alert("Silahkan pilih Jenis Rekap Barang");
+        }
+    });
+
+
 
 
     // BARANG SISA
