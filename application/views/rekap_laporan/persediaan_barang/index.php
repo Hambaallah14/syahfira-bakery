@@ -13,7 +13,7 @@
                             <div class="col-md-12">
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        <select class="form-control show-tick form-line"  name="rekap-penjualan-barang" id="rekap-penjualan-barang">
+                                        <select class="form-control show-tick form-line"  name="rekap-persediaan-barang" id="rekap-persediaan-barang">
                                             <option value="-">-- Pilih Rekap --</option>
                                             <option value="per-tanggal">Per Tanggal</option>
                                             <option value="per-bulan">Per Bulan</option>
@@ -22,28 +22,28 @@
                                     </div>
                                 </div>
 
-                                <div class="row" id="per-tanggal-penjualan">
+                                <div class="row" id="per-tanggal-persediaan-barang">
                                     <div class="col-md-6">
                                         <div class="form-group form-float">
                                             <div class="form-line">
-                                                <input type="date" class="form-control" name="dr-tgl" id="dr-tgl-penjualan">
+                                                <input type="date" class="form-control" name="dr-tgl" id="dr-tgl-persediaan-barang">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group form-float">
                                             <div class="form-line">
-                                                <input type="date" class="form-control" name="sm-tgl" id="sm-tgl-penjualan">
+                                                <input type="date" class="form-control" name="sm-tgl" id="sm-tgl-persediaan-barang">
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="row" id="per-bulan-penjualan">
+                                <div class="row" id="per-bulan-persediaan-barang">
                                     <div class="col-md-6">
                                         <div class="form-group form-float">
                                             <div class="form-line">
-                                                <select class="form-control show-tick form-line"  name="per-bulan" id="bulan-penjualan">
+                                                <select class="form-control show-tick form-line"  name="per-bulan" id="bulan-persediaan-brg">
                                                     <option>--Pilih Bulan--</option>
                                                     <?php
                                                         $bln = [
@@ -59,7 +59,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-line">
-                                            <select class="form-control show-tick form-line"  name="tahun" id="tahun">
+                                            <select class="form-control show-tick form-line"  name="tahun" id="tahun-persediaan-brg">
                                                 <option>--Pilih Tahun--</option>
                                                 <?php
                                                     for($i=date('Y');$i>=date('Y')-2;$i--){
@@ -73,9 +73,9 @@
                                 </div>
                                 
 
-                                <div class="form-group form-float" id="per-tahun-penjualan">
+                                <div class="form-group form-float" id="per-tahun-persediaan-barang">
                                     <div class="form-line">
-                                        <select class="form-control show-tick form-line"  name="per-tahun" id="tahun-penjualan">
+                                        <select class="form-control show-tick form-line"  name="per-tahun" id="tahun-persediaan-barang">
                                             <option>--Pilih Tahun--</option>
                                             <?php
                                                 for($i=date('Y');$i>=date('Y')-2;$i--){
@@ -87,7 +87,7 @@
                                     </div>
                                 </div>
 
-                                <button class="btn bg-brown waves-effect button-filter-penjualan-barang" id="button-filter-penjualan-barang" type="button">
+                                <button class="btn bg-brown waves-effect button-filter-persediaan-barang" id="button-filter-persediaan-barang" type="button">
                                     <i class="material-icons">search</i>    
                                     <span>Filter</span>
                                 </button>
@@ -114,7 +114,7 @@
 
                     <div class="body">
                         <div class="data-barang"></div>
-                        <button target="blank" class="btn bg-brown waves-effect button-cetak-penjualan-barang mt-3" type="button">
+                        <button target="blank" class="btn bg-brown waves-effect button-cetak-persediaan-barang mt-3" type="button">
                             <i class="material-icons">print</i>
                             <span>Cetak</span>
                         </button>

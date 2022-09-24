@@ -152,19 +152,19 @@ $('#rekap-barang').change(function(){
 $('#rekap-persediaan-barang').change(function(){
 	var option = $(this).val();
 	if(option == "per-tanggal"){
-		$("#per-tanggal").show();
-		$("#per-bulan").hide();
-		$("#per-tahun").hide();
+		$("#per-tanggal-persediaan-barang").show();
+		$("#per-bulan-persediaan-barang").hide();
+		$("#per-tahun-persediaan-barang").hide();
 	}
 	else if(option == "per-bulan"){
-		$("#per-bulan").show();
-		$("#per-tanggal").hide();
-		$("#per-tahun").hide();
+		$("#per-bulan-persediaan-barang").show();
+		$("#per-tanggal-persediaan-barang").hide();
+		$("#per-tahun-persediaan-barang").hide();
 	}
 	else if(option == "per-tahun"){
-		$("#per-tahun").show();
-		$("#per-tanggal").hide();
-		$("#per-bulan").hide();
+		$("#per-tahun-persediaan-barang").show();
+		$("#per-tanggal-persediaan-barang").hide();
+		$("#per-bulan-persediaan-barang").hide();
 	}
 });
 

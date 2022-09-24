@@ -74,7 +74,7 @@
 <!-- Sweetalert -->
 <script type="text/javascript" src="<?=base_url();?>assets/plugins/sweetalert/sweetalert.min.js"></script>
 <script type="text/javascript" src="<?=base_url();?>assets/script.js"></script>
-
+<script type="text/javascript" src="<?=base_url();?>assets/new-script.js"></script>
 
 <!-- Editable -->
 <!-- <script src="<?=base_url();?>assets/plugins/edit/jquery-3.0.0.js" type='text/javascript'></script> -->
