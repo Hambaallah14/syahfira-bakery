@@ -83,7 +83,21 @@ Class Rekap_laporan extends CI_Controller{
     }
 
     public function per_bulan($object){
+        if($object == "persediaan_barang"){
+            $bulan                    = $this->input->post('per_bulan');
+			$tahun                    = $this->input->post('per_tahun');
+            $data['persediaan_barang'] = $this->Transaksi_Model->perBulan($bulan, $tahun, $object);
+            $this->load->view('rekap_laporan/persediaan_barang/rekap_perBulan', $data);
+        }
+        else if($object == "barang_keluar"){
+            
+        }
+        else if($object == "barang_terjual"){
 
+        }
+        else if($object == "barang_sisa"){
+
+        }
     }
 
     public function per_tahun($object){
