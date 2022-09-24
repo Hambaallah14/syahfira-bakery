@@ -88,7 +88,7 @@
                                 <span style="color:#24181a;">Barang Sisa</span>
                             </a>
                         </li>
-                        <li>
+                        <!-- <li>
                             <a href="javascript:void(0);" class="menu-toggle">
                                 <i class="material-icons" style="color:#24181a;">shopping_cart</i>
                                 <span style="color:#24181a;">Persediaan Barang</span>
@@ -113,7 +113,7 @@
                                     </a>
                                 </li>
                             </ul>
-                        </li>
+                        </li> -->
 
                         <li class="header">REKAP LAPORAN</li>
                         <li>
