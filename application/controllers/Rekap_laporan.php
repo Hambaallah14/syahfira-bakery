@@ -7,6 +7,7 @@ Class Rekap_laporan extends CI_Controller{
 		$this->load->library('form_validation');
 		$this->load->helper('url');
         $this->load->model('Barang_Model');
+        $this->load->model('Transaksi_Model');
 		$this->load->model('User_Model');
 		if (! $this->session->userdata('logged')) { //cek session
             redirect('login'); //jika tidak ada session maka balek ke menu login
@@ -17,9 +18,10 @@ Class Rekap_laporan extends CI_Controller{
 	public function persediaan_barang(){
         $data['title'] 	  	       = "Rekap Laporan Persediaan Barang - Syahfira Bakery & Cake";
 		$data['user']              = $this->User_Model->user_by_iduser($this->session->userdata('id_user'));
+        
 		$this->load->view('template/header', $data);
 		$this->load->view('template/sidebar');
-		$this->load->view('barang/rekap_laporan/persediaan_barang/index');
+		$this->load->view('rekap_laporan/persediaan_barang/index');
         $this->load->view('template/footer');     
     }
 
