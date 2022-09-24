@@ -41,7 +41,7 @@ Class Rekap_laporan extends CI_Controller{
 		$data['user']              = $this->User_Model->user_by_iduser($this->session->userdata('id_user'));
 		$this->load->view('template/header', $data);
 		$this->load->view('template/sidebar');
-		$this->load->view('barang/filter_laporan/daftar_barang');
+		$this->load->view('rekap_laporan/barang_terjual/index');
         $this->load->view('template/footer');     
     }
 
@@ -52,7 +52,7 @@ Class Rekap_laporan extends CI_Controller{
 		$data['user']              = $this->User_Model->user_by_iduser($this->session->userdata('id_user'));
 		$this->load->view('template/header', $data);
 		$this->load->view('template/sidebar');
-		$this->load->view('barang/filter_laporan/daftar_barang');
+		$this->load->view('rekap_laporan/barang_sisa/index');
         $this->load->view('template/footer');     
     }
 
