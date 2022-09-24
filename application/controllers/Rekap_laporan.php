@@ -17,7 +17,6 @@ Class Rekap_laporan extends CI_Controller{
 	public function persediaan_barang(){
         $data['title'] 	  	       = "Rekap Laporan Persediaan Barang - Syahfira Bakery & Cake";
 		$data['user']              = $this->User_Model->user_by_iduser($this->session->userdata('id_user'));
-        $data['jenis_barang']	   = $this->Barang_Model->jenis_barang();
 		$this->load->view('template/header', $data);
 		$this->load->view('template/sidebar');
 		$this->load->view('barang/rekap_laporan/persediaan_barang/index');
