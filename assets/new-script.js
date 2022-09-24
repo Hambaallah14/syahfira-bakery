@@ -38,7 +38,7 @@ $(document).ready(function(){
             $(".button-cetak-persediaan-barang").show();
         }
 
-        else if(option == "per-bulan"){
+        else if(option_rekap == "per-bulan"){
             const bulan = $('#bulan-persediaan-brg').val();
             const tahun = $('#tahun-persediaan-brg').val();
             $.ajax({
