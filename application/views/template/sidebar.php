@@ -123,11 +123,26 @@
                             </a>
                             <ul class="ml-menu">
                                 <li>  
-                                    <a href="<?=base_url();?>filter_laporan/daftar_barang">
-                                        <span class="icon-name mt-5">Daftar Barang</span>
+                                    <a href="<?=base_url();?>rekap_laporan/persediaan_barang">
+                                        <span class="icon-name mt-5">Persediaan Barang</span>
                                     </a>
                                 </li>
                                 <li>  
+                                    <a href="<?=base_url();?>rekap_laporan/barang_keluar">
+                                        <span class="icon-name mt-5">Barang Keluar</span>
+                                    </a>
+                                </li>
+                                <li>  
+                                    <a href="<?=base_url();?>rekap_laporan/barang_terjual">
+                                        <span class="icon-name mt-5">Barang Terjual</span>
+                                    </a>
+                                </li>
+                                <li>  
+                                    <a href="<?=base_url();?>rekap_laporan/barang_sisa">
+                                        <span class="icon-name mt-5">Barang Sisa</span>
+                                    </a>
+                                </li>
+                                <!-- <li>  
                                     <a href="<?=base_url();?>filter_laporan/persediaan_barang">
                                         <span class="icon-name mt-5">Persediaan Barang</span>
                                     </a>
@@ -136,7 +151,7 @@
                                     <a href="<?=base_url();?>filter_laporan/penjualan_barang">
                                         <span class="icon-name mt-5">Penjualan Barang</span>
                                     </a>
-                                </li>
+                                </li> -->
                             </ul>
                         </li>
                 </ul>
