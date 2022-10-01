@@ -125,7 +125,7 @@ class Transaksi_Model extends CI_Model{
       }
 
       else if($object == "barang_sisa"){
-        return $this->db->query("SELECT tb_barang_sisa.id_transaksi, tb_barang_sisa.id_barang, tb_barang_sisa.qty, tb_barang.barang, tb_satuan.satuan FROM tb_barang_sisa INNER JOIN tb_barang ON tb_barang_sisa.id_barang=tb_barang.id_barang INNER JOIN tb_satuan ON tb_satuan.id_satuan=tb_barang.id_satuan WHERE tb_barang_terjual.tanggal_transaksi >= '$dr_tgl' AND tb_barang_terjual.tanggal_transaksi <= '$sm_tgl' ORDER BY tb_barang_terjual.tanggal_transaksi DESC")->result_array();
+        return $this->db->query("SELECT tb_barang_sisa.id_transaksi, tb_barang_sisa.id_barang, tb_barang_sisa.qty, tb_barang.barang, tb_satuan.satuan FROM tb_barang_sisa INNER JOIN tb_barang ON tb_barang_sisa.id_barang=tb_barang.id_barang INNER JOIN tb_satuan ON tb_satuan.id_satuan=tb_barang.id_satuan WHERE tb_barang_sisa.tanggal >= '$dr_tgl' AND tb_barang_sisa.tanggal <= '$sm_tgl' ORDER BY tb_barang_sisa.tanggal DESC")->result_array();
       }
 
     }
@@ -142,6 +142,10 @@ class Transaksi_Model extends CI_Model{
       else if($object == "barang_terjual"){
         return $this->db->query("SELECT tb_barang_terjual.id_transaksi, tb_barang_terjual.id_barang, tb_barang_terjual.qty, tb_barang_terjual.tanggal_transaksi, tb_barang.barang, tb_satuan.satuan FROM tb_barang_terjual INNER JOIN tb_barang ON tb_barang_terjual.id_barang=tb_barang.id_barang INNER JOIN tb_satuan ON tb_satuan.id_satuan=tb_barang.id_satuan WHERE EXTRACT(YEAR FROM tb_barang_terjual.tanggal_transaksi) = '$tahun' AND EXTRACT(MONTH FROM tb_barang_terjual.tanggal_transaksi)='$bulan' ORDER BY tb_barang_terjual.tanggal_transaksi DESC")->result_array();
       }
+
+      else if($object == "barang_sisa"){
+        return $this->db->query("SELECT tb_barang_sisa.id_transaksi, tb_barang_sisa.id_barang, tb_barang_sisa.qty, tb_barang_sisa.tanggal_transaksi, tb_barang_sisa.tanggal, tb_barang.barang, tb_satuan.satuan FROM tb_barang_sisa INNER JOIN tb_barang ON tb_barang_sisa.id_barang=tb_barang.id_barang INNER JOIN tb_satuan ON tb_satuan.id_satuan=tb_barang.id_satuan WHERE EXTRACT(YEAR FROM tb_barang_sisa.tanggal) = '$tahun' AND EXTRACT(MONTH FROM tb_barang_sisa.tanggal)='$bulan' ORDER BY tb_barang_sisa.tanggal DESC")->result_array();
+      }
     }
 
     public function perTahun($tahun, $object){
@@ -155,6 +159,10 @@ class Transaksi_Model extends CI_Model{
 
       else if($object == "barang_terjual"){
         return $this->db->query("SELECT tb_barang_terjual.id_transaksi, tb_barang_terjual.id_barang, tb_barang_terjual.qty, tb_barang_terjual.tanggal_transaksi, tb_barang.barang, tb_satuan.satuan FROM tb_barang_terjual INNER JOIN tb_barang ON tb_barang_terjual.id_barang=tb_barang.id_barang INNER JOIN tb_satuan ON tb_satuan.id_satuan=tb_barang.id_satuan WHERE EXTRACT(YEAR FROM tb_barang_terjual.tanggal_transaksi) = '$tahun' ORDER BY tb_barang_terjual.tanggal_transaksi DESC")->result_array();
+      }
+
+      else if($object == "barang_sisa"){
+        return $this->db->query("SELECT tb_barang_sisa.id_transaksi, tb_barang_sisa.id_barang, tb_barang_sisa.qty, tb_barang_sisa.tanggal_transaksi, tb_barang_sisa.tanggal, tb_barang.barang, tb_satuan.satuan FROM tb_barang_sisa INNER JOIN tb_barang ON tb_barang_sisa.id_barang=tb_barang.id_barang INNER JOIN tb_satuan ON tb_satuan.id_satuan=tb_barang.id_satuan WHERE EXTRACT(YEAR FROM tb_barang_sisa.tanggal) = '$tahun' ORDER BY tb_barang_sisa.tanggal DESC")->result_array();
       }
     }
 }
