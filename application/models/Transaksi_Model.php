@@ -88,7 +88,8 @@ class Transaksi_Model extends CI_Model{
     public function add_barang_sisa(){
       // Menambahkan barang ke Barang Sisa
       $data_barang_sisa = [
-        "tanggal_transaksi"   => date('Y-m-d'),
+        "tanggal"             => date('Y-m-d'),
+        "tanggal_transaksi"   => $this->input->post('tanggal_transaksi', true),
         "id_transaksi"        => $this->input->post('id-transaksi', true),
         "id_barang"           => $this->input->post('id-barang', true),
         "qty"                 => $this->input->post('qty', true)

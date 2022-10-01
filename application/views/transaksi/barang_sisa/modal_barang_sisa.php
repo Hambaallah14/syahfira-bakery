@@ -8,9 +8,10 @@
         <h5 class="mb-3">Apakah anda ingin memindahkan stok ?</h5>
         <table class="table table-bordered">
             <thead>
-                <input type="hidden" class="modal-id-transaksi" name="id-transaksi" value="<?= $data_modal[0]["id_transaksi"];?>">
-                <input type="hidden" class="modal-id-barang" name="id-barang" value="<?= $data_modal[0]["id_barang"];?>">
-                <input type="hidden" class="modal-qty" name="qty" value="<?= $data_modal[0]["qty"];?>">
+                <input type="hidden" name="id-transaksi" value="<?= $data_modal[0]["id_transaksi"];?>">
+                <input type="hidden" name="id-barang" value="<?= $data_modal[0]["id_barang"];?>">
+                <input type="hidden" name="qty" value="<?= $data_modal[0]["qty"];?>">
+                <input type="hidden" name="tanggal_transaksi" value="<?= $data_modal[0]["tanggal_transaksi"];?>">
                 
                 <tr>
                     <th>ID Barang</th>
