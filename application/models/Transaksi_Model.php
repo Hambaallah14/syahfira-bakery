@@ -125,7 +125,7 @@ class Transaksi_Model extends CI_Model{
       }
 
       else if($object == "barang_sisa"){
-        return $this->db->query("SELECT tb_barang_sisa.id_transaksi, tb_barang_sisa.id_barang, tb_barang_sisa.qty, tb_barang.barang, tb_satuan.satuan FROM tb_barang_sisa INNER JOIN tb_barang ON tb_barang_sisa.id_barang=tb_barang.id_barang INNER JOIN tb_satuan ON tb_satuan.id_satuan=tb_barang.id_satuan WHERE tb_barang_sisa.tanggal >= '$dr_tgl' AND tb_barang_sisa.tanggal <= '$sm_tgl' ORDER BY tb_barang_sisa.tanggal DESC")->result_array();
+        return $this->db->query("SELECT tb_barang_sisa.id_transaksi, tb_barang_sisa.id_barang, tb_barang_sisa.qty, tb_barang_sisa.tanggal, tb_barang_sisa.tanggal_transaksi, tb_barang.barang, tb_satuan.satuan FROM tb_barang_sisa INNER JOIN tb_barang ON tb_barang_sisa.id_barang=tb_barang.id_barang INNER JOIN tb_satuan ON tb_satuan.id_satuan=tb_barang.id_satuan WHERE tb_barang_sisa.tanggal >= '$dr_tgl' AND tb_barang_sisa.tanggal <= '$sm_tgl' ORDER BY tb_barang_sisa.tanggal DESC")->result_array();
       }
 
     }
