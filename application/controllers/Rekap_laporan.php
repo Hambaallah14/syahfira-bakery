@@ -84,9 +84,6 @@ Class Rekap_laporan extends CI_Controller{
             $data['barang_sisa']       = $this->Transaksi_Model->perTanggal($dr_tgl, $sm_tgl, $object);
             $this->load->view('rekap_laporan/barang_sisa/rekap_filter', $data);
         }
-        else if($object == "barang_sisa"){
-
-        }
     }
 
     public function per_bulan($object){
@@ -109,7 +106,10 @@ Class Rekap_laporan extends CI_Controller{
             $this->load->view('rekap_laporan/barang_terjual/rekap_filter', $data);
         }
         else if($object == "barang_sisa"){
-
+            $bulan                    = $this->input->post('per_bulan');
+			$tahun                    = $this->input->post('per_tahun');
+            $data['barang_sisa']      = $this->Transaksi_Model->perBulan($bulan, $tahun, $object);
+            $this->load->view('rekap_laporan/barang_sisa/rekap_filter', $data);
         }
     }
 
@@ -130,7 +130,9 @@ Class Rekap_laporan extends CI_Controller{
             $this->load->view('rekap_laporan/barang_terjual/rekap_filter', $data);
         }
         else if($object == "barang_sisa"){
-
+            $tahun                     = $this->input->post('tahun');
+            $data['barang_sisa']       = $this->Transaksi_Model->perTahun($tahun, $object);
+            $this->load->view('rekap_laporan/barang_sisa/rekap_filter', $data);
         }
     }
 	
