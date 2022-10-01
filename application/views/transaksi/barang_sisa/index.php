@@ -44,7 +44,7 @@
                                         foreach ($barang_sisa as $brg_sisa) {
                                             echo"<tr>";
                                                 echo"<td>".$no."</td>";
-                                                echo"<td>".date('d F Y', strtotime($brg_terjual["tanggal"]))."</td>";
+                                                echo"<td>".date('d F Y', strtotime($brg_sisa["tanggal"]))."</td>";
                                                 echo"<td>".date('d F Y', strtotime($brg_sisa["tanggal_transaksi"]))."</td>";
                                                 echo"<td>".$brg_sisa["barang"]."</td>";
                                                 echo"<td>".$brg_sisa["qty"]." ".$brg_sisa["satuan"]."</td>";
