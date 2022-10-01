@@ -79,6 +79,12 @@ Class Rekap_laporan extends CI_Controller{
             $this->load->view('rekap_laporan/barang_terjual/rekap_filter', $data);
         }
         else if($object == "barang_sisa"){
+            $dr_tgl                    = $this->input->post('dr_tgl');
+			$sm_tgl                    = $this->input->post('sm_tgl');
+            $data['barang_sisa']       = $this->Transaksi_Model->perTanggal($dr_tgl, $sm_tgl, $object);
+            $this->load->view('rekap_laporan/barang_sisa/rekap_filter', $data);
+        }
+        else if($object == "barang_sisa"){
 
         }
     }

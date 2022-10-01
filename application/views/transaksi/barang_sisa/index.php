@@ -31,6 +31,7 @@
                                 <thead>
                                     <tr>
                                         <th class="text-center">No</th>
+                                        <th class="text-center">Tanggal Persediaan</th>
                                         <th class="text-center">Barang</th>
                                         <th class="text-center">Qty</th>
                                     </tr>
@@ -42,6 +43,7 @@
                                         foreach ($barang_sisa as $brg_sisa) {
                                             echo"<tr>";
                                                 echo"<td>".$no."</td>";
+                                                echo"<td>".$brg_sisa["tanggal_transaksi"]."</td>";
                                                 echo"<td>".$brg_sisa["barang"]."</td>";
                                                 echo"<td>".$brg_sisa["qty"]." ".$brg_sisa["satuan"]."</td>";
                                             echo"</tr>";

@@ -31,7 +31,7 @@
                                 <thead>
                                     <tr>
                                         <th class="text-center">No</th>
-                                        <th class="text-center">Tanggal Transaksi</th>
+                                        <th class="text-center">Tanggal Persediaan</th>
                                         <th class="text-center">Barang</th>
                                         <th class="text-center">Qty</th>
                                     </tr>

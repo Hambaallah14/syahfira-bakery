@@ -1,5 +1,33 @@
 $(document).ready(function(){
-    
+    // PINDAH STATUS BARANG
+    $(".btn-status-barang").on('click', function(e){
+        const idTransaksi 	= $(this).data('id_transaksi'); 
+
+        $.ajax({
+            type    : 'POST',
+            url     : 'https://syahfirabakery.co.id/transaksi/modal_status_barang',
+            data    : 'id_transaksi=' + idTransaksi,
+            success : function(response){
+            $('.modal-status-barang').html(response);
+            }
+        });
+    });
+
+    // BARANG SISA
+    $(".btn-barang-sisa").on('click', function(e){
+        const idTransaksi 	= $(this).data('id_transaksi'); 
+
+        $.ajax({
+            type    : 'POST',
+            url     : 'https://syahfirabakery.co.id/transaksi/modal_barang_sisa',
+            data    : 'id_transaksi=' + idTransaksi,
+            success : function(response){
+            $('.modal-barang-sisa').html(response);
+            }
+        }); 
+    });
+    /////////////////////////////////////
+
     // PERSEDIAAN BARANG
     hidden("#per-tanggal-persediaan-barang", "#per-bulan-persediaan-barang", "#per-tahun-persediaan-barang");
     button_cetak(".button-cetak-persediaan-barang");
@@ -214,6 +242,72 @@ $(document).ready(function(){
 
 
     // BARANG SISA
+    hidden("#per-tanggal-barang-sisa", "#per-bulan-barang-sisa", "#per-tahun-barang-sisa");
+    button_cetak(".button-cetak-barang-sisa");
+    $('#rekap-barang-sisa').change(function(){
+        var option = $(this).val();
+        if(option == "per-tanggal"){
+            per_tanggal_show("#per-tanggal-barang-sisa", "#per-bulan-barang-sisa", "#per-tahun-barang-sisa");
+        }
+        else if(option == "per-bulan"){
+           per_bulan_show("#per-tanggal-barang-sisa", "#per-bulan-barang-sisa", "#per-tahun-barang-sisa");
+        }
+        else if(option == "per-tahun"){
+            per_tahun_show("#per-tanggal-barang-sisa", "#per-bulan-barang-sisa", "#per-tahun-barang-sisa");
+        }
+    });
+
+    $("#button-filter-barang-sisa").on('click', function(e){
+        var option_rekap = $('#rekap-barang-sisa').val();
+        if(option_rekap == "per-tanggal"){
+            const dr_tgl = $('#dr-tgl-barang-sisa').val();
+            const sm_tgl = $('#sm-tgl-barang-sisa').val();
+            $.ajax({
+                type    : 'POST',
+                url     : 'https://syahfirabakery.co.id/rekap_laporan/per_tanggal/barang_sisa',
+                data    : {dr_tgl : dr_tgl, sm_tgl : sm_tgl},
+                success : function(response){
+                  $(".data-barang").html(response);
+                }
+            });
+            $("#card-filter").show();
+            $(".button-cetak-barang-sisa").show();
+        }
+
+        else if(option_rekap == "per-bulan"){
+            
+            const bulan = $('#bulan-brg-sisa').val();
+            const tahun = $('#tahun-brg-sisa').val();
+            $.ajax({
+                type    : 'POST',
+                url     : 'https://syahfirabakery.co.id/rekap_laporan/per_bulan/barang_sisa',
+                data    : {per_bulan : bulan, per_tahun : tahun},
+                success : function(response){
+                  $(".data-barang").html(response);
+                }
+            });
+            $("#card-filter").show();
+            $(".button-cetak-barang-sisa").show();
+        }
+
+        else if(option_rekap == "per-tahun"){
+            const tahun = $('#tahun-barang-sisa').val();
+            $.ajax({
+                type    : 'POST',
+                url     : 'https://syahfirabakery.co.id/rekap_laporan/per_tahun/barang_sisa',
+                data    : {tahun : tahun},
+                success : function(response){
+                  $(".data-barang").html(response);
+                }
+            });
+            $("#card-filter").show();
+            $(".button-cetak-barang-sisa").show();
+        }
+        
+        else{
+            alert("Silahkan pilih Jenis Rekap Barang");
+        }
+    });
 
 
     // =========================================================
