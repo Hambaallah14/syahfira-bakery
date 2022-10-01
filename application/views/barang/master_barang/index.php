@@ -48,7 +48,12 @@
                                                 echo"<td>".$barang["id_barang"]."</td>";
                                                 // echo"<td><img src='".base_url()."assets/img/qrcode/barang/master-barang/".$barang["id_barcode"].".png' width='50%'></td>";
                                                 echo"<td>".$barang["barang"]."</td>";
-                                                echo"<td>".$barang["stok"]." ".$barang["satuan"]."</td>";
+                                                if($barang["qty"] == ""){
+                                                    echo"<td>0</td>";
+                                                }
+                                                else{
+                                                    echo"<td>".$barang["qty"]." ".$barang["satuan"]."</td>";
+                                                }
                                                 echo"<td>"; 
                                                     echo"<div class='demo-google-material-icon'>";
                                                         echo"<a class='btn-hapus' href='".base_url()."daftar_barang/hapus/".$barang["id_barang"]."' title='Hapus'>";

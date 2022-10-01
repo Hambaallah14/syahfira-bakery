@@ -28,7 +28,7 @@
             }
             else{
                 echo"<tr>";
-                    echo"<td colspan=4>Data tidak ditemukan</td>";
+                    echo"<td colspan=5>Data tidak ditemukan</td>";
                 echo"</tr>";
             }
         ?>
