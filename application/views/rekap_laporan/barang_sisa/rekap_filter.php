@@ -3,6 +3,7 @@
         <thead>
             <tr>
                 <th class="text-center">No</th>
+                <th class="text-center">Tanggal</th>
                 <th class="text-center">Tanggal Persediaan</th>
                 <th class="text-center">Barang</th>
                 <th class="text-center">Qty</th>
@@ -17,6 +18,7 @@
                 foreach($barang_sisa as $b){
                     echo"<tr>";
                         echo"<td class='text-center'>".$no."</td>";
+                        echo"<td class='text-center'>".date('d F Y', strtotime($b["tanggal"]))."</td>";
                         echo"<td class='text-center'>".date('d F Y', strtotime($b["tanggal_transaksi"]))."</td>";
                         echo"<td>".$b["barang"]."</td>";
                         echo"<td class='text-right'>".$b["qty"]." ".$b["satuan"]."</td>";
