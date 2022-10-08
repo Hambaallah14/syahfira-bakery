@@ -36,7 +36,7 @@
                                         <th class="text-center">Barang</th>
                                         <th class="text-center">Qty</th>
                                         <th class="text-center">Tanggal Persediaan</th>
-                                        <th class="text-center">Opsi</th>
+                                        <th class="text-center">Ops</th>
                                     </tr>
                                 </thead>
 
