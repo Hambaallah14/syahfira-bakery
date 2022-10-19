@@ -28,7 +28,8 @@
                                 <span style="color:#24181a;">Home</span>
                             </a>
                         </li>
-                        <li class="header">MASTER DATA</li>
+                    <?php if($user["h_akses"] == "admin"){ ?>
+                    <li class="header">MASTER DATA</li>
                         <li>
                             <a href="javascript:void(0);" class="menu-toggle">
                                 <i class="material-icons" style="color:#24181a;">supervisor_account</i>
@@ -43,8 +44,6 @@
                             </ul>
                         </li>
                     
-                       
-                    
                         <li>
                             <a href="javascript:void(0);" class="menu-toggle">
                                 <i class="material-icons" style="color:#24181a;">category</i>
@@ -58,9 +57,10 @@
                                 </li>
                             </ul>
                         </li>
+                    <?php } ?>
                     
                    
-                        <li class="header">TRANSAKSI</li>
+                    <li class="header">TRANSAKSI</li>
                         <li>
                             <a href="<?=base_url();?>transaksi/persediaan_barang" class="waves-effect wave-block">
                                 <i class="material-icons" style="color:#24181a;">shopping_cart</i>
