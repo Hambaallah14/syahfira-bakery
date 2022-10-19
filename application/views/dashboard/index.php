@@ -92,6 +92,12 @@
                             </div>
                         </div>
                     </div>
+                <?php }else{ ?>
+                    <div class="col-md-12">
+                        <div class="alert bg-teal">
+                            Selamat Datang Admin
+                        </div>
+                    </div>
                 <?php } ?>
             </div>
 
