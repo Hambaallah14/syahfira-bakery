@@ -8,7 +8,7 @@ class Barang_Model extends CI_Model{
       return $this->db->query("SELECT * FROM tb_barang")->result_array();
     }
     public function all_barang(){
-      return $this->db->query('SELECT tb_barang.id_barang, tb_barang.barang, tb_jenis.jenis, tb_satuan.satuan FROM tb_barang INNER JOIN tb_jenis ON tb_barang.id_jenis=tb_jenis.id INNER JOIN tb_satuan ON tb_satuan.id_satuan=tb_barang.id_satuan')->result_array();
+      return $this->db->query('SELECT tb_barang.id_barang, tb_barang.barang, tb_barang.harga, tb_jenis.jenis, tb_satuan.satuan FROM tb_barang INNER JOIN tb_jenis ON tb_barang.id_jenis=tb_jenis.id INNER JOIN tb_satuan ON tb_satuan.id_satuan=tb_barang.id_satuan')->result_array();
     }
 
     public function all_barang_by_id($id_barang){

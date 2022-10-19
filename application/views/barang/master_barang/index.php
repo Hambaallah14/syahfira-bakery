@@ -34,7 +34,7 @@
                                         <th>No</th>
                                         <th>ID Barang</th>
                                         <th>Barang</th>
-                                        <!-- <th>Stok Barang</th> -->
+                                        <th>Harga</th>
                                         <th>Opsi</th>
                                     </tr>
                                 </thead>
@@ -48,6 +48,7 @@
                                                 echo"<td>".$barang["id_barang"]."</td>";
                                                 // echo"<td><img src='".base_url()."assets/img/qrcode/barang/master-barang/".$barang["id_barcode"].".png' width='50%'></td>";
                                                 echo"<td>".$barang["barang"]."</td>";
+                                                echo"<td>Rp. ".number_format($barang["harga"],0,',','.')."</td>";
                                                 // if($barang["qty"] == ""){
                                                 //     echo"<td>0</td>";
                                                 // }
