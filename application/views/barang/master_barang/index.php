@@ -11,7 +11,7 @@
                 
                 <div class="card">
                     <div class="header">
-                            <button type="button" class="btn bg-teal waves-effect btn-tambah-barang" data-toggle="modal" data-target="#defaultModal">Tamba Barang</button>
+                            <button type="button" class="btn bg-teal waves-effect btn-tambah-barang" data-toggle="modal" data-target="#defaultModal">Tambah Barang</button>
                         <ul class="header-dropdown m-r--5">
                             <li class="dropdown">
                                 <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -107,7 +107,7 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-md-8">
+                            <div class="col-md-4">
                                 <div class="form-group form-float">
                                     <div class="form-line">
                                         <input type="text" class="form-control barang" name="barang" required>
@@ -126,6 +126,14 @@
                                                     }
                                                 ?>
                                         </select>
+                                    </div>
+                                </div> 
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group form-float">
+                                    <div class="form-line">
+                                        <input type="number" class="form-control harga" name="harga" placeholder="Harga" id="harga" onkeydown="return numbersonly(this, event);" onkeyup="javascript:tandaPemisahTitik(this);">
+                                        <label class="form-label">Harga</label>
                                     </div>
                                 </div> 
                             </div>
