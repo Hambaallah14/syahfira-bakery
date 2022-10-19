@@ -28,7 +28,7 @@
                                 <span style="color:#24181a;">Home</span>
                             </a>
                         </li>
-                    <?php if($user["h_akses"] == "admin"){ ?>
+                    <?php if($user[0]["h_akses"] == "admin"){ ?>
                     <li class="header">MASTER DATA</li>
                         <li>
                             <a href="javascript:void(0);" class="menu-toggle">
