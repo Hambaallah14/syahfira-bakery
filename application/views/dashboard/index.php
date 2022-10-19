@@ -6,91 +6,97 @@
 
             <!-- Widgets -->
             <div class="row clearfix">
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                    <div class="info-box hover-expand-effect">
-                        <div class="icon bg-green">
-                            <i class="material-icons">supervisor_account</i>
+                <?php if($user[0]["h_akses"] == "admin"){ ?>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                        <div class="info-box hover-expand-effect">
+                            <div class="icon bg-green">
+                                <i class="material-icons">supervisor_account</i>
+                            </div>
+                            <div class="content">
+                                <div class="text">USER</div>
+                                <div class="number"><?= $jumlah_user; ?></div>
+                            </div>
                         </div>
-                        <div class="content">
-                            <div class="text">USER</div>
-                            <div class="number"><?= $jumlah_user; ?></div>
+
+                    
+                    </div>
+                
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                        <div class="info-box hover-zoom-effect">
+                            <div class="icon bg-blue">
+                                <i class="material-icons">devices</i>
+                            </div>
+                            <div class="content">
+                                <div class="text">MAKANAN RINGAN</div>
+                                <div class="number"><?= $jumlah_makanan_ringan; ?></div>
+                            </div>
                         </div>
                     </div>
 
-                   
-                </div>
-               
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                    <div class="info-box hover-zoom-effect">
-                        <div class="icon bg-blue">
-                            <i class="material-icons">devices</i>
-                        </div>
-                        <div class="content">
-                            <div class="text">MAKANAN RINGAN</div>
-                            <div class="number"><?= $jumlah_makanan_ringan; ?></div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                        <div class="info-box">
+                            <div class="icon bg-deep-orange">
+                                <i class="material-icons">equalizer</i>
+                            </div>
+                            <div class="content">
+                                <div class="text">MINUMAN</div>
+                                <div class="number"><?= $jumlah_minuman; ?></div>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                    <div class="info-box">
-                        <div class="icon bg-deep-orange">
-                            <i class="material-icons">equalizer</i>
-                        </div>
-                        <div class="content">
-                            <div class="text">MINUMAN</div>
-                            <div class="number"><?= $jumlah_minuman; ?></div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                        <div class="info-box">
+                            <div class="icon bg-amber">
+                                <i class="material-icons">equalizer</i>
+                            </div>
+                            <div class="content">
+                                <div class="text">ANEKA BOLU</div>
+                                <div class="number"><?= $jumlah_bolu; ?></div>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                    <div class="info-box">
-                        <div class="icon bg-amber">
-                            <i class="material-icons">equalizer</i>
-                        </div>
-                        <div class="content">
-                            <div class="text">ANEKA BOLU</div>
-                            <div class="number"><?= $jumlah_bolu; ?></div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                        <div class="info-box">
+                            <div class="icon bg-amber">
+                                <i class="material-icons">equalizer</i>
+                            </div>
+                            <div class="content">
+                                <div class="text">ANEKA ROTI</div>
+                                <div class="number"><?= $jumlah_roti; ?></div>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                    <div class="info-box">
-                        <div class="icon bg-amber">
-                            <i class="material-icons">equalizer</i>
-                        </div>
-                        <div class="content">
-                            <div class="text">ANEKA ROTI</div>
-                            <div class="number"><?= $jumlah_roti; ?></div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                        <div class="info-box">
+                            <div class="icon bg-amber">
+                                <i class="material-icons">equalizer</i>
+                            </div>
+                            <div class="content">
+                                <div class="text">ANEKA KUE TRADISIONAL</div>
+                                <div class="number"><?= $jumlah_kue_tradisional; ?></div>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                    <div class="info-box">
-                        <div class="icon bg-amber">
-                            <i class="material-icons">equalizer</i>
-                        </div>
-                        <div class="content">
-                            <div class="text">ANEKA KUE TRADISIONAL</div>
-                            <div class="number"><?= $jumlah_kue_tradisional; ?></div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                        <div class="info-box">
+                            <div class="icon bg-amber">
+                                <i class="material-icons">equalizer</i>
+                            </div>
+                            <div class="content">
+                                <div class="text">BAHAN BAKU</div>
+                                <div class="number"><?= $jumlah_bahan_baku; ?></div>
+                            </div>
                         </div>
                     </div>
-                </div>
+                <?php } ?>
 
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                    <div class="info-box">
-                        <div class="icon bg-amber">
-                            <i class="material-icons">equalizer</i>
-                        </div>
-                        <div class="content">
-                            <div class="text">BAHAN BAKU</div>
-                            <div class="number"><?= $jumlah_bahan_baku; ?></div>
-                        </div>
-                    </div>
-                </div>
+                <?php else{ ?>
+                    <h1>Selamat Datang Syahfira Bakery</h1>
+                <?php } ?>
             </div>
 
             
