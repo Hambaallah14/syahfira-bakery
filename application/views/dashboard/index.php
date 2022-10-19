@@ -93,10 +93,6 @@
                         </div>
                     </div>
                 <?php } ?>
-
-                <?php else{ ?>
-                    <h1>Selamat Datang Syahfira Bakery</h1>
-                <?php } ?>
             </div>
 
             
