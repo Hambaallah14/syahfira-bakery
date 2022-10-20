@@ -108,7 +108,7 @@
                                         
                                         <input type="text" id="id_barang" class="id_barang" name="id_barang">
                                         <div class="form-line">  
-                                            <input type="text" id="barang" class="form-control barang" name="barang" autocomplete="off" required="required">
+                                            <input type="text" id="barang" class="form-control barang" name="barang" autocomplete required="required">
                                             <label class="form-label">Nama Barang</label>
                                         </div>
                                     </div>
