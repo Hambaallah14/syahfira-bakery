@@ -5,6 +5,12 @@ class Transaksi_Model extends CI_Model{
     }
 
     // PERSEDIAAN BARANG
+    public function cariBarang($nama_barang){
+      $this->db->like('barang', $nama_barang, 'BOTH');
+      $this->db->order_by('id_barang', 'asc');
+      return $this->db->get('tb_barang')->result();
+    }
+    
     public function all_persediaan_barang(){
         return $this->db->query("SELECT tb_persediaan_barang.id_transaksi, tb_persediaan_barang.id_barang, tb_persediaan_barang.qty, tb_persediaan_barang.tanggal_transaksi, tb_barang.barang, tb_satuan.satuan FROM tb_persediaan_barang INNER JOIN tb_barang ON tb_persediaan_barang.id_barang=tb_barang.id_barang INNER JOIN tb_satuan ON tb_satuan.id_satuan=tb_barang.id_satuan ORDER BY tb_persediaan_barang.tanggal_transaksi DESC")->result_array();
     }

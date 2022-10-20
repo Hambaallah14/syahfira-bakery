@@ -28,12 +28,17 @@ Class transaksi extends CI_Controller{
     }
 
     public function cariBarang(){
-        $barang = $this->input->post('barang', true);
-        $query  = $this->db->query("SELECT barang FROM tb_barang");
-        foreach($query->result() as $barang){
-            $all[] = $barang->barang;
+        if(isset($_GET['barang'])){
+            $barang = $this->input->post('barang', true);
+            $query  = $this->Transaksi_Model->cariBarang($_GET['barang']);
+            if(count($query > 0)){
+                foreach($query as $a){
+                    $result[] = $a->barang;
+                    echo json_encode($result);
+                }
+            }
         }
-        echo json_encode($all);
+       
 
     }
 
