@@ -93,16 +93,28 @@
                 <div class="modal-body">
                     <?php echo form_open("transaksi/add_persediaan_barang", array('enctype'=>'multipart/form-data', 'id' => 'form_validation')); ?>
                         
-                        <div class="form-group form-float">
-                            <div class="form-line">
-                                <select class="form-control show-tick id_barang" name="id_barang" required>
-                                        <option value="-">--Pilih Barang--</option>
-                                        <?php
-                                            foreach($daftar_barang as $brg){
-                                                echo"<option value='".$brg["id_barang"]."'>".$brg['barang']."</option>";
-                                            }
-                                        ?>
-                                </select>
+                        <div class="row">
+                            <div class="col-md-10">
+                                <div class="form-group form-float">
+                                    <div class="form-line">
+                                        <select class="form-control show-tick id_barang" name="id_barang" required>
+                                                <option value="-">--Pilih Barang--</option>
+                                                <?php
+                                                    foreach($daftar_barang as $brg){
+                                                        echo"<option value='".$brg["id_barang"]."'>".$brg['barang']."</option>";
+                                                    }
+                                                ?>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group form-float">
+                                    <div class="form-line">
+                                        <input type="number" class="form-control harga" name="harga" onkeydown="return numbersonly(this, event);" onkeyup="javascript:tandaPemisahTitik(this);">
+                                        <label class="form-label">Harga</label>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
