@@ -103,6 +103,7 @@ class Barang_Model extends CI_Model{
         "qrcode"          => $this->input->post('id_barang', true),
         "id_jenis"        => $this->input->post('id_jenis', true),
         "barang"          => $this->input->post('barang', true),
+        "harga"           => str_replace(".", "", $this->input->post('harga', true)),
         "id_satuan"       => $this->input->post('id_satuan', true)
       ];
       $this->db->insert('tb_barang', $data_barang);

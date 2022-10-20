@@ -87,7 +87,7 @@
                     <h4 class="modal-title" id="defaultModalLabel" style="padding-top:-5px;padding-bottom:10px;color:white;">Tambah Barang</h4>
                 </div>
                 <div class="modal-body">
-                    <?php echo form_open("", array('enctype'=>'multipart/form-data', 'id' => 'form_validation')); ?>
+                    <?php echo form_open("daftar_barang/add", array('enctype'=>'multipart/form-data', 'id' => 'form_validation')); ?>
                         <div class="form-group form-float">
                             <div class="form-line">
                                 <input type="text" class="form-control id_barang" name="id_barang" value="<?= $kode;?>" readonly required>
