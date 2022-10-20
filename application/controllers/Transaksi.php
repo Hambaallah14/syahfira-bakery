@@ -27,6 +27,16 @@ Class transaksi extends CI_Controller{
         $this->load->view('template/footer');
     }
 
+    public function cariBarang(){
+        $barang = $this->input->post('barang', true);
+        $query  = $this->db->query("SELECT * FROM tb_barang");
+        foreach($query->result() as $barang){
+            $all[] = $barang->barang;
+        }
+        echo json_encode($all);
+
+    }
+
     public function add_persediaan_barang(){
         $data['title'] 	            = "Persediaan Barang - Syahfira Bakery & Cake";
 		$this->form_validation->set_rules('id_barang', 'id_barang', 'required');

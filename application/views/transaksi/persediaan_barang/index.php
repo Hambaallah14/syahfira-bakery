@@ -105,9 +105,10 @@
                                                     // }
                                                 ?>
                                         </select> -->
-                                        <div class="form-line">
-                                            <input type="text" class="id_barang" name="id_barang">
-                                            <input type="text" class="form-control barang" name="barang" autocomplete="off" required="required">
+                                        
+                                        <input type="text" id="id_barang" class="id_barang" name="id_barang">
+                                        <div class="form-line">  
+                                            <input type="text" id="barang" class="form-control barang" name="barang" autocomplete="off" required="required">
                                             <label class="form-label">Nama Barang</label>
                                         </div>
                                     </div>
@@ -116,7 +117,7 @@
                             <div class="col-md-4">
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        <input type="number" readonly="readonly" class="form-control harga" name="harga" onkeydown="return numbersonly(this, event);" onkeyup="javascript:tandaPemisahTitik(this);">
+                                        <input type="number" id="harga" class="form-control harga" name="harga" readonly="readonly">
                                         <label class="form-label">Harga</label>
                                     </div>
                                 </div>
