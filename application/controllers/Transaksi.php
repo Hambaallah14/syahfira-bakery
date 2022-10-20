@@ -29,7 +29,7 @@ Class transaksi extends CI_Controller{
 
     public function cariBarang(){
         $barang = $this->input->post('barang', true);
-        $query  = $this->db->query("SELECT * FROM tb_barang WHERE barang='$barang'");
+        $query  = $this->db->query("SELECT barang FROM tb_barang");
         foreach($query->result() as $barang){
             $all[] = $barang->barang;
         }
