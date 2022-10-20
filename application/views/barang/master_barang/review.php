@@ -81,6 +81,12 @@
                                         </div>
                                     </div> 
 
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            <input type="number" class="form-control harga" name="harga" onkeydown="return numbersonly(this, event);" onkeyup="javascript:tandaPemisahTitik(this);" value="<?=$sat["harga"] ?>">
+                                        </div>
+                                    </div> 
+
                                     
                                 </div>
                                     <button type="submit" class="btn bg-green waves-effect">Edit data</button>
