@@ -106,7 +106,8 @@
                                                 ?>
                                         </select> -->
                                         <div class="form-line">
-                                            <input type="text" class="form-control id_barang" name="id_barang" autocomplete="off" required="required">
+                                            <input type="text" class="id_barang" name="id_barang">
+                                            <input type="text" class="form-control barang" name="barang" autocomplete="off" required="required">
                                             <label class="form-label">Nama Barang</label>
                                         </div>
                                     </div>
