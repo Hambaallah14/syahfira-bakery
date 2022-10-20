@@ -59,14 +59,14 @@ Class Daftar_barang extends CI_Controller{
 			$this->ciqrcode->generate($params); // fungsi untuk generate QR CODE
 
 			$this->Barang_Model->add();
-			$this->session->set_flashdata('flash', 'Disimpan');
+			$this->session->set_flashdata('daftar_barang', 'Disimpan');
 			redirect('daftar_barang');
 		}
     }
 
 	public function hapus($id_barang){
         $this->Barang_Model->delete($id_barang);
-		$this->session->set_flashdata('flash', 'Dihapus');
+		$this->session->set_flashdata('daftar_barang', 'Dihapus');
 		redirect('daftar_barang');
 	}
 
@@ -84,7 +84,7 @@ Class Daftar_barang extends CI_Controller{
 
 	public function edit($id_barang){
 		$this->Barang_Model->edit();
-		$this->session->set_flashdata('flash', 'Diedit');
+		$this->session->set_flashdata('review_barang', 'Diedit');
 		redirect('daftar_barang/review_barang/'.$id_barang);
 	}
 }

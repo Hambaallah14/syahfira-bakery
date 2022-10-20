@@ -1,4 +1,4 @@
-<div class="flash-data" data-target="Persediaan Barang" data-flashdata="<?= $this->session->flashdata('flash'); ?>"></div>
+<div class="flash-data" data-target="Persediaan Barang" data-flashdata="<?= $this->session->flashdata('persediaan_barang'); ?>"></div>
 <section class="content">
     <div class="container-fluid">
     
@@ -65,7 +65,6 @@
                                                     }
                                                     else{
                                                         echo"<td class='bg-teal text-center'>".date('d F Y', strtotime($persediaan["tanggal_transaksi"]))."</td>";
-
                                                         echo"<td class='text-center'><a href='#' class='btn bg-teal btn-status-barang' data-toggle='modal' data-target='#ModalStatusBarang' data-id_transaksi='".$persediaan["id_transaksi"]."'>Pindai Stok</a></td>";
                                                     }
                                                 }
