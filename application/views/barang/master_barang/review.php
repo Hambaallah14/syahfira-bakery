@@ -83,7 +83,7 @@
 
                                     <div class="form-group form-float">
                                         <div class="form-line">
-                                            <input type="number" class="form-control harga" name="harga" onkeydown="return numbersonly(this, event);" onkeyup="javascript:tandaPemisahTitik(this);" value="<?=$sat["harga"] ?>">
+                                            <input type="number" class="form-control harga" name="harga" onkeydown="return numbersonly(this, event);" onkeyup="javascript:tandaPemisahTitik(this);" value="<?= $daftar_barang[0]['harga'];?>">
                                         </div>
                                     </div> 
 
