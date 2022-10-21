@@ -1,40 +1,5 @@
 $(document).ready(function(){
-    // KETIKAN NAMA YANG DICARI DIKLIK, MAKA DITAMPILKAN DI FORM
-    // $('#barang').autocomplete({
-         source : "https://syahfirabakery.co.id/transaksi/cariBarang"
-        // delay  : 0,
-        // source : function(request, response){
-        //     $.ajax({
-        //         url      : 'https://syahfirabakery.co.id/transaksi/cariBarang',
-        //         dataType : "json",
-        //         data     : 'barang=' + request.term,
-        //         success  :  function(data){
-        //             response($.map(data, function(item){
-        //                 return{
-        //                     id_barang : item.id_barang,
-        //                     barang    : item.barang,
-        //                     harga     : item.harga
-        //                 }
-        //             }));
-        //         },
-        //         error : function(e){
-        //             alert('Error : '+request);
-        //             console.log(e)
-        //         }
-        //     });
-        // },
-        // minLength :1,
-        // select: function(event, ui){
-        //     $('#id_barang').val(ui.item.id_barang);
-        //     $('#barang').val(ui.item.barang);
-        //     $('#harga').val(ui.item.harga);
-        //     return false;
-        // },
-        // focus : function(event, ui){
-        //     return false;
-        // }
-    // });
-
+    // SELECT HARGA BARANG
     $('#id_barang').change(function(){
         const id_barang = $('#id_barang').val();
         $.ajax({
