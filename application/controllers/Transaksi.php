@@ -28,18 +28,10 @@ Class transaksi extends CI_Controller{
     }
 
     public function cariBarang(){
-        if(isset($_GET['barang'])){
-            $barang = $this->input->post('barang', true);
-            $query  = $this->Transaksi_Model->cariBarang($_GET['barang']);
-            if(count($query > 0)){
-                foreach($query as $a){
-                    $result[] = $a->barang;
-                    echo json_encode($result);
-                }
-            }
-        }
+        $id_barang = $this->input->post('id_barang', true);
+        $data['harga'] = $this->Transaksi_Model->cariBarang($id_barang);
+        $this->load->view('transaksi/persediaan_barang/cariBarang', $data);
        
-
     }
 
     public function add_persediaan_barang(){

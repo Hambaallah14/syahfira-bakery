@@ -5,10 +5,8 @@ class Transaksi_Model extends CI_Model{
     }
 
     // PERSEDIAAN BARANG
-    public function cariBarang($nama_barang){
-      $this->db->like('barang', $nama_barang, 'BOTH');
-      $this->db->order_by('id_barang', 'asc');
-      return $this->db->get('tb_barang')->result();
+    public function cariBarang($id_barang){
+      return $this->db->query("SELECT * FROM tb_barang WHERE id_barang='$id_barang'")->result_array();
     }
     
     public function all_persediaan_barang(){

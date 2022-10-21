@@ -37,7 +37,14 @@ $(document).ready(function(){
 
     $('#id_barang').change(function(){
         const id_barang = $('#id_barang').val();
-        alert(id_barang);
+        $.ajax({
+            type    : 'POST',
+            url     : 'https://syahfirabakery.co.id/transaksi/cariBarang',
+            data    : 'id_barang=' + id_barang,
+            success : function(response){
+            $('#harga').html(response);
+            }
+        });
     });
     
 
