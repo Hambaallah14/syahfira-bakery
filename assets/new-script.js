@@ -35,7 +35,7 @@ $(document).ready(function(){
         // }
     // });
 
-    $('#id_barang').on('change', function(e){
+    $('#id_barang').change(function(){
         const id_barang = $('#id_barang').val();
         alert(id_barang);
     });

@@ -97,7 +97,7 @@
                             <div class="col-md-12">
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        <select class="form-control show-tick id_barang" name="id_barang" required>
+                                        <select id="id_barang" class="form-control show-tick id_barang" name="id_barang" required>
                                                 <option value="-">--Pilih Barang--</option>
                                                 <?php
                                                     foreach($daftar_barang as $brg){
