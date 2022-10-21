@@ -94,31 +94,20 @@
                     <?php echo form_open("transaksi/add_persediaan_barang", array('enctype'=>'multipart/form-data', 'id' => 'form_validation')); ?>
                         
                         <div class="row">
-                            <div class="col-md-8">
+                            <div class="col-md-12">
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        <!-- <select class="form-control show-tick id_barang" name="id_barang" required>
+                                        <select class="form-control show-tick id_barang" name="id_barang" required>
                                                 <option value="-">--Pilih Barang--</option>
                                                 <?php
-                                                    // foreach($daftar_barang as $brg){
-                                                    //     echo"<option value='".$brg["id_barang"]."'>".$brg['barang']."</option>";
-                                                    // }
+                                                    foreach($daftar_barang as $brg){
+                                                        echo"<option value='".$brg["id_barang"]."'>".$brg['barang']."</option>";
+                                                    }
                                                 ?>
-                                        </select> -->
+                                        </select>
                                         
-                                        <input type="text" id="id_barang" class="id_barang" name="id_barang">
-                                        <div class="form-line">  
-                                            <input type="text" id="barang" class="form-control barang" name="barang" autocomplete required="required">
-                                            <label class="form-label">Nama Barang</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group form-float">
-                                    <div class="form-line">
-                                        <input type="number" id="harga" class="form-control harga" name="harga" readonly="readonly">
-                                        <label class="form-label">Harga</label>
+                                        <input type="text" id="harga" class="harga" name="harga">
+                                       
                                     </div>
                                 </div>
                             </div>
