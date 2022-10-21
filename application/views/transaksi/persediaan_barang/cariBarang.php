@@ -1,1 +1,1 @@
-<input type="text" class="harga" name="harga" value="<?=$harga[0]["harga"];?>">
+<input type="hidden" class="harga" name="harga" value="<?=$harga[0]["harga"];?>">
