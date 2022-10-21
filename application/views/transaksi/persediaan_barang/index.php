@@ -106,8 +106,7 @@
                                                 ?>
                                         </select>
                                         
-                                        <input type="text" id="harga" class="harga" name="harga">
-                                       
+                                        <div id="harga"></div>
                                     </div>
                                 </div>
                             </div>
