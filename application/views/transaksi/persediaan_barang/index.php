@@ -54,6 +54,7 @@
 
                                                 if($persediaan["jenis"] == "Bahan Baku"){
                                                     echo"<td class='bg-teal text-center'>".date('d F Y', strtotime($persediaan["tanggal_transaksi"]))."</td>";
+                                                    echo"<td class='text-center'></td>";
                                                 }
                                                 else{
                                                     if($diff->d >= 3){
