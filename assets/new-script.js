@@ -1,6 +1,6 @@
 $(document).ready(function(){
     // KETIKAN NAMA YANG DICARI DIKLIK, MAKA DITAMPILKAN DI FORM
-    $('#barang').autocomplete({
+    // $('#barang').autocomplete({
          source : "https://syahfirabakery.co.id/transaksi/cariBarang"
         // delay  : 0,
         // source : function(request, response){
@@ -33,7 +33,13 @@ $(document).ready(function(){
         // focus : function(event, ui){
         //     return false;
         // }
+    // });
+
+    $('#id_barang').on('change', function(e){
+        const id_barang = $('#id_barang').val();
+        alert(id_barang);
     });
+    
 
 
     // PINDAH STATUS BARANG
