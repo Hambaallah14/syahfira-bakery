@@ -75,7 +75,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <button type="submit" class="btn bg-teal waves-effect btn-simpan">Pindai Stok</button>
+                                <div class="col-md-12">
+                                    <button type="submit" class="btn bg-teal waves-effect btn-simpan">Pindai Stok</button>
+                                </div>
                             </div>
                         <?php echo form_close(); ?>
                     </div>
