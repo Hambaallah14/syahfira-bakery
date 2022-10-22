@@ -79,7 +79,7 @@ Class transaksi extends CI_Controller{
 
             $this->load->view('template/header', $data);
             $this->load->view('template/sidebar');
-            $this->load->view('transaksi/persediaan_barang/index');
+            $this->load->view('transaksi/persediaan_barang/pindaiStokBarang');
             $this->load->view('template/footer');
         }
     }
