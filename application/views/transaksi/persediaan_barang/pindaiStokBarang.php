@@ -56,7 +56,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group form-float">
                                         <div class="form-line"> 
-                                            <input type="text" class="form-control" name="qty" readonly value="<?=$data_modal[0]["qty"]." ".$persediaan_barang[0]["satuan"];?>">     
+                                            <input type="text" class="form-control" name="qty" readonly value="<?=$persediaan_barang[0]["qty"]." ".$persediaan_barang[0]["satuan"];?>">     
                                         </div>
                                     </div>
                                 </div>
