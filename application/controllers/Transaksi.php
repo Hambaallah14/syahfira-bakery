@@ -61,6 +61,15 @@ Class transaksi extends CI_Controller{
 		redirect('transaksi/persediaan_barang');
     }
 
+    public function pindai_stok($statusBarang, $idTransaksi){
+        if($statusBarang == "barang_terjual"){
+            
+        }
+        else{
+            
+        }
+    }
+
     public function modal_status_barang(){
         $id_transaksi = $this->input->post('id_transaksi', true);
         $data['data_modal'] = $this->Transaksi_Model->modal_status_barang($id_transaksi);
