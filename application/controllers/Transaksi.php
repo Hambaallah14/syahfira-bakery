@@ -84,17 +84,13 @@ Class transaksi extends CI_Controller{
         }
     }
 
-    public function modal_status_barang(){
-        $id_transaksi = $this->input->post('id_transaksi', true);
-        $data['data_modal'] = $this->Transaksi_Model->modal_status_barang($id_transaksi);
-        $this->load->view('transaksi/persediaan_barang/modal_status_barang', $data);
-    }
-
     public function add_status_barang(){
         $data['title'] 	            = "Persediaan Barang - Syahfira Bakery & Cake";
+		$this->form_validation->set_rules('id_user', 'id_user', 'required');
 		$this->form_validation->set_rules('id-transaksi', 'id-transaksi', 'required');
 		$this->form_validation->set_rules('pilih-menu', 'pilih-menu', 'required');
 		$this->form_validation->set_rules('id-barang', 'id-barang', 'required');
+		$this->form_validation->set_rules('harga', 'harga', 'required');
 		$this->form_validation->set_rules('new-qty', 'new-qty', 'required');
     
 

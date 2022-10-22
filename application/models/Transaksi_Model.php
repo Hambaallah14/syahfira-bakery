@@ -42,7 +42,9 @@ class Transaksi_Model extends CI_Model{
           "tanggal_transaksi"   => date('Y-m-d'),
           "id_transaksi"        => $this->input->post('id-transaksi', true),
           "id_barang"           => $this->input->post('id-barang', true),
-          "qty"                 => $this->input->post('new-qty', true)
+          "harga"               => $this->input->post('harga', true),
+          "qty"                 => $this->input->post('new-qty', true),
+          "id_user"             => $this->input->post('id_user', true)
         ];
         $this->db->insert('tb_barang_terjual', $data_barang_terjual);
 
@@ -58,7 +60,9 @@ class Transaksi_Model extends CI_Model{
           "tanggal_transaksi"   => date('Y-m-d'),
           "id_transaksi"        => $this->input->post('id-transaksi', true),
           "id_barang"           => $this->input->post('id-barang', true),
-          "qty"                 => $this->input->post('new-qty', true)
+          "harga"               => $this->input->post('harga', true),
+          "qty"                 => $this->input->post('new-qty', true),
+          "id_user"             => $this->input->post('id_user', true)
         ];
         $this->db->insert('tb_barang_keluar', $data_barang_keluar);
 
