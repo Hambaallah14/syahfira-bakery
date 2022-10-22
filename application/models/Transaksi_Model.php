@@ -15,7 +15,7 @@ class Transaksi_Model extends CI_Model{
 
     public function all_persediaan_barang_by_idTransaksi($id_transaksi){
       return $this->db->query("SELECT tb_persediaan_barang.id_transaksi, tb_persediaan_barang.id_barang, tb_persediaan_barang.qty, tb_persediaan_barang.tanggal_transaksi, tb_persediaan_barang.harga, tb_barang.barang, tb_satuan.satuan, tb_jenis.jenis FROM tb_persediaan_barang INNER JOIN tb_barang ON tb_persediaan_barang.id_barang=tb_barang.id_barang INNER JOIN tb_satuan ON tb_satuan.id_satuan=tb_barang.id_satuan INNER JOIN tb_jenis ON tb_jenis.id=tb_barang.id_jenis WHERE tb_persediaan_barang.id_transaksi='$id_transaksi' ORDER BY tb_persediaan_barang.tanggal_transaksi DESC")->result_array();
-  }
+    }
 
     public function add_persediaan_barang(){
       $data_persediaan = [
@@ -31,10 +31,6 @@ class Transaksi_Model extends CI_Model{
     public function delete_persediaan_barang($id_transaksi){
       $this->db->where('id_transaksi', $id_transaksi);
       $this->db->delete('tb_persediaan_barang');
-    }
-
-    public function modal_status_barang($id_transaksi){
-      return $this->db->query("SELECT tb_persediaan_barang.id_transaksi, tb_persediaan_barang.id_barang, tb_persediaan_barang.qty, tb_persediaan_barang.tanggal_transaksi, tb_barang.barang, tb_satuan.satuan FROM tb_persediaan_barang INNER JOIN tb_barang ON tb_persediaan_barang.id_barang=tb_barang.id_barang INNER JOIN tb_satuan ON tb_satuan.id_satuan=tb_barang.id_satuan WHERE tb_persediaan_barang.id_transaksi='$id_transaksi'")->result_array();
     }
 
     public function add_status_barang(){
