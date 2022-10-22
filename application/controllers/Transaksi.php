@@ -62,11 +62,25 @@ Class transaksi extends CI_Controller{
     }
 
     public function pindai_stok($statusBarang, $idTransaksi){
-        if($statusBarang == "barang_terjual"){
-            
+        if($statusBarang == "barang_sisa"){
+            $data['title'] 	  	       = "Input Barang Sisa - Syahfira Bakery & Cake";
+            $data['user']              = $this->User_Model->user_by_iduser($this->session->userdata('id_user'));
+            $data['persediaan_barang'] = $this->Transaksi_Model->all_persediaan_barang_by_idTransaksi($idTransaksi);
+
+            $this->load->view('template/header', $data);
+            $this->load->view('template/sidebar');
+            $this->load->view('transaksi/persediaan_barang/pindaiStokkeBarangSisa');
+            $this->load->view('template/footer');
         }
         else{
-            
+            $data['title'] 	  	       = "Input Status Barang - Syahfira Bakery & Cake";
+            $data['user']              = $this->User_Model->user_by_iduser($this->session->userdata('id_user'));
+            $data['persediaan_barang'] = $this->Transaksi_Model->all_persediaan_barang_by_idTransaksi($idTransaksi);
+
+            $this->load->view('template/header', $data);
+            $this->load->view('template/sidebar');
+            $this->load->view('transaksi/persediaan_barang/index');
+            $this->load->view('template/footer');
         }
     }
 
