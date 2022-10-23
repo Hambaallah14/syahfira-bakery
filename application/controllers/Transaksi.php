@@ -152,12 +152,6 @@ Class transaksi extends CI_Controller{
         $this->load->view('template/footer');
     }
 
-    public function modal_barang_sisa(){
-        $id_transaksi = $this->input->post('id_transaksi', true);
-        $data['data_modal'] = $this->Transaksi_Model->modal_barang_sisa($id_transaksi);
-        $this->load->view('transaksi/barang_sisa/modal_barang_sisa', $data);
-    }
-
 
     public function add_barang_sisa(){
         $data['title'] 	            = "Persediaan Barang - Syahfira Bakery & Cake";

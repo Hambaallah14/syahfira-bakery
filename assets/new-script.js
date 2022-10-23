@@ -12,34 +12,6 @@ $(document).ready(function(){
         });
     });
     
-
-
-    // PINDAH STATUS BARANG
-    $(".btn-status-barang").on('click', function(e){
-        const idTransaksi 	= $(this).data('id_transaksi'); 
-        $.ajax({
-            type    : 'POST',
-            url     : 'https://syahfirabakery.co.id/transaksi/modal_status_barang',
-            data    : 'id_transaksi=' + idTransaksi,
-            success : function(response){
-            $('.modal-status-barang').html(response);
-            }
-        });
-    });
-
-    // BARANG SISA
-    $(".btn-barang-sisa").on('click', function(e){
-        const idTransaksi 	= $(this).data('id_transaksi'); 
-
-        $.ajax({
-            type    : 'POST',
-            url     : 'https://syahfirabakery.co.id/transaksi/modal_barang_sisa',
-            data    : 'id_transaksi=' + idTransaksi,
-            success : function(response){
-            $('.modal-barang-sisa').html(response);
-            }
-        }); 
-    });
     /////////////////////////////////////
 
     // PERSEDIAAN BARANG

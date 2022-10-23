@@ -148,24 +148,4 @@
             </div>
         </div>
     </div>
-
-
-    <!-- Modal Status Barang -->
-    <div class="modal fade" id="ModalStatusBarang" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-status-barang"></div>
-            </div>
-        </div>
-    </div>
-
-    
-    <!-- Modal Barang Sisa -->
-    <div class="modal fade" id="ModalBarangSisa" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-barang-sisa"></div>
-            </div>
-        </div>
-    </div>
 </section>
