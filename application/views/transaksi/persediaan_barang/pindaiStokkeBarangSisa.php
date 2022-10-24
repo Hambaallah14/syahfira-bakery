@@ -54,14 +54,14 @@
                                 <div class="col-md-6">
                                     <div class="form-group form-float">
                                         <div class="form-line"> 
-                                            <input type="text" class="form-control" name="qty" readonly value="<?=$persediaan_barang[0]["qty"]." ".$persediaan_barang[0]["satuan"];?>">     
+                                            <input type="number" class="form-control" name="qty" readonly value="<?=$persediaan_barang[0]["qty"];?>">     
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group form-float">
                                         <div class="form-line"> 
-                                        <input type="number" class="form-control" name="new-qty" required min="0" max="<?=$persediaan_barang[0]["qty"];?>" value="0">     
+                                        <input type="text" class="form-control" name="satuan" required value="<?=$persediaan_barang[0]["satuan"];?>">     
                                         </div>
                                     </div>
                                 </div>
