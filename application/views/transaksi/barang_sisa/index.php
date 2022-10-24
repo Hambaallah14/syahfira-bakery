@@ -34,7 +34,10 @@
                                         <th class="text-center">Tanggal</th>
                                         <th class="text-center">Tanggal Persediaan</th>
                                         <th class="text-center">Barang</th>
+                                        <th class="text-center">Harga</th>
                                         <th class="text-center">Qty</th>
+                                        <th class="text-center">Total</th>
+
                                     </tr>
                                 </thead>
 
@@ -47,7 +50,9 @@
                                                 echo"<td>".date('d F Y', strtotime($brg_sisa["tanggal"]))."</td>";
                                                 echo"<td>".date('d F Y', strtotime($brg_sisa["tanggal_transaksi"]))."</td>";
                                                 echo"<td>".$brg_sisa["barang"]."</td>";
+                                                echo"<td>".number_format($brg_sisa["harga"],0,',','.')."</td>";
                                                 echo"<td>".$brg_sisa["qty"]." ".$brg_sisa["satuan"]."</td>";
+                                                echo"<td>".number_format($brg_sisa["harga"]*$brg_sisa["qty"],0,',','.')."</td>";
                                             echo"</tr>";
                                             $no++;
                                         }
