@@ -33,7 +33,9 @@
                                         <th class="text-center">No</th>
                                         <th class="text-center">Tanggal Persediaan</th>
                                         <th class="text-center">Barang</th>
+                                        <th class="text-center">Harga</th>
                                         <th class="text-center">Qty</th>
+                                        <th class="text-center">Total</th>
                                     </tr>
                                 </thead>
 
@@ -45,7 +47,9 @@
                                                 echo"<td>".$no."</td>";
                                                 echo"<td>".date('d F Y', strtotime($brg_keluar["tanggal_transaksi"]))."</td>";
                                                 echo"<td>".$brg_keluar["barang"]."</td>";
+                                                echo"<td>".number_format($brg_keluar["harga"],0,',','.')."</td>";
                                                 echo"<td>".$brg_keluar["qty"]." ".$brg_keluar["satuan"]."</td>";
+                                                echo"<td>".number_format($brg_keluar["harga"]*$brg_keluar["qty"],0,',','.')."</td>";
                                             echo"</tr>";
                                             $no++;
                                         }
