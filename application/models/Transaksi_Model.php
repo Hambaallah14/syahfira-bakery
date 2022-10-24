@@ -82,7 +82,7 @@ class Transaksi_Model extends CI_Model{
 
     // BARANG TERJUAL
     public function all_barang_terjual(){
-      return $this->db->query("SELECT tb_barang_terjual.id_transaksi, tb_barang_terjual.id_barang, tb_barang_terjual.qty, tb_barang_terjual.tanggal_transaksi, tb_barang.barang, tb_satuan.satuan FROM tb_barang_terjual INNER JOIN tb_barang ON tb_barang_terjual.id_barang=tb_barang.id_barang INNER JOIN tb_satuan ON tb_satuan.id_satuan=tb_barang.id_satuan")->result_array();
+      return $this->db->query("SELECT tb_barang_terjual.id_transaksi, tb_barang_terjual.id_barang, tb_barang_terjual.harga, tb_barang_terjual.qty, tb_barang_terjual.tanggal_transaksi, tb_barang.barang, tb_satuan.satuan FROM tb_barang_terjual INNER JOIN tb_barang ON tb_barang_terjual.id_barang=tb_barang.id_barang INNER JOIN tb_satuan ON tb_satuan.id_satuan=tb_barang.id_satuan")->result_array();
     }
 
 
