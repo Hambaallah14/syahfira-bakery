@@ -49,7 +49,7 @@
                                                 echo"<td>".$brg_terjual["barang"]."</td>";
                                                 echo"<td>".number_format($brg_terjual["harga"],0,',','.')."</td>";
                                                 echo"<td>".$brg_terjual["qty"]." ".$brg_terjual["satuan"]."</td>";
-                                                echo"<td>".$brg_terjual["harga"]*$brg_terjual["qty"]."</td>";
+                                                echo"<td>".number_format($brg_terjual["harga"]*$brg_terjual["qty"],0,',','.')."</td>";
                                             echo"</tr>";
                                             $no++;
                                         }
