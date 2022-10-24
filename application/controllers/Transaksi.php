@@ -155,9 +155,12 @@ Class transaksi extends CI_Controller{
 
     public function add_barang_sisa(){
         $data['title'] 	            = "Persediaan Barang - Syahfira Bakery & Cake";
+		$this->form_validation->set_rules('tanggal_transaksi', 'tanggal_transaksi', 'required');
 		$this->form_validation->set_rules('id-transaksi', 'id-transaksi', 'required');
 		$this->form_validation->set_rules('id-barang', 'id-barang', 'required');
+		$this->form_validation->set_rules('harga', 'harga', 'required');
 		$this->form_validation->set_rules('qty', 'qty', 'required');
+        $this->form_validation->set_rules('id_user', 'id_transaksi', 'required');
         
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('template/header', $data);

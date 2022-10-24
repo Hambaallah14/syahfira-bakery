@@ -98,7 +98,9 @@ class Transaksi_Model extends CI_Model{
         "tanggal_transaksi"   => $this->input->post('tanggal_transaksi', true),
         "id_transaksi"        => $this->input->post('id-transaksi', true),
         "id_barang"           => $this->input->post('id-barang', true),
-        "qty"                 => $this->input->post('qty', true)
+        "harga"               => $this->input->post('harga', true),
+        "qty"                 => $this->input->post('qty', true),
+        "id_user"             => $this->input->post('id_user', true)
       ];
       $this->db->insert('tb_barang_sisa', $data_barang_sisa);
 
