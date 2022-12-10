@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 Class Daftar_barang extends CI_Controller{
 	
 	public function __construct(){
-		parent::__construct();
+		parent::__construct();a
 		$this->load->library('form_validation');
 		$this->load->helper('url');
 		$this->load->model('Barang_Model');
