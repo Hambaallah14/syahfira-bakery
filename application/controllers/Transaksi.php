@@ -120,7 +120,7 @@ class transaksi extends CI_Controller
     {
         $data['title']                  = "Barang Keluar - Syahfira Bakery & Cake";
         $data['user']              = $this->User_Model->user_by_iduser($this->session->userdata('id_user'));
-        $data['barang_keluar']     = $this->Transaksi_Model->all_barang_keluar();
+        // $data['barang_keluar']     = $this->Transaksi_Model->all_barang_keluar();
 
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar');
