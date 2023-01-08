@@ -11,9 +11,9 @@ class Barang_Model extends CI_Model
     return $this->db->query("SELECT * FROM tb_barang WHERE id_jenis = '3'")->result_array();
   }
 
-  public function all_daftar_barang()
+  public function all_daftar_barang_makanandanminuman()
   {
-    return $this->db->query("SELECT * FROM tb_barang")->result_array();
+    return $this->db->query("SELECT * FROM tb_barang WHERE id_jenis <> '3'")->result_array();
   }
 
   public function all_barang()
