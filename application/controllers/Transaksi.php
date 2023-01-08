@@ -25,8 +25,8 @@ class transaksi extends CI_Controller
         if ($object == "bahan_baku") {
             $data['title']                  = "Persediaan Bahan Baku - Syahfira Bakery & Cake";
             $data['user']                   = $this->User_Model->user_by_iduser($this->session->userdata('id_user'));
-            $data['persediaan_barang']      = $this->Transaksi_Model->all_persediaan_barang();
-            $data['daftar_barang']          = $this->Barang_Model->all_daftar_barang();
+            $data['persediaan_barang']      = $this->Transaksi_Model->all_persediaan_barang_bahan_baku();
+            $data['daftar_barang']          = $this->Barang_Model->all_daftar_barang_bahan_baku();
             $this->load->view('template/header', $data);
             $this->load->view('template/sidebar');
             $this->load->view('transaksi/persediaan_barang/bahan_baku');

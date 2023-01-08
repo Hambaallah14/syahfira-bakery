@@ -12,6 +12,11 @@ class Transaksi_Model extends CI_Model
     return $this->db->query("SELECT * FROM tb_barang WHERE id_barang='$id_barang'")->result_array();
   }
 
+  public function all_persediaan_barang_bahan_baku()
+  {
+    return $this->db->query("SELECT tb_persediaan_barang.id_transaksi, tb_persediaan_barang.id_barang, tb_persediaan_barang.qty, tb_persediaan_barang.tanggal_transaksi, tb_persediaan_barang.harga, tb_persediaan_barang.ket, tb_barang.barang, tb_satuan.satuan, tb_jenis.jenis FROM tb_persediaan_barang INNER JOIN tb_barang ON tb_persediaan_barang.id_barang=tb_barang.id_barang INNER JOIN tb_satuan ON tb_satuan.id_satuan=tb_barang.id_satuan INNER JOIN tb_jenis ON tb_jenis.id=tb_barang.id_jenis WHERE tb_jenis.jenis = 'Bahan Baku' ORDER BY tb_persediaan_barang.tanggal_transaksi DESC")->result_array();
+  }
+
   public function all_persediaan_barang()
   {
     return $this->db->query("SELECT tb_persediaan_barang.id_transaksi, tb_persediaan_barang.id_barang, tb_persediaan_barang.qty, tb_persediaan_barang.tanggal_transaksi, tb_persediaan_barang.harga, tb_persediaan_barang.ket, tb_barang.barang, tb_satuan.satuan, tb_jenis.jenis FROM tb_persediaan_barang INNER JOIN tb_barang ON tb_persediaan_barang.id_barang=tb_barang.id_barang INNER JOIN tb_satuan ON tb_satuan.id_satuan=tb_barang.id_satuan INNER JOIN tb_jenis ON tb_jenis.id=tb_barang.id_jenis ORDER BY tb_persediaan_barang.tanggal_transaksi DESC")->result_array();
