@@ -59,7 +59,11 @@
                                         if ($diff->d >= 3) {
                                             echo "<td class='text-center'><a href='" . base_url() . "transaksi/pindai_stok/barang_sisa/" . $persediaan["id_transaksi"] . "' class='btn bg-pink btn-barang-sisa'>Pindai Stok</a></td>";
                                         } else {
-                                            echo "<td class='text-center'><a href='" . base_url() . "transaksi/pindai_stok/status_barang/" . $persediaan["id_transaksi"] . "' class='btn bg-teal btn-status-barang'>Pindai Stok</a></td>";
+                                            if ($persediaan["qty"] == 0) {
+                                                echo "<td class='text-center'><a href='" . base_url() . "transaksi/delete_persediaan_barang/" . $persediaan["id_transaksi"] . "' class='btn bg-teal'><i class='material-icons'>delete</i></a></td>";
+                                            } else {
+                                                echo "<td class='text-center'><a href='" . base_url() . "transaksi/pindai_stok/status_barang/" . $persediaan["id_transaksi"] . "' class='btn bg-teal btn-status-barang'>Pindai Stok</a></td>";
+                                            }
                                         }
                                         echo "</tr>";
                                         $no++;
