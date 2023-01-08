@@ -73,7 +73,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="<?= base_url(); ?>transaksi/persediaan_barang">
+                            <a href="<?= base_url(); ?>transaksi/persediaan_barang/makanandanminuman">
                                 <span class="icon-name mt-5">Makanan dan Minuman</span>
                             </a>
                         </li>

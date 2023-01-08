@@ -3,7 +3,7 @@
     <div class="container-fluid">
 
         <div class="block-header">
-            <h2>Persediaan Barang</h2>
+            <h2>Makanan dan Minuman</h2>
         </div>
 
         <div class="row clearfix">

@@ -17,17 +17,30 @@ class transaksi extends CI_Controller
     }
 
     // <!-- PERSEDIAAN BARANG -->
-    public function persediaan_barang()
+    public function persediaan_barang($object)
     {
-        $data['title']                  = "Persediaan Barang - Syahfira Bakery & Cake";
-        $data['user']              = $this->User_Model->user_by_iduser($this->session->userdata('id_user'));
         $data['persediaan_barang'] = $this->Transaksi_Model->all_persediaan_barang();
         $data['daftar_barang']     = $this->Barang_Model->all_daftar_barang();
 
-        $this->load->view('template/header', $data);
-        $this->load->view('template/sidebar');
-        $this->load->view('transaksi/persediaan_barang/index');
-        $this->load->view('template/footer');
+        if ($object == "bahan_baku") {
+            $data['title']                  = "Persediaan Bahan Baku - Syahfira Bakery & Cake";
+            $data['user']                   = $this->User_Model->user_by_iduser($this->session->userdata('id_user'));
+            $data['persediaan_barang']      = $this->Transaksi_Model->all_persediaan_barang();
+            $data['daftar_barang']          = $this->Barang_Model->all_daftar_barang();
+            $this->load->view('template/header', $data);
+            $this->load->view('template/sidebar');
+            $this->load->view('transaksi/persediaan_barang/bahan_baku');
+            $this->load->view('template/footer');
+        } else {
+            $data['title']                  = "Persediaan Makanan dan Minuman - Syahfira Bakery & Cake";
+            $data['user']                   = $this->User_Model->user_by_iduser($this->session->userdata('id_user'));
+            $data['persediaan_barang']      = $this->Transaksi_Model->all_persediaan_barang();
+            $data['daftar_barang']          = $this->Barang_Model->all_daftar_barang();
+            $this->load->view('template/header', $data);
+            $this->load->view('template/sidebar');
+            $this->load->view('transaksi/persediaan_barang/makanandanminuman');
+            $this->load->view('template/footer');
+        }
     }
 
     public function cariBarang()
