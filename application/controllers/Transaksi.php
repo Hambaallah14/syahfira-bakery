@@ -86,8 +86,8 @@ class transaksi extends CI_Controller
     public function delete_persediaan_barang($id_transaksi)
     {
         $this->Transaksi_Model->delete_persediaan_barang($id_transaksi);
-        $this->session->set_flashdata('persediaan_barang', 'Dihapus');
-        redirect('transaksi/persediaan_barang');
+        $this->session->set_flashdata('makanandanminuman', 'Dihapus');
+        redirect('transaksi/persediaan_barang/makanandanminuman');
     }
 
     public function pindai_stok($statusBarang, $idTransaksi)
