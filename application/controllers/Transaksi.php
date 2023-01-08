@@ -131,8 +131,8 @@ class transaksi extends CI_Controller
             $this->load->view('template/footer');
         } else {
             $this->Transaksi_Model->add_status_barang();
-            $this->session->set_flashdata('flash', 'Disimpan');
-            redirect('transaksi/persediaan_barang');
+            $this->session->set_flashdata('pindaistokbrg', 'Disimpan');
+            redirect('transaksi/persediaan_barang/makanandanminuman');
         }
     }
 
@@ -202,8 +202,8 @@ class transaksi extends CI_Controller
             $this->load->view('template/footer');
         } else {
             $this->Transaksi_Model->add_barang_sisa();
-            $this->session->set_flashdata('flash', 'Disimpan');
-            redirect('transaksi/persediaan_barang');
+            $this->session->set_flashdata('pindaistokbrgsisa', 'Disimpan');
+            redirect('transaksi/persediaan_barang/makanandanminuman');
         }
     }
 
