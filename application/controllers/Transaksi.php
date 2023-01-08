@@ -48,7 +48,7 @@ class transaksi extends CI_Controller
         $this->load->view('transaksi/persediaan_barang/cariBarang', $data);
     }
 
-    public function add_persediaan_barang()
+    public function add_persediaan_barang($object)
     {
         $data['title']                 = "Persediaan Barang - Syahfira Bakery & Cake";
         $this->form_validation->set_rules('id_user', 'id_user', 'required');
@@ -58,16 +58,28 @@ class transaksi extends CI_Controller
         $this->form_validation->set_rules('qty', 'qty', 'required');
         $this->form_validation->set_rules('ket', 'ket', 'required');
 
-
-        if ($this->form_validation->run() == FALSE) {
-            $this->load->view('template/header', $data);
-            $this->load->view('template/sidebar');
-            $this->load->view('transaksi/persediaan_barang/index');
-            $this->load->view('template/footer');
+        if ($object == "makanandanminuman") {
+            if ($this->form_validation->run() == FALSE) {
+                $this->load->view('template/header', $data);
+                $this->load->view('template/sidebar');
+                $this->load->view('transaksi/persediaan_barang/index');
+                $this->load->view('template/footer');
+            } else {
+                $this->Transaksi_Model->add_persediaan_barang();
+                $this->session->set_flashdata('makanandanminuman', 'Disimpan');
+                redirect('transaksi/persediaan_barang/makanandanminuman');
+            }
         } else {
-            $this->Transaksi_Model->add_persediaan_barang();
-            $this->session->set_flashdata('bahan_baku', 'Disimpan');
-            redirect('transaksi/persediaan_barang');
+            if ($this->form_validation->run() == FALSE) {
+                $this->load->view('template/header', $data);
+                $this->load->view('template/sidebar');
+                $this->load->view('transaksi/persediaan_barang/index');
+                $this->load->view('template/footer');
+            } else {
+                $this->Transaksi_Model->add_persediaan_barang();
+                $this->session->set_flashdata('bahan_baku', 'Disimpan');
+                redirect('transaksi/persediaan_barang/bahan_baku');
+            }
         }
     }
 
