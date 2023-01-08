@@ -53,6 +53,9 @@
                                         echo "<td>" . $no . "</td>";
                                         echo "<td>" . $persediaan["barang"] . "</td>";
                                         echo "<td>" . $persediaan["qty"] . " " . $persediaan["satuan"] . "</td>";
+                                        echo "<td class='bg-teal text-center'>" . date('d F Y', strtotime($persediaan["tanggal_transaksi"])) . "</td>";
+                                        echo "<td class='text-center'>" . $persediaan["ket"] . "</td>";
+                                        echo "<td>dd</td>";
                                         echo "</tr>";
                                         $no++;
                                     }
