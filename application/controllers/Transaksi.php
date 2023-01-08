@@ -19,8 +19,6 @@ class transaksi extends CI_Controller
     // <!-- PERSEDIAAN BARANG -->
     public function persediaan_barang($object)
     {
-        $data['persediaan_barang'] = $this->Transaksi_Model->all_persediaan_barang();
-        $data['daftar_barang']     = $this->Barang_Model->all_daftar_barang();
 
         if ($object == "bahan_baku") {
             $data['title']                  = "Persediaan Bahan Baku - Syahfira Bakery & Cake";
@@ -34,7 +32,7 @@ class transaksi extends CI_Controller
         } else {
             $data['title']                  = "Persediaan Makanan dan Minuman - Syahfira Bakery & Cake";
             $data['user']                   = $this->User_Model->user_by_iduser($this->session->userdata('id_user'));
-            // $data['persediaan_barang']      = $this->Transaksi_Model->all_persediaan_barang_makanandanminuman();
+            $data['persediaan_barang']      = $this->Transaksi_Model->all_persediaan_barang_makanandanminuman();
             $data['daftar_barang']          = $this->Barang_Model->all_daftar_barang_makanandanminuman();
             $this->load->view('template/header', $data);
             $this->load->view('template/sidebar');
