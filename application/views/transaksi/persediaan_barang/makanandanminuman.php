@@ -37,6 +37,7 @@
                                         <th class="text-center">Barang</th>
                                         <th class="text-center">Qty</th>
                                         <th class="text-center">Tanggal Persediaan</th>
+                                        <th class="text-center">Tanggal Expired</th>
                                         <th class="text-center">Keterangan</th>
                                         <th class="text-center">Opsi</th>
                                     </tr>
@@ -54,6 +55,7 @@
                                         echo "<td>" . $persediaan["barang"] . "</td>";
                                         echo "<td>" . $persediaan["qty"] . " " . $persediaan["satuan"] . "</td>";
                                         echo "<td class='text-center'>" . date('d F Y', strtotime($persediaan["tanggal_transaksi"])) . "</td>";
+                                        echo "<td class='text-center'>" . date('d F Y', strtotime($persediaan["tgl_expired"])) . "</td>";
                                         echo "<td class='text-center'>" . $persediaan["ket"] . "</td>";
 
                                         if ($diff->d >= 3) {
