@@ -49,6 +49,7 @@
                                     foreach ($persediaan_barang as $persediaan) {
                                         $date_now = date_create();
                                         $date     = date_create($persediaan["tanggal_transaksi"]);
+                                        $date     = date_create($persediaan["tgl_expired"]);
                                         $diff = date_diff($date, $date_now);
                                         echo "<tr>";
                                         echo "<td>" . $no . "</td>";
@@ -59,7 +60,7 @@
                                         echo "<td class='text-center'>" . date('d F Y', strtotime($persediaan["tgl_expired"])) . "</td>";
                                         echo "<td class='text-center'>" . $persediaan["ket"] . "</td>";
 
-                                        if ($diff->d >= 3) {
+                                        if ($persediaan["tgl_expired"] < date('Ymd')) {
                                             echo "<td class='text-center'><a href='" . base_url() . "transaksi/pindai_stok/barang_sisa/" . $persediaan["id_transaksi"] . "' class='btn bg-pink btn-barang-sisa'>Pindai Stok</a></td>";
                                         } else {
                                             if ($persediaan["qty"] == 0) {

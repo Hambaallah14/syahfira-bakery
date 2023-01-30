@@ -101,15 +101,27 @@
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-md-8">
-                            <div class="form-group form-float">
+                    <div class="row clearfix">
+                        <div class="col-md-6">
+                            <b>Tanggal Persediaan</b>
+                            <div class="input-group">
                                 <div class="form-line">
                                     <input type="date" class="datepicker form-control tgl-transaksi" placeholder="Pilih Tanggal" name="tgl-transaksi" required>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-6">
+                            <b>Tanggal Expired</b>
+                            <div class="input-group">
+                                <div class="form-line">
+                                    <input type="date" class="datepicker form-control tgl-expired" placeholder="Pilih Tanggal" name="tgl-expired" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3">
                             <div class="form-group form-float">
                                 <div class="form-line">
                                     <input type="number" class="form-control qty" name="qty" required>
@@ -117,10 +129,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-12">
+                        <div class="col-md-4">
                             <div class="form-group form-float">
                                 <div class="form-line">
                                     <input type="text" class="form-control ket" placeholder="Pilih Keterangan" name="ket" required>
@@ -128,7 +137,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
 
                 <div class="modal-footer">
