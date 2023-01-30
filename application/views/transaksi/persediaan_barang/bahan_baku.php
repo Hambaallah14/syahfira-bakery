@@ -54,7 +54,14 @@
 
                                         echo "<td class='text-center'>" . date('d F Y', strtotime($persediaan["tanggal_transaksi"])) . "</td>";
 
-                                        echo "<td class='text-center'>" . date('d F Y', strtotime($persediaan["tgl_expired"])) . "</td>";
+                                        if (date('Y-m-d') > $persediaan["tgl_expired"]) {
+                                            echo "<td class='text-center bg-pink'>" . date('d F Y', strtotime($persediaan["tgl_expired"])) . "</td>";
+                                        } else if (date('Y-m-d') == $persediaan["tgl_expired"]) {
+                                            echo "<td class='text-center bg-orange'>" . date('d F Y', strtotime($persediaan["tgl_expired"])) . "</td>";
+                                        } else {
+                                            echo "<td class='text-center bg-green'>" . date('d F Y', strtotime($persediaan["tgl_expired"])) . "</td>";
+                                        }
+
 
                                         echo "<td class='text-center'>" . $persediaan["ket"] . "</td>";
                                         echo "<td class='text-center'></td>";
