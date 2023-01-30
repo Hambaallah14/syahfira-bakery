@@ -32,6 +32,7 @@ class transaksi extends CI_Controller
         } else {
             $data['title']                  = "Persediaan Makanan dan Minuman - Syahfira Bakery & Cake";
             $data['user']                   = $this->User_Model->user_by_iduser($this->session->userdata('id_user'));
+            $data['daftar_user']            = $this->User_Model->all_data();
             $data['persediaan_barang']      = $this->Transaksi_Model->all_persediaan_barang_makanandanminuman();
             $data['daftar_barang']          = $this->Barang_Model->all_daftar_barang_makanandanminuman();
             $this->load->view('template/header', $data);
