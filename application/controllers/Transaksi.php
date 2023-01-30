@@ -55,6 +55,7 @@ class transaksi extends CI_Controller
         $this->form_validation->set_rules('id_barang', 'id_barang', 'required');
         $this->form_validation->set_rules('harga', 'harga', 'required');
         $this->form_validation->set_rules('tgl-transaksi', 'tgl-transaksi', 'required');
+        $this->form_validation->set_rules('tgl-expired', 'tgl-expired', 'required');
         $this->form_validation->set_rules('qty', 'qty', 'required');
         $this->form_validation->set_rules('ket', 'ket', 'required');
 

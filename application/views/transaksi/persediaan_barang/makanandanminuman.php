@@ -136,7 +136,7 @@
                         <div class="col-md-3">
                             <div class="form-group form-float">
                                 <div class="form-line">
-                                    <input type="number" class="form-control qty" name="qty" required>
+                                    <input type="number" class="form-control qty" name="qty" required min="0">
                                     <label class="form-label">Qty</label>
                                 </div>
                             </div>
