@@ -47,10 +47,6 @@
                                     <?php
                                     $no = 1;
                                     foreach ($persediaan_barang as $persediaan) {
-                                        $date_now = date_create();
-                                        $date     = date_create($persediaan["tanggal_transaksi"]);
-                                        $date     = date_create($persediaan["tgl_expired"]);
-                                        $diff = date_diff($date, $date_now);
                                         echo "<tr>";
                                         echo "<td>" . $no . "</td>";
                                         echo "<td>" . $persediaan["barang"] . "</td>";
@@ -62,6 +58,8 @@
 
                                         if (date('Y-m-d') > $persediaan["tgl_expired"]) {
                                             echo "<td class='text-center'><a href='" . base_url() . "transaksi/pindai_stok/barang_sisa/" . $persediaan["id_transaksi"] . "' class='btn bg-pink btn-barang-sisa'>Pindai Stok</a></td>";
+                                        } else if (date('Y-m-d') == $persediaan["tgl_expired"]) {
+                                            echo "<td class='text-center'><a href='" . base_url() . "transaksi/pindai_stok/barang_sisa/" . $persediaan["id_transaksi"] . "' class='btn bg-orange btn-barang-sisa'>Pindai Stok</a></td>";
                                         } else {
                                             if ($persediaan["qty"] == 0) {
                                                 echo "<td class='text-center'><a href='" . base_url() . "transaksi/delete_persediaan_barang/" . $persediaan["id_transaksi"] . "' class='btn bg-teal'><i class='material-icons'>delete</i></a></td>";

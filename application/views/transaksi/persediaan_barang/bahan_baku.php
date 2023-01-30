@@ -47,14 +47,17 @@
                                     <?php
                                     $no = 1;
                                     foreach ($persediaan_barang as $persediaan) {
-                                        $date_now = date_create();
-                                        $date     = date_create($persediaan["tanggal_transaksi"]);
-                                        $diff = date_diff($date, $date_now);
                                         echo "<tr>";
                                         echo "<td>" . $no . "</td>";
                                         echo "<td>" . $persediaan["barang"] . "</td>";
                                         echo "<td>" . $persediaan["qty"] . " " . $persediaan["satuan"] . "</td>";
 
+                                        echo "<td class='text-center'>" . date('d F Y', strtotime($persediaan["tanggal_transaksi"])) . "</td>";
+
+                                        echo "<td class='text-center'>" . date('d F Y', strtotime($persediaan["tgl_expired"])) . "</td>";
+
+                                        echo "<td class='text-center'>" . $persediaan["ket"] . "</td>";
+                                        echo "<td class='text-center'></td>";
 
                                         echo "</tr>";
                                         $no++;
@@ -79,7 +82,7 @@
                     <h4 class="modal-title" id="defaultModalLabel" style="padding-top:-5px;padding-bottom:10px;color:white;">Tambah Persediaan Barang</h4>
                 </div>
                 <div class="modal-body">
-                    <?php echo form_open("transaksi/add_persediaan_barang", array('enctype' => 'multipart/form-data', 'id' => 'form_validation')); ?>
+                    <?php echo form_open("transaksi/add_persediaan_barang/bahan_baku", array('enctype' => 'multipart/form-data', 'id' => 'form_validation')); ?>
 
                     <div class="row">
                         <div class="col-md-12">
@@ -129,7 +132,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-9">
                             <div class="form-group form-float">
                                 <div class="form-line">
                                     <input type="text" class="form-control ket" placeholder="Pilih Keterangan" name="ket" required>
