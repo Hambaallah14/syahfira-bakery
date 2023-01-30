@@ -59,7 +59,7 @@
 
                                         echo "<td class='text-center'>" . date('d F Y', strtotime($persediaan["tgl_expired"])) . "</td>";
                                         echo "<td class='text-center'>" . $persediaan["ket"] . "</td>";
-
+                                        var_dump($persediaan["tgl_expired"]);
                                         if (date('Ymd', $persediaan["tgl_expired"]) < date('Ymd')) {
                                             echo "<td class='text-center'><a href='" . base_url() . "transaksi/pindai_stok/barang_sisa/" . $persediaan["id_transaksi"] . "' class='btn bg-pink btn-barang-sisa'>Pindai Stok</a></td>";
                                         } else {
