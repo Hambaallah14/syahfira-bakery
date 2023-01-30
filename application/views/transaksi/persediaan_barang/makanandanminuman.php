@@ -46,9 +46,10 @@
                                         foreach ($daftar_user as $user) {
                                             echo "<tr>";
                                             echo "<td>" . $no . "</td>";
-                                            echo "<td>" . $persediaan["nama"] . "</td>";
-                                            echo "<td><a href='" . base_url() . "transaksi/persediaan_barang/makanandanminuman/" . $persediaan["id_user"] . "'><i class='material-icons'>visibility</i></a></td>";
+                                            echo "<td>" . $user["nama"] . "</td>";
+                                            echo "<td><a href='" . base_url() . "transaksi/persediaan_barang/makanandanminuman/" . $user["id_user"] . "'><i class='material-icons'>visibility</i></a></td>";
                                             echo "<tr>";
+                                            $no++;
                                         }
                                         ?>
                                     </tbody>
