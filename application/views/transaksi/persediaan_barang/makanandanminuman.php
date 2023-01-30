@@ -55,6 +55,7 @@
                                         echo "<td>" . $persediaan["barang"] . "</td>";
                                         echo "<td>" . $persediaan["qty"] . " " . $persediaan["satuan"] . "</td>";
                                         echo "<td class='text-center'>" . date('d F Y', strtotime($persediaan["tanggal_transaksi"])) . "</td>";
+
                                         echo "<td class='text-center'>" . date('d F Y', strtotime($persediaan["tgl_expired"])) . "</td>";
                                         echo "<td class='text-center'>" . $persediaan["ket"] . "</td>";
 
@@ -107,6 +108,31 @@
                                     </select>
 
                                     <div id="harga"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row clearfix">
+                        <div class="col-md-6">
+                            <b>Tanggal Persediaan</b>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">date_range</i>
+                                </span>
+                                <div class="form-line">
+                                    <input type="date" class="datepicker form-control tgl-transaksi" placeholder="Pilih Tanggal" name="tgl-transaksi" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <b>Tanggal Expired</b>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">date_range</i>
+                                </span>
+                                <div class="form-line">
+                                    <input type="date" class="datepicker form-control tgl-transaksi" placeholder="Pilih Tanggal" name="tgl-transaksi" required>
                                 </div>
                             </div>
                         </div>
