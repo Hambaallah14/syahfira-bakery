@@ -118,13 +118,13 @@
                     <h4 class="modal-title" id="defaultModalLabel" style="padding-top:-5px;padding-bottom:10px;color:white;">Tambah Persediaan Barang</h4>
                 </div>
                 <div class="modal-body">
-                    <?php echo form_open("transaksi/add_persediaan_barang/bahan_baku", array('enctype' => 'multipart/form-data', 'id' => 'form_validation')); ?>
+                    <?php echo form_open("transaksi/add_persediaan_barang/makanandanminuman", array('enctype' => 'multipart/form-data', 'id' => 'form_validation')); ?>
 
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group form-float">
                                 <div class="form-line">
-                                    <input type="text" name="id_user" value="<?= $user[0]["id_user"]; ?>">
+                                    <input type="text" name="id_user" value="<?= $users[0]["id_user"]; ?>">
                                     <select id="id_barang" class="form-control show-tick id_barang" name="id_barang" required>
                                         <option value="-">--Pilih Barang--</option>
                                         <?php
