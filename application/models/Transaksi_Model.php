@@ -40,11 +40,10 @@ class Transaksi_Model extends CI_Model
       "id_user"             => $this->input->post('id_user', true),
       "id_barang"           => $this->input->post('id_barang', true),
       "harga"               => $this->input->post('harga', true),
+      "qty"                 => $this->input->post('qty', true),
       "tanggal_transaksi"   => $this->input->post('tgl-transaksi', true),
       "tgl_expired"         => $this->input->post('tgl-expired', true),
-      "qty"                 => $this->input->post('qty', true),
       "ket"                 => $this->input->post('ket', true)
-
     ];
     $this->db->insert('tb_persediaan_barang', $data_persediaan);
   }
