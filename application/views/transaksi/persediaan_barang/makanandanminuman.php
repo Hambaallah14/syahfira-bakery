@@ -122,19 +122,7 @@
 
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="form-group form-float">
-                                <div class="form-line">
-                                    <select id="id_user" class="form-control show-tick id_user" name="id_user" required>
-                                        <option value="-">--Pilih Cabang--</option>
-                                        <?php
-                                        foreach ($daftar_user as $users) {
-                                            echo "<option value='" . $users["id_user"] . "'>" . $users['nama'] . "</option>";
-                                        }
-                                        ?>
-                                    </select>
-                                    <div id="harga"></div>
-                                </div>
-                            </div>
+
 
                         </div>
                     </div>
@@ -143,7 +131,7 @@
                         <div class="col-md-10">
                             <div class="form-group form-float">
                                 <div class="form-line">
-
+                                    <input type="text" name="id_user" value="<?= $users[0]["id_user"]; ?>">
                                     <select id="id_barang" class="form-control show-tick id_barang" name="id_barang" required>
                                         <option value="-">--Pilih Barang--</option>
                                         <?php
