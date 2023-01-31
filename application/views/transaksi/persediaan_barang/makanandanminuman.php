@@ -131,7 +131,7 @@
                         <div class="col-md-10">
                             <div class="form-group form-float">
                                 <div class="form-line">
-                                    <input type="hidden" name="id_user" value="<?= $user[0]["id_user"]; ?>">
+                                    <input type="text" name="id_user" value="<?= $user[0]["id_users"]; ?>">
                                     <select id="id_barang" class="form-control show-tick id_barang" name="id_barang" required>
                                         <option value="-">--Pilih Barang--</option>
                                         <?php
