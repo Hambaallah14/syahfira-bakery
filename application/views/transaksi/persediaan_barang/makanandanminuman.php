@@ -122,19 +122,7 @@
 
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="form-group form-float">
-                                <div class="form-line">
-                                    <select id="id_user" class="form-control show-tick id_user" name="id_user" required>
-                                        <option value="-">--Pilih Cabang--</option>
-                                        <?php
-                                        foreach ($daftar_user as $users) {
-                                            echo "<option value='" . $users["id_user"] . "'>" . $users['nama'] . "</option>";
-                                        }
-                                        ?>
-                                    </select>
-                                    <div id="harga"></div>
-                                </div>
-                            </div>
+                            <input type="hidden" name="id_user" value="<?= $user[0]["id_user"]; ?>">
                         </div>
                     </div>
 
