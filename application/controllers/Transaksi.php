@@ -42,6 +42,17 @@ class transaksi extends CI_Controller
         }
     }
 
+    public function persediaan_makanandanminuman($id_user)
+    {
+        $data['title']                  = "Persediaan Makanan dan Minuman - Syahfira Bakery & Cake";
+        $data['user']                   = $this->User_Model->user_by_iduser($this->session->userdata('id_user'));
+        $data['persediaan_barang']      = $this->Transaksi_Model->persediaan_makanandanminuman($id_user);
+        $this->load->view('template/header', $data);
+        $this->load->view('template/sidebar');
+        $this->load->view('transaksi/persediaan_barang/makanandanminuman_untuk_admin');
+        $this->load->view('template/footer');
+    }
+
     public function cariBarang()
     {
         $id_barang = $this->input->post('id_barang', true);
