@@ -76,7 +76,7 @@ class transaksi extends CI_Controller
             if ($this->form_validation->run() == FALSE) {
                 $this->load->view('template/header', $data);
                 $this->load->view('template/sidebar');
-                $this->load->view('transaksi/persediaan_barang/index');
+                $this->load->view('transaksi/persediaan_barang/makanandanminuman');
                 $this->load->view('template/footer');
             } else {
                 $this->Transaksi_Model->add_persediaan_barang();
@@ -87,7 +87,7 @@ class transaksi extends CI_Controller
             if ($this->form_validation->run() == FALSE) {
                 $this->load->view('template/header', $data);
                 $this->load->view('template/sidebar');
-                $this->load->view('transaksi/persediaan_barang/index');
+                $this->load->view('transaksi/persediaan_barang/bahan_baku');
                 $this->load->view('template/footer');
             } else {
                 $this->Transaksi_Model->add_persediaan_barang();
