@@ -54,8 +54,22 @@
                                         echo "<td class='text-center'>" . date('d F Y', strtotime($persediaan["tgl_expired"])) . "</td>";
                                         echo "<td class='text-center'>" . $persediaan["ket"] . "</td>";
 
+                                        // JIKA STATUS PERSANAN MASIH PROSES
                                         if ($persediaan["status_verifikasi"] == 0) {
-                                            echo "<td class='text-center'><a href='" . base_url() . "transaksi/pindai_stok/barang_sisa/" . $persediaan["id_transaksi"] . "' class='btn bg-primary btn-barang-sisa'>Belum Diverifikasi</a></td>";
+                                            echo "<td class='text-center'><a href='#' class='btn bg-primary btn-barang-sisa'>Pesanan diproses</a></td>";
+                                        }
+                                        // JIKA PESANAN DITERIMA
+                                        else if ($persediaan["status_verifikasi"] == 1) {
+                                            echo "<td class='text-center'>";
+                                            echo "<button type='button' class='btn btn-success waves-effect'>
+                                            <i class='material-icons'>query_builder</i>
+                                            <span>PESANAN DITERIMA</span>
+                                        </button>";
+                                            echo "</td>";
+                                        }
+
+                                        // JIKA PESANAN DITOLAK
+                                        else if ($persediaan["status_verifikasi"] == 2) {
                                         } else {
                                             if (date('Y-m-d') > $persediaan["tgl_expired"]) {
                                                 echo "<td class='text-center'><a href='" . base_url() . "transaksi/pindai_stok/barang_sisa/" . $persediaan["id_transaksi"] . "' class='btn bg-pink btn-barang-sisa'>Pindai Stok</a></td>";
