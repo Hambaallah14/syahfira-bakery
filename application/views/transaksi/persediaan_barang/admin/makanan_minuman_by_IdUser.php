@@ -55,7 +55,7 @@
                                         echo "<td class='text-center'>" . $persediaan["ket"] . "</td>";
 
                                         if ($persediaan["status_verifikasi"] == 0) {
-                                            echo "<td class='text-center'><a href='" . base_url() . "transaksi/pindai_stok/barang_sisa/" . $persediaan["id_transaksi"] . "' class='btn bg-pink btn-barang-sisa'>Belum Diverifikasi</a></td>";
+                                            echo "<td class='text-center'><a href='" . base_url() . "transaksi/pindai_stok/barang_sisa/" . $persediaan["id_transaksi"] . "' class='btn bg-primary btn-barang-sisa'>Belum Diverifikasi</a></td>";
                                         } else {
                                             if (date('Y-m-d') > $persediaan["tgl_expired"]) {
                                                 echo "<td class='text-center'><a href='" . base_url() . "transaksi/pindai_stok/barang_sisa/" . $persediaan["id_transaksi"] . "' class='btn bg-pink btn-barang-sisa'>Pindai Stok</a></td>";
