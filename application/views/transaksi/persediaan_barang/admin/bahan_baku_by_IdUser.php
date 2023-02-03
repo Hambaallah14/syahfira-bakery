@@ -77,7 +77,7 @@
                                         else if ($persediaan["status_verifikasi"] == 2) {
                                             echo "<td class='text-center'>";
                                             echo "<button type='button' class='btn btn-danger waves-effect' data-container='body' data-toggle='popover'
-                                            data-placement='top' title='Informasi' data-content='" . $persediaan["ket"] . "'>
+                                            data-placement='top' title='Informasi' data-content='" . $persediaan["ket_status"] . "'>
                                                 <i class='material-icons'>cancel</i>
                                                 <span>PESANAN DITOLAK</span>
                                             </button>";
