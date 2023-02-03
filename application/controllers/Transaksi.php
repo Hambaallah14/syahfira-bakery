@@ -32,7 +32,10 @@ class transaksi extends CI_Controller
                 $this->load->view('template/footer');
             } else {
                 $data['makanan_minuman']  = $this->Transaksi_Model->makanan_minuman($this->session->userdata('id_user'));
-                var_dump($data['makanan_minuman'][0]["barang"]);
+                $this->load->view('template/header', $data);
+                $this->load->view('template/sidebar');
+                $this->load->view('transaksi/persediaan_barang/user/makanan_minuman');
+                $this->load->view('template/footer');
             }
         } else if ($object == "bahan_baku") {
             $data['title']                  = "Persediaan Bahan Baku - Syahfira Bakery & Cake";
