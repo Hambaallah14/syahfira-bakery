@@ -62,6 +62,12 @@ class Transaksi_Model extends CI_Model
     $this->db->insert('tb_persediaan_barang', $data_persediaan);
   }
 
+  // UPDATE STATUS VERIFIKASI PESANAN DI AKSES USER
+  public function UpdatePersediaanBarang()
+  {
+  }
+
+
   public function delete_persediaan_barang($id_transaksi)
   {
     $this->db->where('id_transaksi', $id_transaksi);

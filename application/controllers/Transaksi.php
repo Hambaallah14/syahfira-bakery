@@ -126,6 +126,9 @@ class transaksi extends CI_Controller
     public function UpdatePersediaanBarang($object)
     {
         if ($object == "makanan_minuman") {
+            $this->Transaksi_Model->UpdatePersediaanBarang($id_transaksi);
+            $this->session->set_flashdata('makanandanminuman', 'Dihapus');
+            redirect('transaksi/persediaan_barang/makanandanminuman');
         } else {
         }
     }
