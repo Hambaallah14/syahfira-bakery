@@ -56,9 +56,19 @@
 
                                         if ($persediaan["status_verifikasi"] == 0) {
                                             echo "<td class='text-center'>";
-                                            echo "<button type='button' class='btn btn-primary waves-effect' data-toggle='modal' data-target='#defaultModal'>
+                                            echo "<button type='button' class='btn btn-primary waves-effect btnPesanan' data-toggle='modal' data-target='#defaultModal' data-id='" . $persediaan["id_transaksi"] . "'>
                                                 <i class='material-icons'>markunread</i>
                                                 <span>PESANAN</span>
+                                            </button>";
+                                            echo "</td>";
+                                        }
+                                        // JIKA PESANAN DITOLAK
+                                        else if ($persediaan["status_verifikasi"] == 2) {
+                                            echo "<td class='text-center'>";
+                                            echo "<button type='button' class='btn btn-danger waves-effect' data-container='body' data-toggle='popover'
+                                            data-placement='top' title='Informasi' data-content='" . $persediaan["ket_status"] . "'>
+                                                <i class='material-icons'>cancel</i>
+                                                <span>PESANAN DITOLAK</span>
                                             </button>";
                                             echo "</td>";
                                         } else {
@@ -97,11 +107,12 @@
                 <div class="modal-body">
                     <?php echo form_open("transaksi/UpdatePersediaanBarang/bahan_baku", array('enctype' => 'multipart/form-data', 'id' => 'form_validation')); ?>
 
+                    <input type="hidden" name="id_transaksi" id="IdTransaksi">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group form-float">
                                 <div class="form-line">
-                                    <select id="id_user" class="form-control show-tick id_user" name="id_user" required>
+                                    <select id="status" class="form-control show-tick status" name="status" required>
                                         <option value="-">--Pilih Status--</option>
                                         <option value="1">PESANAN DITERIMA</option>
                                         <option value="2">PESANAN DITOLAK</option>

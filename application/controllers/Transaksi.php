@@ -130,6 +130,9 @@ class transaksi extends CI_Controller
             $this->session->set_flashdata('makanandanminuman', 'Terkirim');
             redirect('transaksi/persediaan_barang/makanandanminuman');
         } else {
+            $this->Transaksi_Model->UpdatePersediaanBarang();
+            $this->session->set_flashdata('bahan_baku', 'Terkirim');
+            redirect('transaksi/persediaan_barang/bahan_baku');
         }
     }
 
