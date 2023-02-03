@@ -1,4 +1,10 @@
 $(document).ready(function(){
+    // MENGAMBIL DATA ID TRANSAKSI PADA PESANAN
+    $('.btnPesanan').click(function(){
+        var IdTransaksi = $(this).data("id");
+    });
+
+
     // POPOVER
     $(function () {
         //Tooltip

@@ -56,7 +56,7 @@
 
                                         if ($persediaan["status_verifikasi"] == 0) {
                                             echo "<td class='text-center'>";
-                                            echo "<button type='button' class='btn btn-primary waves-effect' data-toggle='modal' data-target='#defaultModal'>
+                                            echo "<button type='button' class='btn btn-primary waves-effect btnPesanan' data-toggle='modal' data-target='#defaultModal' data-id='" . $persediaan["id_transaksi"] . "'>
                                                 <i class='material-icons'>markunread</i>
                                                 <span>PESANAN</span>
                                             </button>";
@@ -98,6 +98,7 @@
                 <div class="modal-body">
                     <?php echo form_open("transaksi/UpdatePersediaanBarang/makanan_minuman", array('enctype' => 'multipart/form-data', 'id' => 'form_validation')); ?>
 
+                    <input type="text" name="id_transaksi" id="IdTransaksi">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group form-float">
