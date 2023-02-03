@@ -76,12 +76,14 @@
                                         // JIKA PESANAN DITOLAK
                                         else if ($persediaan["status_verifikasi"] == 2) {
                                             echo "<td class='text-center'>";
-                                            echo "<button type='button' class='btn btn-success waves-effect'>
+                                            echo "<button type='button' class='btn btn-danger waves-effect'>
                                                 <i class='material-icons'>cancel</i>
                                                 <span>PESANAN DITOLAK</span>
                                             </button>";
                                             echo "</td>";
-                                        } else {
+                                        }
+                                        // JIKA PESANAN 
+                                        else {
                                             if (date('Y-m-d') > $persediaan["tgl_expired"]) {
                                                 echo "<td class='text-center'><a href='" . base_url() . "transaksi/pindai_stok/barang_sisa/" . $persediaan["id_transaksi"] . "' class='btn bg-pink btn-barang-sisa'>Pindai Stok</a></td>";
                                             } else if (date('Y-m-d') == $persediaan["tgl_expired"]) {
