@@ -42,16 +42,16 @@ class Transaksi_Model extends CI_Model
     return $this->db->query("SELECT tb_persediaan_barang.id_transaksi, tb_persediaan_barang.id_barang, tb_persediaan_barang.qty, tb_persediaan_barang.tanggal_transaksi, tb_persediaan_barang.harga, tb_barang.barang, tb_satuan.satuan, tb_jenis.jenis FROM tb_persediaan_barang INNER JOIN tb_barang ON tb_persediaan_barang.id_barang=tb_barang.id_barang INNER JOIN tb_satuan ON tb_satuan.id_satuan=tb_barang.id_satuan INNER JOIN tb_jenis ON tb_jenis.id=tb_barang.id_jenis WHERE tb_persediaan_barang.id_transaksi='$id_transaksi' ORDER BY tb_persediaan_barang.tanggal_transaksi DESC")->result_array();
   }
 
-  public function add_persediaan_barang()
+  public function InsertPersediaanBarang()
   {
     $data_persediaan = [
-      "id_user"             => $this->input->post('id_user', true),
       "id_barang"           => $this->input->post('id_barang', true),
       "harga"               => $this->input->post('harga', true),
       "qty"                 => $this->input->post('qty', true),
       "tanggal_transaksi"   => $this->input->post('tgl-transaksi', true),
       "tgl_expired"         => $this->input->post('tgl-expired', true),
-      "ket"                 => $this->input->post('ket', true)
+      "ket"                 => $this->input->post('ket', true),
+      "id_user"             => $this->input->post('id_user', true)
     ];
     $this->db->insert('tb_persediaan_barang', $data_persediaan);
   }

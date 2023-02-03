@@ -87,6 +87,41 @@ class transaksi extends CI_Controller
         $this->load->view('transaksi/persediaan_barang/admin/MenampilkanHargaBarang', $data);
     }
 
+    public function InsertPersediaanBarang($object)
+    {
+
+        $this->form_validation->set_rules('id_barang', 'id_barang', 'required');
+        $this->form_validation->set_rules('harga', 'harga', 'required');
+        $this->form_validation->set_rules('qty', 'qty', 'required');
+        $this->form_validation->set_rules('tgl-transaksi', 'tgl-transaksi', 'required');
+        $this->form_validation->set_rules('tgl-expired', 'tgl-expired', 'required');
+        $this->form_validation->set_rules('ket', 'ket', 'required');
+        $this->form_validation->set_rules('id_user', 'id_user', 'required');
+        if ($object == "makanan_minuman") {
+            if ($this->form_validation->run() == FALSE) {
+                $this->load->view('template/header', $data);
+                $this->load->view('template/sidebar');
+                $this->load->view('transaksi/persediaan_barang/admin/makanan_minuman');
+                $this->load->view('template/footer');
+            } else {
+                $this->Transaksi_Model->InsertPersediaanBarang();
+                $this->session->set_flashdata('makanan_minuman', 'Disimpan');
+                redirect('transaksi/persediaan_barang/admin/makanan_minuman');
+            }
+        } else {
+            if ($this->form_validation->run() == FALSE) {
+                $this->load->view('template/header', $data);
+                $this->load->view('template/sidebar');
+                $this->load->view('transaksi/persediaan_barang/admin/bahan_baku');
+                $this->load->view('template/footer');
+            } else {
+                $this->Transaksi_Model->InsertPersediaanBarang();
+                $this->session->set_flashdata('bahan_baku', 'Disimpan');
+                redirect('transaksi/persediaan_barang/admin/bahan_baku');
+            }
+        }
+    }
+
 
 
 

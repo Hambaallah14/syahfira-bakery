@@ -1,4 +1,4 @@
-<div class="flash-data" data-target="Persediaan Barang" data-flashdata="<?= $this->session->flashdata('makanandanminuman'); ?>"></div>
+<div class="flash-data" data-target="Persediaan Barang" data-flashdata="<?= $this->session->flashdata('makanan_minuman'); ?>"></div>
 <section class="content">
     <div class="container-fluid">
 
@@ -70,7 +70,7 @@
                     <h4 class="modal-title" id="defaultModalLabel" style="padding-top:-5px;padding-bottom:10px;color:white;">Tambah Makanan dan Minuman</h4>
                 </div>
                 <div class="modal-body">
-                    <?php echo form_open("transaksi/add_persediaan_barang/makanandanminuman", array('enctype' => 'multipart/form-data', 'id' => 'form_validation')); ?>
+                    <?php echo form_open("transaksi/InsertPersediaanBarang/makanan_minuman", array('enctype' => 'multipart/form-data', 'id' => 'form_validation')); ?>
 
                     <div class="row">
                         <div class="col-md-12">
