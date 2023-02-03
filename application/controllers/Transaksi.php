@@ -48,6 +48,19 @@ class transaksi extends CI_Controller
         }
     }
 
+    // UNTUK ADMIN
+    public function persediaan($object, $id_user)
+    {
+        if ($object == "makanandanminuman") {
+            $data['title']                  = "Persediaan Makanan dan Minuman - Syahfira Bakery & Cake";
+            $data['persediaan_barang']      = $this->Transaksi_Model->makanan_minuman($id_user);
+        } else {
+            $data['title']                  = "Persediaan Bahan Baku - Syahfira Bakery & Cake";
+            $data['persediaan_barang']      = $this->Transaksi_Model->bahan_baku($id_user);
+        }
+    }
+
+
 
 
 

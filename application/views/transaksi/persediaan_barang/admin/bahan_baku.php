@@ -46,8 +46,8 @@
                                         echo "<tr>";
                                         echo "<td>" . $no . "</td>";
                                         echo "<td>" . $user["nama"] . "</td>";
-                                        echo "<td><a href='" . base_url() . "transaksi/persediaan_makanandanminuman/" . $user["id_user"] . "'><i class='material-icons'>visibility</i></a></td>";
-                                        echo "<tr>";
+                                        echo "<td><a href='" . base_url() . "transaksi/persediaan/bahan_baku/" . $user["id_user"] . "'><i class='material-icons'>visibility</i></a></td>";
+                                        echo "</tr>";
                                         $no++;
                                     }
                                     ?>
