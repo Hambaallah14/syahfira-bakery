@@ -4,7 +4,7 @@ $(document).ready(function(){
         const id_barang = $('#id_barang').val();
         $.ajax({
             type    : 'POST',
-            url     : 'https://syahfirabakery.co.id/transaksi/cariBarang',
+            url     : 'https://syahfirabakery.co.id/transaksi/MenampilkanHargaBarang',
             data    : 'id_barang=' + id_barang,
             success : function(response){
             $('#harga').html(response);

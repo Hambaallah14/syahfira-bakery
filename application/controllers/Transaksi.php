@@ -80,7 +80,12 @@ class transaksi extends CI_Controller
         }
     }
 
-
+    public function MenampilkanHargaBarang()
+    {
+        $id_barang = $this->input->post('id_barang', true);
+        $data['harga'] = $this->Transaksi_Model->MenampilkanHargaBarang($id_barang);
+        $this->load->view('transaksi/persediaan_barang/admin/MenampilkanHargaBarang', $data);
+    }
 
 
 

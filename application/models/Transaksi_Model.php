@@ -7,7 +7,7 @@ class Transaksi_Model extends CI_Model
   }
 
   // PERSEDIAAN BARANG
-  public function cariBarang($id_barang)
+  public function MenampilkanHargaBarang($id_barang)
   {
     return $this->db->query("SELECT * FROM tb_barang WHERE id_barang='$id_barang'")->result_array();
   }

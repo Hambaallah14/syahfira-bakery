@@ -283,25 +283,6 @@ $(".button-cetak-penjualan-barang").on("click",  function(e){
 });
 
 
-
-$('.rekap_permintaan_atk').change(function(){
-	var option = $(this).val();
-	if(option == "Bidang"){
-		$('.pil-bidang').show();
-		$('.pil-orang').hide();
-		$('#form_validation').attr('action', 'https://syahfirabakery.co.id/rekap/rekap_permintaan_atk');
-	}
-	else if (option == "Orang"){
-		$('.pil-bidang').hide();
-		$('.pil-orang').show();
-		$('#form_validation').attr('action', 'https://syahfirabakery.co.id/rekap/rekap_permintaan_atk');
-	}
-	else{
-		$('.pil-bidang').hide();
-		$('.pil-orang').hide();
-	}
-});
-
 $('.rekap').change(function(){
 	var option = $(this).val();
 	if(option == "Bulan"){
