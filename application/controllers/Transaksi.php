@@ -106,7 +106,7 @@ class transaksi extends CI_Controller
             } else {
                 $this->Transaksi_Model->InsertPersediaanBarang();
                 $this->session->set_flashdata('makanan_minuman', 'Disimpan');
-                redirect('transaksi/persediaan_barang/admin/makanan_minuman');
+                redirect('transaksi/persediaan_barang/makanandanminuman');
             }
         } else {
             if ($this->form_validation->run() == FALSE) {
@@ -117,7 +117,7 @@ class transaksi extends CI_Controller
             } else {
                 $this->Transaksi_Model->InsertPersediaanBarang();
                 $this->session->set_flashdata('bahan_baku', 'Disimpan');
-                redirect('transaksi/persediaan_barang/admin/bahan_baku');
+                redirect('transaksi/persediaan_barang/bahan_baku');
             }
         }
     }
