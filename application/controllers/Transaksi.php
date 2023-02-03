@@ -50,6 +50,10 @@ class transaksi extends CI_Controller
                 $this->load->view('template/footer');
             } else {
                 $data['bahan_baku']      = $this->Transaksi_Model->bahan_baku($this->session->userdata('id_user'));
+                $this->load->view('template/header', $data);
+                $this->load->view('template/sidebar');
+                $this->load->view('transaksi/persediaan_barang/user/bahan_baku');
+                $this->load->view('template/footer');
             }
         }
     }
