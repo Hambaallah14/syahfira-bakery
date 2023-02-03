@@ -98,12 +98,12 @@
                 <div class="modal-body">
                     <?php echo form_open("transaksi/UpdatePersediaanBarang/makanan_minuman", array('enctype' => 'multipart/form-data', 'id' => 'form_validation')); ?>
 
-                    <input type="text" name="id_transaksi" id="IdTransaksi">
+                    <input type="hidden" name="id_transaksi" id="IdTransaksi">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group form-float">
                                 <div class="form-line">
-                                    <select id="id_user" class="form-control show-tick id_user" name="id_user" required>
+                                    <select id="status" class="form-control show-tick status" name="status" required>
                                         <option value="-">--Pilih Status--</option>
                                         <option value="1">PESANAN DITERIMA</option>
                                         <option value="2">PESANAN DITOLAK</option>
