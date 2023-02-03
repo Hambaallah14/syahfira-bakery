@@ -56,7 +56,7 @@
 
                                         if ($persediaan["status_verifikasi"] == 0) {
                                             echo "<td class='text-center'>";
-                                            echo "<button type='button' class='btn btn-primary waves-effect'>
+                                            echo "<button type='button' class='btn btn-primary waves-effect' data-toggle='modal' data-target='#defaultModal'>
                                                 <i class='material-icons'>markunread</i>
                                                 <span>PESANAN</span>
                                             </button>";
