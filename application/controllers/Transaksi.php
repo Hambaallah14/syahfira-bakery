@@ -31,6 +31,8 @@ class transaksi extends CI_Controller
                 $this->load->view('transaksi/persediaan_barang/admin/makanan_minuman');
                 $this->load->view('template/footer');
             } else {
+                $data['makanan_minuman']  = $this->Transaksi_Model->bahan_baku($data["user"][0]["id_user"]);
+                var_dump($data['makanan_minuman'][0]["barang"]);
             }
         } else if ($object == "bahan_baku") {
             $data['title']                  = "Persediaan Bahan Baku - Syahfira Bakery & Cake";
@@ -44,6 +46,7 @@ class transaksi extends CI_Controller
                 $this->load->view('transaksi/persediaan_barang/admin/bahan_baku');
                 $this->load->view('template/footer');
             } else {
+                $data['bahan_baku']      = $this->Transaksi_Model->bahan_baku($data["user"][0]["id_user"]);
             }
         }
     }
