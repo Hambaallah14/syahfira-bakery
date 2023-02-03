@@ -122,6 +122,13 @@ class transaksi extends CI_Controller
         }
     }
 
+    // UPDATE STATUS VERIFIKASI PESANAN DI AKSES USER
+    public function UpdatePersediaanBarang($object)
+    {
+        if ($object == "makanan_minuman") {
+        } else {
+        }
+    }
 
 
 
