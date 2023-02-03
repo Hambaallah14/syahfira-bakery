@@ -1,4 +1,17 @@
 $(document).ready(function(){
+    // POPOVER
+    $(function () {
+        //Tooltip
+        $('[data-toggle="tooltip"]').tooltip({
+            container: 'body'
+        });
+    
+        //Popover
+        $('[data-toggle="popover"]').popover();
+    })
+
+
+    
     // SELECT HARGA BARANG
     $('#id_barang').change(function(){
         const id_barang = $('#id_barang').val();
