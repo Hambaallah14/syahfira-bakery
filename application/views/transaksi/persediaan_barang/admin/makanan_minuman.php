@@ -67,7 +67,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header bg-teal">
-                    <h4 class="modal-title" id="defaultModalLabel" style="padding-top:-5px;padding-bottom:10px;color:white;">Tambah Persediaan Barang</h4>
+                    <h4 class="modal-title" id="defaultModalLabel" style="padding-top:-5px;padding-bottom:10px;color:white;">Tambah Makanan dan Minuman</h4>
                 </div>
                 <div class="modal-body">
                     <?php echo form_open("transaksi/add_persediaan_barang/makanandanminuman", array('enctype' => 'multipart/form-data', 'id' => 'form_validation')); ?>
@@ -110,7 +110,7 @@
                         <div class="col-md-2">
                             <div class="form-group form-float">
                                 <div class="form-line">
-                                    <input type="number" class="form-control qty" name="qty" required>
+                                    <input type="number" class="form-control qty" name="qty" min="0" required>
                                     <label class="form-label">Qty</label>
                                 </div>
                             </div>
