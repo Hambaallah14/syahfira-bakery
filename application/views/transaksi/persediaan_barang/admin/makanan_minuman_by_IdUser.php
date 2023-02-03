@@ -82,7 +82,7 @@
                                             </button>";
                                             echo "</td>";
                                         }
-                                        // JIKA PESANAN 
+                                        // JIKA PESANAN PUNYA ADMIN 
                                         else {
                                             if (date('Y-m-d') > $persediaan["tgl_expired"]) {
                                                 echo "<td class='text-center'><a href='" . base_url() . "transaksi/pindai_stok/barang_sisa/" . $persediaan["id_transaksi"] . "' class='btn bg-pink btn-barang-sisa'>Pindai Stok</a></td>";

@@ -44,6 +44,11 @@ class Transaksi_Model extends CI_Model
 
   public function InsertPersediaanBarang()
   {
+    if ($this->input->post('id_user', true) == "syahfira") {
+      $status = 4;
+    } else {
+      $status = 0;
+    }
     $data_persediaan = [
       "id_barang"           => $this->input->post('id_barang', true),
       "harga"               => $this->input->post('harga', true),
@@ -52,7 +57,7 @@ class Transaksi_Model extends CI_Model
       "tgl_expired"         => $this->input->post('tgl-expired', true),
       "ket"                 => $this->input->post('ket', true),
       "id_user"             => $this->input->post('id_user', true),
-      "status_verifikasi"   => 0
+      "status_verifikasi"   => $status
     ];
     $this->db->insert('tb_persediaan_barang', $data_persediaan);
   }
