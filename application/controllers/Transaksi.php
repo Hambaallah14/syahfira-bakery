@@ -25,7 +25,7 @@ class transaksi extends CI_Controller
             if ($data["user"][0]["h_akses"] == "admin") {
                 $data['daftar_user']        = $this->User_Model->all_data();
                 $data['persediaan_barang']  = $this->Transaksi_Model->all_persediaan_barang_bahan_baku();
-                $data['daftar_barang']      = $this->Barang_Model->all_daftar_barang_bahan_baku();
+                $data['daftar_barang']      = $this->Barang_Model->all_daftar_barang_makanandanminuman();
                 $this->load->view('template/header', $data);
                 $this->load->view('template/sidebar');
                 $this->load->view('transaksi/persediaan_barang/admin/makanan_minuman');
@@ -38,7 +38,7 @@ class transaksi extends CI_Controller
             if ($data["user"][0]["h_akses"] == "admin") {
                 $data['daftar_user']       = $this->User_Model->all_data();
                 $data['persediaan_barang'] = $this->Transaksi_Model->all_persediaan_barang_makanandanminuman();
-                $data['daftar_barang']     = $this->Barang_Model->all_daftar_barang_makanandanminuman();
+                $data['daftar_barang']     = $this->Barang_Model->all_daftar_barang_bahan_baku();
                 $this->load->view('template/header', $data);
                 $this->load->view('template/sidebar');
                 $this->load->view('transaksi/persediaan_barang/admin/bahan_baku');
