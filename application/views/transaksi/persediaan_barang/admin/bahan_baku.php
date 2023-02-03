@@ -76,6 +76,23 @@
                         <div class="col-md-12">
                             <div class="form-group form-float">
                                 <div class="form-line">
+                                    <select id="id_user" class="form-control show-tick id_user" name="id_user" required>
+                                        <option value="-">--Pilih Cabang--</option>
+                                        <?php
+                                        foreach ($daftar_user as $user) {
+                                            echo "<option value='" . $user["id_user"] . "'>" . $user['nama'] . "</option>";
+                                        }
+                                        ?>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-10">
+                            <div class="form-group form-float">
+                                <div class="form-line">
                                     <input type="text" name="id_user" value="<?= $users[0]["id_user"]; ?>">
                                     <select id="id_barang" class="form-control show-tick id_barang" name="id_barang" required>
                                         <option value="-">--Pilih Barang--</option>
@@ -87,6 +104,14 @@
                                     </select>
 
                                     <div id="harga"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <input type="number" class="form-control qty" name="qty" required>
+                                    <label class="form-label">Qty</label>
                                 </div>
                             </div>
                         </div>
@@ -112,15 +137,7 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-md-3">
-                            <div class="form-group form-float">
-                                <div class="form-line">
-                                    <input type="number" class="form-control qty" name="qty" required>
-                                    <label class="form-label">Qty</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-9">
+                        <div class="col-md-12">
                             <div class="form-group form-float">
                                 <div class="form-line">
                                     <input type="text" class="form-control ket" placeholder="Pilih Keterangan" name="ket" required>
