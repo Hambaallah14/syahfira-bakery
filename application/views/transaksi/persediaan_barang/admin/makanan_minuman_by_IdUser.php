@@ -10,7 +10,6 @@
 
                 <div class="card">
                     <div class="header">
-                        <button type="button" class="btn bg-teal waves-effect" data-toggle="modal" data-target="#defaultModal">Tambah Persediaan Barang</button>
 
                         <ul class="header-dropdown m-r--5">
                             <li class="dropdown">
