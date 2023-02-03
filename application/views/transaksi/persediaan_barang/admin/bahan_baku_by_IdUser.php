@@ -1,9 +1,8 @@
-<div class="flash-data" data-target="Persediaan Barang" data-flashdata="<?= $this->session->flashdata('makanandanminuman'); ?>"></div>
 <section class="content">
     <div class="container-fluid">
 
         <div class="block-header">
-            <h2>Makanan dan Minuman</h2>
+            <h2>Bahan Baku</h2>
         </div>
 
         <div class="row clearfix">
@@ -46,7 +45,7 @@
                                 <tbody>
                                     <?php
                                     $no = 1;
-                                    foreach ($persediaan_barang as $persediaan) {
+                                    foreach ($bahan_baku as $persediaan) {
                                         echo "<tr>";
                                         echo "<td>" . $no . "</td>";
                                         echo "<td>" . $persediaan["barang"] . "</td>";
@@ -75,85 +74,6 @@
                             </table>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
-    <!-- Modal -->
-    <div class="modal fade" id="defaultModal" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header bg-teal">
-                    <h4 class="modal-title" id="defaultModalLabel" style="padding-top:-5px;padding-bottom:10px;color:white;">Tambah Persediaan Barang</h4>
-                </div>
-                <div class="modal-body">
-                    <?php echo form_open("transaksi/add_persediaan_barang/makanandanminuman", array('enctype' => 'multipart/form-data', 'id' => 'form_validation')); ?>
-
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group form-float">
-                                <div class="form-line">
-                                    <input type="hidden" name="id_user" value="<?= $user[0]["id_user"]; ?>">
-                                    <select id="id_barang" class="form-control show-tick id_barang" name="id_barang" required>
-                                        <option value="-">--Pilih Barang--</option>
-                                        <?php
-                                        foreach ($daftar_barang as $brg) {
-                                            echo "<option value='" . $brg["id_barang"] . "'>" . $brg['barang'] . "</option>";
-                                        }
-                                        ?>
-                                    </select>
-
-                                    <div id="harga"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row clearfix">
-                        <div class="col-md-6">
-                            <b>Tanggal Persediaan</b>
-                            <div class="input-group">
-                                <div class="form-line">
-                                    <input type="date" class="datepicker form-control tgl-transaksi" placeholder="Pilih Tanggal" name="tgl-transaksi" required>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <b>Tanggal Expired</b>
-                            <div class="input-group">
-                                <div class="form-line">
-                                    <input type="date" class="datepicker form-control tgl-expired" placeholder="Pilih Tanggal" name="tgl-expired" required>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-3">
-                            <div class="form-group form-float">
-                                <div class="form-line">
-                                    <input type="number" class="form-control qty" name="qty" required min="0">
-                                    <label class="form-label">Qty</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-9">
-                            <div class="form-group form-float">
-                                <div class="form-line">
-                                    <input type="text" class="form-control ket" placeholder="Pilih Keterangan" name="ket" required>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-link waves-effect btn-simpan">Simpan data</button>
-                    <?php echo form_close(); ?>
-                    <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">Tutup</button>
                 </div>
             </div>
         </div>

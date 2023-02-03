@@ -52,11 +52,21 @@ class transaksi extends CI_Controller
     public function persediaan($object, $id_user)
     {
         if ($object == "makanandanminuman") {
-            $data['title']                  = "Persediaan Makanan dan Minuman - Syahfira Bakery & Cake";
-            $data['persediaan_barang']      = $this->Transaksi_Model->makanan_minuman($id_user);
+            $data['title']            = "Persediaan Makanan dan Minuman - Syahfira Bakery & Cake";
+            $data['user']             = $this->User_Model->user_by_iduser($this->session->userdata('id_user'));
+            $data['makanan_minuman']  = $this->Transaksi_Model->makanan_minuman($id_user);
+            $this->load->view('template/header', $data);
+            $this->load->view('template/sidebar');
+            $this->load->view('transaksi/persediaan_barang/admin/makanan_minuman_by_IdUser');
+            $this->load->view('template/footer');
         } else {
-            $data['title']                  = "Persediaan Bahan Baku - Syahfira Bakery & Cake";
-            $data['persediaan_barang']      = $this->Transaksi_Model->bahan_baku($id_user);
+            $data['title']           = "Persediaan Bahan Baku - Syahfira Bakery & Cake";
+            $data['user']            = $this->User_Model->user_by_iduser($this->session->userdata('id_user'));
+            $data['bahan_baku']      = $this->Transaksi_Model->bahan_baku($id_user);
+            $this->load->view('template/header', $data);
+            $this->load->view('template/sidebar');
+            $this->load->view('transaksi/persediaan_barang/admin/bahan_baku_by_IdUser');
+            $this->load->view('template/footer');
         }
     }
 
