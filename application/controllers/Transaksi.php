@@ -22,10 +22,29 @@ class transaksi extends CI_Controller
         if ($object == "makanandanminuman") {
             $data['title']           = "Persediaan Makanan dan Minuman - Syahfira Bakery & Cake";
             $data['user']            = $this->User_Model->user_by_iduser($this->session->userdata('id_user'));
-            var_dump($data["user"][0]["h_akses"]);
+            if ($data["user"][0]["h_akses"] == "admin") {
+                $data['daftar_user']        = $this->User_Model->all_data();
+                $data['persediaan_barang']  = $this->Transaksi_Model->all_persediaan_barang_bahan_baku();
+                $data['daftar_barang']      = $this->Barang_Model->all_daftar_barang_bahan_baku();
+                $this->load->view('template/header', $data);
+                $this->load->view('template/sidebar');
+                $this->load->view('transaksi/persediaan_barang/admin/makanan_minuman');
+                $this->load->view('template/footer');
+            } else {
+            }
         } else if ($object == "bahan_baku") {
             $data['title']                  = "Persediaan Bahan Baku - Syahfira Bakery & Cake";
             $data['user']            = $this->User_Model->user_by_iduser($this->session->userdata('id_user'));
+            if ($data["user"][0]["h_akses"] == "admin") {
+                $data['daftar_user']       = $this->User_Model->all_data();
+                $data['persediaan_barang'] = $this->Transaksi_Model->all_persediaan_barang_makanandanminuman();
+                $data['daftar_barang']     = $this->Barang_Model->all_daftar_barang_makanandanminuman();
+                $this->load->view('template/header', $data);
+                $this->load->view('template/sidebar');
+                $this->load->view('transaksi/persediaan_barang/admin/bahan_baku');
+                $this->load->view('template/footer');
+            } else {
+            }
         }
     }
 
