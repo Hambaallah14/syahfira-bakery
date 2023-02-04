@@ -138,7 +138,34 @@ class transaksi extends CI_Controller
 
 
 
+    // PINDAI STOK JIKA TANGGAL EXPIRED MASIH ADA
+    public function pindai_stok($statusBarang, $idTransaksi)
+    {
+        if ($statusBarang == "barang_sisa") {
+            $data['title']        = "Input Barang Sisa - Syahfira Bakery & Cake";
+            $data['user']         = $this->User_Model->user_by_iduser($this->session->userdata('id_user'));
+            $data['BarangSisa']   = $this->Transaksi_Model->all_persediaan_barang_by_idTransaksi($idTransaksi);
 
+            $this->load->view('template/header', $data);
+            $this->load->view('template/sidebar');
+            $this->load->view('transaksi/persediaan_barang/pindaiStokkeBarangSisa');
+            $this->load->view('template/footer');
+        } else {
+            $data['title']        = "Input Status Barang - Syahfira Bakery & Cake";
+            $data['user']         = $this->User_Model->user_by_iduser($this->session->userdata('id_user'));
+            $data['stokBarang']   = $this->Transaksi_Model->all_persediaan_barang_by_idTransaksi($idTransaksi);
 
-    // BAHAN BAKU
+            $this->load->view('template/header', $data);
+            $this->load->view('template/sidebar');
+            $this->load->view('transaksi/persediaan_barang/pindaiStokBarang');
+            $this->load->view('template/footer');
+        }
+    }
+
+    public function InsertBarangSisa()
+    {
+    }
+    public function InsertBarang()
+    {
+    }
 }

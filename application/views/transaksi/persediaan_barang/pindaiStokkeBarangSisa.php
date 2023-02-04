@@ -26,43 +26,43 @@
                     </div>
 
                     <div class="body">
-                        <?php echo form_open("transaksi/add_barang_sisa", array('enctype' => 'multipart/form-data', 'id' => 'form_validation')); ?>
+                        <?php echo form_open("transaksi/InsertBarangSisa", array('enctype' => 'multipart/form-data', 'id' => 'form_validation')); ?>
                         <input type="hidden" name="id_user" value="<?= $user[0]["id_user"]; ?>">
-                        <input type="hidden" name="id-transaksi" value="<?= $persediaan_barang[0]["id_transaksi"]; ?>">
-                        <input type="hidden" name="tanggal_transaksi" value="<?= $persediaan_barang[0]["tanggal_transaksi"]; ?>">
+                        <input type="hidden" name="id-transaksi" value="<?= $BarangSisa[0]["id_transaksi"]; ?>">
+                        <input type="hidden" name="tanggal_transaksi" value="<?= $BarangSisa[0]["tanggal_transaksi"]; ?>">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        <input type="text" class="form-control" name="id-barang" readonly value="<?= $persediaan_barang[0]["id_barang"]; ?>">
+                                        <input type="text" class="form-control" name="id-barang" readonly value="<?= $BarangSisa[0]["id_barang"]; ?>">
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        <input type="text" class="form-control" name="barang" readonly value="<?= $persediaan_barang[0]["barang"]; ?>">
+                                        <input type="text" class="form-control" name="barang" readonly value="<?= $BarangSisa[0]["barang"]; ?>">
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        <input type="number" class="form-control" name="harga" readonly value="<?= $persediaan_barang[0]["harga"]; ?>">
+                                        <input type="number" class="form-control" name="harga" readonly value="<?= $BarangSisa[0]["harga"]; ?>">
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        <input type="number" class="form-control" name="qty" readonly value="<?= $persediaan_barang[0]["qty"]; ?>">
+                                        <input type="number" class="form-control" name="qty" readonly value="<?= $BarangSisa[0]["qty"]; ?>">
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        <input type="text" class="form-control" name="satuan" readonly value="<?= $persediaan_barang[0]["satuan"]; ?>">
+                                        <input type="text" class="form-control" name="satuan" readonly value="<?= $BarangSisa[0]["satuan"]; ?>">
                                     </div>
                                 </div>
                             </div>

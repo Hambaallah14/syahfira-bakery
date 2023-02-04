@@ -26,9 +26,9 @@
                     </div>
 
                     <div class="body">
-                        <?php echo form_open("transaksi/add_status_barang", array('enctype' => 'multipart/form-data', 'id' => 'form_validation')); ?>
+                        <?php echo form_open("transaksi/InsertBarang", array('enctype' => 'multipart/form-data', 'id' => 'form_validation')); ?>
                         <input type="hidden" name="id_user" value="<?= $user[0]["id_user"]; ?>">
-                        <input type="hidden" name="id-transaksi" value="<?= $persediaan_barang[0]["id_transaksi"]; ?>">
+                        <input type="hidden" name="id-transaksi" value="<?= $stokBarang[0]["id_transaksi"]; ?>">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group form-float">
@@ -43,35 +43,35 @@
 
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        <input type="text" class="form-control" name="id-barang" readonly value="<?= $persediaan_barang[0]["id_barang"]; ?>">
+                                        <input type="text" class="form-control" name="id-barang" readonly value="<?= $stokBarang[0]["id_barang"]; ?>">
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        <input type="text" class="form-control" name="barang" readonly value="<?= $persediaan_barang[0]["barang"]; ?>">
+                                        <input type="text" class="form-control" name="barang" readonly value="<?= $stokBarang[0]["barang"]; ?>">
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        <input type="number" class="form-control" name="harga" readonly value="<?= $persediaan_barang[0]["harga"]; ?>">
+                                        <input type="number" class="form-control" name="harga" readonly value="<?= $stokBarang[0]["harga"]; ?>">
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        <input type="text" class="form-control" name="qty" readonly value="<?= $persediaan_barang[0]["qty"] . " " . $persediaan_barang[0]["satuan"]; ?>">
+                                        <input type="text" class="form-control" name="qty" readonly value="<?= $stokBarang[0]["qty"] . " " . $stokBarang[0]["satuan"]; ?>">
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        <input type="number" class="form-control" name="new-qty" required min="0" max="<?= $persediaan_barang[0]["qty"]; ?>" value="0">
+                                        <input type="number" class="form-control" name="new-qty" required min="0" max="<?= $stokBarang[0]["qty"]; ?>" value="0">
                                     </div>
                                 </div>
                             </div>
