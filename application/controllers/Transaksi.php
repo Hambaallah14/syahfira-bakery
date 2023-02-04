@@ -136,6 +136,17 @@ class transaksi extends CI_Controller
         }
     }
 
+    // HAPUS PERSEDIAAN BARANG
+    public function delete_persediaan_barang($object, $id_transaksi, $id_user)
+    {
+        if ($object == "makanan_minuman") {
+            $this->Transaksi_Model->delete_persediaan_barang($id_transaksi);
+            $this->session->set_flashdata('makanandanminuman', 'Dihapus');
+            redirect('transaksi/persediaan/makanandanminuman/' . $id_user);
+        } else {
+        }
+    }
+
 
 
     // PINDAI STOK JIKA TANGGAL EXPIRED MASIH ADA
@@ -203,6 +214,7 @@ class transaksi extends CI_Controller
             redirect('transaksi/persediaan/makanandanminuman/' . $this->input->post('id_user', true));
         }
     }
+
 
 
     // <!-- BARANG KELUAR -->

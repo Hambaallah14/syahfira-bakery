@@ -89,7 +89,7 @@
                                                 echo "<td class='text-center'><a href='" . base_url() . "transaksi/pindai_stok/status_barang/" . $persediaan["id_transaksi"] . "' class='btn bg-orange btn-barang-sisa'>Pindai Stok</a></td>";
                                             } else {
                                                 if ($persediaan["qty"] == 0) {
-                                                    echo "<td class='text-center'><a href='" . base_url() . "transaksi/delete_persediaan_barang/" . $persediaan["id_transaksi"] . "' class='btn bg-teal'><i class='material-icons'>delete</i></a></td>";
+                                                    echo "<td class='text-center'><a href='" . base_url() . "transaksi/delete_persediaan_barang/makanan_minuman/" . $persediaan["id_transaksi"] . "/" . $persediaan["id_user"] . "' class='btn bg-teal'><i class='material-icons'>delete</i></a></td>";
                                                 } else {
                                                     echo "<td class='text-center'><a href='" . base_url() . "transaksi/pindai_stok/status_barang/" . $persediaan["id_transaksi"] . "' class='btn bg-teal btn-status-barang'>Pindai Stok</a></td>";
                                                 }
