@@ -164,6 +164,24 @@ class transaksi extends CI_Controller
 
     public function InsertBarangSisa()
     {
+        $data['title']                 = "Persediaan Barang - Syahfira Bakery & Cake";
+        $this->form_validation->set_rules('tanggal_transaksi', 'tanggal_transaksi', 'required');
+        $this->form_validation->set_rules('id-transaksi', 'id-transaksi', 'required');
+        $this->form_validation->set_rules('id-barang', 'id-barang', 'required');
+        $this->form_validation->set_rules('harga', 'harga', 'required');
+        $this->form_validation->set_rules('qty', 'qty', 'required');
+        $this->form_validation->set_rules('id_user', 'id_user', 'required');
+
+        if ($this->form_validation->run() == FALSE) {
+            $this->load->view('template/header', $data);
+            $this->load->view('template/sidebar');
+            $this->load->view('transaksi/persediaan/makanandanminuman/' . $this->input->post('id_user', true));
+            $this->load->view('template/footer');
+        } else {
+            $this->Transaksi_Model->InsertBarangSisa();
+            $this->session->set_flashdata('pindaistokbrgsisa', 'Disimpan');
+            redirect('transaksi/persediaan/makanandanminuman/' . $this->input->post('id_user', true));
+        }
     }
     public function InsertBarang()
     {
@@ -177,12 +195,12 @@ class transaksi extends CI_Controller
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('template/header', $data);
             $this->load->view('template/sidebar');
-            $this->load->view('transaksi/persediaan/makanandanminuman/"' . $this->input->post('id_user', true) . '"');
+            $this->load->view('transaksi/persediaan/makanandanminuman/' . $this->input->post('id_user', true));
             $this->load->view('template/footer');
         } else {
             $this->Transaksi_Model->InsertBarang();
             $this->session->set_flashdata('pindaistokbrg', 'Disimpan');
-            redirect('transaksi/persediaan/makanandanminuman/"' . $this->input->post('id_user', true) . '"');
+            redirect('transaksi/persediaan/makanandanminuman/' . $this->input->post('id_user', true));
         }
     }
 }

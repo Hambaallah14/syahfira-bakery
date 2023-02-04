@@ -140,7 +140,7 @@ class Transaksi_Model extends CI_Model
     return $this->db->query("SELECT tb_barang_sisa.id_transaksi, tb_barang_sisa.id_barang, tb_barang_sisa.qty, tb_barang_sisa.harga, tb_barang_sisa.tanggal_transaksi, tb_barang_sisa.tanggal, tb_barang.barang, tb_satuan.satuan FROM tb_barang_sisa INNER JOIN tb_barang ON tb_barang_sisa.id_barang=tb_barang.id_barang INNER JOIN tb_satuan ON tb_satuan.id_satuan=tb_barang.id_satuan")->result_array();
   }
 
-  public function add_barang_sisa()
+  public function InsertBarangSisa()
   {
     // Menambahkan barang ke Barang Sisa
     $data_barang_sisa = [
