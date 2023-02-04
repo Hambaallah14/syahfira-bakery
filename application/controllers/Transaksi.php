@@ -203,4 +203,50 @@ class transaksi extends CI_Controller
             redirect('transaksi/persediaan/makanandanminuman/' . $this->input->post('id_user', true));
         }
     }
+
+
+    // <!-- BARANG KELUAR -->
+    public function barang_keluar()
+    {
+        $data['title']                  = "Barang Keluar - Syahfira Bakery & Cake";
+        $data['user']              = $this->User_Model->user_by_iduser($this->session->userdata('id_user'));
+        $data['barang_keluar']     = $this->Transaksi_Model->all_barang_keluar();
+
+        $this->load->view('template/header', $data);
+        $this->load->view('template/sidebar');
+        $this->load->view('transaksi/barang_keluar/index');
+        $this->load->view('template/footer');
+    }
+
+    // <!-- END BARANG KELUAR -->
+
+
+    // <!-- BARANG TERJUAL -->
+    public function barang_terjual()
+    {
+        $data['title']                  = "Barang Terjual - Syahfira Bakery & Cake";
+        $data['user']              = $this->User_Model->user_by_iduser($this->session->userdata('id_user'));
+        $data['barang_terjual']    = $this->Transaksi_Model->all_barang_terjual();
+
+        $this->load->view('template/header', $data);
+        $this->load->view('template/sidebar');
+        $this->load->view('transaksi/barang_terjual/index');
+        $this->load->view('template/footer');
+    }
+
+    // <!-- END BARANG TERJUAL -->
+
+
+    // <!-- BARANG SISA -->
+    public function barang_sisa()
+    {
+        $data['title']                  = "Barang Sisa - Syahfira Bakery & Cake";
+        $data['user']              = $this->User_Model->user_by_iduser($this->session->userdata('id_user'));
+        $data['barang_sisa']       = $this->Transaksi_Model->all_barang_sisa();
+
+        $this->load->view('template/header', $data);
+        $this->load->view('template/sidebar');
+        $this->load->view('transaksi/barang_sisa/index');
+        $this->load->view('template/footer');
+    }
 }
