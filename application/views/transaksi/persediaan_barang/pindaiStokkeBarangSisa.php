@@ -38,6 +38,8 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group form-float">
                                     <div class="form-line">
@@ -52,6 +54,8 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group form-float">
                                     <div class="form-line">
@@ -66,14 +70,17 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        <div class="row">
                             <div class="col-md-12">
                                 <button type="submit" class="btn bg-teal waves-effect btn-simpan">Pindai Stok</button>
                             </div>
                         </div>
-                        <?php echo form_close(); ?>
                     </div>
+                    <?php echo form_close(); ?>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 </section>
