@@ -80,7 +80,7 @@ class Transaksi_Model extends CI_Model
     $this->db->delete('tb_persediaan_barang');
   }
 
-  public function add_status_barang()
+  public function InsertBarang()
   {
     $pilih_menu = $this->input->post('pilih-menu', true);
 
