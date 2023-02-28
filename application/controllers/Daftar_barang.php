@@ -37,6 +37,7 @@ class Daftar_barang extends CI_Controller
 		$this->form_validation->set_rules('barang', 'barang', 'required');
 		$this->form_validation->set_rules('id_satuan', 'id_satuan', 'required');
 		$this->form_validation->set_rules('harga', 'harga', 'required');
+		$this->form_validation->set_rules('durasi', 'durasi', 'required');
 
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('template/header', $data);
