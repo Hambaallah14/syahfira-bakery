@@ -95,21 +95,23 @@
                             <input type="text" class="form-control id_barang" name="id_barang" value="<?= $kode; ?>" readonly required>
                         </div>
                     </div>
-                    <div class="form-group form-float">
-                        <div class="form-line">
-                            <select class="form-control show-tick id_jenis" name="id_jenis" required>
-                                <option value="-">--Pilih Jenis Barang--</option>
-                                <?php
-                                foreach ($jenis_barang as $jenis) {
-                                    echo "<option value='" . $jenis["id"] . "'>" . $jenis['jenis'] . "</option>";
-                                }
-                                ?>
-                            </select>
-                        </div>
-                    </div>
 
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-md-6">
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <select class="form-control show-tick id_jenis" name="id_jenis" required>
+                                        <option value="-">--Pilih Jenis Barang--</option>
+                                        <?php
+                                        foreach ($jenis_barang as $jenis) {
+                                            echo "<option value='" . $jenis["id"] . "'>" . $jenis['jenis'] . "</option>";
+                                        }
+                                        ?>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
                             <div class="form-group form-float">
                                 <div class="form-line">
                                     <input type="text" class="form-control barang" name="barang" required>
@@ -117,6 +119,8 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="row">
                         <div class="col-md-4">
                             <div class="form-group form-float">
                                 <div class="form-line">
@@ -136,6 +140,14 @@
                                 <div class="form-line">
                                     <input type="number" class="form-control harga" name="harga" onkeydown="return numbersonly(this, event);" onkeyup="javascript:tandaPemisahTitik(this);">
                                     <label class="form-label">Harga</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <input type="number" class="form-control durasi" name="durasi">
+                                    <label class="form-label">Durasi Expired</label>
                                 </div>
                             </div>
                         </div>
