@@ -50,7 +50,7 @@
                                         // echo"<td><img src='".base_url()."assets/img/qrcode/barang/master-barang/".$barang["id_barcode"].".png' width='50%'></td>";
                                         echo "<td>" . $barang["barang"] . "</td>";
                                         echo "<td>Rp. " . number_format($barang["harga"], 0, ',', '.') . "</td>";
-                                        echo "<td></td>";
+                                        echo "<td>" . $barang["durasi_exp"] . " Hari</td>";
                                         // if($barang["qty"] == ""){
                                         //     echo"<td>0</td>";
                                         // }
