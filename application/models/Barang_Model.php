@@ -155,6 +155,7 @@ class Barang_Model extends CI_Model
       "barang"          => $this->input->post('barang', true),
       "harga"           => str_replace(".", "", $this->input->post('harga', true)),
       "id_satuan"       => $this->input->post('id_satuan', true),
+      "durasi_exp"      => $this->input->post('durasi', true)
     ];
     $this->db->where("id_barang", $this->input->post('id_barang', true));
     $this->db->update('tb_barang', $data_edit);
