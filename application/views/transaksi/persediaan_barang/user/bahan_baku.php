@@ -51,7 +51,8 @@
                                         echo "<td>" . $persediaan["qty"] . " " . $persediaan["satuan"] . "</td>";
                                         echo "<td class='text-center'>" . date('d F Y', strtotime($persediaan["tanggal_transaksi"])) . "</td>";
 
-                                        echo "<td class='text-center'>" . date('d F Y', strtotime($persediaan["tgl_expired"])) . "</td>";
+                                        $tanggal_expired = date('d F Y', strtotime('+' . $persediaan["durasi_exp"] . 'days', strtotime($persediaan["tanggal_transaksi"])));
+                                        echo "<td class='text-center'>" . $tanggal_expired . "</td>";
                                         echo "<td class='text-center'>" . $persediaan["ket"] . "</td>";
 
                                         if ($persediaan["status_verifikasi"] == 0) {
@@ -72,9 +73,9 @@
                                             </button>";
                                             echo "</td>";
                                         } else {
-                                            if (date('Y-m-d') > $persediaan["tgl_expired"]) {
+                                            if (date('Y-m-d') > $tanggal_expired) {
                                                 echo "<td class='text-center'><a href='" . base_url() . "transaksi/pindai_stok/barang_sisa/" . $persediaan["id_transaksi"] . "' class='btn bg-pink btn-barang-sisa'>Pindai Stok</a></td>";
-                                            } else if (date('Y-m-d') == $persediaan["tgl_expired"]) {
+                                            } else if (date('Y-m-d') == $tanggal_expired) {
                                                 echo "<td class='text-center'><a href='" . base_url() . "transaksi/pindai_stok/barang_sisa/" . $persediaan["id_transaksi"] . "' class='btn bg-orange btn-barang-sisa'>Pindai Stok</a></td>";
                                             } else {
                                                 if ($persediaan["qty"] == 0) {
