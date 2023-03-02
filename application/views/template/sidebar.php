@@ -61,25 +61,26 @@
 
 
                 <li class="header">TRANSAKSI</li>
-                <li>
-                    <a href="javascript:void(0);" class="menu-toggle">
-                        <i class="material-icons" style="color:#24181a;">shopping_cart</i>
-                        <span style="color:#24181a;">Persediaan Barang</span>
-                    </a>
-                    <ul class="ml-menu">
-                        <li>
-                            <a href="<?= base_url(); ?>transaksi/persediaan_barang/bahan_baku">
-                                <span class="icon-name mt-5">Bahan Baku</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="<?= base_url(); ?>transaksi/persediaan_barang/makanandanminuman">
-                                <span class="icon-name mt-5">Makanan dan Minuman</span>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-
+                <?php if ($user[0]["h_akses"] == "admin") { ?>
+                    <li>
+                        <a href="javascript:void(0);" class="menu-toggle">
+                            <i class="material-icons" style="color:#24181a;">shopping_cart</i>
+                            <span style="color:#24181a;">Persediaan Barang</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="<?= base_url(); ?>transaksi/persediaan_barang/bahan_baku">
+                                    <span class="icon-name mt-5">Bahan Baku</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="<?= base_url(); ?>transaksi/persediaan_barang/makanandanminuman">
+                                    <span class="icon-name mt-5">Makanan dan Minuman</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                <?php } ?>
                 <li>
                     <a href="<?= base_url(); ?>transaksi/barang_keluar" class="waves-effect wave-block">
                         <i class="material-icons" style="color:#24181a;">shopping_cart</i>
