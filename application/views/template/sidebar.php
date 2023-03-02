@@ -81,52 +81,30 @@
                         </ul>
                     </li>
                 <?php } ?>
-                <li>
-                    <a href="<?= base_url(); ?>transaksi/barang_keluar" class="waves-effect wave-block">
-                        <i class="material-icons" style="color:#24181a;">shopping_cart</i>
-                        <span style="color:#24181a;">Barang Keluar</span>
-                    </a>
-                </li>
 
-                <li>
-                    <a href="<?= base_url(); ?>transaksi/barang_terjual" class="waves-effect wave-block">
-                        <i class="material-icons" style="color:#24181a;">shopping_cart</i>
-                        <span style="color:#24181a;">Barang Terjual</span>
-                    </a>
-                </li>
+                <?php if ($user[0]["h_akses"] == "admin" || $user[0]["h_akses"] == "user") { ?>
+                    <li>
+                        <a href="<?= base_url(); ?>transaksi/barang_keluar" class="waves-effect wave-block">
+                            <i class="material-icons" style="color:#24181a;">shopping_cart</i>
+                            <span style="color:#24181a;">Barang Keluar</span>
+                        </a>
+                    </li>
 
-                <li>
-                    <a href="<?= base_url(); ?>transaksi/barang_sisa" class="waves-effect wave-block">
-                        <i class="material-icons" style="color:#24181a;">shopping_cart</i>
-                        <span style="color:#24181a;">Barang Sisa</span>
-                    </a>
-                </li>
-                <!-- <li>
-                            <a href="javascript:void(0);" class="menu-toggle">
-                                <i class="material-icons" style="color:#24181a;">shopping_cart</i>
-                                <span style="color:#24181a;">Persediaan Barang</span>
-                            </a>
-                            <ul class="ml-menu">
-                                <li>  
-                                    <a href="<?= base_url(); ?>persediaan_barang">
-                                        <span class="icon-name mt-5">Barang</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0);" class="menu-toggle">
-                                <i class="material-icons" style="color:#24181a;">receipt</i>
-                                <span style="color:#24181a;">Penjualan Barang</span>
-                            </a>
-                            <ul class="ml-menu">
-                                <li>  
-                                    <a href="<?= base_url(); ?>penjualan_barang">
-                                        <span class="icon-name mt-5">Barang</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li> -->
+                    <li>
+                        <a href="<?= base_url(); ?>transaksi/barang_terjual" class="waves-effect wave-block">
+                            <i class="material-icons" style="color:#24181a;">shopping_cart</i>
+                            <span style="color:#24181a;">Barang Terjual</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="<?= base_url(); ?>transaksi/barang_sisa" class="waves-effect wave-block">
+                            <i class="material-icons" style="color:#24181a;">shopping_cart</i>
+                            <span style="color:#24181a;">Barang Sisa</span>
+                        </a>
+                    </li>
+                <?php } ?>
+
 
                 <li class="header">REKAP LAPORAN</li>
                 <li>
