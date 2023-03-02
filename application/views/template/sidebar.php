@@ -61,7 +61,7 @@
 
 
                 <li class="header">TRANSAKSI</li>
-                <?php if ($user[0]["h_akses"] == "admin") { ?>
+                <?php if ($user[0]["h_akses"] == "produksi") { ?>
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons" style="color:#24181a;">shopping_cart</i>
