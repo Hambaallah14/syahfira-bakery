@@ -51,6 +51,7 @@
                                         echo "<td>" . $persediaan["qty"] . " " . $persediaan["satuan"] . "</td>";
                                         echo "<td class='text-center'>" . date('d F Y', strtotime($persediaan["tanggal_transaksi"])) . "</td>";
 
+                                        $tanggal_1 = date('Y-m-d', strtotime('+' . $persediaan["durasi_exp"] . 'days', strtotime($persediaan["tanggal_transaksi"])));
                                         // echo "<td class='text-center'>" . date('d F Y', strtotime($persediaan["tgl_expired"])) . "</td>";
                                         echo "<td class='text-center'>" . $persediaan["ket"] . "</td>";
 
