@@ -54,7 +54,6 @@ class Transaksi_Model extends CI_Model
       "harga"               => $this->input->post('harga', true),
       "qty"                 => $this->input->post('qty', true),
       "tanggal_transaksi"   => $this->input->post('tgl-transaksi', true),
-      "tgl_expired"         => $this->input->post('tgl-expired', true),
       "ket"                 => $this->input->post('ket', true),
       "id_user"             => $this->input->post('id_user', true),
       "status_verifikasi"   => $status

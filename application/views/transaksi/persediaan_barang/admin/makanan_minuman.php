@@ -118,19 +118,11 @@
                     </div>
 
                     <div class="row clearfix">
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                             <b>Tanggal Persediaan</b>
                             <div class="input-group">
                                 <div class="form-line">
                                     <input type="date" class="datepicker form-control tgl-transaksi" placeholder="Pilih Tanggal" name="tgl-transaksi" required>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <b>Tanggal Expired</b>
-                            <div class="input-group">
-                                <div class="form-line">
-                                    <input type="date" class="datepicker form-control tgl-expired" placeholder="Pilih Tanggal" name="tgl-expired" required>
                                 </div>
                             </div>
                         </div>

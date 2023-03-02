@@ -86,9 +86,9 @@
                                         }
                                         // JIKA PESANAN PUNYA ADMIN 
                                         else {
-                                            if (date('Y-m-d') > $persediaan["tgl_expired"]) {
+                                            if (date('Y-m-d') > $tanggal_expired) {
                                                 echo "<td class='text-center'><a href='" . base_url() . "transaksi/pindai_stok/barang_sisa/" . $persediaan["id_transaksi"] . "' class='btn bg-pink btn-barang-sisa'>Pindai Stok</a></td>";
-                                            } else if (date('Y-m-d') == $persediaan["tgl_expired"]) {
+                                            } else if (date('Y-m-d') == $tanggal_expired) {
                                                 echo "<td class='text-center'><a href='" . base_url() . "transaksi/pindai_stok/status_barang/" . $persediaan["id_transaksi"] . "' class='btn bg-orange btn-barang-sisa'>Pindai Stok</a></td>";
                                             } else {
                                                 if ($persediaan["qty"] == 0) {
