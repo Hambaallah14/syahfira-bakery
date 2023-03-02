@@ -22,7 +22,7 @@ class transaksi extends CI_Controller
         if ($object == "makanandanminuman") {
             $data['title']           = "Persediaan Makanan dan Minuman - Syahfira Bakery & Cake";
             $data['user']            = $this->User_Model->user_by_iduser($this->session->userdata('id_user'));
-            if ($data["user"][0]["h_akses"] == "admin") {
+            if ($data["user"][0]["h_akses"] == "produksi") {
                 $data['daftar_user']        = $this->User_Model->all_data();
                 $data['persediaan_barang']  = $this->Transaksi_Model->all_persediaan_barang_bahan_baku();
                 $data['daftar_barang']      = $this->Barang_Model->all_daftar_barang_makanandanminuman();
@@ -40,7 +40,7 @@ class transaksi extends CI_Controller
         } else if ($object == "bahan_baku") {
             $data['title']                  = "Persediaan Bahan Baku - Syahfira Bakery & Cake";
             $data['user']            = $this->User_Model->user_by_iduser($this->session->userdata('id_user'));
-            if ($data["user"][0]["h_akses"] == "admin") {
+            if ($data["user"][0]["h_akses"] == "produksi") {
                 $data['daftar_user']       = $this->User_Model->all_data();
                 $data['persediaan_barang'] = $this->Transaksi_Model->all_persediaan_barang_makanandanminuman();
                 $data['daftar_barang']     = $this->Barang_Model->all_daftar_barang_bahan_baku();
