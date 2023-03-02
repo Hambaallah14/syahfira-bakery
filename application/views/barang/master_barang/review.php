@@ -9,13 +9,13 @@
                     <div class="card" style="border-top:2px solid green;padding:20px 15px 20px 15px;">
                         <div class="row">
                             <div class="col-md-12">
-                                <img src='<?=base_url("assets/img/qrcode/barang/");?><?=$daftar_barang[0]["qrcode"];?>.png' style="display:block;margin:auto;width:100px;height:100px; margin-bottom:10px;" class="rounded-circle">
+                                <img src='<?= base_url("assets/img/qrcode/barang/"); ?><?= $daftar_barang[0]["qrcode"]; ?>.png' style="display:block;margin:auto;width:100px;height:100px; margin-bottom:10px;" class="rounded-circle">
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-md-12" style="margin-bottom:10px;">
-                                <h4 class="text-center"><?=$daftar_barang[0]["id_barang"];?></h4>
+                                <h4 class="text-center"><?= $daftar_barang[0]["id_barang"]; ?></h4>
                                 <h5 class="text-center"><?= $daftar_barang[0]["barang"]; ?></h5>
                             </div>
                         </div>
@@ -25,7 +25,7 @@
                 <div class="col-md-8">
                     <div class="card" style="border-top:2px solid green;">
                         <div class="header">
-                        <h2>Edit Barang</h2>
+                            <h2>Edit Barang</h2>
                             <ul class="header-dropdown m-r--5">
                                 <li class="dropdown">
                                     <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -44,65 +44,69 @@
                             <div class="table-responsive">
 
                                 <div id="edit-profil" style="display:none;">
-                                <?php echo form_open("daftar_barang/edit/".$daftar_barang[0]['id_barang'], array('enctype'=>'multipart/form-data', 'id' => 'form_validation')); ?>
-                                   
+                                    <?php echo form_open("daftar_barang/edit/" . $daftar_barang[0]['id_barang'], array('enctype' => 'multipart/form-data', 'id' => 'form_validation')); ?>
+
                                     <div class="form-group form-float">
                                         <div class="form-line">
-                                            <input type="text" class="form-control" name="id_barang" readonly value="<?= $daftar_barang[0]['id_barang'];?>">
-                                        </div>  
+                                            <input type="text" class="form-control" name="id_barang" readonly value="<?= $daftar_barang[0]['id_barang']; ?>">
+                                        </div>
                                     </div>
 
                                     <div class="form-group form-float">
                                         <div class="form-line">
                                             <select class="form-control show-tick" name="id_jenis" required>
                                                 <option value="-">--Pilih Jenis Barang--</option>
-                                                    <?php foreach($jenis_barang as $sat){ ?>
-                                                        <option value="<?=$sat["id"] ?>" <?php if($sat["id"] == $daftar_barang[0]["id_jenis"]){echo "selected";} ?>><?=$sat["jenis"];?></option>
-                                                    <?php } ?>  
+                                                <?php foreach ($jenis_barang as $sat) { ?>
+                                                    <option value="<?= $sat["id"] ?>" <?php if ($sat["id"] == $daftar_barang[0]["id_jenis"]) {
+                                                                                            echo "selected";
+                                                                                        } ?>><?= $sat["jenis"]; ?></option>
+                                                <?php } ?>
                                             </select>
                                         </div>
                                     </div>
 
                                     <div class="form-group form-float">
                                         <div class="form-line">
-                                            <input type="text" class="form-control" name="barang" required value="<?= $daftar_barang[0]['barang'];?>">
+                                            <input type="text" class="form-control" name="barang" required value="<?= $daftar_barang[0]['barang']; ?>">
                                             <label class="form-label">Barang</label>
                                         </div>
                                     </div>
-                                    
+
                                     <div class="form-group form-float">
                                         <div class="form-line">
                                             <select class="form-control show-tick" name="id_satuan" required>
                                                 <option value="-">--Pilih Satuan--</option>
-                                                <?php foreach($satuan as $sat){ ?>
-                                                    <option value="<?=$sat["id_satuan"] ?>" <?php if($sat["id_satuan"] == $daftar_barang[0]["id_satuan"]){echo "selected";} ?>><?=$sat["satuan"];?></option>";
-                                                <?php } ?>  
+                                                <?php foreach ($satuan as $sat) { ?>
+                                                    <option value="<?= $sat["id_satuan"] ?>" <?php if ($sat["id_satuan"] == $daftar_barang[0]["id_satuan"]) {
+                                                                                                    echo "selected";
+                                                                                                } ?>><?= $sat["satuan"]; ?></option>";
+                                                <?php } ?>
                                             </select>
                                         </div>
-                                    </div> 
+                                    </div>
 
                                     <div class="form-group form-float">
                                         <div class="form-line">
-                                            <input type="number" class="form-control harga" name="harga" onkeydown="return numbersonly(this, event);" onkeyup="javascript:tandaPemisahTitik(this);" value="<?= $daftar_barang[0]['harga'];?>">
+                                            <input type="number" class="form-control harga" name="harga" onkeydown="return numbersonly(this, event);" onkeyup="javascript:tandaPemisahTitik(this);" value="<?= $daftar_barang[0]['harga']; ?>">
                                         </div>
-                                    </div> 
+                                    </div>
 
-                                    
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            <input type="number" class="form-control durasi" name="durasi" value="<?= $daftar_barang[0]['durasi_exp']; ?>">
+                                        </div>
+                                    </div>
+
+
                                 </div>
-                                    <button type="submit" class="btn bg-green waves-effect">Edit data</button>
+                                <button type="submit" class="btn bg-green waves-effect">Edit data</button>
                                 <?php echo form_close(); ?>
-                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </div>
 </section>
-
-
-
-
-                                        
-                                   

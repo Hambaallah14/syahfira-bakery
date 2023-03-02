@@ -23,7 +23,7 @@ class Barang_Model extends CI_Model
 
   public function all_barang_by_id($id_barang)
   {
-    return $this->db->query("SELECT tb_barang.id_barang, tb_barang.qrcode, tb_barang.barang, tb_barang.harga, tb_barang.id_jenis, tb_jenis.jenis, tb_satuan.satuan, tb_satuan.id_satuan, tb_stok.stok FROM tb_barang INNER JOIN tb_jenis ON tb_barang.id_jenis=tb_jenis.id INNER JOIN tb_satuan ON tb_satuan.id_satuan=tb_barang.id_satuan INNER JOIN tb_stok ON tb_barang.id_barang=tb_stok.id_barang WHERE tb_barang.id_barang='$id_barang'")->result_array();
+    return $this->db->query("SELECT tb_barang.id_barang, tb_barang.qrcode, tb_barang.barang, tb_barang.harga, tb_barang.id_jenis, tb_barang.durasi_exp, tb_jenis.jenis, tb_satuan.satuan, tb_satuan.id_satuan, tb_stok.stok FROM tb_barang INNER JOIN tb_jenis ON tb_barang.id_jenis=tb_jenis.id INNER JOIN tb_satuan ON tb_satuan.id_satuan=tb_barang.id_satuan INNER JOIN tb_stok ON tb_barang.id_barang=tb_stok.id_barang WHERE tb_barang.id_barang='$id_barang'")->result_array();
   }
 
   public function all_barang_by_idJenis($id_jenis)
