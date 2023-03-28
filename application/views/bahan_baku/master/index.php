@@ -51,11 +51,11 @@
 
                                         echo "<td>";
                                         echo "<div class='demo-google-material-icon'>";
-                                        echo "<a class='btn-hapus' href='" . base_url() . "bahan_baku/hapus/" . $barang["id_bahanbaku"] . "' title='Hapus'>";
+                                        echo "<a class='btn-hapus' href='" . base_url() . "bahan_baku/delete/" . $barang["id_bahanbaku"] . "' title='Hapus'>";
                                         echo "<i class='material-icons'>delete</i> ";
                                         echo "</a>";
 
-                                        echo "<a class='btn-edit-barang' href='" . base_url() . "bahan_baku/review_barang/" . $barang["id_bahanbaku"] . "' title='Review Barang'>";
+                                        echo "<a class='btn-edit-barang' href='" . base_url() . "bahan_baku/review/" . $barang["id_bahanbaku"] . "' title='Review Barang'>";
                                         echo "<i class='material-icons'>edit</i>";
                                         echo "</a>";
                                         echo "</div>";

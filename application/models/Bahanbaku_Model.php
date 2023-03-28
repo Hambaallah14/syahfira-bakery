@@ -12,6 +12,13 @@ class Bahanbaku_Model extends CI_Model
         return $this->db->get('tb_bahan_baku')->result_array();
     }
 
+    public function allbyId($id)
+    {
+        return $this->db->query("SELECT tb_bahan_baku.id_bahanbaku, tb_bahan_baku.qrcode, tb_bahan_baku.bahanbaku, tb_bahan_baku.harga, tb_satuan.satuan FROM tb_bahan_baku INNER JOIN tb_satuan ON tb_bahan_baku.id_satuan=tb_satuan.id WHERE tb_bahan_baku.id_bahanbaku='$id'")->result_array();
+    }
+
+
+
     public function kode()
     {
         $q  = $this->db->query("SELECT MAX(RIGHT(id_bahanbaku,3)) AS kd_max FROM tb_bahan_baku");
@@ -39,5 +46,24 @@ class Bahanbaku_Model extends CI_Model
             "id_satuan"       => $this->input->post('id_satuan', true)
         ];
         $this->db->insert('tb_bahan_baku', $bahan_baku);
+    }
+
+
+    public function delete($id_bahanbaku)
+    {
+        $this->db->where('id_bahanbaku', $id_bahanbaku);
+        $this->db->delete('tb_bahan_baku');
+    }
+
+    public function edit()
+    {
+        $bahan_baku = [
+            "bahanbaku"      => $this->input->post('bahan_baku', true),
+            "harga"          => str_replace(".", "", $this->input->post('harga', true)),
+            "id_satuan"      => $this->input->post('id_satuan', true)
+
+        ];
+        $this->db->where("id_bahanbaku", $this->input->post('id_bahanbaku', true));
+        $this->db->update('tb_bahan_baku', $bahan_baku);
     }
 }

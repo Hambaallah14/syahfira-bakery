@@ -6,7 +6,6 @@ class Bahan_baku extends CI_Controller
     {
         parent::__construct();
         $this->load->library('form_validation');
-        $this->load->helper('url');
         $this->load->model('User_Model');
         $this->load->model('Bahanbaku_Model');
         $this->load->model('Satuan_Model');
@@ -70,5 +69,24 @@ class Bahan_baku extends CI_Controller
         $this->Bahanbaku_Model->delete($id);
         $this->session->set_flashdata('bahan_baku', 'Dihapus');
         redirect('bahan_baku');
+    }
+
+    public function review($id)
+    {
+        $data['title']             = "Review Barang - Syahfira Bakery & Cake";
+        $data['user']              = $this->User_Model->user_by_iduser($this->session->userdata('id_user'));
+        $data['bahan_baku']        = $this->Bahanbaku_Model->allbyId($id);
+        $data['satuan']            = $this->Satuan_Model->all();
+        $this->load->view('template/header', $data);
+        $this->load->view('template/sidebar');
+        $this->load->view('bahan_baku/master/review');
+        $this->load->view('template/footer');
+    }
+
+    public function edit($id)
+    {
+        $this->Bahanbaku_Model->edit();
+        $this->session->set_flashdata('edit_bahan_baku', 'Diedit');
+        redirect('bahan_baku/review/' . $id);
     }
 }
