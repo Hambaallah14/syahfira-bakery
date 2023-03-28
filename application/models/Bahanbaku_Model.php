@@ -51,6 +51,7 @@ class Bahanbaku_Model extends CI_Model
 
     public function delete($id_bahanbaku)
     {
+        unlink('https://syahfirabakery.co.id/assets/img/qrcode/barang/'.$id_bahanbaku.'.png');
         $this->db->where('id_bahanbaku', $id_bahanbaku);
         $this->db->delete('tb_bahan_baku');
     }
