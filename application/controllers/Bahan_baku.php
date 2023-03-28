@@ -9,6 +9,7 @@ class Bahan_baku extends CI_Controller
         $this->load->helper('url');
         $this->load->model('User_Model');
         $this->load->model('Bahanbaku_Model');
+        $this->load->model('Satuan_Model');
 
         if (!$this->session->userdata('logged')) { //cek session
             redirect('login'); //jika tidak ada session maka balek ke menu login
@@ -21,9 +22,15 @@ class Bahan_baku extends CI_Controller
         $data['user']              = $this->User_Model->user_by_iduser($this->session->userdata('id_user'));
         $data['bahan_baku']        = $this->Bahanbaku_Model->all();
         $data['kode_bahan_baku']   = $this->Bahanbaku_Model->kode();
+        $data['satuan']            = $this->Satuan_Model->all();
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar');
         $this->load->view('bahan_baku/master/index');
         $this->load->view('template/footer');
+    }
+
+
+    public function insert()
+    {
     }
 }

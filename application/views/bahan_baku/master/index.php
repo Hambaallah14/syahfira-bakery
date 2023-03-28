@@ -81,7 +81,7 @@
                     <h4 class="modal-title" id="defaultModalLabel" style="padding-top:-5px;padding-bottom:10px;color:white;">Tambah Bahan Baku</h4>
                 </div>
                 <div class="modal-body">
-                    <?php echo form_open("bahan_baku/add", array('enctype' => 'multipart/form-data', 'id' => 'form_validation')); ?>
+                    <?php echo form_open("bahan_baku/insert", array('enctype' => 'multipart/form-data', 'id' => 'form_validation')); ?>
                     <div class="form-group form-float">
                         <div class="form-line">
                             <input type="text" class="form-control id_bahanbaku" name="id_bahanbaku" value="<?= $kode_bahan_baku; ?>" readonly required>
@@ -96,21 +96,22 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <div class="form-group form-float">
                                 <div class="form-line">
                                     <select class="form-control show-tick id_satuan" name="id_satuan" required>
                                         <option value="-">--Pilih Satuan--</option>
                                         <?php
                                         foreach ($satuan as $sat) {
-                                            echo "<option value='" . $sat["id_satuan"] . "'>" . $sat['satuan'] . "</option>";
+                                            echo "<option value='" . $sat["id"] . "'>" . $sat['satuan'] . "</option>";
                                         }
                                         ?>
                                     </select>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
+
+                        <div class="col-md-6">
                             <div class="form-group form-float">
                                 <div class="form-line">
                                     <input type="number" class="form-control harga" name="harga" onkeydown="return numbersonly(this, event);" onkeyup="javascript:tandaPemisahTitik(this);">
@@ -118,14 +119,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="form-group form-float">
-                                <div class="form-line">
-                                    <input type="number" class="form-control durasi" name="durasi">
-                                    <label class="form-label">Durasi Expired</label>
-                                </div>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
 
