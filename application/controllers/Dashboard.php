@@ -6,7 +6,7 @@ class Dashboard extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->library('form_validation');
-
+		$this->load->model('User_Model');
 
 		if (!$this->session->userdata('logged')) { //cek session
 			redirect('login'); //jika tidak ada session maka balek ke menu login
@@ -15,7 +15,8 @@ class Dashboard extends CI_Controller
 
 	public function index()
 	{
-		$data['title'] 	  		  	= "Dashboard - Syahfira Bakery & Cake";
+		$data['title'] 	  		  		= "Dashboard - Syahfira Bakery & Cake";
+		$data['user']             		= $this->User_Model->user_by_iduser($this->session->userdata('id_user'));
 		$this->load->view('template/header', $data);
 		$this->load->view('template/sidebar', $data);
 		$this->load->view('dashboard/index');
