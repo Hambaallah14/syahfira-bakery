@@ -17,6 +17,7 @@ class Dashboard extends CI_Controller
 	{
 		$data['title'] 	  		  		= "Dashboard - Syahfira Bakery & Cake";
 		$data['user']             		= $this->User_Model->user_by_iduser($this->session->userdata('id_user'));
+		$data['jumlah_user']	  		= $this->User_Model->jumlah_user();
 		$this->load->view('template/header', $data);
 		$this->load->view('template/sidebar', $data);
 		$this->load->view('dashboard/index');

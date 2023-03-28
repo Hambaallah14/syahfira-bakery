@@ -28,6 +28,7 @@
                         <span style="color:#24181a;">Home</span>
                     </a>
                 </li>
+
                 <?php if ($user[0]["h_akses"] == "admin") { ?>
                     <li class="header">MASTER DATA</li>
                     <li>
@@ -51,30 +52,12 @@
                         </a>
                         <ul class="ml-menu">
                             <li>
-                                <a href="<?= base_url(); ?>daftar_barang">
-                                    <span class="icon-name mt-5">Daftar Barang</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                <?php } ?>
-
-
-                <li class="header">TRANSAKSI</li>
-                <?php if ($user[0]["h_akses"] == "produksi" || $user[0]["h_akses"] == "user") { ?>
-                    <li>
-                        <a href="javascript:void(0);" class="menu-toggle">
-                            <i class="material-icons" style="color:#24181a;">shopping_cart</i>
-                            <span style="color:#24181a;">Persediaan Barang</span>
-                        </a>
-                        <ul class="ml-menu">
-                            <li>
-                                <a href="<?= base_url(); ?>transaksi/persediaan_barang/bahan_baku">
+                                <a href="<?= base_url(); ?>bahan_baku">
                                     <span class="icon-name mt-5">Bahan Baku</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="<?= base_url(); ?>transaksi/persediaan_barang/makanandanminuman">
+                                <a href="<?= base_url(); ?>makanan_dan_minuman">
                                     <span class="icon-name mt-5">Makanan dan Minuman</span>
                                 </a>
                             </li>
@@ -82,60 +65,12 @@
                     </li>
                 <?php } ?>
 
-                <?php if ($user[0]["h_akses"] == "admin" || $user[0]["h_akses"] == "user") { ?>
-                    <li>
-                        <a href="<?= base_url(); ?>transaksi/barang_keluar" class="waves-effect wave-block">
-                            <i class="material-icons" style="color:#24181a;">shopping_cart</i>
-                            <span style="color:#24181a;">Barang Keluar</span>
-                        </a>
-                    </li>
 
-                    <li>
-                        <a href="<?= base_url(); ?>transaksi/barang_terjual" class="waves-effect wave-block">
-                            <i class="material-icons" style="color:#24181a;">shopping_cart</i>
-                            <span style="color:#24181a;">Barang Terjual</span>
-                        </a>
-                    </li>
 
-                    <li>
-                        <a href="<?= base_url(); ?>transaksi/barang_sisa" class="waves-effect wave-block">
-                            <i class="material-icons" style="color:#24181a;">shopping_cart</i>
-                            <span style="color:#24181a;">Barang Sisa</span>
-                        </a>
-                    </li>
-                <?php } ?>
 
-                <?php if ($user[0]["h_akses"] == "admin" || $user[0]["h_akses"] == "user") { ?>
-                    <li class="header">REKAP LAPORAN</li>
-                    <li>
-                        <a href="javascript:void(0);" class="menu-toggle">
-                            <i class="material-icons" style="color:#24181a;">print</i>
-                            <span style="color:#24181a;">Cetak Laporan</span>
-                        </a>
-                        <ul class="ml-menu">
-                            <li>
-                                <a href="<?= base_url(); ?>rekap_laporan/persediaan_barang">
-                                    <span class="icon-name mt-5">Persediaan Barang</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="<?= base_url(); ?>rekap_laporan/barang_keluar">
-                                    <span class="icon-name mt-5">Barang Keluar</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="<?= base_url(); ?>rekap_laporan/barang_terjual">
-                                    <span class="icon-name mt-5">Barang Terjual</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="<?= base_url(); ?>rekap_laporan/barang_sisa">
-                                    <span class="icon-name mt-5">Barang Sisa</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                <?php } ?>
+
+
+
             </ul>
         </div>
         <!-- #Menu -->
@@ -150,64 +85,4 @@
         </div>
         <!-- #Footer -->
     </aside>
-    <!-- #END# Left Sidebar -->
-    <!-- Right Sidebar -->
-    <aside id="rightsidebar" class="right-sidebar">
-        <ul class="nav nav-tabs tab-nav-right" role="tablist">
-            <li role="presentation" class="active"><a href="#skins" data-toggle="tab">SKINS</a></li>
-            <li role="presentation"><a href="#settings" data-toggle="tab">SETTINGS</a></li>
-        </ul>
-
-        <div role="tabpanel" class="tab-pane fade" id="settings">
-            <div class="demo-settings">
-                <p>GENERAL SETTINGS</p>
-                <ul class="setting-list">
-                    <li>
-                        <span>Report Panel Usage</span>
-                        <div class="switch">
-                            <label><input type="checkbox" checked><span class="lever"></span></label>
-                        </div>
-                    </li>
-                    <li>
-                        <span>Email Redirect</span>
-                        <div class="switch">
-                            <label><input type="checkbox"><span class="lever"></span></label>
-                        </div>
-                    </li>
-                </ul>
-                <p>SYSTEM SETTINGS</p>
-                <ul class="setting-list">
-                    <li>
-                        <span>Notifications</span>
-                        <div class="switch">
-                            <label><input type="checkbox" checked><span class="lever"></span></label>
-                        </div>
-                    </li>
-                    <li>
-                        <span>Auto Updates</span>
-                        <div class="switch">
-                            <label><input type="checkbox" checked><span class="lever"></span></label>
-                        </div>
-                    </li>
-                </ul>
-                <p>ACCOUNT SETTINGS</p>
-                <ul class="setting-list">
-                    <li>
-                        <span>Offline</span>
-                        <div class="switch">
-                            <label><input type="checkbox"><span class="lever"></span></label>
-                        </div>
-                    </li>
-                    <li>
-                        <span>Location Permission</span>
-                        <div class="switch">
-                            <label><input type="checkbox" checked><span class="lever"></span></label>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        </div>
-    </aside>
-    <!-- #END# Right Sidebar -->
 </section>
