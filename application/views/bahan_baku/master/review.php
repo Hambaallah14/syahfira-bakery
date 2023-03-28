@@ -46,11 +46,11 @@
                                 <div id="edit-profil" style="display:none;">
                                     <?php echo form_open("bahan_baku/edit/" . $bahan_baku[0]['id_bahanbaku'], array('enctype' => 'multipart/form-data', 'id' => 'form_validation')); ?>
 
-                                    <div class="form-group form-float">
-                                        <div class="form-line">
-                                            <input type="text" class="form-control" name="id_bahanbaku" readonly value="<?= $bahan_baku[0]['id_bahanbaku']; ?>">
+                                        <div class="form-group form-float">
+                                            <div class="form-line">
+                                                <input type="text" class="form-control" name="id_bahanbaku" readonly value="<?= $bahan_baku[0]['id_bahanbaku']; ?>">
+                                            </div>
                                         </div>
-                                    </div>
 
 
 
@@ -77,7 +77,7 @@
 
                                     <div class="form-group form-float">
                                         <div class="form-line">
-                                            <input type="number" class="form-control harga" name="harga" onkeydown="return numbersonly(this, event);" onkeyup="javascript:tandaPemisahTitik(this);" value="<?= bahan_baku[0]['harga']; ?>">
+                                            <input type="number" class="form-control harga" name="harga" onkeydown="return numbersonly(this, event);" onkeyup="javascript:tandaPemisahTitik(this);" value="<?= $bahan_baku[0]['harga']; ?>">
                                         </div>
                                     </div>
                                 </div>
