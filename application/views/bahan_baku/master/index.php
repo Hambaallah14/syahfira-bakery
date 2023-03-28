@@ -11,7 +11,7 @@
 
                 <div class="card">
                     <div class="header">
-                        <button type="button" class="btn bg-teal waves-effect btn-tambah-barang" data-toggle="modal" data-target="#defaultModal">Tambah Bahan Baku</button>
+                        <button type="button" class="btn bg-teal waves-effect btn-tambah-bahan_baku" data-toggle="modal" data-target="#bahan_baku">Tambah Bahan Baku</button>
                         <ul class="header-dropdown m-r--5">
                             <li class="dropdown">
                                 <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -74,11 +74,11 @@
         </div>
     </div>
 
-    <div class="modal fade" id="defaultModal" tabindex="-1" role="dialog">
+    <div class="modal fade" id="bahan_baku" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header bg-teal">
-                    <h4 class="modal-title" id="defaultModalLabel" style="padding-top:-5px;padding-bottom:10px;color:white;">Tambah Bahan Bak</h4>
+                    <h4 class="modal-title" id="defaultModalLabel" style="padding-top:-5px;padding-bottom:10px;color:white;">Tambah Bahan Baku</h4>
                 </div>
                 <div class="modal-body">
                     <?php echo form_open("bahan_baku/insert", array('enctype' => 'multipart/form-data', 'id' => 'form_validation')); ?>
