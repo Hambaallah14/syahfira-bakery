@@ -13,8 +13,8 @@
                             <i class="material-icons">supervisor_account</i>
                         </div>
                         <div class="content">
-                            <div class="text">USER</div>
-                            <div class="number"><?= $jumlah_user; ?></div>
+                            <div class="text">USERS</div>
+                            <div class="number"><?= $jumlah_user; ?> User</div>
                         </div>
                     </div>
 

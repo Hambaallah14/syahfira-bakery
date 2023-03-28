@@ -1,9 +1,9 @@
-<div class="flash-data" data-target="Barang" data-flashdata="<?= $this->session->flashdata('daftar_barang'); ?>"></div>
+<div class="flash-data" data-target="Bahan Baku" data-flashdata="<?= $this->session->flashdata('bahan_baku'); ?>"></div>
 <section class="content">
     <div class="container-fluid">
 
         <div class="block-header">
-            <h2>Daftar Barang</h2>
+            <h2>Bahan Baku</h2>
         </div>
 
         <div class="row clearfix">
@@ -32,10 +32,9 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>ID Barang</th>
-                                        <th>Barang</th>
+                                        <th>ID</th>
+                                        <th>Bahan Baku</th>
                                         <th>Harga</th>
-                                        <th>Durasi Expired</th>
                                         <th>Opsi</th>
                                     </tr>
                                 </thead>
@@ -43,20 +42,13 @@
                                 <tbody>
                                     <?php
                                     $no = 1;
-                                    foreach ($daftar_barang as $barang) {
+                                    foreach ($bahan_baku as $barang) {
                                         echo "<tr>";
                                         echo "<td>" . $no . "</td>";
-                                        echo "<td>" . $barang["id_barang"] . "</td>";
-                                        // echo"<td><img src='".base_url()."assets/img/qrcode/barang/master-barang/".$barang["id_barcode"].".png' width='50%'></td>";
-                                        echo "<td>" . $barang["barang"] . "</td>";
+                                        echo "<td>" . $barang["id_bahanbaku"] . "</td>";
+                                        echo "<td>" . $barang["bahanbaku"] . "</td>";
                                         echo "<td>Rp. " . number_format($barang["harga"], 0, ',', '.') . "</td>";
-                                        echo "<td>" . $barang["durasi_exp"] . " Hari</td>";
-                                        // if($barang["qty"] == ""){
-                                        //     echo"<td>0</td>";
-                                        // }
-                                        // else{
-                                        //     echo"<td>".$barang["qty"]." ".$barang["satuan"]."</td>";
-                                        // }
+
                                         echo "<td>";
                                         echo "<div class='demo-google-material-icon'>";
                                         echo "<a class='btn-hapus' href='" . base_url() . "daftar_barang/hapus/" . $barang["id_barang"] . "' title='Hapus'>";
