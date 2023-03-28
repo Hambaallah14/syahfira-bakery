@@ -28,4 +28,16 @@ class Bahanbaku_Model extends CI_Model
         $a = "BB" . date('y') . $kd;
         return $a;
     }
+
+    public function insert()
+    {
+        $bahan_baku = [
+            "id_bahanbaku"    => $this->input->post('id_bahanbaku', true),
+            "qrcode"          => $this->input->post('id_bahanbaku', true),
+            "bahanbaku"       => $this->input->post('bahan_baku', true),
+            "harga"           => str_replace(".", "", $this->input->post('harga', true)),
+            "id_satuan"       => $this->input->post('id_satuan', true)
+        ];
+        $this->db->insert('tb_bahan_baku', $bahan_baku);
+    }
 }
