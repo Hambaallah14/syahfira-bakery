@@ -83,21 +83,36 @@
                     <h4 class="modal-title" id="defaultModalLabel" style="padding-top:-5px;padding-bottom:10px;color:white;">Tambah Bahan Baku</h4>
                 </div>
                 <div class="modal-body">
-                    <?php echo form_open("bahan_baku/insert", array('enctype' => 'multipart/form-data', 'id' => 'form_validation')); ?>
+                    <?php echo form_open("makanan_dan_minuman/insert", array('enctype' => 'multipart/form-data', 'id' => 'form_validation')); ?>
                     <div class="form-group form-float">
                         <div class="form-line">
-                            <input type="text" class="form-control id_bahanbaku" name="id_bahanbaku" value="<?= $kode_bahan_baku; ?>" readonly required>
+                            <input type="text" class="form-control id" name="id" value="<?= $kode_makanan; ?>" readonly required>
                         </div>
                     </div>
 
                     <div class="form-group form-float">
                         <div class="form-line">
-                            <input type="text" class="form-control bahan_baku" name="bahan_baku" required>
-                            <label class="form-label">Bahan Baku</label>
+                            <input type="text" class="form-control makanan_minuman" name="makanan_minuman" required>
+                            <label class="form-label">Makanan/Minuman</label>
                         </div>
                     </div>
 
                     <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <select class="form-control show-tick id_jenis" name="id_jenis" required>
+                                        <option value="-">--Pilih Jenis Makanan/Minuman--</option>
+                                        <?php
+                                        foreach ($jenis as $jen) {
+                                            echo "<option value='" . $jen["id"] . "'>" . $jen['jenis'] . "</option>";
+                                        }
+                                        ?>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="col-md-6">
                             <div class="form-group form-float">
                                 <div class="form-line">
@@ -112,7 +127,9 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
 
+                    <div class="row">
                         <div class="col-md-6">
                             <div class="form-group form-float">
                                 <div class="form-line">
@@ -122,7 +139,16 @@
                             </div>
                         </div>
 
+                        <div class="col-md-6">
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <input type="number" class="form-control durasi_expired" name="durasi_expired">
+                                    <label class="form-label">Durasi Expired</label>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                    
                 </div>
 
                 <div class="modal-footer">

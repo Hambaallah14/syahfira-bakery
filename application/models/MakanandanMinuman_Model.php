@@ -38,22 +38,24 @@ class MakanandanMinuman_Model extends CI_Model
 
     public function insert()
     {
-        $bahan_baku = [
-            "id_bahanbaku"    => $this->input->post('id_bahanbaku', true),
-            "qrcode"          => $this->input->post('id_bahanbaku', true),
-            "bahanbaku"       => $this->input->post('bahan_baku', true),
-            "harga"           => str_replace(".", "", $this->input->post('harga', true)),
-            "id_satuan"       => $this->input->post('id_satuan', true)
+        $makanan_minuman = [
+            "id"                => $this->input->post('id', true),
+            "qrcode"            => $this->input->post('id', true),
+            "makanan_minuman"   => $this->input->post('makanan_minuman', true),
+            "id_jenis"          => $this->input->post('id_jenis', true),
+            "id_satuan"         => $this->input->post('id_satuan', true),
+            "harga"             => str_replace(".", "", $this->input->post('harga', true)),
+            "durasi_expired"    => $this->input->post('durasi_expired', true)
         ];
-        $this->db->insert('tb_bahan_baku', $bahan_baku);
+        $this->db->insert('tb_makanan_minuman', $makanan_minuman);
     }
 
 
-    public function delete($id_bahanbaku)
+    public function delete($id)
     {
-        unlink('./assets/img/qrcode/barang/'.$id_bahanbaku.'.png');
-        $this->db->where('id_bahanbaku', $id_bahanbaku);
-        $this->db->delete('tb_bahan_baku');
+        unlink('./assets/img/qrcode/barang/'.$id.'.png');
+        $this->db->where('id', $id);
+        $this->db->delete('tb_makanan_minuman');
     }
 
     public function edit()
