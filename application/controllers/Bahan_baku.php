@@ -20,6 +20,7 @@ class Bahan_baku extends CI_Controller
         $data['title']             = "Bahan Baku - Syahfira Bakery & Cake";
         $data['user']              = $this->User_Model->user_by_iduser($this->session->userdata('id_user'));
         $data['bahan_baku']        = $this->Bahanbaku_Model->all();
+        $data['kode_bahan_baku']   = $this->Bahanbaku_Model->kode();
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar');
         $this->load->view('bahan_baku/master/index');
