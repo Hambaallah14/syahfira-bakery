@@ -66,7 +66,7 @@
                                             <select class="form-control show-tick" name="id_satuan" required>
                                                 <option value="-">--Pilih Satuan--</option>
                                                 <?php foreach ($satuan as $sat) { ?>
-                                                    <option><?= $sat["satuan"];?></option>
+                                                    <option value="<?= $sat["id_satuan"];?>" <?php if($sat["id"] == $bahan_baku[0]["id_satuan"]){echo "selected";}?> ><?= $sat["satuan"];?></option>
                                                 <?php } ?>
                                             </select>
                                         </div>
