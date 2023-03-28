@@ -78,7 +78,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header bg-teal">
-                    <h4 class="modal-title" id="defaultModalLabel" style="padding-top:-5px;padding-bottom:10px;color:white;">Tambah Bahan Baku</h4>
+                    <h4 class="modal-title" id="defaultModalLabel" style="padding-top:-5px;padding-bottom:10px;color:white;">Tambah Bahan Bak</h4>
                 </div>
                 <div class="modal-body">
                     <?php echo form_open("bahan_baku/insert", array('enctype' => 'multipart/form-data', 'id' => 'form_validation')); ?>
