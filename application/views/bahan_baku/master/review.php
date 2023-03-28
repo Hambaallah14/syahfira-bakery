@@ -44,31 +44,20 @@
                             <div class="table-responsive">
 
                                 <div id="edit-profil" style="display:none;">
-                                    <?php echo form_open("daftar_barang/edit/" . $daftar_barang[0]['id_barang'], array('enctype' => 'multipart/form-data', 'id' => 'form_validation')); ?>
+                                    <?php echo form_open("bahan_baku/edit/" . $bahan_baku[0]['id_bahanbaku'], array('enctype' => 'multipart/form-data', 'id' => 'form_validation')); ?>
 
                                     <div class="form-group form-float">
                                         <div class="form-line">
-                                            <input type="text" class="form-control" name="id_barang" readonly value="<?= $daftar_barang[0]['id_barang']; ?>">
+                                            <input type="text" class="form-control" name="id_bahanbaku" readonly value="<?= $bahan_baku[0]['id_bahanbaku']; ?>">
                                         </div>
                                     </div>
 
-                                    <div class="form-group form-float">
-                                        <div class="form-line">
-                                            <select class="form-control show-tick" name="id_jenis" required>
-                                                <option value="-">--Pilih Jenis Barang--</option>
-                                                <?php foreach ($jenis_barang as $sat) { ?>
-                                                    <option value="<?= $sat["id"] ?>" <?php if ($sat["id"] == $daftar_barang[0]["id_jenis"]) {
-                                                                                            echo "selected";
-                                                                                        } ?>><?= $sat["jenis"]; ?></option>
-                                                <?php } ?>
-                                            </select>
-                                        </div>
-                                    </div>
+
 
                                     <div class="form-group form-float">
                                         <div class="form-line">
-                                            <input type="text" class="form-control" name="barang" required value="<?= $daftar_barang[0]['barang']; ?>">
-                                            <label class="form-label">Barang</label>
+                                            <input type="text" class="form-control" name="bahan_baku" required value="<?= $bahan_baku[0]['bahanbaku']; ?>">
+                                            <label class="form-label">Bahan Baku</label>
                                         </div>
                                     </div>
 
@@ -77,9 +66,10 @@
                                             <select class="form-control show-tick" name="id_satuan" required>
                                                 <option value="-">--Pilih Satuan--</option>
                                                 <?php foreach ($satuan as $sat) { ?>
-                                                    <option value="<?= $sat["id_satuan"] ?>" <?php if ($sat["id_satuan"] == $daftar_barang[0]["id_satuan"]) {
-                                                                                                    echo "selected";
-                                                                                                } ?>><?= $sat["satuan"]; ?></option>";
+                                                    <option value="<?= $sat["id_satuan"] ?>"
+                                                        <?php if ($sat["id_satuan"] == $bahan_baku[0]["id_satuan"]) {
+                                                                echo "selected";
+                                                            } ?>><?= $sat["satuan"]; ?></option>";
                                                 <?php } ?>
                                             </select>
                                         </div>
@@ -87,17 +77,9 @@
 
                                     <div class="form-group form-float">
                                         <div class="form-line">
-                                            <input type="number" class="form-control harga" name="harga" onkeydown="return numbersonly(this, event);" onkeyup="javascript:tandaPemisahTitik(this);" value="<?= $daftar_barang[0]['harga']; ?>">
+                                            <input type="number" class="form-control harga" name="harga" onkeydown="return numbersonly(this, event);" onkeyup="javascript:tandaPemisahTitik(this);" value="<?= bahan_baku[0]['harga']; ?>">
                                         </div>
                                     </div>
-
-                                    <div class="form-group form-float">
-                                        <div class="form-line">
-                                            <input type="number" class="form-control durasi" name="durasi" value="<?= $daftar_barang[0]['durasi_exp']; ?>">
-                                        </div>
-                                    </div>
-
-
                                 </div>
                                 <button type="submit" class="btn bg-green waves-effect">Edit data</button>
                                 <?php echo form_close(); ?>
