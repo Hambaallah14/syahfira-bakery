@@ -79,18 +79,19 @@ class Makanan_dan_minuman extends CI_Controller
     {
         $data['title']             = "Review Barang - Syahfira Bakery & Cake";
         $data['user']              = $this->User_Model->user_by_iduser($this->session->userdata('id_user'));
-        $data['bahan_baku']        = $this->Bahanbaku_Model->allbyId($id);
+        $data['makanan_minuman']   = $this->MakanandanMinuman_Model->allbyId($id);
         $data['satuan']            = $this->Satuan_Model->all();
+        $data['jenis']             = $this->Jenis_Model->all();
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar');
-        $this->load->view('bahan_baku/master/review');
+        $this->load->view('makanan_dan_minuman/master/review');
         $this->load->view('template/footer');
     }
 
     public function edit($id)
     {
         $this->Bahanbaku_Model->edit();
-        $this->session->set_flashdata('edit_bahan_baku', 'Diedit');
+        $this->session->set_flashdata('edit_makanan', 'Diedit');
         redirect('bahan_baku/review/' . $id);
     }
 }
