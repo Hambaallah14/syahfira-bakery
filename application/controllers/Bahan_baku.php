@@ -116,6 +116,7 @@ class Bahan_baku extends CI_Controller
     public function persediaan_cabang($id_user)
     {
         $data['title']             = "Persediaan Bahan Baku - Syahfira Bakery & Cake";
+        $data['user']              = $this->User_Model->user_by_iduser($this->session->userdata('id_user'));
         $data['bahan_baku']        = $this->Bahanbaku_Model->allPersediaanbyIdUser($id_user);
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar');
