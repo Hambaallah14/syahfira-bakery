@@ -94,4 +94,16 @@ class Makanan_dan_minuman extends CI_Controller
         $this->session->set_flashdata('edit_makanan', 'Diedit');
         redirect('makanan_dan_minuman/review/' . $id);
     }
+
+
+
+    ////////////// PERSEDIAAN
+    public function persediaan()
+    {
+        $data['title']             = "Persediaan Bahan Baku - Syahfira Bakery & Cake";
+        $data['user']              = $this->User_Model->user_by_iduser($this->session->userdata('id_user'));
+        if ($data["user"][0]["h_akses"] == "produksi") {
+        } else {
+        }
+    }
 }
