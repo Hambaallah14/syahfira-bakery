@@ -105,6 +105,11 @@ class Bahan_baku extends CI_Controller
             $this->load->view('bahan_baku/persediaan/admin/index');
             $this->load->view('template/footer');
         } else {
+            $data['bahan_baku']         = $this->Bahanbaku_Model->allPersediaanbyIdUser($this->session->userdata('id_user'));
+            $this->load->view('template/header', $data);
+            $this->load->view('template/sidebar');
+            $this->load->view('bahan_baku/persediaan/user/index');
+            $this->load->view('template/footer');
         }
     }
 }

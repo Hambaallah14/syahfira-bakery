@@ -17,6 +17,7 @@ class Bahanbaku_Model extends CI_Model
         return $this->db->query("SELECT tb_bahan_baku.id_bahanbaku, tb_bahan_baku.qrcode, tb_bahan_baku.bahanbaku, tb_bahan_baku.harga, tb_bahan_baku.id_satuan, tb_satuan.satuan FROM tb_bahan_baku INNER JOIN tb_satuan ON tb_bahan_baku.id_satuan=tb_satuan.id WHERE tb_bahan_baku.id_bahanbaku='$id'")->result_array();
     }
 
+
     public function jumlah_bahan_baku()
     {
         $this->db->select('COUNT(id_bahanbaku) as jumlah_bahan');
@@ -73,5 +74,13 @@ class Bahanbaku_Model extends CI_Model
         ];
         $this->db->where("id_bahanbaku", $this->input->post('id_bahanbaku', true));
         $this->db->update('tb_bahan_baku', $bahan_baku);
+    }
+
+
+
+    /////////////PERSEDIAAN
+    public function allPersediaanbyIdUser($idUser)
+    {
+        return $this->db->query("SELECT tb_persediaan_bb.id_persediaan, tb_persediaan_bb.id_bahanbaku, tb_bahan_baku.bahanbaku, tb_persediaan_bb.harga, tb_persediaan_bb.qty, tb_persediaan_bb.tgl_persediaan, tb_persediaan_bb.tgl_expired, tb_persediaan_bb.keterangan, tb_status_persediaan_bb.id_user FROM tb_persediaan_bb INNER JOIN tb_bahan_baku ON tb_bahan_baku.id_bahanbaku=tb_persediaan_bb.id_bahanbaku INNER JOIN tb_status_persediaan_bb ON tb_status_persediaan_bb.id_persediaan=tb_persediaan_bb.id_persediaan WHERE tb_status_persediaan_bb.id_user='$idUser'")->result_array();
     }
 }

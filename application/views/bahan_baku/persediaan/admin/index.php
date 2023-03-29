@@ -35,7 +35,7 @@
                                 <thead>
                                     <tr>
                                         <th class="text-center">No</th>
-                                        <th class="text-center">Nama User</th>
+                                        <th class="text-center">Nama Cabang</th>
                                         <th class="text-center">Opsi</th>
                                     </tr>
                                 </thead>
@@ -117,11 +117,19 @@
                     </div>
 
                     <div class="row clearfix">
-                        <div class="col-md-12">
+                        <div class="col-md-6">
                             <b>Tanggal Persediaan</b>
                             <div class="input-group">
                                 <div class="form-line">
-                                    <input type="date" class="datepicker form-control tgl-transaksi" placeholder="Pilih Tanggal" name="tgl-transaksi" required>
+                                    <input type="date" class="datepicker form-control tgl_persediaan" placeholder="Pilih Tanggal" name="tgl_persediaan" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <b>Tanggal Expired</b>
+                            <div class="input-group">
+                                <div class="form-line">
+                                    <input type="date" class="datepicker form-control tgl_expired" placeholder="Pilih Tanggal" name="tgl_expired" required>
                                 </div>
                             </div>
                         </div>
