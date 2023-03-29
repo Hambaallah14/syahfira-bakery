@@ -60,13 +60,15 @@ class MakanandanMinuman_Model extends CI_Model
 
     public function edit()
     {
-        $bahan_baku = [
-            "bahanbaku"      => $this->input->post('bahan_baku', true),
-            "harga"          => str_replace(".", "", $this->input->post('harga', true)),
-            "id_satuan"      => $this->input->post('id_satuan', true)
+        $makanan_minuman = [
+            "makanan_minuman"   => $this->input->post('makanan_minuman', true),
+            "harga"             => str_replace(".", "", $this->input->post('harga', true)),
+            "id_jenis"          => $this->input->post('id_jenis', true),
+            "id_satuan"         => $this->input->post('id_satuan', true),
+            "durasi_expired"    => $this->input->post('durasi_expired', true)
 
         ];
-        $this->db->where("id_bahanbaku", $this->input->post('id_bahanbaku', true));
-        $this->db->update('tb_bahan_baku', $bahan_baku);
+        $this->db->where("id", $this->input->post('id', true));
+        $this->db->update('tb_makanan_minuman', $makanan_minuman);
     }
 }

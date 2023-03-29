@@ -90,8 +90,8 @@ class Makanan_dan_minuman extends CI_Controller
 
     public function edit($id)
     {
-        $this->Bahanbaku_Model->edit();
+        $this->MakanandanMinuman_Model->edit();
         $this->session->set_flashdata('edit_makanan', 'Diedit');
-        redirect('bahan_baku/review/' . $id);
+        redirect('makanan_dan_minuman/review/' . $id);
     }
 }
