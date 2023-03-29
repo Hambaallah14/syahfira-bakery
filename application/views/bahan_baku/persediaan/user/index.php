@@ -11,6 +11,10 @@
                 <div class="card">
                     <div class="header">
 
+                        <?php if ($user[0]["h_akses"] == "admin") { ?>
+                            <a href="<?php base_url(); ?>bahan_baku/review_persediaan_cabang" class="btn bg-teal waves-effect">LIHAT DATA PERSEDIAAN CABANG</a>
+                        <?php } ?>
+
                         <ul class="header-dropdown m-r--5">
                             <li class="dropdown">
                                 <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
