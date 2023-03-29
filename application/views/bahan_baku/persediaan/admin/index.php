@@ -70,30 +70,34 @@
                     <h4 class="modal-title" id="defaultModalLabel" style="padding-top:-5px;padding-bottom:10px;color:white;">Tambah Bahan Baku</h4>
                 </div>
                 <div class="modal-body">
-                    <?php echo form_open("transaksi/InsertPersediaanBarang/bahan_baku", array('enctype' => 'multipart/form-data', 'id' => 'form_validation')); ?>
+                    <?php echo form_open("bahan_baku/addPersediaan", array('enctype' => 'multipart/form-data', 'id' => 'form_validation')); ?>
 
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group form-float">
-                                <div class="form-line">
-                                    <select id="id_user" class="form-control show-tick id_user" name="id_user" required>
-                                        <option value="-">--Pilih Cabang--</option>
-                                        <?php
-                                        foreach ($daftar_user as $user) {
-                                            echo "<option value='" . $user["id_user"] . "'>" . $user['nama'] . "</option>";
-                                        }
-                                        ?>
-                                    </select>
-                                </div>
-                            </div>
+                    <div class="form-group form-float">
+                        <div class="form-line">
+                            <input type="text" class="form-control id_persediaan" name="id_persediaan" value="<?= $kode_persediaan; ?>" readonly required>
                         </div>
                     </div>
+
+
+                    <div class="form-group form-float">
+                        <div class="form-line">
+                            <select id="id_user" class="form-control show-tick id_user" name="id_user" required>
+                                <option value="-">--Pilih Cabang--</option>
+                                <?php
+                                foreach ($daftar_user as $user) {
+                                    echo "<option value='" . $user["id_user"] . "'>" . $user['nama'] . "</option>";
+                                }
+                                ?>
+                            </select>
+                        </div>
+                    </div>
+
 
                     <div class="row">
                         <div class="col-md-10">
                             <div class="form-group form-float">
                                 <div class="form-line">
-                                    <select id="id_barang" class="form-control show-tick id_barang" name="id_barang" required>
+                                    <select id="id_bahanbaku" class="form-control show-tick id_bahanbaku" name="id_bahanbaku" required>
                                         <option value="-">--Pilih Bahan Baku--</option>
                                         <?php
                                         foreach ($bahan_baku as $brg) {
@@ -106,6 +110,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="col-md-2">
                             <div class="form-group form-float">
                                 <div class="form-line">

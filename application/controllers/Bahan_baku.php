@@ -100,6 +100,7 @@ class Bahan_baku extends CI_Controller
         if ($data["user"][0]["h_akses"] == "produksi") {
             $data['daftar_user']        = $this->User_Model->all_data();
             $data['bahan_baku']         = $this->Bahanbaku_Model->all();
+            $data['kode_persediaan']    = $this->Bahanbaku_Model->kode_persediaan();
             $this->load->view('template/header', $data);
             $this->load->view('template/sidebar');
             $this->load->view('bahan_baku/persediaan/admin/index');
@@ -122,6 +123,11 @@ class Bahan_baku extends CI_Controller
         $this->load->view('template/sidebar');
         $this->load->view('bahan_baku/persediaan/admin/persediaan_cabang');
         $this->load->view('template/footer');
+    }
+
+
+    public function addPersediaan()
+    {
     }
 
     // Menu hanya dibagian admin

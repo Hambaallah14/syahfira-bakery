@@ -83,4 +83,22 @@ class Bahanbaku_Model extends CI_Model
     {
         return $this->db->query("SELECT tb_persediaan_bb.id_persediaan, tb_persediaan_bb.id_bahanbaku, tb_bahan_baku.bahanbaku, tb_persediaan_bb.harga, tb_persediaan_bb.qty, tb_persediaan_bb.tgl_persediaan, tb_persediaan_bb.tgl_expired, tb_persediaan_bb.keterangan, tb_status_persediaan_bb.id_user FROM tb_persediaan_bb INNER JOIN tb_bahan_baku ON tb_bahan_baku.id_bahanbaku=tb_persediaan_bb.id_bahanbaku INNER JOIN tb_status_persediaan_bb ON tb_status_persediaan_bb.id_persediaan=tb_persediaan_bb.id_persediaan WHERE tb_status_persediaan_bb.id_user='$idUser'")->result_array();
     }
+
+
+    public function kode_persediaan()
+    {
+        $q  = $this->db->query("SELECT MAX(RIGHT(id_persediaan,3)) AS kd_max FROM tb_persediaan_bb");
+        $kd = "";
+        if ($q->num_rows() > 0) {
+            foreach ($q->result() as $k) {
+                $tmp = ((int)$k->kd_max) + 1;
+                $kd  = sprintf("%03s", $tmp);
+            }
+        } else {
+            $kd = "PBB" . date('y') . "001";
+        }
+        date_default_timezone_set('Asia/Jakarta');
+        $a = "PBB" . date('y') . $kd;
+        return $a;
+    }
 }
