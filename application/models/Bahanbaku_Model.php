@@ -17,6 +17,13 @@ class Bahanbaku_Model extends CI_Model
         return $this->db->query("SELECT tb_bahan_baku.id_bahanbaku, tb_bahan_baku.qrcode, tb_bahan_baku.bahanbaku, tb_bahan_baku.harga, tb_bahan_baku.id_satuan, tb_satuan.satuan FROM tb_bahan_baku INNER JOIN tb_satuan ON tb_bahan_baku.id_satuan=tb_satuan.id WHERE tb_bahan_baku.id_bahanbaku='$id'")->result_array();
     }
 
+    public function jumlah_bahan_baku()
+    {
+        $this->db->select('COUNT(id_bahanbaku) as jumlah_bahan');
+        $this->db->from('tb_bahan_baku');
+        return $this->db->get()->row()->jumlah_bahan;
+    }
+
 
 
     public function kode()
@@ -51,7 +58,7 @@ class Bahanbaku_Model extends CI_Model
 
     public function delete($id_bahanbaku)
     {
-        unlink('./assets/img/qrcode/barang/'.$id_bahanbaku.'.png');
+        unlink('./assets/img/qrcode/barang/' . $id_bahanbaku . '.png');
         $this->db->where('id_bahanbaku', $id_bahanbaku);
         $this->db->delete('tb_bahan_baku');
     }
