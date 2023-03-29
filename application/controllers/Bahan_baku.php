@@ -112,4 +112,14 @@ class Bahan_baku extends CI_Controller
             $this->load->view('template/footer');
         }
     }
+
+    public function persediaan_cabang($id_user)
+    {
+        $data['title']             = "Persediaan Bahan Baku - Syahfira Bakery & Cake";
+        $data['bahan_baku']        = $this->Bahanbaku_Model->allPersediaanbyIdUser($id_user);
+        $this->load->view('template/header', $data);
+        $this->load->view('template/sidebar');
+        $this->load->view('bahan_baku/persediaan/admin/persediaan_cabang');
+        $this->load->view('template/footer');
+    }
 }
