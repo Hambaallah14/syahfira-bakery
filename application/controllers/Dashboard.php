@@ -8,6 +8,7 @@ class Dashboard extends CI_Controller
 		$this->load->library('form_validation');
 		$this->load->helper('url');
 		$this->load->model('User_Model');
+		$this->load->model('Bahanbaku_Model');
 
 		if (!$this->session->userdata('logged')) { //cek session
 			redirect('login'); //jika tidak ada session maka balek ke menu login
@@ -19,6 +20,7 @@ class Dashboard extends CI_Controller
 		$data['title'] 	  		  		= "Dashboard - Syahfira Bakery & Cake";
 		$data['user']             		= $this->User_Model->user_by_iduser($this->session->userdata('id_user'));
 		$data['jumlah_user']	  		= $this->User_Model->jumlah_user();
+		$data['jumlah_bahan_baku'] 		= $this->Bahanbaku_Model->jumlah_bahan_baku();
 		$this->load->view('template/header', $data);
 		$this->load->view('template/sidebar', $data);
 		$this->load->view('dashboard/index');

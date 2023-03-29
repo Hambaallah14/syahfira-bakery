@@ -17,8 +17,17 @@
                             <div class="number"><?= $jumlah_user; ?> User</div>
                         </div>
                     </div>
-
-
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                    <div class="info-box hover-expand-effect">
+                        <div class="icon bg-green">
+                            <i class="material-icons">supervisor_account</i>
+                        </div>
+                        <div class="content">
+                            <div class="text">DAFTAR BAHAN BAKU</div>
+                            <div class="number"><?= $jumlah_bahan_baku; ?> Jenis</div>
+                        </div>
+                    </div>
                 </div>
 
             <?php } else { ?>
