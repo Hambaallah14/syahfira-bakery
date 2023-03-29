@@ -12,7 +12,7 @@
                     <div class="header">
 
                         <?php if ($user[0]["h_akses"] == "admin") { ?>
-                            <a href="<?php base_url(); ?>review_persediaan_cabang" class="btn bg-teal waves-effect">LIHAT DATA PERSEDIAAN CABANG</a>
+                            <a href="<?= base_url(); ?>bahan_baku/review_persediaan_cabang" class="btn bg-teal waves-effect">LIHAT DATA PERSEDIAAN CABANG</a>
                         <?php } ?>
 
                         <ul class="header-dropdown m-r--5">
