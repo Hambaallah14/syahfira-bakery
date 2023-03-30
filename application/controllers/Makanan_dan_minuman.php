@@ -100,10 +100,33 @@ class Makanan_dan_minuman extends CI_Controller
     ////////////// PERSEDIAAN
     public function persediaan()
     {
-        $data['title']             = "Persediaan Bahan Baku - Syahfira Bakery & Cake";
+        $data['title']             = "Persediaan Makanan dan Minuman - Syahfira Bakery & Cake";
         $data['user']              = $this->User_Model->user_by_iduser($this->session->userdata('id_user'));
         if ($data["user"][0]["h_akses"] == "produksi") {
+            $data['daftar_user']        = $this->User_Model->all_data();
+            $data['makanan_minuman']    = $this->MakanandanMinuman_Model->all();
+            $data['kode_persediaan']    = $this->MakanandanMinuman_Model->kode_persediaan();
+            $this->load->view('template/header', $data);
+            $this->load->view('template/sidebar');
+            $this->load->view('makanan_dan_minuman/persediaan/admin/index');
+            $this->load->view('template/footer');
         } else {
+            $data['makanan_minuman']         = $this->MakanandanMinuman_Model->allPersediaanbyIdUser($this->session->userdata('id_user'));
+            $this->load->view('template/header', $data);
+            $this->load->view('template/sidebar');
+            $this->load->view('makanan_dan_minuman/persediaan/user/index');
+            $this->load->view('template/footer');
         }
+    }
+
+    public function persediaan_cabang($id_user)
+    {
+        $data['title']             = "Persediaan Bahan Baku - Syahfira Bakery & Cake";
+        $data['user']              = $this->User_Model->user_by_iduser($this->session->userdata('id_user'));
+        $data['makanan_minuman']   = $this->MakanandanMinuman_Model->allPersediaanbyIdUser($id_user);
+        $this->load->view('template/header', $data);
+        $this->load->view('template/sidebar');
+        $this->load->view('makanan_dan_minuman/persediaan/admin/persediaan_cabang');
+        $this->load->view('template/footer');
     }
 }
