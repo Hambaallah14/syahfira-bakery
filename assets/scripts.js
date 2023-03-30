@@ -140,6 +140,7 @@ $(document).ready(function(){
 
 
     $('.btnPesananPersediaanBahanBaku').click(function(){
+        $('#form_validation').reset();
         var IdPersediaan = $(this).data("id");
         $('#id_persediaan').val(IdPersediaan);
     });
