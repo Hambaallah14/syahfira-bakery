@@ -11,7 +11,10 @@
 
                 <div class="card">
                     <div class="header">
-                        <button type="button" class="btn bg-teal waves-effect" data-toggle="modal" data-target="#defaultModal">Tambah Persediaan</button>
+
+                        <?php if ($user[0]["h_akses"] == "produksi") { ?>
+                            <button type="button" class="btn bg-teal waves-effect" data-toggle="modal" data-target="#defaultModal">Tambah Persediaan</button>
+                        <?php } ?>
 
                         <ul class="header-dropdown m-r--5">
                             <li class="dropdown">
