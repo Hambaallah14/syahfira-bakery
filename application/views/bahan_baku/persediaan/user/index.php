@@ -70,7 +70,7 @@
                                         } else {
                                             if ($persediaan["status_persediaan"] == 0) {
                                                 echo "<td class='text-center'>";
-                                                echo "<button type='button' class='btn btn-primary waves-effect' data-toggle='modal' data-target='#defaultModal' data-id='" . $persediaan["id_persediaan"] . "'>";
+                                                echo "<button type='button' class='btn btn-primary waves-effect btnPesananPersediaanBahanBaku' data-toggle='modal' data-target='#defaultModal' data-id='" . $persediaan["id_persediaan"] . "'>";
                                                 echo "<i class='material-icons'>query_builder</i>";
                                                 echo "<span>PESANAN</span>";
                                                 echo "</button>";
@@ -99,14 +99,14 @@
                     <h4 class="modal-title" id="defaultModalLabel" style="padding-top:-5px;padding-bottom:10px;color:white;">PESANAN</h4>
                 </div>
                 <div class="modal-body">
-                    <?php echo form_open("transaksi/UpdatePersediaanBarang/bahan_baku", array('enctype' => 'multipart/form-data', 'id' => 'form_validation')); ?>
+                    <?php echo form_open("bahan_baku/", array('enctype' => 'multipart/form-data', 'id' => 'form_validation')); ?>
 
-                    <input type="hidden" name="id_transaksi" id="IdTransaksi">
+                    <input type="hidden" name="id_persediaan" id="id_persediaan">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group form-float">
                                 <div class="form-line">
-                                    <select id="status" class="form-control show-tick status" name="status" required>
+                                    <select id="status_persediaan" class="form-control show-tick status_persediaan" name="status_persediaan" required>
                                         <option value="-">--Pilih Status--</option>
                                         <option value="1">PESANAN DITERIMA</option>
                                         <option value="2">PESANAN DITOLAK</option>
@@ -120,7 +120,7 @@
                         <div class="col-md-12">
                             <div class="form-group form-float">
                                 <div class="form-line">
-                                    <input type="text" class="form-control ket" placeholder="Keterangan" name="ket" required>
+                                    <input type="text" class="form-control status_keterangan" placeholder="Keterangan" name="status_keterangan" required>
                                 </div>
                             </div>
                         </div>

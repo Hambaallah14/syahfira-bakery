@@ -137,4 +137,10 @@ $(document).ready(function(){
             }
         });
     });
+
+
+    $('.btnPesananPersediaanBahanBaku').click(function(){
+        var IdPersediaan = $(this).data("id");
+        $('#id_persediaan').val(IdPersediaan);
+    });
 });
