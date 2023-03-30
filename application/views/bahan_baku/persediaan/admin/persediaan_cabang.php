@@ -85,7 +85,8 @@
                                             echo "</button>";
                                             echo "</td>";
                                         } else {
-                                            if (date('Y-m-d') > $persediaan["tgl_expired"]) {
+                                            $tanggal_expired = date('d F Y', strtotime($persediaan["tgl_expired"]));
+                                            if (date('Y-m-d') > $tanggal_expired) {
                                                 echo "<td class='text-center'>";
                                                 echo "<button type='button' class='btn btn-danger waves-effect'>";
                                                 echo "<i class='material-icons'>cancel</i>";
