@@ -48,7 +48,7 @@
                                     foreach ($bahan_baku as $persediaan) {
                                         echo "<tr>";
                                         echo "<td>" . $no . "</td>";
-                                        echo "<td>" . $persediaan["id_bahanbaku"] . "</td>";
+                                        echo "<td>" . $persediaan["id_persediaan"] . "</td>";
                                         echo "<td>" . $persediaan["bahanbaku"] . "</td>";
                                         echo "<td>" . $persediaan["qty"] . "</td>";
                                         echo "<td class='text-center'>" . date('d F Y', strtotime($persediaan["tgl_persediaan"])) . "</td>";

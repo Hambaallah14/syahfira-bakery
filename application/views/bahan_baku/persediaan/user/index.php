@@ -52,13 +52,32 @@
                                     foreach ($bahan_baku as $persediaan) {
                                         echo "<tr>";
                                         echo "<td>" . $no . "</td>";
-                                        echo "<td>" . $persediaan["id_bahanbaku"] . "</td>";
+                                        echo "<td>" . $persediaan["id_persediaan"] . "</td>";
                                         echo "<td>" . $persediaan["bahanbaku"] . "</td>";
                                         echo "<td>" . $persediaan["qty"] . "</td>";
                                         echo "<td class='text-center'>" . date('d F Y', strtotime($persediaan["tgl_persediaan"])) . "</td>";
                                         echo "<td class='text-center'>" . date('d F Y', strtotime($persediaan["tgl_expired"])) . "</td>";
                                         echo "<td class='text-center'>" . $persediaan["keterangan"] . "</td>";
-                                        echo "<td class='text-center'>d</td>";
+
+                                        $tanggal_expired = date('Y-m-d', strtotime($persediaan["tgl_expired"]));
+                                        if (date('Y-m-d') > $tanggal_expired) {
+                                            echo "<td class='text-center'>";
+                                            echo "<button type='button' class='btn btn-danger waves-effect'>";
+                                            echo "<i class='material-icons'>cancel</i>";
+                                            echo "<span>EXPIRED</span>";
+                                            echo "</button>";
+                                            echo "</td>";
+                                        } else {
+                                            if ($persediaan["status_persediaan"] == 0) {
+                                                echo "<td class='text-center'>";
+                                                echo "<button type='button' class='btn btn-primary waves-effect' data-toggle='modal' data-target='#defaultModal' data-id='" . $persediaan["id_transaksi"] . "'>";
+                                                echo "<i class='material-icons'>query_builder</i>";
+                                                echo "<span>PESANAN</span>";
+                                                echo "</button>";
+                                                echo "</td>";
+                                            }
+                                        }
+
                                         echo "</tr>";
                                         $no++;
                                     }
