@@ -54,6 +54,7 @@
                                         echo "<td class='text-center'>" . date('d F Y', strtotime($persediaan["tgl_persediaan"])) . "</td>";
                                         echo "<td class='text-center'>" . date('d F Y', strtotime($persediaan["tgl_expired"])) . "</td>";
                                         echo "<td class='text-center'>" . $persediaan["keterangan"] . "</td>";
+                                        $tanggal_expired = date('Y-m-d', strtotime($persediaan["tgl_expired"]));
                                         if (date('Y-m-d') > $tanggal_expired) {
                                             echo "<td class='text-center'>";
                                             echo "<button type='button' class='btn btn-danger waves-effect'>";
