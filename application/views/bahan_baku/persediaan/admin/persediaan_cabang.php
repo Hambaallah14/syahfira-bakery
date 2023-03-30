@@ -50,7 +50,7 @@
                                         echo "<td>" . $no . "</td>";
                                         echo "<td>" . $persediaan["id_persediaan"] . "</td>";
                                         echo "<td>" . $persediaan["bahanbaku"] . "</td>";
-                                        echo "<td>" . $persediaan["qty"] . "</td>";
+                                        echo "<td>" . $persediaan["qty"] . " " . $persediaan["satuan"] . "</td>";
                                         echo "<td class='text-center'>" . date('d F Y', strtotime($persediaan["tgl_persediaan"])) . "</td>";
                                         echo "<td class='text-center'>" . date('d F Y', strtotime($persediaan["tgl_expired"])) . "</td>";
                                         echo "<td class='text-center'>" . $persediaan["keterangan"] . "</td>";
