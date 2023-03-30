@@ -1,0 +1,1 @@
+<input type="hidden" class="harga" name="harga" value="<?= $harga[0]["harga"]; ?>">

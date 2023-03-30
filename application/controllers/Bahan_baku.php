@@ -125,9 +125,33 @@ class Bahan_baku extends CI_Controller
         $this->load->view('template/footer');
     }
 
-
-    public function addPersediaan()
+    public function selectHargaBahanBaku()
     {
+        $id_bahanbaku  = $this->input->post('id_bahanbaku', true);
+        $data['harga'] = $this->Bahanbaku_Model->selectHargaBahanBaku($id_bahanbaku);
+        $this->load->view('bahan_baku/persediaan/admin/select_harga_bahan_baku', $data);
+    }
+
+    public function InsertPersediaan()
+    {
+        $data['title']             = "Persediaan Bahan Baku - Syahfira Bakery & Cake";
+        $this->form_validation->set_rules('id_persediaan', 'id_persediaan', 'required');
+        $this->form_validation->set_rules('id_user', 'id_user', 'required');
+        $this->form_validation->set_rules('id_bahanbaku', 'id_bahanbaku', 'required');
+        $this->form_validation->set_rules('harga', 'harga', 'required');
+        $this->form_validation->set_rules('qty', 'qty', 'required');
+        $this->form_validation->set_rules('tgl_persediaan', 'tgl_persediaan', 'required');
+        $this->form_validation->set_rules('tgl_expired', 'tgl_expired', 'required');
+        if ($this->form_validation->run() == FALSE) {
+            $this->load->view('template/header', $data);
+            $this->load->view('template/sidebar');
+            $this->load->view('bahan_baku/persediaan/admin/index');
+            $this->load->view('template/footer');
+        } else {
+            $this->Bahanbaku_Model->InsertPersediaan();
+            $this->session->set_flashdata('bahan_baku', 'Disimpan');
+            redirect('bahan_baku/persediaan');
+        }
     }
 
     // Menu hanya dibagian admin

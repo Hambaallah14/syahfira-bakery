@@ -1,4 +1,4 @@
-<div class="flash-data" data-target="Barang" data-flashdata="<?= $this->session->flashdata('edit_bahan_baku'); ?>"></div>
+<div class="flash-data" data-target="Bahan Baku" data-flashdata="<?= $this->session->flashdata('edit_bahan_baku'); ?>"></div>
 <section class="content">
     <div class="container-fluid">
 
@@ -46,11 +46,11 @@
                                 <div id="edit-profil" style="display:none;">
                                     <?php echo form_open("bahan_baku/edit/" . $bahan_baku[0]['id_bahanbaku'], array('enctype' => 'multipart/form-data', 'id' => 'form_validation')); ?>
 
-                                        <div class="form-group form-float">
-                                            <div class="form-line">
-                                                <input type="text" class="form-control" name="id_bahanbaku" readonly value="<?= $bahan_baku[0]['id_bahanbaku']; ?>">
-                                            </div>
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            <input type="text" class="form-control" name="id_bahanbaku" readonly value="<?= $bahan_baku[0]['id_bahanbaku']; ?>">
                                         </div>
+                                    </div>
 
 
 
@@ -66,7 +66,9 @@
                                             <select class="form-control show-tick" name="id_satuan" required>
                                                 <option value="-">--Pilih Satuan--</option>
                                                 <?php foreach ($satuan as $sat) { ?>
-                                                    <option value="<?= $sat["id"];?>" <?php if($sat["id"] == $bahan_baku[0]["id_satuan"]){echo "selected";}?> ><?= $sat["satuan"];?></option>
+                                                    <option value="<?= $sat["id"]; ?>" <?php if ($sat["id"] == $bahan_baku[0]["id_satuan"]) {
+                                                                                            echo "selected";
+                                                                                        } ?>><?= $sat["satuan"]; ?></option>
                                                 <?php } ?>
                                             </select>
                                         </div>

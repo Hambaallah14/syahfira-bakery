@@ -101,4 +101,25 @@ class Bahanbaku_Model extends CI_Model
         $a = "PBB" . date('y') . $kd;
         return $a;
     }
+
+    public function InsertPersediaan()
+    {
+        $persediaan = [
+            "id_persediaan"    => $this->input->post('id_persediaan', true),
+            "id_bahanbaku"     => $this->input->post('id_bahanbaku', true),
+            "harga"            => $this->input->post('harga', true),
+            "qty"              => $this->input->post('qty', true),
+            "tgl_persediaan"   => $this->input->post('tgl_persediaan', true),
+            "tgl_expired"      => $this->input->post('tgl_expired', true),
+            "keterangan"       => $this->input->post('keterangan', true)
+        ];
+        $this->db->insert('tb_persediaan_bb', $persediaan);
+
+        $status = [
+            "id_persediaan"         => $this->input->post('id_persediaan', true),
+            "id_user"               => $this->input->post('id_user', true),
+            "status_persediaan"     => 1
+        ];
+        $this->db->insert('tb_status_persediaan_bb', $status);
+    }
 }

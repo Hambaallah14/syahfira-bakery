@@ -1,4 +1,4 @@
-<div class="flash-data" data-target="persediaan_bahanbaku" data-flashdata="<?= $this->session->flashdata('bahan_baku'); ?>"></div>
+<div class="flash-data" data-target="Persediaan Bahan Baku" data-flashdata="<?= $this->session->flashdata('bahan_baku'); ?>"></div>
 <section class="content">
     <div class="container-fluid">
 
@@ -70,7 +70,7 @@
                     <h4 class="modal-title" id="defaultModalLabel" style="padding-top:-5px;padding-bottom:10px;color:white;">Tambah Bahan Baku</h4>
                 </div>
                 <div class="modal-body">
-                    <?php echo form_open("bahan_baku/addPersediaan", array('enctype' => 'multipart/form-data', 'id' => 'form_validation')); ?>
+                    <?php echo form_open("bahan_baku/InsertPersediaan", array('enctype' => 'multipart/form-data', 'id' => 'form_validation')); ?>
 
                     <div class="form-group form-float">
                         <div class="form-line">
@@ -144,7 +144,7 @@
                         <div class="col-md-12">
                             <div class="form-group form-float">
                                 <div class="form-line">
-                                    <input type="text" class="form-control ket" placeholder="Pilih Keterangan" name="ket" required>
+                                    <input type="text" class="form-control keterangan" placeholder="Pilih Keterangan" name="keterangan" required>
                                 </div>
                             </div>
                         </div>

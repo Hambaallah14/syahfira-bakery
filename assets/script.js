@@ -1,40 +1,4 @@
-const flashdata = $('.flash-data').data('flashdata');
-const target    = $('.flash-data').data('target');
-if(flashdata){
-	swal({
-		title : 'Data ' + target,
-		text : 'Berhasil '+ flashdata,
-		type : 'success'
-	});
-}
 
-
-// //tombol-hapus
-$('.btn-hapus').on('click', function(e){
-	e.preventDefault();
-	const href = $(this).attr('href');
-		swal({
-			title: "Apakah Anda Yakin",
-			text: "Data " + target +" akan dihapus",
-			type: "warning",
-			showCancelButton: true,
-			confirmButtonColor: "#DD6B55",
-			confirmButtonText: "Yes",
-			cancelButtonText: "No",
-			closeOnConfirm: false,
-			closeOnCancel: false
-		}, function (isConfirm) {
-			if (isConfirm) {
-				document.location.href = href;
-			} else {
-				swal({
-					title : 'Data ' + target,
-					text : 'Gagal dihapus',
-					type : 'error'
-				});
-			}
-		});
-});
 
 // Btn-Pemberitahuan
 $('.btn-pemberitahuan-pegawai').on('click', function(e){
