@@ -77,6 +77,17 @@
                                                 echo "</button>";
                                                 echo "</td>";
                                             }
+
+                                            // JIKA PESANAN DITOLAK
+                                            else if ($persediaan["status_verifikasi"] == 2) {
+                                                echo "<td class='text-center'>";
+                                                echo "<button type='button' class='btn btn-danger waves-effect' data-container='body' data-toggle='popover'
+                                                data-placement='top' title='Informasi' data-content='" . $persediaan["status_keterangan"] . "'>";
+                                                echo "<i class='material-icons'>cancel</i>";
+                                                echo "<span>PESANAN DITOLAK</span>";
+                                                echo "</button>";
+                                                echo "</td>";
+                                            }
                                         }
 
                                         echo "</tr>";
