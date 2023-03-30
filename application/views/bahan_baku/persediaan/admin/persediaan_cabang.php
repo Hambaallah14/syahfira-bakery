@@ -54,7 +54,16 @@
                                         echo "<td class='text-center'>" . date('d F Y', strtotime($persediaan["tgl_persediaan"])) . "</td>";
                                         echo "<td class='text-center'>" . date('d F Y', strtotime($persediaan["tgl_expired"])) . "</td>";
                                         echo "<td class='text-center'>" . $persediaan["keterangan"] . "</td>";
-                                        echo "<td class='text-center'>d</td>";
+
+                                        // PESANAN MASIH DIPROSES
+                                        if ($persediaan["status_persediaan"] == 0) {
+                                            echo "<td class='text-center'>";
+                                            echo "<button type='button' class='btn btn-primary waves-effect'>";
+                                            echo "<i class='material-icons'>query_builder</i>";
+                                            echo "<span>PESANAN DIPROSES</span>";
+                                            echo "</button>";
+                                            echo "</td>";
+                                        }
                                         echo "</tr>";
                                         $no++;
                                     }
