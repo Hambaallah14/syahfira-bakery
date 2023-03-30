@@ -154,7 +154,13 @@ class Bahan_baku extends CI_Controller
         }
     }
 
-    // Menu hanya dibagian admin
+    public function UpdateStatusPersediaan()
+    {
+        $this->Bahanbaku_Model->UpdateStatusPersediaan();
+        $this->session->set_flashdata('status_persediaan', 'Diubah');
+        redirect('bahan_baku/persediaan');
+    }
+    // Menu hanya di akun admin
     public function review_persediaan_cabang()
     {
         $data['title']             = "Persediaan Bahan Baku - Syahfira Bakery & Cake";

@@ -127,4 +127,15 @@ class Bahanbaku_Model extends CI_Model
         ];
         $this->db->insert('tb_status_persediaan_bb', $status);
     }
+
+    public function UpdateStatusPersediaan()
+    {
+        $bahan_baku = [
+            "status_persediaan"      => $this->input->post('status_persediaan', true),
+            "status_keterangan"      => $this->input->post('status_keterangan', true)
+
+        ];
+        $this->db->where("id_persediaan", $this->input->post('id_persediaan', true));
+        $this->db->update('tb_status_persediaan_bb', $bahan_baku);
+    }
 }

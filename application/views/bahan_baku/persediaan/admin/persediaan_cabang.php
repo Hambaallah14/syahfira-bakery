@@ -106,49 +106,4 @@
             </div>
         </div>
     </div>
-
-    <!-- Modal -->
-    <div class="modal fade" id="defaultModal" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header bg-teal">
-                    <h4 class="modal-title" id="defaultModalLabel" style="padding-top:-5px;padding-bottom:10px;color:white;">PESANAN</h4>
-                </div>
-                <div class="modal-body">
-                    <?php echo form_open("transaksi/UpdatePersediaanBarang/bahan_baku", array('enctype' => 'multipart/form-data', 'id' => 'form_validation')); ?>
-
-                    <input type="hidden" name="id_transaksi" id="IdTransaksi">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group form-float">
-                                <div class="form-line">
-                                    <select id="status" class="form-control show-tick status" name="status" required>
-                                        <option value="-">--Pilih Status--</option>
-                                        <option value="1">PESANAN DITERIMA</option>
-                                        <option value="2">PESANAN DITOLAK</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group form-float">
-                                <div class="form-line">
-                                    <input type="text" class="form-control ket" placeholder="Keterangan" name="ket" required>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-link waves-effect btn-simpan">Simpan</button>
-                    <?php echo form_close(); ?>
-                    <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">Tutup</button>
-                </div>
-            </div>
-        </div>
-    </div>
 </section>

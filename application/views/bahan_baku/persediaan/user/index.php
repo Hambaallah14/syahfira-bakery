@@ -1,3 +1,4 @@
+<div class="flash-data" data-target="Persediaan Bahan Baku" data-flashdata="<?= $this->session->flashdata('status_persediaan'); ?>"></div>
 <section class="content">
     <div class="container-fluid">
 
@@ -99,7 +100,7 @@
                     <h4 class="modal-title" id="defaultModalLabel" style="padding-top:-5px;padding-bottom:10px;color:white;">PESANAN</h4>
                 </div>
                 <div class="modal-body">
-                    <?php echo form_open("bahan_baku/", array('enctype' => 'multipart/form-data', 'id' => 'form_validation')); ?>
+                    <?php echo form_open("bahan_baku/UpdateStatusPersediaan", array('enctype' => 'multipart/form-data', 'id' => 'form_validation')); ?>
 
                     <input type="hidden" name="id_persediaan" id="id_persediaan">
                     <div class="row">
