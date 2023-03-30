@@ -102,6 +102,11 @@ class Bahanbaku_Model extends CI_Model
         return $a;
     }
 
+    public function selectHargaBahanBaku($id_bahanbaku)
+    {
+        return $this->db->query("SELECT * FROM tb_bahan_baku WHERE id_bahanbaku='$id_bahanbaku'")->result_array();
+    }
+
     public function InsertPersediaan()
     {
         $persediaan = [
