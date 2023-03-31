@@ -121,12 +121,32 @@ class Makanan_dan_minuman extends CI_Controller
 
     public function persediaan_cabang($id_user)
     {
-        $data['title']             = "Persediaan Bahan Baku - Syahfira Bakery & Cake";
+        $data['title']             = "Persediaan Makanan dan Minuman - Syahfira Bakery & Cake";
         $data['user']              = $this->User_Model->user_by_iduser($this->session->userdata('id_user'));
         $data['makanan_minuman']   = $this->MakanandanMinuman_Model->allPersediaanbyIdUser($id_user);
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar');
         $this->load->view('makanan_dan_minuman/persediaan/admin/persediaan_cabang');
+        $this->load->view('template/footer');
+    }
+
+
+    public function UpdateStatusPersediaan()
+    {
+        $this->Bahanbaku_Model->UpdateStatusPersediaan();
+        $this->session->set_flashdata('status_persediaan', 'Diubah');
+        redirect('bahan_baku/persediaan');
+    }
+    // Menu hanya di akun admin
+    public function review_persediaan_cabang()
+    {
+        $data['title']              = "Persediaan Makanan dan Minuman - Syahfira Bakery & Cake";
+        $data['user']               = $this->User_Model->user_by_iduser($this->session->userdata('id_user'));
+        $data['daftar_user']        = $this->User_Model->all_data();
+        $data['makanan_minuman']    = $this->Bahanbaku_Model->all();
+        $this->load->view('template/header', $data);
+        $this->load->view('template/sidebar');
+        $this->load->view('makanan_dan_minuman/persediaan/admin/index');
         $this->load->view('template/footer');
     }
 }

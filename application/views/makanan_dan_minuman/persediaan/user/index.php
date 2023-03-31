@@ -1,9 +1,9 @@
-<div class="flash-data" data-target="Persediaan Bahan Baku" data-flashdata="<?= $this->session->flashdata('status_persediaan'); ?>"></div>
+<div class="flash-data" data-target="Persediaan Makanan dan Minuman" data-flashdata="<?= $this->session->flashdata('status_persediaan'); ?>"></div>
 <section class="content">
     <div class="container-fluid">
 
         <div class="block-header">
-            <h2>Bahan Baku</h2>
+            <h2>Makanan dan Minuman</h2>
         </div>
 
         <div class="row clearfix">
@@ -13,7 +13,7 @@
                     <div class="header">
 
                         <?php if ($user[0]["h_akses"] == "admin") { ?>
-                            <a href="<?= base_url(); ?>bahan_baku/review_persediaan_cabang" class="btn bg-teal waves-effect">LIHAT DATA PERSEDIAAN CABANG</a>
+                            <a href="<?= base_url(); ?>makanan_dan_minuman/review_persediaan_cabang" class="btn bg-teal waves-effect">LIHAT RINCIAN PERSEDIAAN CABANG</a>
                         <?php } ?>
 
                         <ul class="header-dropdown m-r--5">
@@ -64,43 +64,53 @@
                                         echo "<td class='text-center'>" . $persediaan["keterangan"] . "</td>";
 
                                         $tanggal_expired2 = date('Y-m-d', strtotime('+' . $persediaan["durasi_expired"] . 'days', strtotime($persediaan["tgl_persediaan"])));
-                                        if (date('Y-m-d') > $tanggal_expired2) {
+                                        if (date('Y-m-d') >= $tanggal_expired2) {
                                             echo "<td class='text-center'>";
                                             echo "<button type='button' class='btn btn-danger waves-effect'>";
                                             echo "<i class='material-icons'>cancel</i>";
                                             echo "<span>EXPIRED</span>";
                                             echo "</button>";
                                             echo "</td>";
+                                        } else if (date('Y-m-d') == $tanggal_expired2) {
                                         } else {
-                                            // JIKA PESANAN DI PROSES
-                                            if ($persediaan["status_persediaan"] == 0) {
+                                            if ($persediaan["qty"] == 0) {
                                                 echo "<td class='text-center'>";
-                                                echo "<button type='button' class='btn btn-primary waves-effect btnPesananPersediaanBahanBaku' data-toggle='modal' data-target='#defaultModal' data-id='" . $persediaan["id_persediaan"] . "'>";
-                                                echo "<i class='material-icons'>query_builder</i>";
-                                                echo "<span>PESANAN</span>";
-                                                echo "</button>";
-                                                echo "</td>";
-                                            }
-
-                                            // JIKA PESANAN DITERIMA
-                                            else if ($persediaan["status_persediaan"] == 1) {
-                                                echo "<td class='text-center'>";
-                                                echo "<button type='button' class='btn btn-success waves-effect'>";
-                                                echo "<i class='material-icons'>done</i>";
-                                                echo "<span>PESANAN DITERIMA</span>";
-                                                echo "</button>";
-                                                echo "</td>";
-                                            }
-
-                                            // JIKA PESANAN DITOLAK
-                                            else if ($persediaan["status_persediaan"] == 2) {
-                                                echo "<td class='text-center'>";
-                                                echo "<button type='button' class='btn btn-danger waves-effect' data-container='body' data-toggle='popover'
-                                                data-placement='top' title='Informasi' data-content='" . $persediaan["status_keterangan"] . "'>";
+                                                echo "<button type='button' class='btn btn-danger waves-effect'>";
                                                 echo "<i class='material-icons'>cancel</i>";
-                                                echo "<span>PESANAN DITOLAK</span>";
+                                                echo "<span>STOK HABIS</span>";
                                                 echo "</button>";
                                                 echo "</td>";
+                                            } else {
+                                                // JIKA PESANAN DI PROSES
+                                                if ($persediaan["status_persediaan"] == 0) {
+                                                    echo "<td class='text-center'>";
+                                                    echo "<button type='button' class='btn btn-primary waves-effect btnPesananPersediaanBahanBaku' data-toggle='modal' data-target='#defaultModal' data-id='" . $persediaan["id_persediaan"] . "'>";
+                                                    echo "<i class='material-icons'>query_builder</i>";
+                                                    echo "<span>PESANAN</span>";
+                                                    echo "</button>";
+                                                    echo "</td>";
+                                                }
+
+                                                // JIKA PESANAN DITERIMA
+                                                else if ($persediaan["status_persediaan"] == 1) {
+                                                    echo "<td class='text-center'>";
+                                                    echo "<button type='button' class='btn btn-success waves-effect'>";
+                                                    echo "<i class='material-icons'>done</i>";
+                                                    echo "<span>PESANAN DITERIMA</span>";
+                                                    echo "</button>";
+                                                    echo "</td>";
+                                                }
+
+                                                // JIKA PESANAN DITOLAK
+                                                else if ($persediaan["status_persediaan"] == 2) {
+                                                    echo "<td class='text-center'>";
+                                                    echo "<button type='button' class='btn btn-danger waves-effect' data-container='body' data-toggle='popover'
+                                                data-placement='top' title='Informasi' data-content='" . $persediaan["status_keterangan"] . "'>";
+                                                    echo "<i class='material-icons'>cancel</i>";
+                                                    echo "<span>PESANAN DITOLAK</span>";
+                                                    echo "</button>";
+                                                    echo "</td>";
+                                                }
                                             }
                                         }
 
@@ -125,7 +135,7 @@
                     <h4 class="modal-title" id="defaultModalLabel" style="padding-top:-5px;padding-bottom:10px;color:white;">PESANAN</h4>
                 </div>
                 <div class="modal-body">
-                    <?php echo form_open("bahan_baku/UpdateStatusPersediaan", array('enctype' => 'multipart/form-data', 'id' => 'form_validation')); ?>
+                    <?php echo form_open("makanan_dan_minuman/UpdateStatusPersediaan", array('enctype' => 'multipart/form-data', 'id' => 'form_validation')); ?>
 
                     <input type="hidden" name="id_persediaan" id="id_persediaan">
                     <div class="row">
