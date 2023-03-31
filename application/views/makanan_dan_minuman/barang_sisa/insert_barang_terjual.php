@@ -30,43 +30,48 @@
                         <input type="hidden" name="id_mkn_mnm" value="<?= $makanan_minuman[0]["id_mkn_mnm"]; ?>">
                         <div class="row">
                             <div class="col-md-12">
-                                <div class="form-group form-float">
+                                <label for="id_persediaan">ID Persediaan</label>
+                                <div class="form-group">
                                     <div class="form-line">
-                                        <input type="text" class="form-control" name="id_persediaan" readonly value="<?= $makanan_minuman[0]["id_persediaan"]; ?>">
+                                        <input type="text" id="id_persediaan" class="form-control" name="id_persediaan" readonly value="<?= $makanan_minuman[0]["id_persediaan"]; ?>">
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-12">
-                                <div class="form-group form-float">
+                                <label for="mkn_mnm">Makanan / Minuman</label>
+                                <div class="form-group">
                                     <div class="form-line">
-                                        <input type="text" class="form-control" readonly value="<?= $makanan_minuman[0]["makanan_minuman"]; ?>">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group form-float">
-                                    <div class="form-line">
-                                        <input type="number" class="form-control" name="harga" readonly value="<?= $makanan_minuman[0]["harga"]; ?>">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group form-float">
-                                    <div class="form-line">
-                                        <input type="text" class="form-control" name="qty" readonly value="<?= $makanan_minuman[0]["qty"]; ?>">
+                                        <input type="text" id="mkn_mnm" class="form-control" readonly value="<?= $makanan_minuman[0]["id_persediaan"]; ?>">
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-12">
-                                <div class="form-group form-float">
+                                <label for="harga">Harga</label>
+                                <div class="form-group">
                                     <div class="form-line">
-                                        <input type="date" class="form-control" name="tgl_persediaan" readonly value="<?= $makanan_minuman[0]["tgl_persediaan"]; ?>">
+                                        <input type="text" id="harga" class="form-control" name="harga" readonly value="<?= $makanan_minuman[0]["id_persediaan"]; ?>">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="qty">Qty tersedia</label>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="text" id="qty" class="form-control" readonly value="<?= $makanan_minuman[0]["qty"] . " " . $makanan_minuman[0]["satuan"]; ?>">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="new-qty">Qty</label>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="number" id="new-qty" class="form-control" max="<?= $makanan_minuman[0]["qty"]; ?>" min="0">
                                     </div>
                                 </div>
                             </div>
