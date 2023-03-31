@@ -143,7 +143,7 @@ class Makanan_dan_minuman extends CI_Controller
         $data['title']              = "Persediaan Makanan dan Minuman - Syahfira Bakery & Cake";
         $data['user']               = $this->User_Model->user_by_iduser($this->session->userdata('id_user'));
         $data['daftar_user']        = $this->User_Model->all_data();
-        $data['makanan_minuman']    = $this->Bahanbaku_Model->all();
+        $data['makanan_minuman']    = $this->MakanandanMinuman_Model->all();
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar');
         $this->load->view('makanan_dan_minuman/persediaan/admin/index');
