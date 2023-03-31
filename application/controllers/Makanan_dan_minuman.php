@@ -199,6 +199,23 @@ class Makanan_dan_minuman extends CI_Controller
 
     public function InsertPersediaanSisa()
     {
+        $data['title']             = "Persediaan Makanan dan Minuman - Syahfira Bakery & Cake";
+        $this->form_validation->set_rules('id_persediaan', 'id_persediaan', 'required');
+        $this->form_validation->set_rules('id_user', 'id_user', 'required');
+        $this->form_validation->set_rules('id_mkn_mnm', 'id_mkn_mnm', 'required');
+        $this->form_validation->set_rules('harga', 'harga', 'required');
+        $this->form_validation->set_rules('qty', 'qty', 'required');
+        $this->form_validation->set_rules('tgl_persediaan', 'tgl_persediaan', 'required');
+        if ($this->form_validation->run() == FALSE) {
+            $this->load->view('template/header', $data);
+            $this->load->view('template/sidebar');
+            $this->load->view('makanan_dan_minuman/persediaan/user/pindah_stok');
+            $this->load->view('template/footer');
+        } else {
+            $this->MakanandanMinuman_Model->InsertPersediaanSisa();
+            $this->session->set_flashdata('status_persediaan', 'Disimpan');
+            redirect('makanan_dan_minuman/persediaan');
+        }
     }
 
     public function persediaan_sisa()
