@@ -60,10 +60,13 @@
 
                                         $tanggal_expired = date('d F Y', strtotime('+' . $persediaan["durasi_expired"] . 'days', strtotime($persediaan["tgl_persediaan"])));
                                         echo "<td class='text-center'>" . $tanggal_expired . "</td>";
-
                                         echo "<td class='text-center'>" . $persediaan["keterangan"] . "</td>";
 
                                         $tanggal_expired2 = date('Y-m-d', strtotime('+' . $persediaan["durasi_expired"] . 'days', strtotime($persediaan["tgl_persediaan"])));
+
+                                        $tanggal_expired3 = date('Y-m-d', strtotime('+' . $persediaan["durasi_expired"] - 1 . 'days', strtotime($persediaan["tgl_persediaan"])));
+
+                                        //jika tgl expired sudah lewat
                                         if (date('Y-m-d') >= $tanggal_expired2) {
                                             echo "<td class='text-center'>";
                                             echo "<button type='button' class='btn btn-danger waves-effect'>";
@@ -71,7 +74,13 @@
                                             echo "<span>EXPIRED</span>";
                                             echo "</button>";
                                             echo "</td>";
-                                        } else if (date('Y-m-d') == $tanggal_expired2) {
+                                        }
+
+                                        //jika tgl 1 hari seblum expired
+                                        else if (date('Y-m-d') == $tanggal_expired3) {
+                                            echo "<td class='text-center'>";
+                                            echo "<a href='" . base_url() . "makanan_dan_minuman/pindahStok/e/" . $persediaan["id_transaksi"] . "' class='btn btn-orange'>PINDAH STOK</a>";
+                                            echo "</td>";
                                         } else {
                                             if ($persediaan["qty"] == 0) {
                                                 echo "<td class='text-center'>";
