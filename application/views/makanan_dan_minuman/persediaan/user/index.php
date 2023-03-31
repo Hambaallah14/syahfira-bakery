@@ -79,7 +79,7 @@
                                         //jika tgl 1 hari seblum expired
                                         else if (date('Y-m-d') == $tanggal_expired3) {
                                             echo "<td class='text-center'>";
-                                            echo "<a href='" . base_url() . "makanan_dan_minuman/pindahStok/e/" . $persediaan["id_transaksi"] . "' class='btn btn-orange'>PINDAH STOK</a>";
+                                            echo "<a href='" . base_url() . "makanan_dan_minuman/pindahStok/e/" . $persediaan["id_persediaan"] . "' class='btn btn-orange'>PINDAH STOK</a>";
                                             echo "</td>";
                                         } else {
                                             if ($persediaan["qty"] == 0) {
