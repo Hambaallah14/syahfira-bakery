@@ -25,7 +25,7 @@
                     </div>
 
                     <div class="body">
-                        <?php echo form_open("makanan_dan_minuman/InsertPersediaanSisa", array('enctype' => 'multipart/form-data', 'id' => 'form_validation')); ?>
+                        <?php echo form_open("makanan_dan_minuman/InsertPenjualanBarang", array('enctype' => 'multipart/form-data', 'id' => 'form_validation')); ?>
                         <input type="hidden" name="id_user" value="<?= $user[0]["id_user"]; ?>">
                         <input type="hidden" name="id_mkn_mnm" value="<?= $makanan_minuman[0]["id_mkn_mnm"]; ?>">
                         <div class="row">
@@ -43,7 +43,7 @@
                                 <label for="mkn_mnm">Makanan / Minuman</label>
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <input type="text" id="mkn_mnm" class="form-control" readonly value="<?= $makanan_minuman[0]["id_persediaan"]; ?>">
+                                        <input type="text" id="mkn_mnm" class="form-control" readonly value="<?= $makanan_minuman[0]["makanan_minuman"]; ?>">
                                     </div>
                                 </div>
                             </div>
@@ -53,7 +53,7 @@
                                 <label for="harga">Harga</label>
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <input type="text" id="harga" class="form-control" name="harga" readonly value="<?= $makanan_minuman[0]["id_persediaan"]; ?>">
+                                        <input type="text" id="harga" class="form-control" name="harga" readonly value="<?= $makanan_minuman[0]["harga"]; ?>">
                                     </div>
                                 </div>
                             </div>
@@ -71,7 +71,7 @@
                                 <label for="new-qty">Qty</label>
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <input type="number" id="new-qty" class="form-control" max="<?= $makanan_minuman[0]["qty"]; ?>" min="0">
+                                        <input type="number" id="new-qty" class="form-control" max="<?= $makanan_minuman[0]["qty"]; ?>" min="0" name="new-qty">
                                     </div>
                                 </div>
                             </div>
