@@ -26,7 +26,7 @@
 
                     <div class="body">
                         <?php echo form_open("makanan_dan_minuman/InsertBarangSisa", array('enctype' => 'multipart/form-data', 'id' => 'form_validation')); ?>
-                        <input type="text" name="id_user" value="<?= $user[0]["id_user"]; ?>">
+                        <input type="hidden" name="id_user" value="<?= $user[0]["id_user"]; ?>">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group form-float">
@@ -40,7 +40,7 @@
                             <div class="col-md-6">
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        <input type="text" class="form-control" name="harga" readonly value="<?= $makanan_minuman[0]["harga"]; ?>">
+                                        <input type="number" class="form-control" name="harga" readonly value="<?= $makanan_minuman[0]["harga"]; ?>">
                                     </div>
                                 </div>
                             </div>
