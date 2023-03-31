@@ -164,6 +164,7 @@ class Makanan_dan_minuman extends CI_Controller
         $this->session->set_flashdata('makanan_minuman', 'Diubah');
         redirect('makanan_dan_minuman/persediaan');
     }
+
     // Menu hanya di akun admin
     public function review_persediaan_cabang()
     {

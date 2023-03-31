@@ -84,7 +84,7 @@
                                                 // JIKA PESANAN DI PROSES
                                                 if ($persediaan["status_persediaan"] == 0) {
                                                     echo "<td class='text-center'>";
-                                                    echo "<button type='button' class='btn btn-primary waves-effect btnPesananPersediaanBahanBaku' data-toggle='modal' data-target='#defaultModal' data-id='" . $persediaan["id_persediaan"] . "'>";
+                                                    echo "<button type='button' class='btn btn-primary waves-effect btnPesananPersediaanMakananMinuman' data-toggle='modal' data-target='#defaultModal' data-id='" . $persediaan["id_persediaan"] . "'>";
                                                     echo "<i class='material-icons'>query_builder</i>";
                                                     echo "<span>PESANAN</span>";
                                                     echo "</button>";
