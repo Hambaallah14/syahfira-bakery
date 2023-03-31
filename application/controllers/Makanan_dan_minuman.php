@@ -130,12 +130,39 @@ class Makanan_dan_minuman extends CI_Controller
         $this->load->view('template/footer');
     }
 
+    public function selectHargaMakandanMinuman()
+    {
+        $id            = $this->input->post('id', true);
+        $data['harga'] = $this->MakanandanMinuman_Model->selectHargaMakandanMinuman($id);
+        $this->load->view('makanan_dan_minuman/persediaan/admin/select_harga_makanan_minuman', $data);
+    }
+
+    public function InsertPersediaan()
+    {
+        $data['title']             = "Persediaan Bahan Baku - Syahfira Bakery & Cake";
+        $this->form_validation->set_rules('id_persediaan', 'id_persediaan', 'required');
+        $this->form_validation->set_rules('id_user', 'id_user', 'required');
+        $this->form_validation->set_rules('id_mkn_mnm', 'id_mkn_mnm', 'required');
+        $this->form_validation->set_rules('harga', 'harga', 'required');
+        $this->form_validation->set_rules('qty', 'qty', 'required');
+        $this->form_validation->set_rules('tgl_persediaan', 'tgl_persediaan', 'required');
+        if ($this->form_validation->run() == FALSE) {
+            $this->load->view('template/header', $data);
+            $this->load->view('template/sidebar');
+            $this->load->view('makanan_dan_minuman/persediaan/admin/index');
+            $this->load->view('template/footer');
+        } else {
+            $this->MakanandanMinuman_Model->InsertPersediaan();
+            $this->session->set_flashdata('makanan_minuman', 'Disimpan');
+            redirect('makanan_dan_minuman/persediaan');
+        }
+    }
 
     public function UpdateStatusPersediaan()
     {
-        $this->Bahanbaku_Model->UpdateStatusPersediaan();
-        $this->session->set_flashdata('status_persediaan', 'Diubah');
-        redirect('bahan_baku/persediaan');
+        $this->MakanandanMinuman_Model->UpdateStatusPersediaan();
+        $this->session->set_flashdata('makanan_minuman', 'Diubah');
+        redirect('makanan_dan_minuman/persediaan');
     }
     // Menu hanya di akun admin
     public function review_persediaan_cabang()

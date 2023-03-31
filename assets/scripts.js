@@ -138,6 +138,18 @@ $(document).ready(function(){
         });
     });
 
+	$('#id').change(function(){
+        const id = $('#id').val();
+        $.ajax({
+            type    : 'POST',
+            url     : 'https://syahfirabakery.co.id/makanan_dan_minuman/selectHargaMakandanMinuman',
+            data    : 'id=' + id,
+            success : function(response){
+            $('#harga').html(response);
+            }
+        });
+    });
+
 
     $('.btnPesananPersediaanBahanBaku').click(function(){
         $('#form_validation').reset();

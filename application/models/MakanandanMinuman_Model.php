@@ -96,4 +96,40 @@ class MakanandanMinuman_Model extends CI_Model
         $a = "PMM" . date('y') . $kd;
         return $a;
     }
+
+    public function selectHargaMakandanMinuman($id)
+    {
+        return $this->db->query("SELECT * FROM tb_makanan_minuman WHERE id='$id'")->result_array();
+    }
+
+    public function InsertPersediaan()
+    {
+        $persediaan = [
+            "id_persediaan"    => $this->input->post('id_persediaan', true),
+            "id_mkn_mnm"       => $this->input->post('id_mkn_mnm', true),
+            "harga"            => $this->input->post('harga', true),
+            "qty"              => $this->input->post('qty', true),
+            "tgl_persediaan"   => $this->input->post('tgl_persediaan', true),
+            "keterangan"       => $this->input->post('keterangan', true)
+        ];
+        $this->db->insert('tb_persediaan_mm', $persediaan);
+
+        $status = [
+            "id_persediaan"         => $this->input->post('id_persediaan', true),
+            "id_user"               => $this->input->post('id_user', true),
+            "status_persediaan"     => 0
+        ];
+        $this->db->insert('tb_status_persediaan_mm', $status);
+    }
+
+    public function UpdateStatusPersediaan()
+    {
+        $MakanandanMinuman = [
+            "status_persediaan"      => $this->input->post('status_persediaan', true),
+            "status_keterangan"      => $this->input->post('status_keterangan', true)
+
+        ];
+        $this->db->where("id_persediaan", $this->input->post('id_persediaan', true));
+        $this->db->update('tb_status_persediaan_mm', $MakanandanMinuman);
+    }
 }
