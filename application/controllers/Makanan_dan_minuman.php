@@ -187,7 +187,7 @@ class Makanan_dan_minuman extends CI_Controller
         if ($object == "e") {
             $this->load->view('template/header', $data);
             $this->load->view('template/sidebar');
-            $this->load->view('makanan_dan_minuman/persediaan/user/pindah_stok');
+            $this->load->view('makanan_dan_minuman/persediaan/user/pindah_sisa_stok');
             $this->load->view('template/footer');
         } else {
             $this->load->view('template/header', $data);

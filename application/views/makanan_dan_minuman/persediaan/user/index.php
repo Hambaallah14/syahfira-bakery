@@ -106,10 +106,10 @@
                                                 // JIKA PESANAN DITERIMA
                                                 else if ($persediaan["status_persediaan"] == 1) {
                                                     echo "<td class='text-center'>";
-                                                    echo "<button type='button' class='btn btn-success waves-effect'>";
-                                                    echo "<i class='material-icons'>done</i>";
-                                                    echo "<span>PESANAN DITERIMA OK</span>";
-                                                    echo "</button>";
+                                                    echo "<a href='" . base_url() . "makanan_dan_minuman/pindahStok/p/" . $persediaan["id_persediaan"] . "' class='btn btn-success waves-effect'>";
+                                                    echo "<i class='material-icons'>input</i>";
+                                                    echo "<span>PINDAH STOK</span>";
+                                                    echo "</a>";
                                                     echo "</td>";
                                                 }
 

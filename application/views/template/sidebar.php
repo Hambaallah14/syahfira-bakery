@@ -91,11 +91,19 @@
                     <li>
                         <a href="<?= base_url(); ?>makanan_dan_minuman/persediaan_sisa" class="waves-effect wave-block">
                             <i class="material-icons" style="color:#24181a;">shopping_cart</i>
-                            <span style="color:#24181a;">Persediaan Sisa</span>
+                            <span style="color:#24181a;">Persediaan Sisa Barang</span>
                         </a>
                     </li>
                 <?php } ?>
 
+                <?php if ($user[0]["h_akses"] != "produksi") { ?>
+                    <li>
+                        <a href="<?= base_url(); ?>makanan_dan_minuman/penjualan_barang" class="waves-effect wave-block">
+                            <i class="material-icons" style="color:#24181a;">shopping_cart</i>
+                            <span style="color:#24181a;">Penjualan Barang</span>
+                        </a>
+                    </li>
+                <?php } ?>
 
 
 
