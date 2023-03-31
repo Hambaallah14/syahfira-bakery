@@ -157,10 +157,10 @@ $(document).ready(function(){
         $('#id_persediaan').val(IdPersediaan);
     });
 
-	$('.btnPesananPersediaanMakananMinuman').click(function(){
+	$('.btnPesananPersediaanMakananMinum').click(function(){
         $('#form_validation').reset();
         var IdPersediaan = $(this).data("id");
-        $('#id_persediaan').val(IdPersediaan);
+        $('#id_persediaanMM').val(IdPersediaan);
     });
 
 	
