@@ -50,18 +50,21 @@
                                 <tbody>
                                     <?php
                                     $no = 1;
-                                    foreach ($bahan_baku as $persediaan) {
+                                    foreach ($makanan_minuman as $persediaan) {
                                         echo "<tr>";
                                         echo "<td>" . $no . "</td>";
                                         echo "<td>" . $persediaan["id_persediaan"] . "</td>";
-                                        echo "<td>" . $persediaan["bahanbaku"] . "</td>";
+                                        echo "<td>" . $persediaan["makanan_minuman"] . "</td>";
                                         echo "<td>" . $persediaan["qty"] . " " . $persediaan["satuan"] . "</td>";
                                         echo "<td class='text-center'>" . date('d F Y', strtotime($persediaan["tgl_persediaan"])) . "</td>";
-                                        echo "<td class='text-center'>" . date('d F Y', strtotime($persediaan["tgl_expired"])) . "</td>";
+
+                                        $tanggal_expired = date('d F Y', strtotime('+' . $persediaan["durasi_expired"] . 'days', strtotime($persediaan["tgl_persediaan"])));
+                                        echo "<td class='text-center'>" . $tanggal_expired . "</td>";
+
                                         echo "<td class='text-center'>" . $persediaan["keterangan"] . "</td>";
 
-                                        $tanggal_expired = date('Y-m-d', strtotime($persediaan["tgl_expired"]));
-                                        if (date('Y-m-d') > $tanggal_expired) {
+                                        $tanggal_expired2 = date('Y-m-d', strtotime('+' . $persediaan["durasi_expired"] . 'days', strtotime($persediaan["tgl_persediaan"])));
+                                        if (date('Y-m-d') > $tanggal_expired2) {
                                             echo "<td class='text-center'>";
                                             echo "<button type='button' class='btn btn-danger waves-effect'>";
                                             echo "<i class='material-icons'>cancel</i>";
