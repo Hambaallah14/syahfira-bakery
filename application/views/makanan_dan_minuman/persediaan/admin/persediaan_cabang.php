@@ -58,7 +58,8 @@
                                         echo "<td class='text-center'>" . $tanggal_expired . "</td>";
                                         echo "<td class='text-center'>" . $persediaan["keterangan"] . "</td>";
 
-                                        if (date('d F Y') >= $tanggal_expired) {
+                                        $tanggal_expired2 = date('Y-m-d', strtotime('+' . $persediaan["durasi_expired"] . 'days', strtotime($persediaan["tgl_persediaan"])));
+                                        if (date('Y-m-d') >= $tanggal_expired2) {
                                             echo "<td class='text-center'>";
                                             echo "<button type='button' class='btn btn-danger waves-effect'>";
                                             echo "<i class='material-icons'>cancel</i>";
