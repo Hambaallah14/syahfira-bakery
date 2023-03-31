@@ -66,7 +66,7 @@
                             <div class="col-md-12">
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        <input type="date" class="form-control" name="harga" readonly value="<?= $makanan_minuman[0]["tgl_persediaan"]; ?>">
+                                        <input type="date" class="form-control" name="tgl_persediaan" readonly value="<?= $makanan_minuman[0]["tgl_persediaan"]; ?>">
                                     </div>
                                 </div>
                             </div>
