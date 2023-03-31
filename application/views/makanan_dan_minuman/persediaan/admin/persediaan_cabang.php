@@ -66,6 +66,7 @@
                                             echo "<span>EXPIRED</span>";
                                             echo "</button>";
                                             echo "</td>";
+                                        } else if (date('Y-m-d') == $tanggal_expired2) {
                                         } else {
                                             if ($persediaan["qty"] == 0) {
                                                 echo "<td class='text-center'>";
