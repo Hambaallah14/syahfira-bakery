@@ -87,6 +87,14 @@
                     </ul>
                 </li>
 
+                <?php if ($user[0]["h_akses"] == "admin") { ?>
+                    <li>
+                        <a href="<?= base_url(); ?>makanan_dan_minuman/persediaan_sisa" class="waves-effect wave-block">
+                            <i class="material-icons" style="color:#24181a;">shopping_cart</i>
+                            <span style="color:#24181a;">Persediaan Sisa</span>
+                        </a>
+                    </li>
+                <?php } ?>
 
 
 
