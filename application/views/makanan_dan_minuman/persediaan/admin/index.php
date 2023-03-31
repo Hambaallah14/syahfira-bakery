@@ -1,4 +1,4 @@
-<div class="flash-data" data-target="Persediaan Bahan Baku" data-flashdata="<?= $this->session->flashdata('makanan_minuman'); ?>"></div>
+<div class="flash-data" data-target="Persediaan Makanan dan Minuman" data-flashdata="<?= $this->session->flashdata('makanan_minuman'); ?>"></div>
 <section class="content">
     <div class="container-fluid">
 
