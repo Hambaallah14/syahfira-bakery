@@ -58,7 +58,7 @@
                                         echo "<td>" . $persediaan["qty"] . " " . $persediaan["satuan"] . "</td>";
                                         echo "<td class='text-center'>" . date('d F Y', strtotime($persediaan["tgl_persediaan"])) . "</td>";
 
-                                        $tanggal_expired = date('d F Y', strtotime('+' . $persediaan["durasi_expired"] - 1 . 'days', strtotime($persediaan["tgl_persediaan"])));
+                                        $tanggal_expired = date('d F Y', strtotime('+' . $persediaan["durasi_expired"] . 'days', strtotime($persediaan["tgl_persediaan"])));
                                         echo "<td class='text-center'>" . $tanggal_expired . "</td>";
                                         echo "<td class='text-center'>" . $persediaan["keterangan"] . "</td>";
 
@@ -108,7 +108,7 @@
                                                     echo "<td class='text-center'>";
                                                     echo "<button type='button' class='btn btn-success waves-effect'>";
                                                     echo "<i class='material-icons'>done</i>";
-                                                    echo "<span>PESANAN DITERIMA</span>";
+                                                    echo "<span>PESANAN DITERIMA OK</span>";
                                                     echo "</button>";
                                                     echo "</td>";
                                                 }
