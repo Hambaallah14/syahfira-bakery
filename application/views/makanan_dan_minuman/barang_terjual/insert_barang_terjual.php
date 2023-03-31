@@ -53,7 +53,7 @@
                                 <label for="harga">Harga</label>
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <input type="text" id="harga" class="form-control" name="harga" readonly value="<?= $makanan_minuman[0]["harga"]; ?>">
+                                        <input type="number" id="harga" class="form-control" name="harga" readonly value="<?= $makanan_minuman[0]["harga"]; ?>">
                                     </div>
                                 </div>
                             </div>

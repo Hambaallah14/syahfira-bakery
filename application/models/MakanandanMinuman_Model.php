@@ -172,7 +172,7 @@ class MakanandanMinuman_Model extends CI_Model
             "id_makan_minum"   => $this->input->post('id_makan_minum', true),
             "tanggal"          => date('Y-m-d'),
             "harga"            => $this->input->post('harga', true),
-            "qty"              => $this->input->post('qty', true)
+            "qty"              => $this->input->post('new-qty', true)
         ];
         $this->db->insert('tb_barang_jual', $persediaan);
     }
