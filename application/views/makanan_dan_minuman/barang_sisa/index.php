@@ -33,6 +33,7 @@
                                 <thead>
                                     <tr>
                                         <th class="text-center">No</th>
+                                        <th class="text-center">Cabang</th>
                                         <th class="text-center">ID Persediaan</th>
                                         <th class="text-center">Makanan / Minuman</th>
                                         <th class="text-center">Qty</th>
@@ -46,6 +47,7 @@
                                     foreach ($makanan_minuman as $persediaan) {
                                         echo "<tr>";
                                         echo "<td>" . $no . "</td>";
+                                        echo "<td>" . $persediaan["nama"] . "</td>";
                                         echo "<td>" . $persediaan["id_persediaan"] . "</td>";
                                         echo "<td>" . $persediaan["makanan_minuman"] . "</td>";
                                         echo "<td>" . $persediaan["qty"] . " " . $persediaan["satuan"] . "</td>";
