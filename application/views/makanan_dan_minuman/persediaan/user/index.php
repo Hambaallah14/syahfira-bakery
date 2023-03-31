@@ -67,7 +67,7 @@
                                         $tanggal_expired3 = date('Y-m-d', strtotime('+' . $persediaan["durasi_expired"] - 1 . 'days', strtotime($persediaan["tgl_persediaan"])));
 
                                         //jika tgl expired sudah lewat
-                                        if (date('Y-m-d') >= $tanggal_expired2) {
+                                        if (date('Y-m-d') > $tanggal_expired2) {
                                             echo "<td class='text-center'>";
                                             echo "<button type='button' class='btn btn-danger waves-effect'>";
                                             echo "<i class='material-icons'>cancel</i>";
