@@ -150,5 +150,11 @@ class MakanandanMinuman_Model extends CI_Model
             "tgl_persediaan"   => $this->input->post('tgl_persediaan', true)
         ];
         $this->db->insert('tb_barang_sisa', $persediaan);
+
+        $this->db->where('id_persediaan', $this->input->post('id_persediaan', true));
+        $this->db->delete('tb_persediaan_mm');
+
+        $this->db->where('id_persediaan', $this->input->post('id_persediaan', true));
+        $this->db->delete('tb_status_persediaan_mm');
     }
 }
