@@ -234,7 +234,7 @@ class Makanan_dan_minuman extends CI_Controller
         $data['title']             = "Penjualan Barang - Syahfira Bakery & Cake";
         $this->form_validation->set_rules('id_persediaan', 'id_persediaan', 'required');
         $this->form_validation->set_rules('id_user', 'id_user', 'required');
-        $this->form_validation->set_rules('id_mkn_mnm', 'id_mkn_mnm', 'required');
+        $this->form_validation->set_rules('id_makan_minum', 'id_makan_minum', 'required');
         $this->form_validation->set_rules('harga', 'harga', 'required');
         $this->form_validation->set_rules('new-qty', 'new-qty', 'required');
 
@@ -244,7 +244,7 @@ class Makanan_dan_minuman extends CI_Controller
             $this->load->view('makanan_dan_minuman/barang_terjual/insert_barang_terjual');
             $this->load->view('template/footer');
         } else {
-            $this->MakanandanMinuman_Model->InsertPersediaan();
+            $this->MakanandanMinuman_Model->InsertPenjualanBarang();
             $this->session->set_flashdata('makanan_minuman', 'Disimpan');
             redirect('makanan_dan_minuman/persediaan');
         }

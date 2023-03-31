@@ -27,7 +27,7 @@
                     <div class="body">
                         <?php echo form_open("makanan_dan_minuman/InsertPenjualanBarang", array('enctype' => 'multipart/form-data', 'id' => 'form_validation')); ?>
                         <input type="hidden" name="id_user" value="<?= $user[0]["id_user"]; ?>">
-                        <input type="hidden" name="id_mkn_mnm" value="<?= $makanan_minuman[0]["id_mkn_mnm"]; ?>">
+                        <input type="hidden" name="id_makan_minum" value="<?= $makanan_minuman[0]["id_mkn_mnm"]; ?>">
                         <div class="row">
                             <div class="col-md-12">
                                 <label for="id_persediaan">ID Persediaan</label>
