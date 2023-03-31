@@ -138,8 +138,8 @@ $(document).ready(function(){
         });
     });
 
-	$('#id').change(function(){
-        const id = $('#id').val();
+	$('#id_mkn_mnm').change(function(){
+        const id = $('#id_mkn_mnm').val();
         $.ajax({
             type    : 'POST',
             url     : 'https://syahfirabakery.co.id/makanan_dan_minuman/selectHargaMakandanMinuman',
