@@ -269,7 +269,19 @@ class Makanan_dan_minuman extends CI_Controller
         $data['daftar_user']        = $this->User_Model->all_data();
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar');
-        $this->load->view('makanan_dan_minuman/persediaan/admin/index');
+        $this->load->view('makanan_dan_minuman/barang_terjual/review_penjualan');
+        $this->load->view('template/footer');
+    }
+
+    public function penjualan_cabang($id_user)
+    {
+        $data['title']             = "Penjualan Makanan dan Minuman - Syahfira Bakery & Cake";
+        $data['user']              = $this->User_Model->user_by_iduser($this->session->userdata('id_user'));
+        $data['makanan_minuman']   = $this->MakanandanMinuman_Model->allPenjualanBarangbyIdUser($id_user);
+        $this->load->view('template/header', $data);
+        $this->load->view('template/sidebar');
+        $this->load->view('makanan_dan_minuman/barang_terjual/penjualan_cabang');
+        $this->load->view('makanan_dan_minuman/persediaan/admin/persediaan_cabang');
         $this->load->view('template/footer');
     }
 }
