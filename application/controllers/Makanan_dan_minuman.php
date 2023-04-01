@@ -281,7 +281,6 @@ class Makanan_dan_minuman extends CI_Controller
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar');
         $this->load->view('makanan_dan_minuman/barang_terjual/penjualan_cabang');
-        $this->load->view('makanan_dan_minuman/persediaan/admin/persediaan_cabang');
         $this->load->view('template/footer');
     }
 }
