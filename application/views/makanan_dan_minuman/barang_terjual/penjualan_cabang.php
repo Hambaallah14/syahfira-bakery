@@ -51,7 +51,7 @@
                                         echo "<td>" . $persediaan["makanan_minuman"] . "</td>";
                                         echo "<td>Rp. " . number_format($persediaan["harga"], 0, ',', '.') . "</td>";
                                         echo "<td>" . $persediaan["qty"] . " " . $persediaan["satuan"] . "</td>";
-
+                                        echo "<td>Rp. " . number_format($persediaan["harga"] * $persediaan["qty"], 0, ',', '.') . "</td>";
                                         echo "</tr>";
                                         $no++;
                                     }
