@@ -182,8 +182,8 @@ class MakanandanMinuman_Model extends CI_Model
         $this->db->update('tb_persediaan_mm');
     }
 
-    public function allPenjualanBarang()
+    public function allPenjualanBarangbyIdUser($IdUser)
     {
-        return $this->db->query("SELECT tb_barang_jual.tanggal, tb_barang_jual.id_persediaan, tb_barang_jual.id_user, tb_user.nama, tb_barang_jual.id_makan_minum, tb_makanan_minuman.makanan_minuman, tb_barang_jual.harga, tb_barang_jual.qty, tb_satuan.satuan FROM tb_barang_jual INNER JOIN tb_makanan_minuman ON tb_barang_jual.id_makan_minum=tb_makanan_minuman.id INNER JOIN tb_user ON tb_user.id_user=tb_barang_jual.id_user INNER JOIN tb_satuan ON tb_satuan.id=tb_makanan_minuman.id_satuan")->result_array();
+        return $this->db->query("SELECT tb_barang_jual.tanggal, tb_barang_jual.id_persediaan, tb_barang_jual.id_user, tb_user.nama, tb_barang_jual.id_makan_minum, tb_makanan_minuman.makanan_minuman, tb_barang_jual.harga, tb_barang_jual.qty, tb_satuan.satuan FROM tb_barang_jual INNER JOIN tb_makanan_minuman ON tb_barang_jual.id_makan_minum=tb_makanan_minuman.id INNER JOIN tb_user ON tb_user.id_user=tb_barang_jual.id_user INNER JOIN tb_satuan ON tb_satuan.id=tb_makanan_minuman.id_satuan WHERE tb_barang_jual.id_user='$IdUser'")->result_array();
     }
 }
