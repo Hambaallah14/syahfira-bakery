@@ -42,7 +42,20 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <?php
+                                    $no = 1;
+                                    foreach ($makanan_minuman as $persediaan) {
+                                        echo "<tr>";
+                                        echo "<td>" . $no . "</td>";
+                                        echo "<td>" . date('d F Y', strtotime($persediaan["tanggal"])) . "</td>";
+                                        echo "<td>" . $persediaan["nama"] . "</td>";
+                                        echo "<td>" . $persediaan["id_persediaan"] . "</td>";
+                                        echo "<td>" . $persediaan["makanan_minuman"] . "</td>";
 
+                                        echo "</tr>";
+                                        $no++;
+                                    }
+                                    ?>
                                 </tbody>
                             </table>
                         </div>
