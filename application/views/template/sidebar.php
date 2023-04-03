@@ -111,18 +111,38 @@
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons" style="color:#24181a;">shopping_cart</i>
-                            <span style="color:#24181a;">Persediaan Barang</span>
+                            <span style="color:#24181a;">Daftar Barang</span>
                         </a>
 
                         <ul class="ml-menu">
                             <li>
-                                <a href="<?= base_url(); ?>cetak/bahan_baku">
+                                <a href="<?= base_url(); ?>cetak/daftar_barang/bahan_baku">
                                     <span class="icon-name mt-5">Bahan Baku</span>
                                 </a>
                             </li>
 
                             <li>
-                                <a href="<?= base_url(); ?>cetak/makanan_dan_minuman">
+                                <a href="<?= base_url(); ?>cetak/daftar_barang/makanan_dan_minuman">
+                                    <span class="icon-name mt-5">Makanan dan Minuman</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" class="menu-toggle">
+                            <i class="material-icons" style="color:#24181a;">shopping_cart</i>
+                            <span style="color:#24181a;">Persediaan Barang</span>
+                        </a>
+
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="<?= base_url(); ?>cetak/persediaan_barang/bahan_baku">
+                                    <span class="icon-name mt-5">Bahan Baku</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="<?= base_url(); ?>cetak/persediaan_barang/makanan_dan_minuman">
                                     <span class="icon-name mt-5">Makanan dan Minuman</span>
                                 </a>
                             </li>
