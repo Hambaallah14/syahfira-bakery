@@ -40,7 +40,7 @@
                                         <th class="text-center">Qty</th>
                                         <th class="text-center">Tanggal Persediaan</th>
                                         <th class="text-center">Tanggal Expired</th>
-                                        <th class="text-center">Opsi</th>
+
                                     </tr>
                                 </thead>
                                 <?php
@@ -53,6 +53,9 @@
                                     echo "<td>" . $persediaan["id_persediaan"] . "</td>";
                                     echo "<td>" . $persediaan["makanan_minuman"] . "</td>";
                                     echo "<td>" . $persediaan["qty"] . " " . $persediaan["satuan"] . "</td>";
+                                    echo "<td class='text-center'>" . date('d F Y', strtotime($persediaan["tgl_persediaan"])) . "</td>";
+                                    $tanggal_expired = date('d F Y', strtotime('+' . $persediaan["durasi_expired"] . 'days', strtotime($persediaan["tgl_persediaan"])));
+                                    echo "<td class='text-center'>" . $tanggal_expired . "</td>";
                                     $no++;
                                 }
                                 ?>
