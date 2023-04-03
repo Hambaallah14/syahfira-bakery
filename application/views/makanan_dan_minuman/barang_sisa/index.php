@@ -43,91 +43,9 @@
                                         <th class="text-center">Opsi</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <?php
-                                    $no = 1;
-                                    foreach ($makanan_minuman as $persediaan) {
-                                        echo "<tr>";
-                                        echo "<td>" . $no . "</td>";
-                                        echo "<td>" . date('d F Y', strtotime($persediaan["tanggal"])) . "</td>";
-                                        echo "<td>" . $persediaan["nama"] . "</td>";
-                                        echo "<td>" . $persediaan["id_persediaan"] . "</td>";
-                                        echo "<td>" . $persediaan["makanan_minuman"] . "</td>";
-                                        echo "<td>" . $persediaan["qty"] . " " . $persediaan["satuan"] . "</td>";
-                                        echo "<td class='text-center'>" . date('d F Y', strtotime($persediaan["tgl_persediaan"])) . "</td>";
-                                        $tanggal_expired = date('d F Y', strtotime('+' . $persediaan["durasi_expired"] . 'days', strtotime($persediaan["tgl_persediaan"])));
-                                        echo "<td class='text-center'>" . $tanggal_expired . "</td>";
-
-                                        $tanggal_expired2 = date('Y-m-d', strtotime('+' . $persediaan["durasi_expired"] . 'days', strtotime($persediaan["tgl_persediaan"])));
-
-                                        $tanggal_expired3 = date('Y-m-d', strtotime('+' . ($persediaan["durasi_expired"] - 1) . 'days', strtotime($persediaan["tgl_persediaan"])));
-
-                                        //jika tgl expired sudah lewat
-                                        if (date('Y-m-d') > $tanggal_expired2) {
-                                            echo "<td class='text-center'>";
-                                            echo "<button type='button' class='btn btn-danger waves-effect'>";
-                                            echo "<i class='material-icons'>cancel</i>";
-                                            echo "<span>EXPIRED</span>";
-                                            echo "</button>";
-                                            echo "</td>";
-                                        }
-
-                                        //jika tgl 1 hari seblum expired
-                                        else if (date('Y-m-d') == $tanggal_expired3) {
-                                            echo "<td class='text-center'>";
-                                            echo "<a href='" . base_url() . "makanan_dan_minuman/pindahStok/e/" . $persediaan["id_persediaan"] . "' class='btn bg-orange'>";
-                                            echo "<i class='material-icons'>input</i>";
-                                            echo "<span>PINDAH STOK</span>";
-                                            echo "</a>";
-                                            echo "</td>";
-                                        } else {
-                                            if ($persediaan["qty"] == 0) {
-                                                echo "<td class='text-center'>";
-                                                echo "<button type='button' class='btn btn-danger waves-effect'>";
-                                                echo "<i class='material-icons'>cancel</i>";
-                                                echo "<span>STOK HABIS</span>";
-                                                echo "</button>";
-                                                echo "</td>";
-                                            } else {
-                                                // JIKA PESANAN DI PROSES
-                                                if ($persediaan["status_persediaan"] == 0) {
-                                                    echo "<td class='text-center'>";
-                                                    echo "<button type='button' class='btn btn-primary waves-effect btnPesananPersediaanMakananMinum' data-toggle='modal' data-target='#defaultModal' data-id='" . $persediaan["id_persediaan"] . "'>";
-                                                    echo "<i class='material-icons'>query_builder</i>";
-                                                    echo "<span>PESANAN</span>";
-                                                    echo "</button>";
-                                                    echo "</td>";
-                                                }
-
-                                                // JIKA PESANAN DITERIMA
-                                                else if ($persediaan["status_persediaan"] == 1) {
-                                                    echo "<td class='text-center'>";
-                                                    echo "<a href='" . base_url() . "makanan_dan_minuman/pindahStok/p/" . $persediaan["id_persediaan"] . "' class='btn btn-success waves-effect'>";
-                                                    echo "<i class='material-icons'>input</i>";
-                                                    echo "<span>PINDAH STOK</span>";
-                                                    echo "</a>";
-                                                    echo "</td>";
-                                                }
-
-                                                // JIKA PESANAN DITOLAK
-                                                else if ($persediaan["status_persediaan"] == 2) {
-                                                    echo "<td class='text-center'>";
-                                                    echo "<button type='button' class='btn btn-danger waves-effect' data-container='body' data-toggle='popover'
-                                                data-placement='top' title='Informasi' data-content='" . $persediaan["status_keterangan"] . "'>";
-                                                    echo "<i class='material-icons'>cancel</i>";
-                                                    echo "<span>PESANAN DITOLAK</span>";
-                                                    echo "</button>";
-                                                    echo "</td>";
-                                                }
-                                            }
-                                        }
-
-                                        echo "<td></td>";
-                                        echo "</tr>";
-                                        $no++;
-                                    }
-                                    ?>
-                                </tbody>
+                                <?php
+                                $no = 1;
+                                ?>
                             </table>
                         </div>
                     </div>
