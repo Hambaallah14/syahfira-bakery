@@ -106,7 +106,7 @@
                 <?php } ?>
 
 
-                <?php if ($user[0]["h_akses"] != "admin") { ?>
+                <?php if ($user[0]["h_akses"] == "admin") { ?>
                     <li class="header">Cetak Laporan</li>
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle">
