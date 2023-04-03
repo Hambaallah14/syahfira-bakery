@@ -110,7 +110,7 @@
                     <li class="header">Cetak Laporan</li>
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle">
-                            <i class="material-icons" style="color:#24181a;">shopping_cart</i>
+                            <i class="material-icons" style="color:#24181a;">category</i>
                             <span style="color:#24181a;">Daftar Barang</span>
                         </a>
 
@@ -156,7 +156,7 @@
         <!-- Footer -->
         <div class="legal" style="color:#24181a;">
             <div class="copyright" style="color:#24181a;">
-                &copy; 2022 <a href="javascript:void(0);">Syahfira Bakery & Cake</a>.
+                &copy; 2023 <a href="javascript:void(0);">Syahfira Bakery & Cake</a>.
             </div>
             <div class="version">
                 <b>Version: </b> 1.0.5
