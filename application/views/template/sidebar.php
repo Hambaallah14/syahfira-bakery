@@ -107,7 +107,7 @@
 
 
                 <?php if ($user[0]["h_akses"] == "admin") { ?>
-                    <li class="header">Cetak Laporan</li>
+                    <li class="header">CETAK LAPORAN</li>
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons" style="color:#24181a;">category</i>
