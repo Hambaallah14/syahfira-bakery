@@ -106,7 +106,29 @@
                 <?php } ?>
 
 
+                <?php if ($user[0]["h_akses"] != "admin") { ?>
+                    <li class="header">Cetak Laporan</li>
+                    <li>
+                        <a href="javascript:void(0);" class="menu-toggle">
+                            <i class="material-icons" style="color:#24181a;">shopping_cart</i>
+                            <span style="color:#24181a;">Persediaan Barang</span>
+                        </a>
 
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="<?= base_url(); ?>cetak/bahan_baku">
+                                    <span class="icon-name mt-5">Bahan Baku</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="<?= base_url(); ?>cetak/makanan_dan_minuman">
+                                    <span class="icon-name mt-5">Makanan dan Minuman</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                <?php } ?>
 
             </ul>
         </div>
