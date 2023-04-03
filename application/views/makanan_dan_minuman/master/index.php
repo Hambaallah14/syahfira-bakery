@@ -80,7 +80,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header bg-teal">
-                    <h4 class="modal-title" id="defaultModalLabel" style="padding-top:-5px;padding-bottom:10px;color:white;">Tambah Bahan Baku</h4>
+                    <h4 class="modal-title" id="defaultModalLabel" style="padding-top:-5px;padding-bottom:10px;color:white;">Tambah Makanan dan Minuman</h4>
                 </div>
                 <div class="modal-body">
                     <?php echo form_open("makanan_dan_minuman/insert", array('enctype' => 'multipart/form-data', 'id' => 'form_validation')); ?>
@@ -148,7 +148,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
 
                 <div class="modal-footer">
