@@ -169,6 +169,24 @@ class MakanandanMinuman_Model extends CI_Model
         return $this->db->query("SELECT tb_barang_sisa.tanggal, tb_barang_sisa.id_persediaan, tb_barang_sisa.id_user, tb_user.nama, tb_barang_sisa.id_makan_minum, tb_makanan_minuman.makanan_minuman, tb_makanan_minuman.durasi_expired, tb_barang_sisa.harga, tb_barang_sisa.qty, tb_satuan.satuan, tb_barang_sisa.tgl_persediaan FROM tb_barang_sisa INNER JOIN tb_makanan_minuman ON tb_barang_sisa.id_makan_minum=tb_makanan_minuman.id INNER JOIN tb_user ON tb_user.id_user=tb_barang_sisa.id_user INNER JOIN tb_satuan ON tb_satuan.id=tb_makanan_minuman.id_satuan WHERE tb_barang_sisa.id_persediaan='$id'")->result_array();
     }
 
+    public function InsertPenjualanSisa()
+    {
+        $persediaan = [
+            "id_persediaan"    => $this->input->post('id_persediaan', true),
+            "id_user"          => $this->input->post('id_user', true),
+            "id_makan_minum"   => $this->input->post('id_makan_minum', true),
+            "tanggal"          => date('Y-m-d'),
+            "harga"            => $this->input->post('harga', true),
+            "qty"              => $this->input->post('new-qty', true)
+        ];
+        $this->db->insert('tb_barang_jual', $persediaan);
+
+        // Update Persediaan Sisa Barang
+        $this->db->set('qty', 'qty-' . $this->input->post('new-qty', true), FALSE);
+        $this->db->where("id_persediaan", $this->input->post('id_persediaan', true));
+        $this->db->update('tb_barang_sisa');
+    }
+
     public function InsertPenjualanMakanMinum()
     {
         $persediaan = [

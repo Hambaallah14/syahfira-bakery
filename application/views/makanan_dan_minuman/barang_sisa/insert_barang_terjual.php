@@ -2,7 +2,7 @@
     <div class="container-fluid">
 
         <div class="block-header">
-            <h2>Memindai Persediaan Makanan dan Minuman</h2>
+            <h2>Memindai Persediaan Sisa</h2>
         </div>
 
         <div class="row clearfix">
@@ -25,7 +25,7 @@
                     </div>
 
                     <div class="body">
-                        <?php echo form_open("makanan_dan_minuman/InsertPenjualanBarang", array('enctype' => 'multipart/form-data', 'id' => 'form_validation')); ?>
+                        <?php echo form_open("makanan_dan_minuman/InsertPenjualanSisa", array('enctype' => 'multipart/form-data', 'id' => 'form_validation')); ?>
                         <input type="hidden" name="id_user" value="<?= $user[0]["id_user"]; ?>">
                         <input type="hidden" name="id_makan_minum" value="<?= $makanan_minuman[0]["id_makan_minum"]; ?>">
                         <div class="row">
