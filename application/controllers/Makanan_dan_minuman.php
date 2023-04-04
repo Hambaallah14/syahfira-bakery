@@ -283,4 +283,17 @@ class Makanan_dan_minuman extends CI_Controller
         $this->load->view('makanan_dan_minuman/barang_terjual/penjualan_cabang');
         $this->load->view('template/footer');
     }
+
+
+    public function pindahStokSisa($id_persediaan)
+    {
+        $data['title']              = "Persediaan Makanan dan Minuman - Syahfira Bakery & Cake";
+        $data['user']               = $this->User_Model->user_by_iduser($this->session->userdata('id_user'));
+        $data['makanan_minuman']    = $this->MakanandanMinuman_Model->allPersediaanSisabyId($id_persediaan);
+
+        $this->load->view('template/header', $data);
+        $this->load->view('template/sidebar');
+        $this->load->view('makanan_dan_minuman/barang_sisa/insert_barang_terjual');
+        $this->load->view('template/footer');
+    }
 }
