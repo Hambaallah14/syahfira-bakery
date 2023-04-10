@@ -62,19 +62,19 @@
 
                                         $tanggal_expired3 = date('Y-m-d', strtotime('+' . ($persediaan["durasi_expired"] - 1) . 'days', strtotime($persediaan["tgl_persediaan"])));
 
-                                        if (date('Y-m-d') >= $tanggal_expired2) {
+                                        if ($persediaan["qty"] == 0) {
                                             echo "<td class='text-center'>";
                                             echo "<button type='button' class='btn btn-danger waves-effect'>";
                                             echo "<i class='material-icons'>cancel</i>";
-                                            echo "<span>EXPIRED</span>";
+                                            echo "<span>STOK HABIS</span>";
                                             echo "</button>";
                                             echo "</td>";
                                         } else {
-                                            if ($persediaan["qty"] == 0) {
+                                            if (date('Y-m-d') > $tanggal_expired2) {
                                                 echo "<td class='text-center'>";
                                                 echo "<button type='button' class='btn btn-danger waves-effect'>";
                                                 echo "<i class='material-icons'>cancel</i>";
-                                                echo "<span>STOK HABIS</span>";
+                                                echo "<span>EXPIRED</span>";
                                                 echo "</button>";
                                                 echo "</td>";
                                             } else {
@@ -86,7 +86,6 @@
                                                     echo "</button>";
                                                     echo "</td>";
                                                 }
-
                                                 // JIKA PESANAN DITERIMA
                                                 else if ($persediaan["status_persediaan"] == 1) {
                                                     echo "<td class='text-center'>";
@@ -96,7 +95,6 @@
                                                     echo "</button>";
                                                     echo "</td>";
                                                 }
-
                                                 // JIKA PESANAN DITOLAK
                                                 else if ($persediaan["status_persediaan"] == 2) {
                                                     echo "<td class='text-center'>";
