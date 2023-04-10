@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-class Makanan_dan_minuman extends CI_Controller
+class Cetak extends CI_Controller
 {
     public function __construct()
     {
