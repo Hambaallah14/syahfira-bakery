@@ -165,19 +165,20 @@ $(document).ready(function(){
 	// CETAK DAFTAR MAKANAN / MINUMAN
 	$('.btnFilterMasterMakananMinuman').click(function(){
 		var id_jenis = $('.id_jenis').val();
-		if(id_jenis == "0"){
-			alert("Silahkan pilih jenis Makanan / Minuman");
-		}
-		else {
-			$.ajax({
-				type    : 'POST',
-				url     : 'https://syahfirabakery.co.id/cetak/hasilFilterMakananMinuman',
-				data    : {id_jenis : id_jenis},
-				success : function(response){
-				  $(".hasilCetak").html(response);
-				}
-			});
-		}
+		alert(id_jenis);
+		// if(id_jenis == "0"){
+		// 	alert("Silahkan pilih jenis Makanan / Minuman");
+		// }
+		// else {
+		// 	$.ajax({
+		// 		type    : 'POST',
+		// 		url     : 'https://syahfirabakery.co.id/cetak/hasilFilterMakananMinuman',
+		// 		data    : {id_jenis : id_jenis},
+		// 		success : function(response){
+		// 		  $(".hasilCetak").html(response);
+		// 		}
+		// 	});
+		// }
 	});
 
 	$('.btnCetak').click(function(){
