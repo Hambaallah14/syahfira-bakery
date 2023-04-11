@@ -39,11 +39,16 @@
                                 </div>
                             </div>
                             <div class="col-md-12">
-                                <button type="button" class="btn bg-teal waves-effect btnCetak float-right">Cetak</button>
+                                <button type="button" class="btn bg-teal waves-effect btnCetak float-right">
+                                    <i class="material-icons">search</i>
+                                    <span>Filter</span>
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <div class="hasilCetak"></div>
             </div>
         </div>
     </div>
