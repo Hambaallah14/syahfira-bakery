@@ -174,7 +174,7 @@ $(document).ready(function(){
 				url     : 'https://syahfirabakery.co.id/cetak/hasilFilterMakananMinuman',
 				data    : {id_jenis : id_jenis},
 				success : function(response){
-				  $(".hasilFilter").html(response);
+				  $(".hasilCetak").html(response);
 				}
 			});
 		}

@@ -40,7 +40,6 @@
                             </div>
                             <div class="col-md-12">
                                 <button type="button" class="btn bg-teal waves-effect btnFilterMasterMakananMinuman float-right">
-                                    <div class="hasilFilter"></div>
                                     <i class="material-icons">search</i>
                                     <span>Filter</span>
                                 </button>
