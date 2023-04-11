@@ -22,7 +22,26 @@
                     </div>
 
                     <div class="body">
-
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group form-float">
+                                    <div class="form-line">
+                                        <select class="form-control show-tick id_jenis" name="id_jenis" required>
+                                            <option value="0">--Pilih Jenis Makanan/Minuman--</option>
+                                            <option value="all">Semua Jenis</option>
+                                            <?php
+                                            foreach ($jenis as $jen) {
+                                                echo "<option value='" . $jen["id"] . "'>" . $jen['jenis'] . "</option>";
+                                            }
+                                            ?>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <button type="button" class="btn btn-link waves-effect btnCetak">Cetak</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
