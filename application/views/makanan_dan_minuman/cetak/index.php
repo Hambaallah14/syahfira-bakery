@@ -39,7 +39,7 @@
                                 </div>
                             </div>
                             <div class="col-md-12">
-                                <button type="button" class="btn btn-link waves-effect btnCetak">Cetak</button>
+                                <button type="button" class="btn bg-teal waves-effect btnCetak float-right">Cetak</button>
                             </div>
                         </div>
                     </div>
