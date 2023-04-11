@@ -39,7 +39,7 @@
                                 </div>
                             </div>
                             <div class="col-md-12">
-                                <button type="button" class="btn bg-teal waves-effect btnCetak float-right">
+                                <button type="button" class="btn bg-teal waves-effect btnFilter float-right">
                                     <i class="material-icons">search</i>
                                     <span>Filter</span>
                                 </button>
@@ -48,7 +48,10 @@
                     </div>
                 </div>
 
-                <div class="hasilCetak"></div>
+                <div class="hasilCetak">
+                    <h1>Hasil Cetak</h1>
+                    <button class="btnCetak">Cetak</button>
+                </div>
             </div>
         </div>
     </div>
