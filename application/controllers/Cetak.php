@@ -36,4 +36,15 @@ class Cetak extends CI_Controller
             $this->load->view('template/footer');
         }
     }
+
+
+    public function hasilFilterMakananMinuman()
+    {
+        $id_jenis   = $this->input->post('id_jenis');
+        if ($id_jenis == "all") {
+            $data['makanan_minuman'] = $this->MakanandanMinuman_Model->all();
+            $this->load->view('makanan_dan_minuman/cetak/hasilFilter', $data);
+        } else {
+        }
+    }
 }
