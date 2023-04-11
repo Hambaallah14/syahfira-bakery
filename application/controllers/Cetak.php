@@ -27,12 +27,12 @@ class Cetak extends CI_Controller
         if ($object == "makanan_dan_minuman") {
             $this->load->view('template/header', $data);
             $this->load->view('template/sidebar');
-
+            $this->load->view('makanan_dan_minuman/cetak/index');
             $this->load->view('template/footer');
         } else {
             $this->load->view('template/header', $data);
             $this->load->view('template/sidebar');
-
+            $this->load->view('bahan_baku/cetak/index');
             $this->load->view('template/footer');
         }
     }
