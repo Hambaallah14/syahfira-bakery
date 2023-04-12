@@ -164,7 +164,7 @@ $(document).ready(function(){
 	
 	// CETAK DAFTAR MAKANAN / MINUMAN
 	$('.btnFilterMasterMakananMinuman').click(function(){
-		var id_jenis = $('.id_jenis').val();
+		var id_jenis = $('#id_jenis').val();
 		alert(id_jenis);
 		// if(id_jenis == "0"){
 		// 	alert("Silahkan pilih jenis Makanan / Minuman");

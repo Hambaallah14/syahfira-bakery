@@ -26,7 +26,7 @@
                             <div class="col-md-12">
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        <select class="form-control show-tick id_jenis" name="id_jenis" required>
+                                        <select class="form-control show-tick id_jenis" id="id_jenis" name="id_jenis" required>
                                             <option value="0">--Pilih Jenis Makanan/Minuman--</option>
                                             <option value="all">Semua Jenis</option>
                                             <?php
