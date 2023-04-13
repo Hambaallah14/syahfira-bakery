@@ -180,7 +180,7 @@ $(document).ready(function(){
 		}
 	});
 
-	$('.hasilCetak .btnCetak').click(function(){
+	$('hasilCetak','.btnCetak').click(function(){
 		$(".hasilCetak").printArea();
 	});
 });
