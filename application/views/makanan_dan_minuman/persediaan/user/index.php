@@ -81,6 +81,13 @@
                                                 echo "<span>EXPIRED</span>";
                                                 echo "</button>";
                                                 echo "</td>";
+                                            } else if (date('Y-m-d') == $tanggal_expired2) {
+                                                echo "<td class='text-center'>";
+                                                echo "<a href='" . base_url() . "makanan_dan_minuman/pindahStok/e/" . $persediaan["id_persediaan"] . "' class='btn bg-orange'>";
+                                                echo "<i class='material-icons'>input</i>";
+                                                echo "<span>PINDAH STOK</span>";
+                                                echo "</a>";
+                                                echo "</td>";
                                             } else if (date('Y-m-d') == $tanggal_expired3) {
                                                 echo "<td class='text-center'>";
                                                 echo "<a href='" . base_url() . "makanan_dan_minuman/pindahStok/e/" . $persediaan["id_persediaan"] . "' class='btn bg-orange'>";
