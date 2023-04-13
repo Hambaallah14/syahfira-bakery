@@ -183,6 +183,6 @@ $(document).ready(function(){
 	});
 
 	$('.btnCetak').click(function(){
-		$(".hasilCetak").printThis();
+		$(".hasilCetak").printArea();
 	});
 });

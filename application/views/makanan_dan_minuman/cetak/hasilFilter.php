@@ -1,5 +1,3 @@
-<div class="row">
-    <div class="col-md-12">
         <div class="table-responsive">
             <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                 <!--UNTUK ADMIN -->
@@ -28,5 +26,3 @@
                 </tbody>
             </table>
         </div>
-    </div>
-</div>
