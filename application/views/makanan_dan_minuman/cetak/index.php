@@ -48,7 +48,34 @@
                     </div>
                 </div>
 
-                <div class="hasilCetak"></div>
+
+                <div class="card">
+                    <div class="header">
+                        <h4>DAFTAR LAPORAN MAKANAN / MINUMAN</h4>
+                        <ul class="header-dropdown m-r--5">
+                            <li class="dropdown">
+                                <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    <i class="material-icons">more_vert</i>
+                                </a>
+                                <ul class="dropdown-menu pull-right">
+                                    <li><a href="javascript:void(0);">Action</a></li>
+                                    <li><a href="javascript:void(0);">Another action</a></li>
+                                    <li><a href="javascript:void(0);">Something else here</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="body">
+                        <div class="hasilCetak"></div>
+                        <div class="col-md-12">
+                            <button type="button" class="btn bg-teal waves-effect btnCetak float-right">
+                                <i class="material-icons">print</i>
+                                <span>CETAK</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

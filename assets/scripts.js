@@ -162,6 +162,7 @@ $(document).ready(function(){
     });
 
 	
+	$('.btnCetak').hide();
 	// CETAK DAFTAR MAKANAN / MINUMAN
 	$('.btnFilterMasterMakananMinuman').click(function(){
 		var id_jenis = $('#id_jenis').val();
@@ -178,9 +179,10 @@ $(document).ready(function(){
 				}
 			});
 		}
+		$('.btnCetak').show();
 	});
 
-	$('hasilCetak','.btnCetak').click(function(){
-		$(".hasilCetak").printArea();
+	$('.btnCetak').click(function(){
+		$(".hasilCetak").printThis();
 	});
 });
