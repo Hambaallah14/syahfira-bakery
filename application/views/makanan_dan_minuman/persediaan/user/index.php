@@ -58,13 +58,11 @@
                                         echo "<td>" . $persediaan["qty"] . " " . $persediaan["satuan"] . "</td>";
                                         echo "<td class='text-center'>" . date('d F Y', strtotime($persediaan["tgl_persediaan"])) . "</td>";
 
-                                        $tanggal_expired = date('d F Y', strtotime('+' . $persediaan["durasi_expired"] . 'days', strtotime($persediaan["tgl_persediaan"])));
+                                        $tanggal_expired = date('d F Y', strtotime('+' . $persediaan["durasi_expired"] - 1 . 'days', strtotime($persediaan["tgl_persediaan"])));
                                         echo "<td class='text-center'>" . $tanggal_expired . "</td>";
                                         echo "<td class='text-center'>" . $persediaan["keterangan"] . "</td>";
 
-                                        $tanggal_expired2 = date('Y-m-d', strtotime('+' . $persediaan["durasi_expired"] . 'days', strtotime($persediaan["tgl_persediaan"])));
-
-                                        $tanggal_expired3 = date('Y-m-d', strtotime('+' . ($persediaan["durasi_expired"] - 1) . 'days', strtotime($persediaan["tgl_persediaan"])));
+                                        $tanggal_pengembalian = date('d F Y', strtotime('+' . 1 . 'days', strtotime($persediaan["tgl_persediaan"])));
 
                                         if ($persediaan["qty"] == 0) {
                                             echo "<td class='text-center'>";
@@ -74,21 +72,14 @@
                                             echo "</button>";
                                             echo "</td>";
                                         } else {
-                                            if (date('Y-m-d') > $tanggal_expired2) {
+                                            if (date('Y-m-d') > $tanggal_expired) {
                                                 echo "<td class='text-center'>";
                                                 echo "<button type='button' class='btn btn-danger waves-effect'>";
                                                 echo "<i class='material-icons'>cancel</i>";
                                                 echo "<span>EXPIRED</span>";
                                                 echo "</button>";
                                                 echo "</td>";
-                                            } else if (date('Y-m-d') == $tanggal_expired2) {
-                                                echo "<td class='text-center'>";
-                                                echo "<a href='" . base_url() . "makanan_dan_minuman/pindahStok/e/" . $persediaan["id_persediaan"] . "' class='btn bg-orange'>";
-                                                echo "<i class='material-icons'>input</i>";
-                                                echo "<span>PINDAH STOK</span>";
-                                                echo "</a>";
-                                                echo "</td>";
-                                            } else if (date('Y-m-d') == $tanggal_expired3) {
+                                            } else if (date('Y-m-d') == $tanggal_expired || date('Y-m-d') == $tanggal_pengembalian) {
                                                 echo "<td class='text-center'>";
                                                 echo "<a href='" . base_url() . "makanan_dan_minuman/pindahStok/e/" . $persediaan["id_persediaan"] . "' class='btn bg-orange'>";
                                                 echo "<i class='material-icons'>input</i>";
