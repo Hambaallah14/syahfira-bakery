@@ -59,10 +59,13 @@
                                         echo "<td class='text-center'>" . date('d F Y', strtotime($persediaan["tgl_persediaan"])) . "</td>";
 
                                         $tanggal_expired = date('d F Y', strtotime('+' . $persediaan["durasi_expired"] - 1 . 'days', strtotime($persediaan["tgl_persediaan"])));
-                                        echo "<td class='text-center'>" . $tanggal_expired . "</td>";
-                                        echo "<td class='text-center'>" . $persediaan["keterangan"] . "</td>";
 
                                         $tanggal_pengembalian = date('d F Y', strtotime('+' . 1 . 'days', strtotime($persediaan["tgl_persediaan"])));
+
+                                        echo "<td class='text-center'>" . $tanggal_pengembalian . "</td>";
+                                        echo "<td class='text-center'>" . $persediaan["keterangan"] . "</td>";
+
+
 
                                         if ($persediaan["qty"] == 0) {
                                             echo "<td class='text-center'>";
