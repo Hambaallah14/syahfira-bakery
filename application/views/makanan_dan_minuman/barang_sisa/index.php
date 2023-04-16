@@ -55,13 +55,14 @@
                                     echo "<td>" . $persediaan["qty"] . " " . $persediaan["satuan"] . "</td>";
                                     echo "<td class='text-center'>" . date('d F Y', strtotime($persediaan["tgl_persediaan"])) . "</td>";
 
-                                    $tanggal_expired = date('d F Y', strtotime('+' . $persediaan["durasi_expired"] . 'days', strtotime($persediaan["tgl_persediaan"])));
+                                    $tanggal_expired = date('d F Y', strtotime('+' . $persediaan["durasi_expired"] - 1 . 'days', strtotime($persediaan["tgl_persediaan"])));
+
+                                    $tanggal_expired2 = date('Y-m-d', strtotime('+' . $persediaan["durasi_expired"] - 1 . 'days', strtotime($persediaan["tgl_persediaan"])));
+
+                                    $tanggal_pengembalian = date('Y-m-d', strtotime('+' . 1 . 'days', strtotime($persediaan["tgl_persediaan"])));
+
+
                                     echo "<td class='text-center'>" . $tanggal_expired . "</td>";
-
-                                    $tanggal_expired2 = date('Y-m-d', strtotime('+' . $persediaan["durasi_expired"] . 'days', strtotime($persediaan["tgl_persediaan"])));
-
-                                    $tanggal_expired3 = date('Y-m-d', strtotime('+' . ($persediaan["durasi_expired"] - 1) . 'days', strtotime($persediaan["tgl_persediaan"])));
-                                    $no++;
 
                                     if ($persediaan["qty"] == 0) {
                                         echo "<td class='text-center'>";
@@ -78,10 +79,7 @@
                                             echo "<span>EXPIRED</span>";
                                             echo "</button>";
                                             echo "</td>";
-                                        }
-
-                                        //jika tgl 1 hari seblum expired
-                                        else if (date('Y-m-d') == $tanggal_expired3) {
+                                        } else if (date('Y-m-d') >= $tanggal_pengembalian2 && date('Y-m-d') <= $tanggal_expired2) {
                                             echo "<td class='text-center'>";
                                             echo "<a href='" . base_url() . "makanan_dan_minuman/pindahStokSisa/" . $persediaan["id_persediaan"] . "' class='btn bg-orange'>";
                                             echo "<i class='material-icons'>input</i>";
@@ -90,6 +88,7 @@
                                             echo "</td>";
                                         }
                                     }
+                                    $no++;
                                 }
                                 ?>
                             </table>
