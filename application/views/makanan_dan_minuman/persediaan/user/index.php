@@ -62,7 +62,7 @@
 
                                         $tanggal_pengembalian = date('d F Y', strtotime('+' . 1 . 'days', strtotime($persediaan["tgl_persediaan"])));
 
-                                        echo "<td class='text-center'>" . $tanggal_pengembalian . "</td>";
+                                        echo "<td class='text-center'>" . $tanggal_expired . "</td>";
                                         echo "<td class='text-center'>" . $persediaan["keterangan"] . "</td>";
 
 
@@ -75,14 +75,14 @@
                                             echo "</button>";
                                             echo "</td>";
                                         } else {
-                                            if (date('Y-m-d') >= $tanggal_expired) {
+                                            if (date('Y-m-d') > $tanggal_expired) {
                                                 echo "<td class='text-center'>";
                                                 echo "<button type='button' class='btn btn-danger waves-effect'>";
                                                 echo "<i class='material-icons'>cancel</i>";
                                                 echo "<span>EXPIRED</span>";
                                                 echo "</button>";
                                                 echo "</td>";
-                                            } else if (date('Y-m-d') == $tanggal_expired || date('Y-m-d') == $tanggal_pengembalian) {
+                                            } else if (date('Y-m-d') >= $tanggal_pengembalian || date('Y-m-d') <= $tanggal_expired) {
                                                 echo "<td class='text-center'>";
                                                 echo "<a href='" . base_url() . "makanan_dan_minuman/pindahStok/e/" . $persediaan["id_persediaan"] . "' class='btn bg-orange'>";
                                                 echo "<i class='material-icons'>input</i>";
