@@ -60,9 +60,12 @@
 
                                         $tanggal_expired = date('d F Y', strtotime('+' . $persediaan["durasi_expired"] - 1 . 'days', strtotime($persediaan["tgl_persediaan"])));
 
+                                        $tanggal_expired2 = date('Y-m-d', strtotime('+' . $persediaan["durasi_expired"] - 1 . 'days', strtotime($persediaan["tgl_persediaan"])));
+
+
                                         $tanggal_pengembalian = date('d F Y', strtotime('+' . 1 . 'days', strtotime($persediaan["tgl_persediaan"])));
 
-                                        echo "<td class='text-center'>" . $tanggal_expired . "</td>";
+                                        echo "<td class='text-center'>" . $tanggal_expired2 . "</td>";
                                         echo "<td class='text-center'>" . $persediaan["keterangan"] . "</td>";
 
 
@@ -75,7 +78,7 @@
                                             echo "</button>";
                                             echo "</td>";
                                         } else {
-                                            if (date('Y-m-d') > $tanggal_expired) {
+                                            if (date('Y-m-d') > $tanggal_expired2) {
                                                 echo "<td class='text-center'>";
                                                 echo "<button type='button' class='btn btn-danger waves-effect'>";
                                                 echo "<i class='material-icons'>cancel</i>";
