@@ -65,7 +65,9 @@
 
                                         $tanggal_pengembalian = date('d F Y', strtotime('+' . 1 . 'days', strtotime($persediaan["tgl_persediaan"])));
 
-                                        echo "<td class='text-center'>" . $tanggal_expired2 . "</td>";
+                                        $tanggal_pengembalian2 = date('Y-m-d', strtotime('+' . 1 . 'days', strtotime($persediaan["tgl_persediaan"])));
+
+                                        echo "<td class='text-center'>" . $tanggal_expired . "</td>";
                                         echo "<td class='text-center'>" . $persediaan["keterangan"] . "</td>";
 
 
@@ -85,10 +87,14 @@
                                                 echo "<span>EXPIRED</span>";
                                                 echo "</button>";
                                                 echo "</td>";
-                                            } else {
+                                            } else if (date('Y-m-d') >= $tanggal_pengembalian2 && date('Y-m-d') <= $tanggal_expired2) {
                                                 echo "<td class='text-center'>";
-                                                echo "Ok";
+                                                echo "<a href='" . base_url() . "makanan_dan_minuman/pindahStok/e/" . $persediaan["id_persediaan"] . "' class='btn bg-orange'>";
+                                                echo "<i class='material-icons'>input</i>";
+                                                echo "<span>PINDAH STOK</span>";
+                                                echo "</a>";
                                                 echo "</td>";
+                                            } else {
                                             }
                                         }
 
