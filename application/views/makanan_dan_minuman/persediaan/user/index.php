@@ -87,10 +87,24 @@
                                                 echo "</td>";
                                             } else if (date('Y-m-d') >= $tanggal_pengembalian2 && date('Y-m-d') <= $tanggal_expired2) {
                                                 echo "<td class='text-center'>";
+                                                echo "<div class='form-group form-float'>";
+                                                echo "<div class='form-line'>";
+                                                echo "<select class='form-control show-tick'>";
+                                                echo "<option>--Pilih Opsi--</option>";
+                                                echo "<option>";
                                                 echo "<a href='" . base_url() . "makanan_dan_minuman/pindahStok/e/" . $persediaan["id_persediaan"] . "' class='btn bg-orange'>";
                                                 echo "<i class='material-icons'>input</i>";
-                                                echo "<span>PINDAH STOK</span>";
+                                                echo "<span>PINDAH STOK KE CABANG</span>";
                                                 echo "</a>";
+                                                echo "</option>";
+                                                echo "";
+                                                echo "</select>";
+                                                echo "</div>";
+                                                echo "</div>";
+                                                // echo "<a href='" . base_url() . "makanan_dan_minuman/pindahStok/e/" . $persediaan["id_persediaan"] . "' class='btn bg-orange'>";
+                                                // echo "<i class='material-icons'>input</i>";
+                                                // echo "<span>PINDAH STOK</span>";
+                                                // echo "</a>";
                                                 echo "</td>";
                                             } else {
                                                 // JIKA PESANAN DI PROSES
