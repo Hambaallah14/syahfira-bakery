@@ -18,18 +18,19 @@ class Cetak extends CI_Controller
 
     public function daftar_barang($object)
     {
-        $data['title']             = "Makanan dan Minuman - Syahfira Bakery & Cake";
         $data['user']              = $this->User_Model->user_by_iduser($this->session->userdata('id_user'));
         $data['makanan_minuman']   = $this->MakanandanMinuman_Model->all();
         $data['bahan_baku']        = $this->Bahanbaku_Model->all();
         $data['jenis']             = $this->Jenis_Model->all();
 
         if ($object == "makanan_dan_minuman") {
+            $data['title']             = "Makanan dan Minuman - Syahfira Bakery & Cake";
             $this->load->view('template/header', $data);
             $this->load->view('template/sidebar');
             $this->load->view('makanan_dan_minuman/cetak/index');
             $this->load->view('template/footer');
         } else {
+            $data['title']             = "Bahan Baku - Syahfira Bakery & Cake";
             $this->load->view('template/header', $data);
             $this->load->view('template/sidebar');
             $this->load->view('bahan_baku/cetak/index');
