@@ -93,7 +93,11 @@
                                                 echo "<option>--Pilih Opsi--</option>";
                                                 echo "<option>";
                                                 echo "<a href='" . base_url() . "makanan_dan_minuman/pindahStok/e/" . $persediaan["id_persediaan"] . "' class='btn bg-orange'>";
-                                                echo "<i class='material-icons'>input</i>";
+                                                echo "<span>PINDAH STOK KE PUSAT</span>";
+                                                echo "</a>";
+                                                echo "</option>";
+                                                echo "<option>";
+                                                echo "<a href='" . base_url() . "makanan_dan_minuman/pindahStok/p/" . $persediaan["id_persediaan"] . "' class='btn bg-orange'>";
                                                 echo "<span>PINDAH STOK KE CABANG</span>";
                                                 echo "</a>";
                                                 echo "</option>";
