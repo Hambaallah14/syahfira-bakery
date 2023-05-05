@@ -226,17 +226,17 @@
                     <div class="row">
                         <div class="col-md-12">
                             <?php
-                            echo "<a href='" . base_url() . "makanan_dan_minuman/pindahStok/e/" . $persediaan["id_persediaan"] . "' class='btn bg-orange'>";
+                            echo "<a href='" . base_url() . "makanan_dan_minuman/pindahStok/e/" . $persediaan["id_persediaan"] . "' class='btn btn-orange'>";
                             echo "<i class='material-icons'>input</i>";
                             echo "<span>PINDAH STOK KE PUSAT</span>";
                             echo "</a>";
                             ?>
                         </div>
-                        <div class="col-md-12">
+                        <div class="col-md-12 mt-3">
                             <?php
-                            echo "<a href='" . base_url() . "makanan_dan_minuman/pindahStok/p/" . $persediaan["id_persediaan"] . "' class='btn bg-orange'>";
+                            echo "<a href='" . base_url() . "makanan_dan_minuman/pindahStok/p/" . $persediaan["id_persediaan"] . "' class='btn btn-orange'>";
                             echo "<i class='material-icons'>input</i>";
-                            echo "<span>PINDAH STOK KE CABANG</span>";
+                            echo "<span>PINDAH STOK KE TERJUAL</span>";
                             echo "</a>";
                             ?>
                         </div>
