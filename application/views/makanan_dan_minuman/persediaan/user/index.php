@@ -87,24 +87,35 @@
                                                 echo "</td>";
                                             } else if (date('Y-m-d') >= $tanggal_pengembalian2 && date('Y-m-d') <= $tanggal_expired2) {
                                                 echo "<td class='text-center'>";
-                                                echo "<div class='form-group form-float'>";
-                                                echo "<div class='form-line'>";
-                                                echo "<select class='form-control show-tick'>";
-                                                echo "<option>--Pilih Opsi--</option>";
-                                                echo "<option>";
-                                                echo "<a href='" . base_url() . "makanan_dan_minuman/pindahStok/e/" . $persediaan["id_persediaan"] . "' class='btn bg-orange'>";
-                                                echo "PINDAH STOK KE PUSAT";
-                                                echo "</a>";
-                                                echo "</option>";
-                                                echo "<option>";
-                                                echo "<a href='" . base_url() . "makanan_dan_minuman/pindahStok/p/" . $persediaan["id_persediaan"] . "' class='btn bg-orange'>";
-                                                echo "PINDAH STOK KE CABANG";
-                                                echo "</a>";
-                                                echo "</option>";
-                                                echo "";
-                                                echo "</select>";
-                                                echo "</div>";
-                                                echo "</div>";
+
+                                                echo "<button type='button' class='btn bg-orange waves-effect btnPesananPersediaanMakananMinum' data-toggle='modal' data-target='#defaultModalPindahStok' data-id='" . $persediaan["id_persediaan"] . "'>";
+                                                echo "<i class='material-icons'>input</i>";
+                                                echo "<span>PINDAH STOK</span>";
+                                                echo "</button>";
+
+
+
+                                                // echo "<div class='form-group form-float'>";
+                                                // echo "<div class='form-line'>";
+                                                // echo "<select class='form-control show-tick'>";
+                                                // echo "<option>--Pilih Opsi--</option>";
+                                                // echo "<option>";
+                                                // echo "<a href='" . base_url() . "makanan_dan_minuman/pindahStok/e/" . $persediaan["id_persediaan"] . "' class='btn bg-orange'>";
+                                                // echo "PINDAH STOK KE PUSAT";
+                                                // echo "</a>";
+                                                // echo "</option>";
+                                                // echo "<option>";
+                                                // echo "<a href='" . base_url() . "makanan_dan_minuman/pindahStok/p/" . $persediaan["id_persediaan"] . "' class='btn bg-orange'>";
+                                                // echo "PINDAH STOK KE CABANG";
+                                                // echo "</a>";
+                                                // echo "</option>";
+                                                // echo "";
+                                                // echo "</select>";
+                                                // echo "</div>";
+                                                // echo "</div>";
+
+
+
                                                 // echo "<a href='" . base_url() . "makanan_dan_minuman/pindahStok/e/" . $persediaan["id_persediaan"] . "' class='btn bg-orange'>";
                                                 // echo "<i class='material-icons'>input</i>";
                                                 // echo "<span>PINDAH STOK</span>";
@@ -195,6 +206,38 @@
                     <button type="submit" class="btn btn-link waves-effect btn-simpan">Simpan</button>
                     <?php echo form_close(); ?>
                     <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="defaultModalPindahStok" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-teal">
+                    <h4 class="modal-title" id="defaultModalLabel" style="padding-top:-5px;padding-bottom:10px;color:white;">PESANAN</h4>
+                </div>
+                <div class="modal-body">
+
+                    <div class="row">
+                        <div class="col-md-12">
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <input type="text" class="form-control status_keterangan" placeholder="Keterangan" name="status_keterangan" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
