@@ -225,17 +225,20 @@
 
                     <div class="row">
                         <div class="col-md-12">
-
+                            <?php
+                            echo "<a href='" . base_url() . "makanan_dan_minuman/pindahStok/e/" . $persediaan["id_persediaan"] . "' class='btn bg-orange'>";
+                            echo "<i class='material-icons'>input</i>";
+                            echo "<span>PINDAH STOK KE PUSAT</span>";
+                            echo "</a>";
+                            ?>
                         </div>
-                    </div>
-
-                    <div class="row">
                         <div class="col-md-12">
-                            <div class="form-group form-float">
-                                <div class="form-line">
-                                    <input type="text" class="form-control status_keterangan" placeholder="Keterangan" name="status_keterangan" required>
-                                </div>
-                            </div>
+                            <?php
+                            echo "<a href='" . base_url() . "makanan_dan_minuman/pindahStok/p/" . $persediaan["id_persediaan"] . "' class='btn bg-orange'>";
+                            echo "<i class='material-icons'>input</i>";
+                            echo "<span>PINDAH STOK KE CABANG</span>";
+                            echo "</a>";
+                            ?>
                         </div>
                     </div>
                 </div>
