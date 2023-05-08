@@ -225,11 +225,12 @@
 
                     <div class="row">
                         <div class="col-md-12">
+                            <button>PINDAH STOK KE CABANG PUSAT</button>
                             <?php
-                            echo "<a href='" . base_url() . "makanan_dan_minuman/pindahStok/e/" . $persediaan["id_persediaan"] . "' class='btn bg-orange w-100'>";
-                            echo "<i class='material-icons'>input</i>";
-                            echo "<span>PINDAH STOK KE PUSAT</span>";
-                            echo "</a>";
+                            // echo "<a href='" . base_url() . "makanan_dan_minuman/pindahStok/e/" . $persediaan["id_persediaan"] . "' class='btn bg-orange w-100'>";
+                            // echo "<i class='material-icons'>input</i>";
+                            // echo "<span>PINDAH STOK KE PUSAT</span>";
+                            // echo "</a>";
                             ?>
                         </div>
                         <div class="col-md-12 mt-3">
