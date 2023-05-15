@@ -225,7 +225,7 @@
 
                     <div class="row">
                         <div class="col-md-12">
-                            <button>PINDAH STOK KE CABANG PUSA</button>
+                            <button class="w-100">PINDAH STOK KE CABANG PUSA</button>
                             <?php
                             // echo "<a href='" . base_url() . "makanan_dan_minuman/pindahStok/e/" . $persediaan["id_persediaan"] . "' class='btn bg-orange w-100'>";
                             // echo "<i class='material-icons'>input</i>";
