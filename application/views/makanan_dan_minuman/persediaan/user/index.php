@@ -224,8 +224,11 @@
                 <div class="modal-body">
 
                     <div class="row">
-                        <div class="col-md-12">
-                            <button class="btn bg-orange mb-3" style="width: 100%;">PINDAH STOK KE CABANG PUSAT</button>
+                        <div class="col-md-12 mb-3">
+                            <button class="btn bg-orange" style="width: 100%;">
+                                <i class="material-icons">input</i>
+                                <span>PINDAH STOK KE CABANG PUSAT</span>
+                            </button>
                             <?php
                             // echo "<a href='" . base_url() . "makanan_dan_minuman/pindahStok/e/" . $persediaan["id_persediaan"] . "' class='btn bg-orange w-100'>";
                             // echo "<i class='material-icons'>input</i>";
@@ -235,7 +238,7 @@
                         </div>
                         <div class="col-md-12 mt-3">
                             <?php
-                            echo "<a href='" . base_url() . "makanan_dan_minuman/pindahStok/p/" . $persediaan["id_persediaan"] . "' class='btn bg-orange w-100'>";
+                            echo "<a href='" . base_url() . "makanan_dan_minuman/pindahStok/p/" . $persediaan["id_persediaan"] . "' class='btn bg-orange' style='width:100%;'>";
                             echo "<i class='material-icons'>input</i>";
                             echo "<span>PINDAH STOK KE TERJUAL</span>";
                             echo "</a>";
