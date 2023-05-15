@@ -224,9 +224,9 @@
                 <div class="modal-body">
 
                     <div class="row">
-                        <div class="col-md-12 mb-3">
+                        <div class="col-md-12">
                             <?php
-                            echo "<a href='" . base_url() . "makanan_dan_minuman/pindahStok/e/" . $persediaan["id_persediaan"] . "' class='btn bg-orange' style='width:100%;'ss>";
+                            echo "<a href='" . base_url() . "makanan_dan_minuman/pindahStok/e/" . $persediaan["id_persediaan"] . "' class='btn bg-orange mb-3' style='width:100%;'ss>";
                             echo "<i class='material-icons'>input</i>";
                             echo "<span>PINDAH STOK KE CABANG PUSAT</span>";
                             echo "</a>";
