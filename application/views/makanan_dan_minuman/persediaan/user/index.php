@@ -92,34 +92,6 @@
                                                 echo "<i class='material-icons'>input</i>";
                                                 echo "<span>PINDAH STOK</span>";
                                                 echo "</button>";
-
-
-
-                                                // echo "<div class='form-group form-float'>";
-                                                // echo "<div class='form-line'>";
-                                                // echo "<select class='form-control show-tick'>";
-                                                // echo "<option>--Pilih Opsi--</option>";
-                                                // echo "<option>";
-                                                // echo "<a href='" . base_url() . "makanan_dan_minuman/pindahStok/e/" . $persediaan["id_persediaan"] . "' class='btn bg-orange'>";
-                                                // echo "PINDAH STOK KE PUSAT";
-                                                // echo "</a>";
-                                                // echo "</option>";
-                                                // echo "<option>";
-                                                // echo "<a href='" . base_url() . "makanan_dan_minuman/pindahStok/p/" . $persediaan["id_persediaan"] . "' class='btn bg-orange'>";
-                                                // echo "PINDAH STOK KE CABANG";
-                                                // echo "</a>";
-                                                // echo "</option>";
-                                                // echo "";
-                                                // echo "</select>";
-                                                // echo "</div>";
-                                                // echo "</div>";
-
-
-
-                                                // echo "<a href='" . base_url() . "makanan_dan_minuman/pindahStok/e/" . $persediaan["id_persediaan"] . "' class='btn bg-orange'>";
-                                                // echo "<i class='material-icons'>input</i>";
-                                                // echo "<span>PINDAH STOK</span>";
-                                                // echo "</a>";
                                                 echo "</td>";
                                             } else {
                                                 // JIKA PESANAN DI PROSES
@@ -147,6 +119,16 @@
                                                     data-placement='top' title='Informasi' data-content='" . $persediaan["status_keterangan"] . "'>";
                                                     echo "<i class='material-icons'>cancel</i>";
                                                     echo "<span>PESANAN DITOLAK</span>";
+                                                    echo "</button>";
+                                                    echo "</td>";
+                                                }
+
+                                                // JIKA PESANAN BARANG SISA DIKIRIM KE CABANG PUSAT MASIH PROSES
+                                                else if ($persediaan["status_persediaan"] == 3) {
+                                                    echo "<td class='text-center'>";
+                                                    echo "<button type='button' class='btn btn-primary waves-effect'>";
+                                                    echo "<i class='material-icons'>query_builder</i>";
+                                                    echo "<span>PESANAN DIPROSES</span>";
                                                     echo "</button>";
                                                     echo "</td>";
                                                 }
