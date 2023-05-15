@@ -225,18 +225,14 @@
 
                     <div class="row">
                         <div class="col-md-12 mb-3">
-                            <button class="btn bg-orange" style="width: 100%;">
-                                <i class="material-icons">input</i>
-                                <span>PINDAH STOK KE CABANG PUSAT</span>
-                            </button>
                             <?php
-                            // echo "<a href='" . base_url() . "makanan_dan_minuman/pindahStok/e/" . $persediaan["id_persediaan"] . "' class='btn bg-orange w-100'>";
-                            // echo "<i class='material-icons'>input</i>";
-                            // echo "<span>PINDAH STOK KE PUSAT</span>";
-                            // echo "</a>";
+                            echo "<a href='" . base_url() . "makanan_dan_minuman/pindahStok/e/" . $persediaan["id_persediaan"] . "' class='btn bg-orange' style='width:100%;'ss>";
+                            echo "<i class='material-icons'>input</i>";
+                            echo "<span>PINDAH STOK KE CABANG PUSAT</span>";
+                            echo "</a>";
                             ?>
                         </div>
-                        <div class="col-md-12 mt-3">
+                        <div class="col-md-12">
                             <?php
                             echo "<a href='" . base_url() . "makanan_dan_minuman/pindahStok/p/" . $persediaan["id_persediaan"] . "' class='btn bg-orange' style='width:100%;'>";
                             echo "<i class='material-icons'>input</i>";
