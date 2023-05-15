@@ -86,6 +86,15 @@
                                             echo "<span>1 HARI LAGI</span>";
                                             echo "</a>";
                                             echo "</td>";
+                                        } else {
+                                            if ($persediaan["status_persediaan"] == 3) {
+                                                echo "<td class='text-center'>";
+                                                echo "<button type='button' class='btn btn-primary waves-effect btnPesananPersediaanMakananMinum' data-toggle='modal' data-target='#defaultModal' data-id='" . $persediaan["id_persediaan"] . "'>";
+                                                echo "<i class='material-icons'>query_builder</i>";
+                                                echo "<span>PESANAN</span>";
+                                                echo "</button>";
+                                                echo "</td>";
+                                            }
                                         }
                                     }
                                     $no++;
