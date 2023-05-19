@@ -152,8 +152,8 @@ class MakanandanMinuman_Model extends CI_Model
         ];
         $this->db->insert('tb_barang_sisa', $persediaan);
 
-        $this->db->where('id_persediaan', $this->input->post('id_persediaan', true));
-        $this->db->delete('tb_persediaan_mm');
+        // $this->db->where('id_persediaan', $this->input->post('id_persediaan', true));
+        // $this->db->delete('tb_persediaan_mm');
 
         $status = [
             "id_persediaan"         => $this->input->post('id_persediaan', true),
