@@ -57,6 +57,33 @@
 
                                     $tanggal_expired = date('d F Y', strtotime('+' . $persediaan["durasi_expired"] - 1 . 'days', strtotime($persediaan["tgl_persediaan"])));
                                     echo "<td class='text-center'>" . $tanggal_expired . "</td>";
+
+                                    if ($persediaan["qty"] == 0) {
+                                        echo "<td class='text-center'>";
+                                        echo "<button type='button' class='btn btn-danger waves-effect'>";
+                                        echo "<i class='material-icons'>cancel</i>";
+                                        echo "<span>STOK HABIS</span>";
+                                        echo "</button>";
+                                        echo "</td>";
+                                    } else {
+                                        $tanggal_expired2 = date('Y-m-d', strtotime('+' . $persediaan["durasi_expired"] - 1 . 'days', strtotime($persediaan["tgl_persediaan"])));
+                                        $tanggal_pengembalian = date('Y-m-d', strtotime('+' . 1 . 'days', strtotime($persediaan["tgl_persediaan"])));
+                                        if (date('Y-m-d') > $tanggal_expired2) {
+                                            echo "<td class='text-center'>";
+                                            echo "<button type='button' class='btn btn-danger waves-effect'>";
+                                            echo "<i class='material-icons'>cancel</i>";
+                                            echo "<span>EXPIRED</span>";
+                                            echo "</button>";
+                                            echo "</td>";
+                                        } else if (date('Y-m-d') >= $tanggal_pengembalian && date('Y-m-d') <= $tanggal_expired2) {
+                                            echo "<td class='text-center'>";
+                                            echo "<a href='" . base_url() . "makanan_dan_minuman/pindahStokSisa/" . $persediaan["id_persediaan"] . "' class='btn bg-orange'>";
+                                            echo "<i class='material-icons'>input</i>";
+                                            echo "<span>JUAL STOK SISA</span>";
+                                            echo "</a>";
+                                            echo "</td>";
+                                        }
+                                    }
                                     echo "</tr>";
                                     $no++;
                                 }
