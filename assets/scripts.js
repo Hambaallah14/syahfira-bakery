@@ -160,6 +160,11 @@ $(document).ready(function(){
         var IdPersediaan = $(this).data("id");
         $('#id_persediaanMM').val(IdPersediaan);
     });
+	
+	$('.btnValidasiBarangSisaMakanMinum').click(function(){
+        var IdPersediaan = $(this).data("id");
+        $('#id_persediaanMM').val(IdPersediaan);
+    });
 
 	
 	$('.btnCetak').hide();

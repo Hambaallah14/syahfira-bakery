@@ -229,6 +229,13 @@ class Makanan_dan_minuman extends CI_Controller
         $this->load->view('template/footer');
     }
 
+    public function UpdateStatusBarangSisa()
+    {
+        $this->MakanandanMinuman_Model->UpdateStatusPersediaan();
+        $this->session->set_flashdata('makanan_minuman', 'Diubah');
+        redirect('makanan_dan_minuman/persediaan');
+    }
+
     public function InsertPenjualanBarang()
     {
         $data['title']             = "Penjualan Barang - Syahfira Bakery & Cake";

@@ -62,7 +62,7 @@
                                     // 1. JIKA BELUM DI VALIDASI MAKA TAMPILKAN BUTTON PESANAN
                                     if ($persediaan["status_persediaan"] == 3) {
                                         echo "<td class='text-center'>";
-                                        echo "<button type='button' class='btn btn-primary waves-effect btnPesananPersediaanMakananMinum' data-toggle='modal' data-target='#defaultModal' data-id='" . $persediaan["id_persediaan"] . "'>";
+                                        echo "<button type='button' class='btn btn-primary waves-effect btnValidasiBarangSisaMakanMinum' data-toggle='modal' data-target='#defaultModal' data-id='" . $persediaan["id_persediaan"] . "'>";
                                         echo "<i class='material-icons'>query_builder</i>";
                                         echo "<span>PESANAN</span>";
                                         echo "</button>";
@@ -107,6 +107,53 @@
                             </table>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="defaultModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-teal">
+                    <h4 class="modal-title" id="defaultModalLabel" style="padding-top:-5px;padding-bottom:10px;color:white;">PESANAN BARANG SISA</h4>
+                </div>
+                <div class="modal-body">
+                    <?php echo form_open("makanan_dan_minuman/UpdateStatusBarangSisa", array('enctype' => 'multipart/form-data', 'id' => 'form_validation')); ?>
+
+                    <input type="hidden" name="id_persediaan" id="id_persediaanMM">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <select id="status_persediaan" class="form-control show-tick status_persediaan" name="status_persediaan" required>
+                                        <option value="-">--Pilih Status--</option>
+                                        <option value="1">PESANAN DITERIMA</option>
+                                        <option value="2">PESANAN DITOLAK</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <input type="text" class="form-control status_keterangan" placeholder="Keterangan" name="status_keterangan" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-link waves-effect btn-simpan">Simpan</button>
+                    <?php echo form_close(); ?>
+                    <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">Tutup</button>
                 </div>
             </div>
         </div>

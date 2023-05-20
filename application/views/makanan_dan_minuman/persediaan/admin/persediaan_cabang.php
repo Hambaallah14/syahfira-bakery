@@ -96,7 +96,9 @@
                                             echo "<span>[BARANG SISA] PESANAN SEDANG DIPROSES OLEH CABANG PUSAT</span>";
                                             echo "</button>";
                                             echo "</td>";
-                                        } // 5. JIKA PESANAN DITERIMA OLEH CABANG PUSAT MAKA TAMPILKAN BUTTON PESANAN DISETUJUI
+                                        }
+
+                                        // 5. JIKA PESANAN DITERIMA OLEH CABANG PUSAT MAKA TAMPILKAN BUTTON PESANAN DISETUJUI
                                         else if ($persediaan["status_persediaan"] == 4) {
                                             echo "<td class='text-center'>";
                                             echo "<button type='button' class='btn btn-success waves-effect'>";
@@ -117,6 +119,7 @@
                                             echo "</button>";
                                             echo "</td>";
                                         } else {
+
                                             // 7. JIKA SUDAH DIVALIDASI, MAKA LIHAT KONDISI APAKAH QTY < 0
                                             if ($persediaan["qty"] == 0) {
                                                 echo "<td class='text-center'>";
