@@ -67,6 +67,18 @@
                                         echo "<span>PESANAN</span>";
                                         echo "</button>";
                                         echo "</td>";
+                                    }
+
+                                    // 1.2. JIKA PESANAN DITOLAK OLEH CABANG PUSAT MAKA TAMPILKAN BUTTON PESANAN DITOLAK
+                                    else if ($persediaan["status_persediaan"] == 5) {
+
+                                        echo "<td class='text-center'>";
+                                        echo "<button type='button' class='btn btn-danger waves-effect' data-container='body' data-toggle='popover'
+                                        data-placement='top' title='Informasi' data-content='" . $persediaan["status_keterangan"] . "'>";
+                                        echo "<i class='material-icons'>cancel</i>";
+                                        echo "<span>[BARANG SISA] PESANAN DITOLAK</span>";
+                                        echo "</button>";
+                                        echo "</td>";
                                     } else {
                                         // 2. JIKA SUDAH DIVALIDASI, MAKA LIHAT KONDISI APAKAH QTY < 0
                                         if ($persediaan["qty"] == 0) {
