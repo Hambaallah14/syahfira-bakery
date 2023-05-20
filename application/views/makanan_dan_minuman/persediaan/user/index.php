@@ -99,7 +99,7 @@
                                             echo "<td class='text-center'>";
                                             echo "<button type='button' class='btn btn-primary waves-effect'>";
                                             echo "<i class='material-icons'>query_builder</i>";
-                                            echo "<span>PESANAN SEDANG DIPROSES OLEH CABANG PUSAT</span>";
+                                            echo "<span>[BARANG SISA] PESANAN SEDANG DIPROSES OLEH CABANG PUSAT</span>";
                                             echo "</button>";
                                             echo "</td>";
                                         }
