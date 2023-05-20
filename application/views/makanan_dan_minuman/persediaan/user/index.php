@@ -123,6 +123,10 @@
                                             echo "<i class='material-icons'>cancel</i>";
                                             echo "<span>[BARANG SISA] PESANAN DITOLAK OLEH CABANG PUSAT</span>";
                                             echo "</button>";
+
+                                            echo "<button type='button' class='btn btn-danger waves-effect'>";
+                                            echo "<i class='material-icons'>edit</i>";
+                                            echo "</button>";
                                             echo "</td>";
                                         } else {
 
