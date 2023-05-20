@@ -63,7 +63,7 @@
                                         echo "<td class='text-center'>" . $persediaan["keterangan"] . "</td>";
 
 
-                                        // 1. JIKA PESANAN BELUM DI VALIDASI DARI CABANG PRODUKSI MAKA TAMPILKAN BUTTON PESANAN
+                                        // 1. JIKA PESANAN BELUM DI DITERIMA DARI CABANG PRODUKSI MAKA TAMPILKAN BUTTON PESANAN
                                         if ($persediaan["status_persediaan"] == 0) {
                                             echo "<td class='text-center'>";
                                             echo "<button type='button' class='btn btn-primary waves-effect btnPesananPersediaanMakananMinum' data-toggle='modal' data-target='#defaultModal' data-id='" . $persediaan["id_persediaan"] . "'>";
@@ -73,7 +73,7 @@
                                             echo "</td>";
                                         }
 
-                                        // 2. JIKA PESANAN SUDAH DI TERIMA DARI CABANG PRODUKSI MAKA TAMPILKAN BUTTON PINDAH STOK
+                                        // 2. JIKA PESANAN SUDAH TERIMA DARI CABANG PRODUKSI MAKA TAMPILKAN BUTTON PINDAH STOK
                                         else if ($persediaan["status_persediaan"] == 1) {
                                             echo "<td class='text-center'>";
                                             echo "<a href='" . base_url() . "makanan_dan_minuman/pindahStok/p/" . $persediaan["id_persediaan"] . "' class='btn btn-success waves-effect'>";
