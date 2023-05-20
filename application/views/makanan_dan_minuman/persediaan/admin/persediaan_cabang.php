@@ -57,7 +57,88 @@
                                         echo "<td class='text-center'>" . $tanggal_expired . "</td>";
                                         echo "<td class='text-center'>" . $persediaan["keterangan"] . "</td>";
 
-                                        echo "<td>ff</td>";
+                                        // 1. JIKA PESANAN BELUM DI DITERIMA DARI CABANG PRODUKSI MAKA TAMPILKAN BUTTON PESANAN
+                                        if ($persediaan["status_persediaan"] == 0) {
+                                            echo "<td class='text-center'>";
+                                            echo "<button type='button' class='btn btn-primary waves-effect'>";
+                                            echo "<i class='material-icons'>query_builder</i>";
+                                            echo "<span>PESANAN DIPROSES</span>";
+                                            echo "</button>";
+                                            echo "</td>";
+                                        }
+
+                                        // 2. JIKA PESANAN DITERIMA DARI CABANG PRODUKSI MAKA TAMPILKAN BUTTON PESANAN DITERIMA
+                                        else if ($persediaan["status_persediaan"] == 1) {
+                                            echo "<td class='text-center'>";
+                                            echo "<button type='button' class='btn btn-success waves-effect'>";
+                                            echo "<i class='material-icons'>done</i>";
+                                            echo "<span>PESANAN DITERIMA</span>";
+                                            echo "</button>";
+                                            echo "</td>";
+                                        }
+
+                                        // 3. JIKA PESANAN DI TOLAK DARI CABANG PRODUKSI MAKA TAMPILKAN BUTTON PESANAN DITOLAK
+                                        else if ($persediaan["status_persediaan"] == 2) {
+                                            echo "<td class='text-center'>";
+                                            echo "<button type='button' class='btn btn-danger waves-effect' data-container='body' data-toggle='popover'
+            data-placement='top' title='Informasi' data-content='" . $persediaan["status_keterangan"] . "'>";
+                                            echo "<i class='material-icons'>cancel</i>";
+                                            echo "<span>PESANAN DITOLAK</span>";
+                                            echo "</button>";
+                                            echo "</td>";
+                                        }
+
+                                        // 4. JIKA PESANAN BELUM DI VALIDASI OLEH CABANG PUSAT MAKA TAMPILKAN BUTTON PESANAN
+                                        else if ($persediaan["status_persediaan"] == 3) {
+                                            echo "<td class='text-center'>";
+                                            echo "<button type='button' class='btn btn-primary waves-effect'>";
+                                            echo "<i class='material-icons'>query_builder</i>";
+                                            echo "<span>PESANAN SEDANG DIPROSES OLEH CABANG PUSAT</span>";
+                                            echo "</button>";
+                                            echo "</td>";
+                                        } // 5. JIKA PESANAN DITERIMA OLEH CABANG PUSAT MAKA TAMPILKAN BUTTON PESANAN DISETUJUI
+                                        else if ($persediaan["status_persediaan"] == 4) {
+                                            echo "<td class='text-center'>";
+                                            echo "<button type='button' class='btn btn-success waves-effect'>";
+                                            echo "<i class='material-icons'>query_builder</i>";
+                                            echo "<span>PESANAN DISETUJUI OLEH CABANG PUSAT</span>";
+                                            echo "</button>";
+                                            echo "</td>";
+                                        }
+
+                                        // 6. JIKA PESANAN DITOLAK OLEH CABANG PUSAT MAKA TAMPILKAN BUTTON PESANAN DITOLAK
+                                        else if ($persediaan["status_persediaan"] == 5) {
+
+                                            echo "<td class='text-center'>";
+                                            echo "<button type='button' class='btn btn-danger waves-effect' data-container='body' data-toggle='popover'
+                                            data-placement='top' title='Informasi' data-content='" . $persediaan["status_keterangan"] . "'>";
+                                            echo "<i class='material-icons'>cancel</i>";
+                                            echo "<span>PESANAN DITOLAK OLEH CABANG PUSAT</span>";
+                                            echo "</button>";
+                                            echo "</td>";
+                                        } else {
+                                            // 7. JIKA SUDAH DIVALIDASI, MAKA LIHAT KONDISI APAKAH QTY < 0
+                                            if ($persediaan["qty"] == 0) {
+                                                echo "<td class='text-center'>";
+                                                echo "<button type='button' class='btn btn-danger waves-effect'>";
+                                                echo "<i class='material-icons'>cancel</i>";
+                                                echo "<span>STOK HABIS</span>";
+                                                echo "</button>";
+                                                echo "</td>";
+                                            } else {
+                                                $tanggal_expired2 = date('Y-m-d', strtotime('+' . $persediaan["durasi_expired"] - 1 . 'days', strtotime($persediaan["tgl_persediaan"])));
+
+                                                // 8. JIKA QTY > 0, MAKA LIHAT KONDISI RANGE MASA EXPIRED > TANGGAL EXPIRED
+                                                if (date('Y-m-d') > $tanggal_expired2) {
+                                                    echo "<td class='text-center'>";
+                                                    echo "<button type='button' class='btn btn-danger waves-effect'>";
+                                                    echo "<i class='material-icons'>cancel</i>";
+                                                    echo "<span>EXPIRED</span>";
+                                                    echo "</button>";
+                                                    echo "</td>";
+                                                }
+                                            }
+                                        }
                                         echo "</tr>";
                                         $no++;
                                     }
