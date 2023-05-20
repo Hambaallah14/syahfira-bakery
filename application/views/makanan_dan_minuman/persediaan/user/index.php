@@ -99,7 +99,29 @@
                                             echo "<td class='text-center'>";
                                             echo "<button type='button' class='btn btn-primary waves-effect'>";
                                             echo "<i class='material-icons'>query_builder</i>";
-                                            echo "<span>PESANAN DIPROSES</span>";
+                                            echo "<span>PESANAN SEDANG DIPROSES OLEH CABANG PUSAT</span>";
+                                            echo "</button>";
+                                            echo "</td>";
+                                        }
+
+                                        // 4.1. JIKA PESANAN DITERIMA OLEH CABANG PUSAT MAKA TAMPILKAN BUTTON PESANAN DISETUJUI
+                                        else if ($persediaan["status_persediaan"] == 4) {
+                                            echo "<td class='text-center'>";
+                                            echo "<button type='button' class='btn btn-success waves-effect'>";
+                                            echo "<i class='material-icons'>query_builder</i>";
+                                            echo "<span>PESANAN DISETUJUI OLEH CABANG PUSAT</span>";
+                                            echo "</button>";
+                                            echo "</td>";
+                                        }
+
+                                        // 4.2. JIKA PESANAN DITOLAK OLEH CABANG PUSAT MAKA TAMPILKAN BUTTON PESANAN DITOLAK
+                                        else if ($persediaan["status_persediaan"] == 5) {
+
+                                            echo "<td class='text-center'>";
+                                            echo "<button type='button' class='btn btn-danger waves-effect' data-container='body' data-toggle='popover'
+                                            data-placement='top' title='Informasi' data-content='" . $persediaan["status_keterangan"] . "'>";
+                                            echo "<i class='material-icons'>cancel</i>";
+                                            echo "<span>PESANAN DITOLAK OLEH CABANG PUSAT</span>";
                                             echo "</button>";
                                             echo "</td>";
                                         } else {
