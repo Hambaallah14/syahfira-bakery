@@ -124,10 +124,9 @@
                                             echo "<span>[BARANG SISA] PESANAN DITOLAK OLEH CABANG PUSAT</span>";
                                             echo "</button>";
 
-                                            echo "<button type='button' class='btn bg-orange waves-effect mb-2'>";
+                                            echo "<button type='button' class='btn bg-orange waves-effect mb-2 btnPesananPersediaanMakananMinum' data-toggle='modal' data-target='#defaultModalPindahStok' data-id='" . $persediaan["id_persediaan"] . "'>";
                                             echo "<i class='material-icons'>edit</i>";
                                             echo "</button>";
-                                            echo "</td>";
                                         } else {
 
                                             // 5. JIKA SUDAH DIVALIDASI, MAKA LIHAT KONDISI APAKAH QTY < 0
