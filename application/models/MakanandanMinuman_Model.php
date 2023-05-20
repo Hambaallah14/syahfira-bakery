@@ -152,9 +152,6 @@ class MakanandanMinuman_Model extends CI_Model
         ];
         $this->db->insert('tb_barang_sisa', $persediaan);
 
-        // $this->db->where('id_persediaan', $this->input->post('id_persediaan', true));
-        // $this->db->delete('tb_persediaan_mm');
-
         $status = [
             "id_persediaan"         => $this->input->post('id_persediaan', true),
             "id_user"               => $this->input->post('id_user', true),
@@ -162,11 +159,6 @@ class MakanandanMinuman_Model extends CI_Model
         ];
         $this->db->where("id_persediaan", $this->input->post('id_persediaan', true));
         $this->db->update('tb_status_persediaan_mm', $status);
-
-
-
-        // $this->db->where('id_persediaan', $this->input->post('id_persediaan', true));
-        // $this->db->delete('tb_status_persediaan_mm');
     }
 
     public function allPersediaanSisa()
