@@ -138,6 +138,17 @@ class MakanandanMinuman_Model extends CI_Model
         $this->db->update('tb_status_persediaan_mm', $MakanandanMinuman);
     }
 
+    public function UpdateStatusBarangSisa()
+    {
+        $MakanandanMinuman = [
+            "status_persediaan"      => $this->input->post('status_persediaan', true),
+            "status_keterangan"      => $this->input->post('status_keterangan', true)
+
+        ];
+        $this->db->where("id_persediaan", $this->input->post('id_persediaan', true));
+        $this->db->update('tb_status_persediaan_mm', $MakanandanMinuman);
+    }
+
 
     public function InsertPersediaanSisa()
     {

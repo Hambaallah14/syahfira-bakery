@@ -109,7 +109,7 @@
                                             echo "<td class='text-center'>";
                                             echo "<button type='button' class='btn btn-success waves-effect'>";
                                             echo "<i class='material-icons'>query_builder</i>";
-                                            echo "<span>PESANAN DISETUJUI OLEH CABANG PUSAT</span>";
+                                            echo "<span>[BARANG SISA] PESANAN DISETUJUI OLEH CABANG PUSAT</span>";
                                             echo "</button>";
                                             echo "</td>";
                                         }
@@ -121,7 +121,7 @@
                                             echo "<button type='button' class='btn btn-danger waves-effect' data-container='body' data-toggle='popover'
                                             data-placement='top' title='Informasi' data-content='" . $persediaan["status_keterangan"] . "'>";
                                             echo "<i class='material-icons'>cancel</i>";
-                                            echo "<span>PESANAN DITOLAK OLEH CABANG PUSAT</span>";
+                                            echo "<span>[BARANG SISA] PESANAN DITOLAK OLEH CABANG PUSAT</span>";
                                             echo "</button>";
                                             echo "</td>";
                                         } else {

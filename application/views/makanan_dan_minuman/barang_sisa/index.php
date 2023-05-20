@@ -131,8 +131,8 @@
                                 <div class="form-line">
                                     <select id="status_persediaan" class="form-control show-tick status_persediaan" name="status_persediaan" required>
                                         <option value="-">--Pilih Status--</option>
-                                        <option value="1">PESANAN DITERIMA</option>
-                                        <option value="2">PESANAN DITOLAK</option>
+                                        <option value="4">PESANAN DITERIMA</option>
+                                        <option value="5">PESANAN DITOLAK</option>
                                     </select>
                                 </div>
                             </div>

@@ -233,7 +233,7 @@ class Makanan_dan_minuman extends CI_Controller
     {
         $this->MakanandanMinuman_Model->UpdateStatusPersediaan();
         $this->session->set_flashdata('makanan_minuman', 'Diubah');
-        redirect('makanan_dan_minuman/persediaan');
+        redirect('makanan_dan_minuman/persediaan_sisa');
     }
 
     public function InsertPenjualanBarang()
