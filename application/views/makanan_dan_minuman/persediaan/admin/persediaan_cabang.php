@@ -57,58 +57,7 @@
                                         echo "<td class='text-center'>" . $tanggal_expired . "</td>";
                                         echo "<td class='text-center'>" . $persediaan["keterangan"] . "</td>";
 
-                                        // 1. JIKA PESANAN BELUM DI DITERIMA DARI CABANG PRODUKSI MAKA TAMPILKAN BUTTON PESANAN
-                                        if ($persediaan["status_persediaan"] == 0) {
-                                            echo "<td class='text-center'>";
-                                            echo "<button type='button' class='btn btn-primary waves-effect'>";
-                                            echo "<i class='material-icons'>query_builder</i>";
-                                            echo "<span>PESANAN DIPROSES</span>";
-                                            echo "</button>";
-                                            echo "</td>";
-                                        }
-
-                                        // 2. JIKA PESANAN DITERIMA DARI CABANG PRODUKSI MAKA TAMPILKAN BUTTON PESANAN DITERIMA
-                                        else if ($persediaan["status_persediaan"] == 1) {
-                                            echo "<td class='text-center'>";
-                                            echo "<button type='button' class='btn btn-success waves-effect'>";
-                                            echo "<i class='material-icons'>done</i>";
-                                            echo "<span>PESANAN DITERIMA</span>";
-                                            echo "</button>";
-                                            echo "</td>";
-                                        }
-
-                                        // 3. JIKA PESANAN DI TOLAK DARI CABANG PRODUKSI MAKA TAMPILKAN BUTTON PESANAN DITOLAK
-                                        else if ($persediaan["status_persediaan"] == 2) {
-                                            echo "<td class='text-center'>";
-                                            echo "<button type='button' class='btn btn-danger waves-effect' data-container='body' data-toggle='popover'
-            data-placement='top' title='Informasi' data-content='" . $persediaan["status_keterangan"] . "'>";
-                                            echo "<i class='material-icons'>cancel</i>";
-                                            echo "<span>PESANAN DITOLAK</span>";
-                                            echo "</button>";
-                                            echo "</td>";
-                                        } else {
-                                            // 4. JIKA SUDAH DIVALIDASI, MAKA LIHAT KONDISI APAKAH QTY < 0
-                                            if ($persediaan["qty"] == 0) {
-                                                echo "<td class='text-center'>";
-                                                echo "<button type='button' class='btn btn-danger waves-effect'>";
-                                                echo "<i class='material-icons'>cancel</i>";
-                                                echo "<span>STOK HABIS</span>";
-                                                echo "</button>";
-                                                echo "</td>";
-                                            } else {
-                                                $tanggal_expired2 = date('Y-m-d', strtotime('+' . $persediaan["durasi_expired"] - 1 . 'days', strtotime($persediaan["tgl_persediaan"])));
-
-                                                // 5. JIKA QTY > 0, MAKA LIHAT KONDISI RANGE MASA EXPIRED > TANGGAL EXPIRED
-                                                if (date('Y-m-d') > $tanggal_expired2) {
-                                                    echo "<td class='text-center'>";
-                                                    echo "<button type='button' class='btn btn-danger waves-effect'>";
-                                                    echo "<i class='material-icons'>cancel</i>";
-                                                    echo "<span>EXPIRED</span>";
-                                                    echo "</button>";
-                                                    echo "</td>";
-                                                }
-                                            }
-                                        }
+                                        echo "<td>ff</td>";
                                         echo "</tr>";
                                         $no++;
                                     }
