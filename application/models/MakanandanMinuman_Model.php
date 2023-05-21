@@ -152,24 +152,25 @@ class MakanandanMinuman_Model extends CI_Model
 
     public function InsertPersediaanSisa()
     {
-        $persediaan = [
-            "tanggal"          => date('Y-m-d'),
-            "id_persediaan"    => $this->input->post('id_persediaan', true),
-            "id_user"          => $this->input->post('id_user', true),
-            "id_makan_minum"   => $this->input->post('id_mkn_mnm', true),
-            "harga"            => $this->input->post('harga', true),
-            "qty"              => $this->input->post('qty', true),
-            "tgl_persediaan"   => $this->input->post('tgl_persediaan', true)
-        ];
-        $this->db->insert('tb_barang_sisa', $persediaan);
+        var_dump($this->allPersediaanSisa());
+        // $persediaan = [
+        //     "tanggal"          => date('Y-m-d'),
+        //     "id_persediaan"    => $this->input->post('id_persediaan', true),
+        //     "id_user"          => $this->input->post('id_user', true),
+        //     "id_makan_minum"   => $this->input->post('id_mkn_mnm', true),
+        //     "harga"            => $this->input->post('harga', true),
+        //     "qty"              => $this->input->post('qty', true),
+        //     "tgl_persediaan"   => $this->input->post('tgl_persediaan', true)
+        // ];
+        // $this->db->insert('tb_barang_sisa', $persediaan);
 
-        $status = [
-            "id_persediaan"         => $this->input->post('id_persediaan', true),
-            "id_user"               => $this->input->post('id_user', true),
-            "status_persediaan"     => 3
-        ];
-        $this->db->where("id_persediaan", $this->input->post('id_persediaan', true));
-        $this->db->update('tb_status_persediaan_mm', $status);
+        // $status = [
+        //     "id_persediaan"         => $this->input->post('id_persediaan', true),
+        //     "id_user"               => $this->input->post('id_user', true),
+        //     "status_persediaan"     => 3
+        // ];
+        // $this->db->where("id_persediaan", $this->input->post('id_persediaan', true));
+        // $this->db->update('tb_status_persediaan_mm', $status);
     }
 
     public function allPersediaanSisa()
