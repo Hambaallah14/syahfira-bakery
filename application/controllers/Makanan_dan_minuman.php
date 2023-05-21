@@ -213,8 +213,8 @@ class Makanan_dan_minuman extends CI_Controller
             $this->load->view('template/footer');
         } else {
             $this->MakanandanMinuman_Model->InsertPersediaanSisa();
-            // $this->session->set_flashdata('status_persediaan', 'Disimpan');
-            // redirect('makanan_dan_minuman/persediaan');
+            $this->session->set_flashdata('status_persediaan', 'Disimpan');
+            redirect('makanan_dan_minuman/persediaan');
         }
     }
 
