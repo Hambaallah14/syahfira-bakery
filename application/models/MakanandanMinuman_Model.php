@@ -152,7 +152,10 @@ class MakanandanMinuman_Model extends CI_Model
 
     public function InsertPersediaanSisa()
     {
-        var_dump($this->allPersediaanSisa());
+        // var_dump($this->allPersediaanSisa());
+        foreach ($this->allPersediaanSisa() as $barang_sisa) {
+            echo $barang_sisa["id_persediaan"];
+        }
         // $persediaan = [
         //     "tanggal"          => date('Y-m-d'),
         //     "id_persediaan"    => $this->input->post('id_persediaan', true),
