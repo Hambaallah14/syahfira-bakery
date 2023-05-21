@@ -154,7 +154,11 @@ class MakanandanMinuman_Model extends CI_Model
     {
         // var_dump($this->allPersediaanSisa());
         foreach ($this->allPersediaanSisa() as $barang_sisa) {
-            echo $barang_sisa["id_persediaan"];
+            if ($barang_sisa["id_persediaan"] == $this->input->post('id_persediaan', true)) {
+                echo "TRUE";
+            } else {
+                echo "FALSE";
+            }
         }
         // $persediaan = [
         //     "tanggal"          => date('Y-m-d'),
