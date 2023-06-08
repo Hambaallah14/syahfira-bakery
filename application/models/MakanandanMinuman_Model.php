@@ -155,32 +155,9 @@ class MakanandanMinuman_Model extends CI_Model
         foreach ($this->allPersediaanSisa() as $barang_sisa) {
             // CEK APAKAH DATA BARANG SISA SAMA DENGAN BARANG YANG MAU DIMASUKKAN DARI PERSEDIAAN
             if ($barang_sisa["id_persediaan"] == $this->input->post('id_persediaan', true)) {
-                $status = [
-                    "id_persediaan"         => $this->input->post('id_persediaan', true),
-                    "id_user"               => $this->input->post('id_user', true),
-                    "status_persediaan"     => 3
-                ];
-                $this->db->where("id_persediaan", $this->input->post('id_persediaan', true));
-                $this->db->update('tb_status_persediaan_mm', $status);
+                echo "TRUE";
             } else {
-                $persediaan = [
-                    "tanggal"          => date('Y-m-d'),
-                    "id_persediaan"    => $this->input->post('id_persediaan', true),
-                    "id_user"          => $this->input->post('id_user', true),
-                    "id_makan_minum"   => $this->input->post('id_mkn_mnm', true),
-                    "harga"            => $this->input->post('harga', true),
-                    "qty"              => $this->input->post('qty', true),
-                    "tgl_persediaan"   => $this->input->post('tgl_persediaan', true)
-                ];
-                $this->db->insert('tb_barang_sisa', $persediaan);
-
-                $status = [
-                    "id_persediaan"         => $this->input->post('id_persediaan', true),
-                    "id_user"               => $this->input->post('id_user', true),
-                    "status_persediaan"     => 3
-                ];
-                $this->db->where("id_persediaan", $this->input->post('id_persediaan', true));
-                $this->db->update('tb_status_persediaan_mm', $status);
+                echo "FALSE";
             }
         }
     }
