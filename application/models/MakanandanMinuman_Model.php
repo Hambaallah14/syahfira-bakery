@@ -12,6 +12,11 @@ class MakanandanMinuman_Model extends CI_Model
         return $this->db->get('tb_makanan_minuman')->result_array();
     }
 
+    public function allbyIdJenis($idJenis)
+    {
+        return $this->db->get_where('tb_makanan_minuman', array('id_jenis' => $idJenis))->result_array();
+    }
+
     public function allbyId($id)
     {
         return $this->db->query("SELECT tb_makanan_minuman.id, tb_makanan_minuman.qrcode, tb_makanan_minuman.id_jenis, tb_makanan_minuman.makanan_minuman, tb_makanan_minuman.harga, tb_makanan_minuman.durasi_expired, tb_makanan_minuman.id_satuan, tb_satuan.satuan FROM tb_makanan_minuman INNER JOIN tb_satuan ON tb_makanan_minuman.id_satuan=tb_satuan.id WHERE tb_makanan_minuman.id='$id'")->result_array();

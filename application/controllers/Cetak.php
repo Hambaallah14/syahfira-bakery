@@ -46,6 +46,8 @@ class Cetak extends CI_Controller
             $data['makanan_minuman'] = $this->MakanandanMinuman_Model->all();
             $this->load->view('makanan_dan_minuman/cetak/hasilFilter', $data);
         } else {
+            $data['makanan_minuman'] = $this->MakanandanMinuman_Model->allbyIdJenis($id_jenis);
+            $this->load->view('makanan_dan_minuman/cetak/hasilFilter', $data);
         }
     }
 }
