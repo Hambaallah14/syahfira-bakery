@@ -152,7 +152,7 @@ class MakanandanMinuman_Model extends CI_Model
 
     public function InsertPersediaanSisa()
     {
-        $barang_sisa = $this->db->get('tb_barang_sisa');
+        $barang_sisa = $this->db->get('tb_barang_sisa')->result_array();
         var_dump($barang_sisa);
     }
 
