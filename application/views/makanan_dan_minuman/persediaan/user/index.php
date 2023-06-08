@@ -151,6 +151,13 @@
                                                         echo "<span>PINDAH STOK</span>";
                                                         echo "</button>";
                                                         echo "</td>";
+                                                    } else {
+                                                        echo "<td class='text-center'>";
+                                                        echo "<a href='" . base_url() . "makanan_dan_minuman/pindahStok/p/" . $persediaan["id_persediaan"] . "' class='btn btn-success waves-effect'>";
+                                                        echo "<i class='material-icons'>input</i>";
+                                                        echo "<span>PINDAH STOK</span>";
+                                                        echo "</a>";
+                                                        echo "</td>";
                                                     }
                                                 }
                                             }
