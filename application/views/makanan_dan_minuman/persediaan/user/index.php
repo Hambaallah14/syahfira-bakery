@@ -73,16 +73,6 @@
                                             echo "</td>";
                                         }
 
-                                        // 2. JIKA PESANAN SUDAH TERIMA DARI CABANG PRODUKSI MAKA TAMPILKAN BUTTON PINDAH STOK
-                                        else if ($persediaan["status_persediaan"] == 1) {
-                                            echo "<td class='text-center'>";
-                                            echo "<a href='" . base_url() . "makanan_dan_minuman/pindahStok/p/" . $persediaan["id_persediaan"] . "' class='btn btn-success waves-effect'>";
-                                            echo "<i class='material-icons'>input</i>";
-                                            echo "<span>PINDAH STOK</span>";
-                                            echo "</a>";
-                                            echo "</td>";
-                                        }
-
                                         // 3. JIKA PESANAN DITOLAK DARI CABANG PRODUKSI MAKA TAMPILKAN BUTTON PESANAN DITOLAK
                                         else if ($persediaan["status_persediaan"] == 2) {
                                             echo "<td class='text-center'>";
@@ -128,38 +118,40 @@
                                             echo "<i class='material-icons'>edit</i>";
                                             echo "</button>";
                                         } else {
-
-                                            // 5. JIKA SUDAH DIVALIDASI, MAKA LIHAT KONDISI APAKAH QTY < 0
-                                            if ($persediaan["qty"] == 0) {
-                                                echo "<td class='text-center'>";
-                                                echo "<button type='button' class='btn btn-danger waves-effect'>";
-                                                echo "<i class='material-icons'>cancel</i>";
-                                                echo "<span>STOK HABIS</span>";
-                                                echo "</button>";
-                                                echo "</td>";
-                                            } else {
-
-                                                $tanggal_expired2     = date('Y-m-d', strtotime('+' . $persediaan["durasi_expired"] - 1 . 'days', strtotime($persediaan["tgl_persediaan"])));
-                                                $tanggal_pengembalian = date('Y-m-d', strtotime('+' . 1 . 'days', strtotime($persediaan["tgl_persediaan"])));
-
-                                                // 6. JIKA QTY > 0, MAKA LIHAT KONDISI RANGE MASA EXPIRED > TANGGAL EXPIRED
-                                                if (date('Y-m-d') > $tanggal_expired2) {
+                                            // 2. JIKA PESANAN SUDAH TERIMA DARI CABANG PRODUKSI MAKA TAMPILKAN BUTTON PINDAH STOK
+                                            if ($persediaan["status_persediaan"] == 1) {
+                                                // 5. JIKA SUDAH DIVALIDASI, MAKA LIHAT KONDISI APAKAH QTY < 0
+                                                if ($persediaan["qty"] == 0) {
                                                     echo "<td class='text-center'>";
                                                     echo "<button type='button' class='btn btn-danger waves-effect'>";
                                                     echo "<i class='material-icons'>cancel</i>";
-                                                    echo "<span>EXPIRED</span>";
+                                                    echo "<span>STOK HABIS</span>";
                                                     echo "</button>";
                                                     echo "</td>";
-                                                }
+                                                } else {
+                                                    $tanggal_expired2     = date('Y-m-d', strtotime('+' . $persediaan["durasi_expired"] - 1 . 'days', strtotime($persediaan["tgl_persediaan"])));
+                                                    $tanggal_pengembalian = date('Y-m-d', strtotime('+' . 1 . 'days', strtotime($persediaan["tgl_persediaan"])));
 
-                                                // 7. JIKA TANGGAL > TANGGAL PENGEMBALIAN DAN TANGGAL < TANGGAL EXPIRED
-                                                else if (date('Y-m-d') >= $tanggal_pengembalian && date('Y-m-d') <= $tanggal_expired2) {
-                                                    echo "<td class='text-center'>";
-                                                    echo "<button type='button' class='btn bg-orange waves-effect btnPesananPersediaanMakananMinum' data-toggle='modal' data-target='#defaultModalPindahStok' data-id='" . $persediaan["id_persediaan"] . "'>";
-                                                    echo "<i class='material-icons'>input</i>";
-                                                    echo "<span>PINDAH STOK</span>";
-                                                    echo "</button>";
-                                                    echo "</td>";
+
+                                                    // 6. JIKA QTY > 0, MAKA EXPIRED 
+                                                    if (date('Y-m-d') > $tanggal_expired2) {
+                                                        echo "<td class='text-center'>";
+                                                        echo "<button type='button' class='btn btn-danger waves-effect'>";
+                                                        echo "<i class='material-icons'>cancel</i>";
+                                                        echo "<span>EXPIRED</span>";
+                                                        echo "</button>";
+                                                        echo "</td>";
+                                                    }
+
+                                                    // 7. JIKA TANGGAL > TANGGAL PENGEMBALIAN DAN TANGGAL < TANGGAL EXPIRED
+                                                    else if (date('Y-m-d') >= $tanggal_pengembalian && date('Y-m-d') <= $tanggal_expired2) {
+                                                        echo "<td class='text-center'>";
+                                                        echo "<button type='button' class='btn bg-orange waves-effect btnPesananPersediaanMakananMinum' data-toggle='modal' data-target='#defaultModalPindahStok' data-id='" . $persediaan["id_persediaan"] . "'>";
+                                                        echo "<i class='material-icons'>input</i>";
+                                                        echo "<span>PINDAH STOK</span>";
+                                                        echo "</button>";
+                                                        echo "</td>";
+                                                    }
                                                 }
                                             }
                                         }
